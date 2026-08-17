@@ -3,7 +3,9 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { appendLivePayment, getAdminOverlay } from "@/lib/admin-state";
-import { courseById, jobs, promoCodes, coinPacks, seedForum } from "@/lib/catalog";
+import { jobs, promoCodes, coinPacks, seedForum } from "@/lib/catalog";
+import { DESK_COIN, deskClosedToday, nextStreak, utcToday } from "@/lib/daily-desk";
+import { getLiveCourseById } from "@/lib/live-catalog";
 import { getSession } from "@/lib/session";
 import { getState, mutateState, notify } from "@/lib/state";
 import type { ForumPost, Journal } from "@/lib/types";
@@ -24,7 +26,7 @@ function slugify(value: string) {
 
 export async function enrollCourse(courseId: string, useBalance = true) {
   const session = await authed();
-  const course = courseById(courseId);
+  const course = await getLiveCourseById(courseId);
   if (!course) redirect("/courses?error=missing");
   const current = await getState();
   if (!current.enrollments.includes(courseId) && course.price > 0 && useBalance && current.coins < course.price) {
@@ -65,7 +67,7 @@ export async function completeModule(courseId: string, moduleId: string) {
     if (state.completedModules.includes(moduleId)) return state;
     return { ...state, completedModules: [...state.completedModules, moduleId] };
   });
-  const course = courseById(courseId);
+  const course = await getLiveCourseById(courseId);
   revalidatePath(`/courses/${course?.slug ?? ""}`);
 }
 
@@ -75,7 +77,7 @@ export async function submitQuiz(formData: FormData) {
   const moduleId = String(formData.get("moduleId"));
   const quizId = String(formData.get("quizId"));
   const retake = String(formData.get("retake") ?? "") === "1";
-  const course = courseById(courseId);
+  const course = await getLiveCourseById(courseId);
   const module = course?.modules.find((item) => item.id === moduleId);
   if (!course || !module) redirect("/courses");
   const state = await getState();
@@ -324,6 +326,33 @@ export async function buyBundle(bundleId: string) {
     createdAt: new Date().toISOString().slice(0, 10),
   });
   redirect(`/bundles/${bundle.slug}?ok=1`);
+}
+
+export async function closeDailyDesk(formData: FormData) {
+  await authed();
+  const note = String(formData.get("note") ?? "").trim();
+  if (note.length < 12) redirect("/campus?error=desk-short");
+  const current = await getState();
+  if (deskClosedToday(current)) redirect("/campus?ok=desk");
+  const today = utcToday();
+  const streak = nextStreak(current, today);
+  await mutateState((state) => {
+    if (deskClosedToday(state)) return state;
+    return notify(
+      {
+        ...state,
+        coins: state.coins + DESK_COIN,
+        streakCount: nextStreak(state, today),
+        lastDeskDate: today,
+      },
+      "Desk closed",
+      `Campus day ${streak}. ${DESK_COIN} coins on the ledger.`,
+      "/campus",
+    );
+  });
+  revalidatePath("/campus");
+  revalidatePath("/profile");
+  redirect("/campus?ok=desk");
 }
 
 export async function updateProfile(formData: FormData) {

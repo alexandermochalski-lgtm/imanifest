@@ -4,6 +4,7 @@ import { getSession } from "@/lib/session";
 
 const nav = [
   { href: "/programs", label: "Programs" },
+  { href: "/#pricing", label: "Pricing" },
   { href: "/about", label: "University" },
   { href: "/pages/investor-relations", label: "Investors" },
 ];

@@ -1,7 +1,7 @@
 import { togglePromo } from "@/app/actions/admin";
 import { Flash, GoldButton } from "@/components/ui";
 import { AdminTable, Kpi, PageHeader, StatusBadge } from "@/components/admin/ui";
-import { coinPacks } from "@/lib/catalog";
+import { coinPacks, membershipPackages } from "@/lib/catalog";
 import { getDesk } from "@/lib/desk";
 import { usd } from "@/lib/ops";
 
@@ -26,7 +26,7 @@ export default async function AdminCoinsPage({
       <PageHeader
         kicker="Treasury"
         title="Coins & promo"
-        description="Pack take is the cash register. Promo leakage is discount vs list price on paid captures. Coin liability is unspent student balances."
+        description="Landing membership packs from app.imanifest.money, plus campus coin SKUs. Promo leakage is discount vs list on paid coin captures."
       />
       <Flash map={{ promo: "Promo code updated." }} ok={ok} />
       <div className="mb-8 grid gap-4 sm:grid-cols-3">
@@ -35,14 +35,30 @@ export default async function AdminCoinsPage({
         <Kpi label="Catalog spend" value={`${desk.kpis.courseGmvCoins.toLocaleString()} coins`} />
       </div>
 
-      <h2 className="font-[family-name:var(--font-cormorant)] text-2xl text-white">Packs</h2>
+      <h2 className="font-[family-name:var(--font-cormorant)] text-2xl text-white">Membership packs</h2>
+      <p className="mt-2 text-sm text-muted">Copied from the live landing. Feature lists were identical on all three cards. Stripe was not wired to these SKUs — Subscribe went to /get.</p>
       <div className="mt-4">
-        <AdminTable columns={["Pack", "Coins", "Bonus", "List price", "Paid sales", "Revenue"]}>
+        <AdminTable columns={["Pack", "Price", "Was", "Duration"]}>
+          {membershipPackages.map((pack) => (
+            <tr key={pack.id} className="border-t border-[var(--line)]">
+              <td className="px-4 py-3 text-white">{pack.name}</td>
+              <td className="px-4 py-3 text-gold">{pack.price === 0 ? "$0" : usd(pack.price)}</td>
+              <td className="px-4 py-3">{pack.listPrice ? usd(pack.listPrice) : "—"}</td>
+              <td className="px-4 py-3">{pack.duration}</td>
+            </tr>
+          ))}
+        </AdminTable>
+      </div>
+
+      <h2 className="mt-10 font-[family-name:var(--font-cormorant)] text-2xl text-white">Campus coin packs</h2>
+      <div className="mt-4">
+        <AdminTable columns={["Pack", "Coins", "Bonus", "Save", "List price", "Paid sales", "Revenue"]}>
           {packSales.map((pack) => (
             <tr key={pack.id} className="border-t border-[var(--line)]">
               <td className="px-4 py-3 text-white">{pack.name}</td>
               <td className="px-4 py-3">{pack.coins}</td>
               <td className="px-4 py-3">{pack.bonus}</td>
+              <td className="px-4 py-3">{pack.savePct ? `${pack.savePct}%` : "—"}</td>
               <td className="px-4 py-3">{usd(pack.price)}</td>
               <td className="px-4 py-3">{pack.sales}</td>
               <td className="px-4 py-3 text-gold">{usd(pack.revenue)}</td>

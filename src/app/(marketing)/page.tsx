@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { courses, stats } from "@/lib/catalog";
 import { CourseCard } from "@/components/CourseCard";
+import { MembershipPacks } from "@/components/MembershipPacks";
 
 export default function Home() {
   return (
@@ -62,6 +63,8 @@ export default function Home() {
           About the university
         </Link>
       </section>
+
+      <MembershipPacks />
     </main>
   );
 }

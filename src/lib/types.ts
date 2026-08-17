@@ -21,12 +21,16 @@ export type User = {
   avatarLabel: string;
 };
 
+export type LessonKind = "video" | "audio" | "reading" | "pdf";
+
 export type Lesson = {
   id: string;
   title: string;
-  kind: "video" | "reading" | "pdf";
+  kind: LessonKind;
   duration: string;
   body: string;
+  mediaUrl?: string;
+  mediaId?: string;
 };
 
 export type Question = {
@@ -63,6 +67,7 @@ export type Course = {
   summary: string;
   modules: Module[];
   status: "active" | "hidden";
+  coverUrl?: string;
 };
 
 export type Book = {
@@ -74,6 +79,27 @@ export type Book = {
   pages: number;
   summary: string;
   price: number;
+  fileUrl?: string;
+  coverUrl?: string;
+};
+
+export type MediaKind = "video" | "audio" | "pdf" | "image" | "other";
+
+export type MediaAsset = {
+  id: string;
+  title: string;
+  kind: MediaKind;
+  contentType: string;
+  size: number;
+  url: string;
+  pathname: string;
+  createdAt: string;
+};
+
+export type CatalogOverlay = {
+  courses: Course[];
+  books: Book[];
+  media: MediaAsset[];
 };
 
 export type Guide = {
@@ -147,6 +173,18 @@ export type CoinPack = {
   coins: number;
   price: number;
   bonus: number;
+  savePct: number;
+};
+
+export type MembershipPackage = {
+  id: string;
+  name: string;
+  price: number;
+  listPrice?: number;
+  duration: string;
+  featured?: boolean;
+  features: string[];
+  href: string;
 };
 
 export type PromoCode = {
@@ -218,6 +256,8 @@ export type CampusState = {
   forumPosts: ForumPost[];
   messages: Message[];
   notifications: NotificationItem[];
+  streakCount: number;
+  lastDeskDate: string;
   profile: {
     name: string;
     phone: string;

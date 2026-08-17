@@ -36,6 +36,8 @@ export function emptyState(): CampusState {
         createdAt: new Date().toISOString().slice(0, 10),
       },
     ],
+    streakCount: 0,
+    lastDeskDate: "",
     profile: {
       name: "",
       phone: "",

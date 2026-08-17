@@ -28,6 +28,7 @@ const groups = [
     links: [
       { href: "/admin/courses", label: "Courses" },
       { href: "/admin/books", label: "Books" },
+      { href: "/admin/media", label: "Media" },
       { href: "/admin/jobs", label: "Jobs" },
       { href: "/admin/coins", label: "Coins & promo" },
     ],

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { AdminTable, EmptyRow, FilterBar, PageHeader, SelectField } from "@/components/admin/ui";
-import { courses } from "@/lib/catalog";
 import { getDesk } from "@/lib/desk";
+import { getLiveCourses } from "@/lib/live-catalog";
 import { courseTitle, formatDate, opsUserById } from "@/lib/ops";
 
 export default async function AdminEnrollmentsPage({
@@ -10,7 +10,7 @@ export default async function AdminEnrollmentsPage({
   searchParams: Promise<{ course?: string }>;
 }) {
   const { course = "all" } = await searchParams;
-  const desk = await getDesk();
+  const [desk, courses] = await Promise.all([getDesk(), getLiveCourses()]);
   const rows = desk.enrollments
     .filter((item) => course === "all" || item.courseId === course)
     .sort((a, b) => (a.enrolledAt < b.enrolledAt ? 1 : -1));
@@ -54,7 +54,9 @@ export default async function AdminEnrollmentsPage({
                     row.userId
                   )}
                 </td>
-                <td className="px-4 py-3 text-white">{courseTitle(row.courseId)}</td>
+                <td className="px-4 py-3 text-white">
+                  {courses.find((item) => item.id === row.courseId)?.title ?? courseTitle(row.courseId)}
+                </td>
                 <td className="px-4 py-3">{formatDate(row.enrolledAt)}</td>
                 <td className="px-4 py-3">
                   <div className="flex items-center gap-2">

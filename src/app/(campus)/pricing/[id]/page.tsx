@@ -19,6 +19,7 @@ export default async function PlaceOrderPage({
       <h1 className="font-[family-name:var(--font-cormorant)] text-4xl text-white">Place order</h1>
       <p className="mt-3 text-muted">
         {pack.name}: {pack.coins + pack.bonus} coins for ${pack.price}
+        {pack.savePct ? ` (Save ${pack.savePct}%)` : ""}
       </p>
       <Flash error={error} map={{ promo: "Promo code inactive or unknown." }} />
       <form action={buyCoins} className="mt-8 max-w-md space-y-4">

@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { toggleFavorite } from "@/app/actions/campus";
 import { GoldButton } from "@/components/ui";
-import { books, categories } from "@/lib/catalog";
+import { categories } from "@/lib/catalog";
+import { getLiveBooks } from "@/lib/live-catalog";
 import { getState } from "@/lib/state";
 
 export default async function LibraryPage({
@@ -12,6 +13,7 @@ export default async function LibraryPage({
   const params = await searchParams;
   const state = await getState();
   const query = (params.q ?? "").toLowerCase();
+  const books = await getLiveBooks();
   const filtered = books.filter((book) => {
     const byCat = !params.category || book.category === params.category;
     const byQ = !query || book.title.toLowerCase().includes(query);

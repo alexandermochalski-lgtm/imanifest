@@ -1,6 +1,6 @@
 import { notFound, redirect } from "next/navigation";
 import { QuizForm } from "@/components/campus/QuizForm";
-import { courseBySlug } from "@/lib/catalog";
+import { getLiveCourseBySlug } from "@/lib/live-catalog";
 import { getState } from "@/lib/state";
 
 export default async function QuizPage({
@@ -12,7 +12,7 @@ export default async function QuizPage({
 }) {
   const { slug, moduleId } = await params;
   const { retake } = await searchParams;
-  const course = courseBySlug(slug);
+  const course = await getLiveCourseBySlug(slug);
   const module = course?.modules.find((item) => item.id === moduleId);
   if (!course || !module) notFound();
   const state = await getState();

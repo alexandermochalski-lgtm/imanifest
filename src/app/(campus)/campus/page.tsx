@@ -1,10 +1,23 @@
-import Link from "next/link";
-import { books, courses, jobs, moduleProgress, seedJournals } from "@/lib/catalog";
+import { DailyDesk } from "@/components/campus/DailyDesk";
+import { jobs, moduleProgress, seedJournals } from "@/lib/catalog";
+import { buildDailyDesk, deskClosedToday, formatCoins, liveStreak, utcToday } from "@/lib/daily-desk";
+import { getLiveBooks, getLiveCourses } from "@/lib/live-catalog";
 import { getState } from "@/lib/state";
+import Link from "next/link";
 
-export default async function DashboardPage() {
+export default async function DashboardPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ ok?: string; error?: string }>;
+}) {
+  const query = await searchParams;
   const state = await getState();
+  const [courses, books] = await Promise.all([getLiveCourses(), getLiveBooks()]);
   const enrolled = courses.filter((course) => state.enrollments.includes(course.id));
+  const streak = liveStreak(state);
+  const closed = deskClosedToday(state);
+  const desk = buildDailyDesk(utcToday(), courses, state.enrollments, state.forumPosts);
+
   return (
     <main>
       <p className="text-xs uppercase tracking-[0.28em] text-gold">Student workspace</p>
@@ -14,9 +27,9 @@ export default async function DashboardPage() {
       </p>
       <div className="mt-8 grid gap-4 md:grid-cols-4">
         {[
-          ["Coins", String(state.coins)],
+          ["Coins", formatCoins(state.coins)],
+          ["Campus day", streak > 0 ? String(streak) : "—"],
           ["Enrolled", String(enrolled.length)],
-          ["Applications", String(state.applications.length)],
           ["Unread", String(state.notifications.filter((item) => !item.read).length)],
         ].map(([label, value]) => (
           <div key={label} className="rounded-2xl border border-[var(--line)] bg-panel p-5">
@@ -25,6 +38,7 @@ export default async function DashboardPage() {
           </div>
         ))}
       </div>
+      <DailyDesk desk={desk} streak={streak} closed={closed} ok={query.ok} error={query.error} />
       <section className="mt-10">
         <h2 className="font-[family-name:var(--font-cormorant)] text-2xl text-white">My courses</h2>
         <div className="mt-4 grid gap-4 md:grid-cols-2">

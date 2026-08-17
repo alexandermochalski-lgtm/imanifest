@@ -1,5 +1,6 @@
 import { books, bundles, coinPacks, courses, jobs, promoCodes, seedForum, seedJournals } from "@/lib/catalog";
 import { getAdminOverlay } from "@/lib/admin-state";
+import { getLiveCourses } from "@/lib/live-catalog";
 import {
   inLastDays,
   opsUsers,
@@ -78,21 +79,22 @@ function mergeApplications(
   return [...byId.values()].sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1));
 }
 
-function mergeEnrollments(userId: string | undefined, liveCourseIds: string[]): EnrollmentRecord[] {
+function mergeEnrollments(
+  userId: string | undefined,
+  liveCourseIds: string[],
+  priceByCourse: Map<string, number>,
+): EnrollmentRecord[] {
   if (!userId) return seedEnrollments;
   const extra = liveCourseIds
     .filter((courseId) => !seedEnrollments.some((item) => item.userId === userId && item.courseId === courseId))
-    .map((courseId) => {
-      const course = courses.find((item) => item.id === courseId);
-      return {
-        id: `en-live-${userId}-${courseId}`,
-        userId,
-        courseId,
-        enrolledAt: new Date().toISOString().slice(0, 10),
-        progress: 0,
-        coinsSpent: course?.price ?? 0,
-      };
-    });
+    .map((courseId) => ({
+      id: `en-live-${userId}-${courseId}`,
+      userId,
+      courseId,
+      enrolledAt: new Date().toISOString().slice(0, 10),
+      progress: 0,
+      coinsSpent: priceByCourse.get(courseId) ?? courses.find((item) => item.id === courseId)?.price ?? 0,
+    }));
   return [...extra, ...seedEnrollments];
 }
 
@@ -110,11 +112,20 @@ function weekBuckets(payments: Payment[]): number[] {
 }
 
 export async function getDesk(): Promise<DeskSnapshot> {
-  const [overlay, campus, session] = await Promise.all([getAdminOverlay(), getState(), getSession()]);
+  const [overlay, campus, session, liveCourses] = await Promise.all([
+    getAdminOverlay(),
+    getState(),
+    getSession(),
+    getLiveCourses(),
+  ]);
   const users = mergeUsers(overlay);
   const payments = mergePayments(overlay);
   const applications = mergeApplications(overlay, campus.applications);
-  const enrollments = mergeEnrollments(session?.userId, campus.enrollments);
+  const enrollments = mergeEnrollments(
+    session?.userId,
+    campus.enrollments,
+    new Map(liveCourses.map((course) => [course.id, course.price])),
+  );
   const registrations = seedRegistrations;
 
   const paidCard = payments.filter((item) => item.kind === "coins" && item.status === "paid");
@@ -137,7 +148,7 @@ export async function getDesk(): Promise<DeskSnapshot> {
   const topCourses = [...topMap.entries()]
     .map(([id, stats]) => ({
       id,
-      title: courses.find((course) => course.id === id)?.title ?? id,
+      title: liveCourses.find((course) => course.id === id)?.title ?? id,
       enrollments: stats.enrollments,
       coins: stats.coins,
       completion: stats.enrollments === 0 ? 0 : Math.round((stats.done / stats.enrollments) * 100),

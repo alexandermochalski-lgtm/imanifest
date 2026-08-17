@@ -3,9 +3,11 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { logoutAction } from "@/app/actions/auth";
 import type { AuthSession } from "@/lib/session";
+import { formatCoins } from "@/lib/daily-desk";
 
 const links = [
   { href: "/campus", label: "Dashboard" },
+  { href: "/campus#desk", label: "Daily desk" },
   { href: "/courses", label: "Courses" },
   { href: "/library", label: "Books" },
   { href: "/guides", label: "Guides" },
@@ -23,11 +25,13 @@ const links = [
 export function CampusShell({
   session,
   coins,
+  streak,
   unread,
   children,
 }: {
   session: AuthSession;
   coins: number;
+  streak: number;
   unread: number;
   children: ReactNode;
 }) {
@@ -71,7 +75,8 @@ export function CampusShell({
             </Link>
           </div>
           <p className="text-sm text-muted">
-            {session.name} · <span className="text-gold">{coins} coins</span>
+            {session.name}
+            {streak > 0 ? ` · Day ${streak}` : ""} · <span className="text-gold">{formatCoins(coins)} coins</span>
           </p>
           <Link href="/pricing" className="text-sm text-gold">
             Top up

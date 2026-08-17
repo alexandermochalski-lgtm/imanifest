@@ -10,6 +10,7 @@ import type {
   Insight,
   JobPost,
   Journal,
+  MembershipPackage,
   PromoCode,
   Question,
   User,
@@ -1067,9 +1068,48 @@ export const bundles: Bundle[] = [
 ];
 
 export const coinPacks: CoinPack[] = [
-  { id: "coin-starter", name: "Starter", coins: 100, price: 29, bonus: 0 },
-  { id: "coin-operator", name: "Operator", coins: 400, price: 99, bonus: 40 },
-  { id: "coin-desk", name: "Desk", coins: 1000, price: 219, bonus: 150 },
+  { id: "coin-starter", name: "Starter", coins: 100, price: 29, bonus: 0, savePct: 0 },
+  { id: "coin-operator", name: "Operator", coins: 400, price: 99, bonus: 40, savePct: 20 },
+  { id: "coin-desk", name: "Desk", coins: 1000, price: 219, bonus: 150, savePct: 30 },
+];
+
+const membershipFeatures = [
+  "AI based suggestions",
+  "19 wealth creation methods",
+  "Access to millionaire mentors",
+  "Community chat groups",
+  "No experience needed",
+  "Cancel anytime, risk-free",
+];
+
+export const membershipPackages: MembershipPackage[] = [
+  {
+    id: "pkg-freemium",
+    name: "Freemium Pack",
+    price: 0,
+    duration: "Ongoing",
+    features: membershipFeatures,
+    href: "/register",
+  },
+  {
+    id: "pkg-premium",
+    name: "Premium Pack",
+    price: 49.99,
+    listPrice: 249.5,
+    duration: "Start the journey",
+    featured: true,
+    features: membershipFeatures,
+    href: "/register",
+  },
+  {
+    id: "pkg-special",
+    name: "Special Pack",
+    price: 249.99,
+    listPrice: 499.5,
+    duration: "Full access",
+    features: membershipFeatures,
+    href: "/register",
+  },
 ];
 
 export const promoCodes: PromoCode[] = [

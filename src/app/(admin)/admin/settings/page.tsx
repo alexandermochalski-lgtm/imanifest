@@ -37,9 +37,25 @@ export default function AdminSettingsPage() {
           </p>
         </section>
         <section className="rounded-2xl border border-[var(--line)] p-5">
-          <h2 className="text-lg text-gold">Desk contact</h2>
+          <h2 className="text-lg text-gold">Media storage</h2>
           <p className="mt-2 text-sm text-muted">
-            Public desk remains info@imanifest.money. Chatify is replaced by campus /messages.
+            Course video/audio and book PDFs are not saved inside the Next.js app. On Vercel the filesystem is
+            ephemeral. Production files go to <span className="text-white">Vercel Blob</span> (object storage): browser
+            uploads the bytes; this desk stores the URL on the course/book.
+          </p>
+          <ol className="mt-3 list-decimal space-y-1 pl-5 text-sm text-muted">
+            <li>Vercel dashboard → project → Storage → Create Blob store → Connect to this project.</li>
+            <li>
+              Locally: <code className="text-gold">npx vercel env pull</code> so{" "}
+              <code className="text-gold">BLOB_READ_WRITE_TOKEN</code> exists.
+            </li>
+            <li>
+              Upload under <span className="text-white">/admin/media</span>, then attach on a course lesson or book.
+            </li>
+          </ol>
+          <p className="mt-3 text-sm text-muted">
+            MP4 in Blob is fine for operator-length lessons. Full-semester 4K should move to Mux or Cloudflare Stream
+            (HLS) later — same attach-URL pattern.
           </p>
         </section>
       </div>

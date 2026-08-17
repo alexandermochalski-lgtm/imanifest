@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { enrollCourse } from "@/app/actions/campus";
 import { Flash, GoldButton } from "@/components/ui";
-import { categories, courses, moduleProgress } from "@/lib/catalog";
+import { categories, moduleProgress } from "@/lib/catalog";
+import { formatCoins } from "@/lib/daily-desk";
+import { getLiveCourses } from "@/lib/live-catalog";
 import { getState } from "@/lib/state";
 
 export default async function CoursesPage({
@@ -11,6 +13,7 @@ export default async function CoursesPage({
 }) {
   const params = await searchParams;
   const state = await getState();
+  const courses = await getLiveCourses();
   const query = (params.q ?? "").toLowerCase();
   const filtered = courses.filter((course) => {
     const byCat = !params.category || course.category === params.category;
@@ -48,7 +51,7 @@ export default async function CoursesPage({
         ))}
       </div>
       <p className="mt-6 text-sm text-muted">
-        Enrolled {mine.length} · Completed {completed.length} · Balance {state.coins} coins
+        Enrolled {mine.length} · Completed {completed.length} · Balance {formatCoins(state.coins)} coins
       </p>
       <div className="mt-8 grid gap-5 md:grid-cols-2">
         {filtered.map((course) => {

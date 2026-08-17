@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { completeModule, enrollCourse } from "@/app/actions/campus";
+import { LessonPlayer } from "@/components/campus/LessonPlayer";
 import { Flash, GoldButton } from "@/components/ui";
-import { courseBySlug } from "@/lib/catalog";
+import { getLiveCourseBySlug } from "@/lib/live-catalog";
 import { getState } from "@/lib/state";
 
 export default async function CourseDetailPage({
@@ -14,7 +15,7 @@ export default async function CourseDetailPage({
 }) {
   const { slug } = await params;
   const query = await searchParams;
-  const course = courseBySlug(slug);
+  const course = await getLiveCourseBySlug(slug);
   if (!course) notFound();
   const state = await getState();
   const enrolled = state.enrollments.includes(course.id);
@@ -60,6 +61,7 @@ export default async function CourseDetailPage({
                       {lesson.title} · {lesson.kind} · {lesson.duration}
                     </p>
                     <p className="mt-1">{lesson.body}</p>
+                    <LessonPlayer enrolled={enrolled} lesson={lesson} />
                   </li>
                 ))}
               </ul>
