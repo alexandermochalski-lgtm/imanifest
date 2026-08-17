@@ -1,34 +1,33 @@
 import Image from "next/image";
 import Link from "next/link";
+import { getSession } from "@/lib/session";
 
 const nav = [
   { href: "/programs", label: "Programs" },
-  { href: "/campus", label: "Campus" },
   { href: "/about", label: "University" },
+  { href: "/pages/investor-relations", label: "Investors" },
 ];
 
-export function Header() {
+export async function Header() {
+  const session = await getSession();
   return (
-    <header className="sticky top-0 z-40 border-b border-[var(--line)] bg-[#070707]/80 backdrop-blur-md">
+    <header className="sticky top-0 z-40 border-b border-[var(--line)] bg-[#070707]/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-5 py-3">
         <Link href="/" className="flex items-center gap-3">
-          <Image src="/logo.svg" alt="iManifest" width={36} height={43} priority />
+          <Image src="/logo.svg" alt="iManifest" width={42} height={50} priority />
           <span className="font-[family-name:var(--font-cormorant)] text-xl tracking-wide text-gold">
-            iManifest <span className="text-white/70">University</span>
+            iManifest <span className="text-[#f6f1e4]">University</span>
           </span>
         </Link>
-        <nav className="hidden items-center gap-8 text-sm text-muted md:flex">
+        <nav className="hidden items-center gap-8 md:flex">
           {nav.map((item) => (
-            <Link key={item.href} href={item.href} className="transition hover:text-gold">
+            <Link key={item.href} href={item.href} className="nav-link">
               {item.label}
             </Link>
           ))}
         </nav>
-        <Link
-          href="/campus"
-          className="gold-btn rounded-full px-5 py-2 text-sm font-semibold tracking-wide"
-        >
-          Enter campus
+        <Link href={session ? "/campus" : "/login"} className="gold-btn rounded-xl px-5 py-2.5 text-xs">
+          {session ? "Enter campus" : "Log in"}
         </Link>
       </div>
     </header>

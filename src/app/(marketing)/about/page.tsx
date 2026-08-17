@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "About",
-};
+export const metadata: Metadata = { title: "About" };
 
 export default function AboutPage() {
   return (
@@ -13,14 +11,15 @@ export default function AboutPage() {
         <p>
           iManifest University exists for people who refuse to treat money as folklore. The original campus taught
           personal finance, investing, and wealth creation — including 21 money-making methods — alongside books,
-          journals, a forum, and a job board.
+          journals, a forum, coins, bundles, and a job board.
         </p>
         <p>
-          This repository is the new product line: a Next.js campus designed for Vercel, so we can iterate the
-          student experience without being locked to the old cPanel / Laravel stack.
+          This rebuild ports those functions onto Next.js: enroll with coins, sit quizzes with a 70% pass mark and
+          retakes, favorite books and jobs, apply to mandates, write journals, post in the forum, message faculty, and
+          run the admin desk.
         </p>
         <p>
-          Brand, curriculum intent, and domain remain iManifest. The engineering surface is new. Contact{" "}
+          Contact{" "}
           <a className="text-gold underline-offset-4 hover:underline" href="mailto:info@imanifest.money">
             info@imanifest.money
           </a>

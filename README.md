@@ -1,8 +1,13 @@
 # iManifest University
 
-Modern campus for [iManifest](https://imanifest.money) — personal finance, investing, and wealth creation.
+Modern campus for iManifest — personal finance, investing, and wealth creation.
 
-This is the new Next.js product (Vercel-ready). It is not a lift-and-shift of the legacy Laravel application.
+This rebuild ports the legacy Laravel campus onto Next.js: auth, courses, quizzes (70% pass + retake), coins, promo codes, books, guides, journals, forum, job board, bundles, insights, messages, notifications, profile, dynamic pages, and an admin desk.
+
+## Demo seats
+
+- `student@imanifest.money` / `imanifest`
+- `admin@imanifest.money` / `imanifest`
 
 ## Local
 
@@ -10,7 +15,3 @@ This is the new Next.js product (Vercel-ready). It is not a lift-and-shift of th
 npm install
 npm run dev
 ```
-
-## Deploy
-
-Push to GitHub, then import the repo in Vercel (Next.js, default settings).
