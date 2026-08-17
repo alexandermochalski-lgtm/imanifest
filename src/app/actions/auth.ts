@@ -1,20 +1,56 @@
 "use server";
 
 import { redirect } from "next/navigation";
-import { findSeedUser, setSession, clearSession } from "@/lib/session";
+import { findSeedUser, sessionUserFromAuth, setSession, clearSession } from "@/lib/session";
 import { emptyState, getState, saveState } from "@/lib/state";
-import { hasCampusAccess, safeNextPath } from "@/lib/membership";
+import { isCampusUnlocked, safeNextPath } from "@/lib/membership";
+import { upsertDirectoryProfile } from "@/lib/directory";
+import { createServerSupabase } from "@/lib/supabase/server";
+import { siteUrl, supabaseConfigured } from "@/lib/supabase/env";
+
+async function publishSeat(userId: string, name: string, bio = "") {
+  try {
+    await upsertDirectoryProfile({ userId, name, bio });
+  } catch {
+    /* profiles table may not exist yet */
+  }
+}
 
 const DEMO_PASSWORD = "imanifest";
+
+function afterLoginPath(role: "student" | "admin", paid: boolean, next: string) {
+  if (role === "admin") return next.startsWith("/admin") ? next : "/admin";
+  if (paid) return next && !next.startsWith("/admin") ? next : "/campus";
+  return "/get";
+}
 
 export async function loginAction(formData: FormData) {
   const email = String(formData.get("email") ?? "").trim();
   const password = String(formData.get("password") ?? "");
   const next = safeNextPath(String(formData.get("next") ?? ""));
-  const user = findSeedUser(email);
-  if (!user || password !== DEMO_PASSWORD) {
-    redirect("/login?error=invalid");
+  const seed = findSeedUser(email);
+  if (seed && password === DEMO_PASSWORD) {
+    const prior = await getState();
+    await setSession(seed);
+    await saveState({
+      ...emptyState(),
+      profile: { name: seed.name, phone: seed.phone, bio: seed.bio },
+      coins: seed.role === "admin" ? 5000 : 500,
+      membershipPaidAt: prior.membershipPaidAt,
+    });
+    const state = await getState();
+    redirect(afterLoginPath(seed.role, await isCampusUnlocked(seed.role, state, seed.id, seed.email), next));
   }
+
+  const supabase = await createServerSupabase();
+  if (!supabase) redirect("/login?error=invalid");
+  const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+  if (error || !data.user?.email) redirect("/login?error=invalid");
+  const user = sessionUserFromAuth({
+    id: data.user.id,
+    email: data.user.email,
+    name: String(data.user.user_metadata?.name ?? ""),
+  });
   const prior = await getState();
   await setSession(user);
   await saveState({
@@ -23,13 +59,9 @@ export async function loginAction(formData: FormData) {
     coins: user.role === "admin" ? 5000 : 500,
     membershipPaidAt: prior.membershipPaidAt,
   });
-  if (user.role === "admin") {
-    redirect(next.startsWith("/admin") ? next : "/admin");
-  }
-  if (hasCampusAccess(user.role, { ...emptyState(), membershipPaidAt: prior.membershipPaidAt })) {
-    redirect(next && !next.startsWith("/admin") ? next : "/campus");
-  }
-  redirect("/get");
+  await publishSeat(user.id, user.name, user.bio);
+  const state = await getState();
+  redirect(afterLoginPath(user.role, await isCampusUnlocked(user.role, state, user.id, user.email), next));
 }
 
 export async function registerAction(formData: FormData) {
@@ -39,11 +71,34 @@ export async function registerAction(formData: FormData) {
   if (!name || !email || password.length < 6) {
     redirect("/register?error=invalid");
   }
-  const existing = findSeedUser(email);
-  if (existing) {
+  if (findSeedUser(email)) {
     redirect("/login?error=exists");
   }
-  redirect("/register?error=demo-only");
+  if (!supabaseConfigured()) redirect("/register?error=demo-only");
+  const supabase = await createServerSupabase();
+  if (!supabase) redirect("/register?error=demo-only");
+  const { data, error } = await supabase.auth.signUp({
+    email,
+    password,
+    options: {
+      data: { name },
+      emailRedirectTo: `${siteUrl()}/login`,
+    },
+  });
+  if (error) {
+    if (/already/i.test(error.message)) redirect("/login?error=exists");
+    redirect("/register?error=rejected");
+  }
+  if (!data.session || !data.user?.email) redirect("/register?ok=confirm");
+  const user = sessionUserFromAuth({ id: data.user.id, email: data.user.email, name });
+  await setSession(user);
+  await saveState({
+    ...emptyState(),
+    profile: { name, phone: "", bio: "" },
+    coins: 500,
+  });
+  await publishSeat(user.id, name);
+  redirect("/get");
 }
 
 export async function logoutAction() {
@@ -54,5 +109,9 @@ export async function logoutAction() {
 export async function forgotAction(formData: FormData) {
   const email = String(formData.get("email") ?? "").trim();
   if (!email) redirect("/forgot-password?error=invalid");
+  const supabase = await createServerSupabase();
+  if (supabase) {
+    await supabase.auth.resetPasswordForEmail(email, { redirectTo: `${siteUrl()}/login` });
+  }
   redirect("/forgot-password?sent=1");
 }

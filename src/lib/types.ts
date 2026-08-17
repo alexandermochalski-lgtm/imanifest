@@ -216,10 +216,17 @@ export type DynamicPage = {
   body: string;
 };
 
+export type MessageKind = "mentor" | "peer";
+
 export type Message = {
   id: string;
   fromId: string;
   fromName: string;
+  toId: string;
+  toName: string;
+  kind: MessageKind;
+  courseId?: string;
+  coinsSpent: number;
   body: string;
   createdAt: string;
 };

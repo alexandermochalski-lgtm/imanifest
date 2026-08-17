@@ -13,6 +13,7 @@ const links = [
   { href: "/guides", label: "Guides" },
   { href: "/journals", label: "Journals" },
   { href: "/forum", label: "Forum" },
+  { href: "/directory", label: "Directory" },
   { href: "/jobs", label: "Job Board" },
   { href: "/bundles", label: "Bundles" },
   { href: "/insights", label: "Insights" },

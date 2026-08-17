@@ -38,9 +38,26 @@ export default function AdminSettingsPage() {
         <section className="rounded-2xl border border-[var(--line)] p-5">
           <h2 className="text-lg text-gold">Mail &amp; auth</h2>
           <p className="mt-2 text-sm text-muted">
-            Demo seats: <span className="text-white">admin@imanifest.money</span> and{" "}
+            Demo seats still work: <span className="text-white">admin@imanifest.money</span> and{" "}
             <span className="text-white">student@imanifest.money</span> / <span className="text-white">imanifest</span>.
-            Production needs SMTP, password reset, and a user table — register is demo-only until then.
+            New students register into Supabase Auth. Confirm emails if the project has confirmations on.
+          </p>
+        </section>
+        <section className="rounded-2xl border border-[var(--line)] p-5">
+          <h2 className="text-lg text-gold">Supabase</h2>
+          <p className="mt-2 text-sm text-muted">
+            Project <code className="text-gold">xjeapgcecjpjuigokarq</code>. Publishable key lives in env, not in git.
+            Paste <code className="text-gold">supabase/migrations/001_memberships.sql</code>,{" "}
+            <code className="text-gold">002_campus_messages.sql</code>, then{" "}
+            <code className="text-gold">003_profiles.sql</code> in the SQL editor so paid seats, messenger
+            threads, and the student directory persist. Vercel env: <code className="text-gold">NEXT_PUBLIC_SUPABASE_URL</code>,{" "}
+            <code className="text-gold">NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY</code>,{" "}
+            <code className="text-gold">NEXT_PUBLIC_SITE_URL=https://imanifest.vercel.app</code>. Webhook writes need{" "}
+            <code className="text-gold">SUPABASE_SECRET_KEY</code> (sb_secret_…).
+          </p>
+          <p className="mt-3 text-sm text-muted">
+            Auth → URL Configuration: add <code className="text-gold">http://localhost:3000/**</code> and{" "}
+            <code className="text-gold">https://imanifest.vercel.app/**</code>.
           </p>
         </section>
         <section className="rounded-2xl border border-[var(--line)] p-5">

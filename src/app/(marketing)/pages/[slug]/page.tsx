@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { dynamicPages } from "@/lib/catalog";
 
 export async function generateMetadata({
@@ -8,12 +8,16 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
+  if (slug === "privacy") return { title: "Privacy" };
+  if (slug === "terms" || slug === "legal") return { title: "Legal" };
   const page = dynamicPages.find((item) => item.slug === slug);
   return { title: page?.title ?? "Page" };
 }
 
 export default async function DynamicPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
+  if (slug === "privacy") redirect("/privacy");
+  if (slug === "terms" || slug === "legal") redirect("/legal");
   const page = dynamicPages.find((item) => item.slug === slug);
   if (!page) notFound();
   return (

@@ -1126,12 +1126,12 @@ export const dynamicPages: DynamicPage[] = [
   {
     slug: "privacy",
     title: "Privacy",
-    body: "This staging campus stores session state in cookies on your browser. Do not put production secrets here. Contact info@imanifest.money for the live policy.",
+    body: "Full policy at /privacy. Accounts on Supabase Auth; memberships in Supabase; faculty media on Vercel Blob; cards on Stripe.",
   },
   {
     slug: "terms",
-    title: "Terms",
-    body: "iManifest University materials are for education. Nothing here is personalized investment advice. Coin purchases on this staging build are simulated.",
+    title: "Legal",
+    body: "Full terms at /legal. Campus is USD 49.99/mo. Materials are education, not investment advice.",
   },
   {
     slug: "investor-relations",

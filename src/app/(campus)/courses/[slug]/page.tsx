@@ -42,7 +42,12 @@ export default async function CourseDetailPage({
           </GoldButton>
         </form>
       ) : (
-        <p className="mt-6 text-sm text-gold">Enrolled · spend coins only once</p>
+        <div className="mt-6 flex flex-wrap items-center gap-4">
+          <p className="text-sm text-gold">Enrolled · spend coins only once</p>
+          <Link href={`/messages/m-${course.id}`} className="text-sm text-gold">
+            Message mentor · free
+          </Link>
+        </div>
       )}
       <div className="mt-10 space-y-6">
         {course.modules.map((module) => {

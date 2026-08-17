@@ -50,7 +50,7 @@ export default async function AdminContentPage() {
         <ul className="mt-4 space-y-2 text-sm text-muted">
           {dynamicPages.map((page) => (
             <li key={page.slug}>
-              /pages/{page.slug} — {page.title}
+              {page.slug === "privacy" ? "/privacy" : page.slug === "terms" ? "/legal" : `/pages/${page.slug}`} — {page.title}
             </li>
           ))}
         </ul>

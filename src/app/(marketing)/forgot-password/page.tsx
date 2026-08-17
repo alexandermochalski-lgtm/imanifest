@@ -14,7 +14,7 @@ export default async function ForgotPage({
   return (
     <main className="mx-auto max-w-md px-5 py-20">
       <h1 className="font-[family-name:var(--font-cormorant)] text-4xl text-white">Reset password</h1>
-      <Flash ok={params.sent} error={params.error} map={{ "1": "Reset mail queued (simulated). Use password imanifest on the demo seats.", invalid: "Enter an email." }} />
+      <Flash ok={params.sent} error={params.error} map={{ "1": "If that email has a seat, a reset link is on the way.", invalid: "Enter an email." }} />
       <form action={forgotAction} className="mt-8 space-y-4">
         <label className="block text-sm text-muted">
           Email

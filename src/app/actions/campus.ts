@@ -5,11 +5,18 @@ import { redirect } from "next/navigation";
 import { appendLivePayment, getAdminOverlay } from "@/lib/admin-state";
 import { jobs, promoCodes, coinPacks, seedForum } from "@/lib/catalog";
 import { DESK_COIN, deskClosedToday, nextStreak, utcToday } from "@/lib/daily-desk";
-import { getLiveCourseById } from "@/lib/live-catalog";
+import { getLiveCourseById, getLiveCourses } from "@/lib/live-catalog";
 import { isCampusUnlocked } from "@/lib/membership";
 import { getSession } from "@/lib/session";
 import { getState, mutateState, notify } from "@/lib/state";
-import type { ForumPost, Journal } from "@/lib/types";
+import type { ForumPost, Journal, Message } from "@/lib/types";
+import { findDirectoryContact, upsertDirectoryProfile } from "@/lib/directory";
+import {
+  PEER_MESSAGE_COST,
+  courseIdFromMentor,
+  findContact,
+  persistRemoteMessage,
+} from "@/lib/messenger";
 
 async function authed() {
   const session = await getSession();
@@ -364,36 +371,105 @@ export async function closeDailyDesk(formData: FormData) {
 }
 
 export async function updateProfile(formData: FormData) {
-  await campusAuthed();
+  const session = await campusAuthed();
+  const name = String(formData.get("name") ?? "").trim();
+  const phone = String(formData.get("phone") ?? "");
+  const bio = String(formData.get("bio") ?? "");
+  const listed = formData.get("listed") === "on";
   await mutateState((state) => ({
     ...state,
     profile: {
-      name: String(formData.get("name") ?? state.profile.name),
-      phone: String(formData.get("phone") ?? state.profile.phone),
-      bio: String(formData.get("bio") ?? state.profile.bio),
+      name: name || state.profile.name,
+      phone,
+      bio,
     },
   }));
+  try {
+    await upsertDirectoryProfile({
+      userId: session.userId,
+      name: name || session.name,
+      bio,
+      listed,
+    });
+  } catch {
+    /* profiles table may not exist yet */
+  }
+  revalidatePath("/directory");
+  revalidatePath("/messages");
   redirect("/profile?ok=1");
 }
 
 export async function sendMessage(formData: FormData) {
   const session = await campusAuthed();
   const body = String(formData.get("body") ?? "").trim();
-  if (!body) redirect("/messages");
-  await mutateState((state) => ({
-    ...state,
-    messages: [
-      {
-        id: `msg-${Date.now()}`,
-        fromId: session.userId,
-        fromName: session.name,
-        body,
-        createdAt: new Date().toISOString().slice(0, 10),
-      },
-      ...state.messages,
-    ].slice(0, 40),
-  }));
-  redirect("/messages?ok=1");
+  const toId = String(formData.get("toId") ?? "").trim();
+  if (body.length < 8 || !toId) redirect("/messages?error=invalid");
+  if (toId === session.userId) redirect("/messages?error=invalid");
+
+  const courses = await getLiveCourses();
+  const current = await getState();
+  const contact =
+    findContact(toId, courses, session.userId) ?? (await findDirectoryContact(toId, session.userId));
+  if (!contact) redirect("/messages?error=missing");
+
+  const courseId = contact.courseId ?? courseIdFromMentor(toId);
+  if (contact.kind === "mentor" && courseId && !current.enrollments.includes(courseId) && session.role !== "admin") {
+    redirect(`/messages/${toId}?error=enroll`);
+  }
+
+  const cost = contact.kind === "peer" && session.role !== "admin" ? PEER_MESSAGE_COST : 0;
+  if (cost > 0 && current.coins < cost) redirect(`/messages/${toId}?error=coins`);
+
+  const now = new Date().toISOString();
+  const outbound: Message = {
+    id: `msg-${Date.now()}`,
+    fromId: session.userId,
+    fromName: session.name,
+    toId: contact.id,
+    toName: contact.name,
+    kind: contact.kind,
+    courseId,
+    coinsSpent: cost,
+    body,
+    createdAt: now,
+  };
+  const ack: Message | null =
+    contact.kind === "mentor"
+      ? {
+          id: `msg-${Date.now()}-ack`,
+          fromId: contact.id,
+          fromName: contact.name,
+          toId: session.userId,
+          toName: session.name,
+          kind: "mentor",
+          courseId,
+          coinsSpent: 0,
+          body: courseId
+            ? "Noted on this desk. Keep shipping. I will mark anything that is still a hobby."
+            : "Noted. Faculty reads the campus thread. Bring a metric next time, not a mood.",
+          createdAt: new Date(Date.now() + 1000).toISOString(),
+        }
+      : null;
+
+  await mutateState((state) => {
+    if (cost > 0 && state.coins < cost) return state;
+    const next = {
+      ...state,
+      coins: state.coins - cost,
+      messages: [outbound, ...(ack ? [ack] : []), ...state.messages].slice(0, 80),
+    };
+    if (cost <= 0) return next;
+    return notify(next, "Message sent", `${cost} coins for a student thread with ${contact.name}.`, `/messages/${contact.id}`);
+  });
+  try {
+    await persistRemoteMessage(outbound);
+    if (ack) await persistRemoteMessage(ack);
+  } catch {
+    /* cookie ledger still holds the thread */
+  }
+  revalidatePath("/messages");
+  revalidatePath(`/messages/${contact.id}`);
+  redirect(`/messages/${contact.id}?ok=sent`);
 }
 
 export async function markNotification(id: string) {

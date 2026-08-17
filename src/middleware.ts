@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import { copyCookies, updateSupabaseSession } from "@/lib/supabase/middleware";
 
 const protectedPrefixes = [
   "/campus",
@@ -13,6 +14,7 @@ const protectedPrefixes = [
   "/insights",
   "/pricing",
   "/profile",
+  "/directory",
   "/messages",
   "/notifications",
   "/admin",
@@ -28,37 +30,38 @@ function isPaidMember(raw: string | undefined): boolean {
   }
 }
 
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest) {
+  const supabaseResponse = await updateSupabaseSession(request);
   const { pathname } = request.nextUrl;
   const needsAuth = protectedPrefixes.some((prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`));
-  if (!needsAuth) return NextResponse.next();
+  if (!needsAuth) return supabaseResponse;
 
   const raw = request.cookies.get("imu_auth")?.value;
   if (!raw) {
     const login = new URL("/login", request.url);
     login.searchParams.set("next", pathname);
-    return NextResponse.redirect(login);
+    return copyCookies(supabaseResponse, NextResponse.redirect(login));
   }
 
   let role = "";
   try {
     role = (JSON.parse(raw) as { role?: string }).role ?? "";
   } catch {
-    return NextResponse.redirect(new URL("/login", request.url));
+    return copyCookies(supabaseResponse, NextResponse.redirect(new URL("/login", request.url)));
   }
 
   if (pathname.startsWith("/admin")) {
     if (role !== "admin") {
-      return NextResponse.redirect(new URL("/access-denied", request.url));
+      return copyCookies(supabaseResponse, NextResponse.redirect(new URL("/access-denied", request.url)));
     }
-    return NextResponse.next();
+    return supabaseResponse;
   }
 
   if (role !== "admin" && !isPaidMember(request.cookies.get("imu_state")?.value)) {
-    return NextResponse.redirect(new URL("/get", request.url));
+    return copyCookies(supabaseResponse, NextResponse.redirect(new URL("/get", request.url)));
   }
 
-  return NextResponse.next();
+  return supabaseResponse;
 }
 
 export const config = {

@@ -21,11 +21,14 @@ export function Footer() {
             <Link href="/about" className="hover:text-gold">
               About iMU
             </Link>
+            <Link href="/privacy" className="hover:text-gold">
+              Privacy
+            </Link>
+            <Link href="/legal" className="hover:text-gold">
+              Legal
+            </Link>
             <Link href="/login" className="hover:text-gold">
               Log in
-            </Link>
-            <Link href="/pages/privacy" className="hover:text-gold">
-              Privacy
             </Link>
           </div>
           <div className="flex flex-col gap-2 text-[#d4d4d4]">

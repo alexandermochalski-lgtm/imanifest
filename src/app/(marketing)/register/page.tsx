@@ -8,17 +8,20 @@ export const metadata: Metadata = { title: "Register" };
 export default async function RegisterPage({
   searchParams,
 }: {
-  searchParams: Promise<{ error?: string }>;
+  searchParams: Promise<{ error?: string; ok?: string }>;
 }) {
-  const { error } = await searchParams;
+  const { error, ok } = await searchParams;
   return (
     <main className="mx-auto max-w-md px-5 py-20">
       <h1 className="font-[family-name:var(--font-cormorant)] text-4xl text-white">Create a campus seat</h1>
       <Flash
+        ok={ok}
         error={error}
         map={{
           invalid: "Name, email, and a 6+ character password are required.",
-          "demo-only": "This staging build uses seeded seats only. Log in as student@imanifest.money, then subscribe $49.99 / month at the campus door.",
+          "demo-only": "Supabase is not configured on this deploy. Add NEXT_PUBLIC_SUPABASE_URL and the publishable key.",
+          rejected: "That email was rejected. Try another, or log in.",
+          confirm: "Check your email to confirm the seat, then log in.",
         }}
       />
       <form action={registerAction} className="mt-8 space-y-4">

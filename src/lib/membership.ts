@@ -1,6 +1,24 @@
 import { mutateOverlay, readOverlay } from "@/lib/storage";
 import { mutateState, notify } from "@/lib/state";
+import { createAdminSupabase } from "@/lib/supabase/admin";
+import { createServerSupabase } from "@/lib/supabase/server";
 import type { CampusState, MemberRecord, Role } from "@/lib/types";
+
+type MembershipRow = {
+  user_id: string;
+  email: string;
+  status: MemberRecord["status"];
+  paid_at: string;
+};
+
+function asRecord(row: MembershipRow): MemberRecord {
+  return {
+    status: row.status,
+    paidAt: row.paid_at,
+    email: row.email,
+    userId: row.user_id,
+  };
+}
 
 export function hasCampusAccess(role: Role | undefined, state: CampusState): boolean {
   if (role === "admin") return true;
@@ -12,9 +30,33 @@ export function safeNextPath(value: string): string {
   return value;
 }
 
-export async function memberRecord(userId: string, email: string): Promise<MemberRecord | null> {
+async function overlayRecord(userId: string, email: string): Promise<MemberRecord | null> {
   const members = (await readOverlay()).members ?? {};
   return members[userId] ?? members[email.toLowerCase()] ?? null;
+}
+
+async function supabaseRecord(userId: string, email: string): Promise<MemberRecord | null> {
+  const admin = createAdminSupabase();
+  const client = admin ?? (await createServerSupabase());
+  if (!client) return null;
+  const { data: byId } = await client.from("memberships").select("user_id, email, status, paid_at").eq("user_id", userId).maybeSingle();
+  if (byId) return asRecord(byId as MembershipRow);
+  const { data: byEmail } = await client
+    .from("memberships")
+    .select("user_id, email, status, paid_at")
+    .eq("email", email.toLowerCase())
+    .maybeSingle();
+  return byEmail ? asRecord(byEmail as MembershipRow) : null;
+}
+
+export async function memberRecord(userId: string, email: string): Promise<MemberRecord | null> {
+  try {
+    const row = await supabaseRecord(userId, email);
+    if (row) return row;
+  } catch {
+    /* table missing or RLS */
+  }
+  return overlayRecord(userId, email);
 }
 
 export async function isCampusUnlocked(
@@ -30,6 +72,24 @@ export async function isCampusUnlocked(
   return Boolean(state.membershipPaidAt);
 }
 
+async function upsertSupabaseMember(userId: string, email: string, status: MemberRecord["status"], paidAt: string) {
+  const row = {
+    user_id: userId,
+    email: email.toLowerCase(),
+    status,
+    paid_at: paidAt,
+    updated_at: new Date().toISOString(),
+  };
+  const admin = createAdminSupabase();
+  if (admin) {
+    await admin.from("memberships").upsert(row, { onConflict: "user_id" });
+    return;
+  }
+  const client = await createServerSupabase();
+  if (!client) return;
+  await client.from("memberships").upsert(row, { onConflict: "user_id" });
+}
+
 export async function recordPaidMember(
   userId: string,
   email: string,
@@ -37,6 +97,11 @@ export async function recordPaidMember(
 ): Promise<string> {
   const paidAt = new Date().toISOString().slice(0, 10);
   const record: MemberRecord = { status, paidAt, email: email.toLowerCase(), userId };
+  try {
+    await upsertSupabaseMember(userId, email, status, paidAt);
+  } catch {
+    /* fall back to overlay */
+  }
   await mutateOverlay((overlay) => ({
     ...overlay,
     members: {
