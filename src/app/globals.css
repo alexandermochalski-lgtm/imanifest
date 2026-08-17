@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+:root {
+  --gold: #f7e68a;
+  --gold-deep: #b2813c;
+  --ink: #070707;
+  --muted: #d1d1d1;
+  --panel: #111111;
+  --line: rgba(247, 230, 138, 0.18);
+  --btn-gradient: linear-gradient(
+    32deg,
+    #281809 -41.86%,
+    #844d24 -30.2%,
+    #8e5b22 -16.2%,
+    #b2813c -6.88%,
+    #f7e68a 4.78%,
+    #d6bb6b 16.44%,
+    #bb9751 25.77%,
+    #a67a3d 37.43%,
+    #96662f 49.09%,
+    #8d5a26 58.42%,
+    #8a5623 70.08%,
+    #e6b964 121.38%,
+    #b2813c 144.7%,
+    #f8e889 163.36%,
+    #844d24 191.34%
+  );
+}
+
+@theme inline {
+  --color-gold: var(--gold);
+  --color-gold-deep: var(--gold-deep);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-panel: var(--panel);
+  --font-sans: var(--font-jakarta);
+  --font-display: var(--font-cormorant);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--ink);
+  color: #f4f0e4;
+  font-family: var(--font-jakarta), system-ui, sans-serif;
+}
+
+.gold-btn {
+  background-image: var(--btn-gradient);
+  background-size: 140% 140%;
+  color: #fff;
+}
+
+.gold-btn:hover {
+  filter: brightness(1.08);
+}
+
+.gold-ring {
+  box-shadow: 0 0 0 1px rgba(247, 230, 138, 0.22), 0 24px 80px rgba(0, 0, 0, 0.45);
+}
+
+.mesh {
+  background:
+    radial-gradient(900px 420px at 12% -10%, rgba(247, 230, 138, 0.16), transparent 60%),
+    radial-gradient(700px 380px at 92% 8%, rgba(132, 77, 36, 0.28), transparent 55%),
+    radial-gradient(600px 400px at 50% 110%, rgba(178, 129, 60, 0.12), transparent 50%);
+}
