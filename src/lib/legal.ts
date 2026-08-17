@@ -110,7 +110,7 @@ export const legalSections: LegalSection[] = [
   {
     title: "Coins and catalog prices",
     paragraphs: [
-      "Campus coins are an internal ledger for enrolling in courses and bundles. They are not cash, not a stored-value instrument, and not redeemable for fiat except where we explicitly say so. Coin pack checkout on this build may still be simulated. Course coin prices are set by the registrar.",
+      "Campus coins are an internal ledger for enrolling in courses, unlocking bundles, and sending student-to-student messages (1 coin per send). Mentors are free when you are enrolled. An active monthly seat credits 50 coins each UTC month. Extra packs are bought on Stripe. Coins are not cash, not a stored-value instrument, and not redeemable for fiat except where we explicitly say so. Course coin prices are set by the registrar.",
     ],
   },
   {

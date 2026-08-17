@@ -32,7 +32,10 @@ export default function AdminSettingsPage() {
             <code className="text-gold">STRIPE_WEBHOOK_SECRET</code> in Vercel env.
           </p>
           <p className="mt-3 text-sm text-muted">
-            Coin packs inside campus are still simulated until those SKUs get their own Stripe prices.
+            Coin packs are live Payment Links: Starter $12, Operator $39, Desk $89. After payment, each link must send the student back to{" "}
+            <code className="text-gold">https://imanifest.vercel.app/pricing/thanks?pack=coin-starter</code> (or{" "}
+            <code className="text-gold">coin-operator</code> / <code className="text-gold">coin-desk</code>). The $49.99
+            seat credits 50 coins each UTC month. Peer DMs cost 1 coin.
           </p>
         </section>
         <section className="rounded-2xl border border-[var(--line)] p-5">

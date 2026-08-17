@@ -182,6 +182,7 @@ export type CoinPack = {
   price: number;
   bonus: number;
   savePct: number;
+  stripeUrl: string;
 };
 
 export type MembershipPackage = {
@@ -274,6 +275,7 @@ export type CampusState = {
   notifications: NotificationItem[];
   streakCount: number;
   lastDeskDate: string;
+  lastStipendMonth: string;
   membershipPaidAt: string;
   profile: {
     name: string;

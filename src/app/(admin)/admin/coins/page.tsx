@@ -26,7 +26,7 @@ export default async function AdminCoinsPage({
       <PageHeader
         kicker="Treasury"
         title="Coins & promo"
-        description="One campus door at $49.99/mo on Stripe, plus coin SKUs after login. Promo leakage is discount vs list on paid coin captures."
+        description="One campus door at $49.99/mo on Stripe, plus live coin packs after login. Seat stipend is 50 coins each UTC month."
       />
       <Flash map={{ promo: "Promo code updated." }} ok={ok} />
       <div className="mb-8 grid gap-4 sm:grid-cols-3">

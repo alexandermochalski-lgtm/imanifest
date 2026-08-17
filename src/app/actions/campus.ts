@@ -2,13 +2,14 @@
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import { appendLivePayment, getAdminOverlay } from "@/lib/admin-state";
-import { jobs, promoCodes, coinPacks, seedForum } from "@/lib/catalog";
+import { appendLivePayment } from "@/lib/admin-state";
+import { jobs, seedForum } from "@/lib/catalog";
 import { DESK_COIN, deskClosedToday, nextStreak, utcToday } from "@/lib/daily-desk";
 import { getLiveCourseById, getLiveCourses } from "@/lib/live-catalog";
 import { isCampusUnlocked } from "@/lib/membership";
 import { getSession } from "@/lib/session";
 import { getState, mutateState, notify } from "@/lib/state";
+import { COIN_PENDING_COOKIE, coinCheckoutUrl, coinPackFromId } from "@/lib/stripe";
 import type { ForumPost, Journal, Message } from "@/lib/types";
 import { findDirectoryContact, upsertDirectoryProfile } from "@/lib/directory";
 import {
@@ -17,6 +18,7 @@ import {
   findContact,
   persistRemoteMessage,
 } from "@/lib/messenger";
+import { cookies } from "next/headers";
 
 async function authed() {
   const session = await getSession();
@@ -277,40 +279,18 @@ export async function likeForum(postId: string, slug: string) {
   redirect(`/forum/${slug}`);
 }
 
-export async function buyCoins(formData: FormData) {
+export async function startCoinCheckout(formData: FormData) {
   const session = await campusAuthed();
-  const packId = String(formData.get("packId"));
-  const promo = String(formData.get("promo") ?? "").trim().toUpperCase();
-  const pack = coinPacks.find((item) => item.id === packId);
+  const packId = String(formData.get("packId") ?? "");
+  const pack = coinPackFromId(packId);
   if (!pack) redirect("/pricing");
-  let payable = pack.price;
-  const overlay = await getAdminOverlay();
-  const catalogCode = promoCodes.find((item) => item.code === promo);
-  const codeActive = promo ? (overlay.promoActive[promo] ?? catalogCode?.active ?? false) : false;
-  const code = catalogCode && codeActive ? catalogCode : undefined;
-  if (promo && !code) redirect(`/pricing/${packId}?error=promo`);
-  if (code) payable = Math.round(payable * (1 - code.discountPct / 100));
-  await mutateState((state) =>
-    notify(
-      { ...state, coins: state.coins + pack.coins + pack.bonus },
-      "Coins credited",
-      `${pack.coins + pack.bonus} coins added. Simulated card capture $${payable}.`,
-      "/pricing",
-    ),
-  );
-  await appendLivePayment({
-    id: `live-coins-${packId}-${Date.now()}`,
-    userId: session.userId,
-    kind: "coins",
-    sku: packId,
-    label: `${pack.name} pack`,
-    amountUsd: payable,
-    coins: pack.coins + pack.bonus,
-    promo: code?.code,
-    status: "paid",
-    createdAt: new Date().toISOString().slice(0, 10),
+  (await cookies()).set(COIN_PENDING_COOKIE, pack.id, {
+    httpOnly: true,
+    sameSite: "lax",
+    path: "/",
+    maxAge: 60 * 60 * 2,
   });
-  redirect("/pricing?ok=purchase");
+  redirect(coinCheckoutUrl(pack, session.email, session.userId));
 }
 
 export async function buyBundle(bundleId: string) {

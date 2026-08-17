@@ -2,6 +2,7 @@ import { updateProfile } from "@/app/actions/campus";
 import { Flash, GoldButton } from "@/components/ui";
 import { formatCoins, liveStreak } from "@/lib/daily-desk";
 import { loadOwnProfile } from "@/lib/directory";
+import { PEER_MESSAGE_COST } from "@/lib/messenger";
 import { getSession } from "@/lib/session";
 import { getState } from "@/lib/state";
 import Link from "next/link";
@@ -54,7 +55,7 @@ export default async function ProfilePage({
             <Link href="/directory" className="text-gold">
               campus directory
             </Link>
-            . Other students can find this name and bio, then open a 2-coin thread. Uncheck to hide.
+            . Other students can find this name and bio, then open a {PEER_MESSAGE_COST}-coin thread. Uncheck to hide.
           </span>
         </label>
         <GoldButton type="submit">Save profile</GoldButton>

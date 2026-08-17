@@ -2,6 +2,7 @@ import { createHmac, timingSafeEqual } from "crypto";
 import { NextResponse } from "next/server";
 import { findSeedUser } from "@/lib/session";
 import { recordPaidMember } from "@/lib/membership";
+import { isCoinCheckout } from "@/lib/stripe";
 
 export const runtime = "nodejs";
 
@@ -46,7 +47,17 @@ export async function POST(request: Request) {
   const { userId, email } = pickIdentity(event.data.object);
   if (!userId && !email) return NextResponse.json({ ok: true, skipped: true });
 
-  if (event.type === "checkout.session.completed" || event.type === "invoice.paid") {
+  if (event.type === "checkout.session.completed") {
+    if (isCoinCheckout(event.data.object)) {
+      return NextResponse.json({ ok: true, kind: "coins" });
+    }
+    try {
+      await recordPaidMember(userId || email, email || userId, "active");
+    } catch {
+      /* overlay may be cookie-only on this request */
+    }
+  }
+  if (event.type === "invoice.paid") {
     try {
       await recordPaidMember(userId || email, email || userId, "active");
     } catch {

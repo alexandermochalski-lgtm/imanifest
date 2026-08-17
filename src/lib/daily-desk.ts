@@ -24,6 +24,10 @@ export function utcToday(): string {
   return new Date().toISOString().slice(0, 10);
 }
 
+export function utcMonth(): string {
+  return new Date().toISOString().slice(0, 7);
+}
+
 export function utcYesterday(): string {
   const date = new Date();
   date.setUTCDate(date.getUTCDate() - 1);

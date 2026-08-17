@@ -1068,9 +1068,33 @@ export const bundles: Bundle[] = [
 ];
 
 export const coinPacks: CoinPack[] = [
-  { id: "coin-starter", name: "Starter", coins: 100, price: 29, bonus: 0, savePct: 0 },
-  { id: "coin-operator", name: "Operator", coins: 400, price: 99, bonus: 40, savePct: 20 },
-  { id: "coin-desk", name: "Desk", coins: 1000, price: 219, bonus: 150, savePct: 30 },
+  {
+    id: "coin-starter",
+    name: "Starter",
+    coins: 100,
+    price: 12,
+    bonus: 0,
+    savePct: 0,
+    stripeUrl: "https://buy.stripe.com/aFabJ14SZfbGc018GUdjO02",
+  },
+  {
+    id: "coin-operator",
+    name: "Operator",
+    coins: 400,
+    price: 39,
+    bonus: 40,
+    savePct: 25,
+    stripeUrl: "https://buy.stripe.com/8x2eVd3OVd3y1ln9KYdjO03",
+  },
+  {
+    id: "coin-desk",
+    name: "Desk",
+    coins: 1000,
+    price: 89,
+    bonus: 150,
+    savePct: 35,
+    stripeUrl: "https://buy.stripe.com/7sY6oH5X34x22prf5idjO04",
+  },
 ];
 
 export const premiumMembership: MembershipPackage = {
@@ -1083,7 +1107,8 @@ export const premiumMembership: MembershipPackage = {
   features: [
     "Full campus: courses, library, journals, forum, job board",
     "Daily desk and streak",
-    "Coin ledger for paid tracks after you are in",
+    "50 coins every paid month",
+    "Coin packs after you are in — not a second membership",
     "Sovereign Mindset enrolled at zero coins",
   ],
   href: "/get",

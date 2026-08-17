@@ -4,8 +4,8 @@ import { createAdminSupabase } from "@/lib/supabase/admin";
 import { createServerSupabase } from "@/lib/supabase/server";
 import type { Course, Message, MessageKind } from "@/lib/types";
 
-/** Peer DMs: 2 coins. Courses run 40–120+. Desk drip is 0.5. Two coins stops spam without taxing a real conversation. */
-export const PEER_MESSAGE_COST = 2;
+/** Peer DMs: 1 coin. Courses run 40–120+. Desk drip is 0.5. One coin stops spray without taxing a real thread. */
+export const PEER_MESSAGE_COST = 1;
 
 export type MessengerContact = {
   id: string;
