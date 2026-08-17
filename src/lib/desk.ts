@@ -101,7 +101,7 @@ function mergeEnrollments(
 function weekBuckets(payments: Payment[]): number[] {
   const buckets = Array.from({ length: 8 }, () => 0);
   for (const payment of payments) {
-    if (payment.kind !== "coins" || payment.status !== "paid") continue;
+    if ((payment.kind !== "coins" && payment.kind !== "membership") || payment.status !== "paid") continue;
     const ago = Math.floor(
       (new Date("2026-08-17T12:00:00Z").getTime() - new Date(`${payment.createdAt}T00:00:00Z`).getTime()) / 86_400_000,
     );
@@ -128,14 +128,16 @@ export async function getDesk(): Promise<DeskSnapshot> {
   );
   const registrations = seedRegistrations;
 
-  const paidCard = payments.filter((item) => item.kind === "coins" && item.status === "paid");
+  const paidCard = payments.filter(
+    (item) => (item.kind === "coins" || item.kind === "membership") && item.status === "paid",
+  );
   const cardRevenue = paidCard.reduce((sum, item) => sum + item.amountUsd, 0);
   const cardRevenue30d = paidCard.filter((item) => inLastDays(item.createdAt, 30)).reduce((sum, item) => sum + item.amountUsd, 0);
   const refunds = payments.filter((item) => item.status === "refunded").reduce((sum, item) => sum + item.amountUsd, 0);
   const completedRegs = registrations.filter((item) => item.status !== "abandoned");
   const conversion = registrations.length === 0 ? 0 : Math.round((completedRegs.length / registrations.length) * 100);
   const completions = enrollments.filter((item) => item.progress >= 100).length;
-  const courseSpend = payments.filter((item) => item.kind !== "coins" && item.status === "paid");
+  const courseSpend = payments.filter((item) => (item.kind === "course" || item.kind === "bundle") && item.status === "paid");
 
   const topMap = new Map<string, { enrollments: number; coins: number; done: number }>();
   for (const row of enrollments) {

@@ -15,8 +15,8 @@ export function Footer() {
             <Link href="/programs" className="hover:text-gold">
               Programs
             </Link>
-            <Link href="/campus" className="hover:text-gold">
-              Student campus
+            <Link href="/#pricing" className="hover:text-gold">
+              Get campus
             </Link>
             <Link href="/about" className="hover:text-gold">
               About iMU

@@ -26,7 +26,7 @@ export default async function AdminCoinsPage({
       <PageHeader
         kicker="Treasury"
         title="Coins & promo"
-        description="Landing membership packs from app.imanifest.money, plus campus coin SKUs. Promo leakage is discount vs list on paid coin captures."
+        description="One campus door at $49.99/mo on Stripe, plus coin SKUs after login. Promo leakage is discount vs list on paid coin captures."
       />
       <Flash map={{ promo: "Promo code updated." }} ok={ok} />
       <div className="mb-8 grid gap-4 sm:grid-cols-3">
@@ -35,8 +35,8 @@ export default async function AdminCoinsPage({
         <Kpi label="Catalog spend" value={`${desk.kpis.courseGmvCoins.toLocaleString()} coins`} />
       </div>
 
-      <h2 className="font-[family-name:var(--font-cormorant)] text-2xl text-white">Membership packs</h2>
-      <p className="mt-2 text-sm text-muted">Copied from the live landing. Feature lists were identical on all three cards. Stripe was not wired to these SKUs — Subscribe went to /get.</p>
+      <h2 className="font-[family-name:var(--font-cormorant)] text-2xl text-white">Campus door</h2>
+      <p className="mt-2 text-sm text-muted">Single SKU. Storefront is free. Campus opens after the monthly Stripe seat. Coins stay an inner ledger.</p>
       <div className="mt-4">
         <AdminTable columns={["Pack", "Price", "Was", "Duration"]}>
           {membershipPackages.map((pack) => (

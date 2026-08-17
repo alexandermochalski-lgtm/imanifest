@@ -25,7 +25,7 @@ export default async function AdminPaymentsPage({
       <PageHeader
         kicker="Revenue"
         title="Payments"
-        description="Card captures on coin packs (real USD) and campus coin movements on courses and bundles."
+        description="Card captures on the $49.99/mo campus door and coin packs, plus campus coin movements on courses and bundles."
       />
       <div className="mb-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
         <Kpi label="Card revenue" value={usd(desk.kpis.cardRevenue)} hint={`${usd(desk.kpis.cardRevenue30d)} in 30d`} />
@@ -41,6 +41,7 @@ export default async function AdminPaymentsPage({
           name="kind"
           options={[
             { value: "all", label: "All kinds" },
+            { value: "membership", label: "Campus door" },
             { value: "coins", label: "Coin packs" },
             { value: "course", label: "Courses" },
             { value: "bundle", label: "Bundles" },
@@ -80,7 +81,7 @@ export default async function AdminPaymentsPage({
                 </td>
                 <td className="px-4 py-3 text-white">{payment.label}</td>
                 <td className="px-4 py-3">{payment.kind}</td>
-                <td className="px-4 py-3">{payment.kind === "coins" ? usd(payment.amountUsd) : "—"}</td>
+                <td className="px-4 py-3">{payment.kind === "coins" || payment.kind === "membership" ? usd(payment.amountUsd) : "—"}</td>
                 <td className="px-4 py-3">{payment.coins > 0 ? `+${payment.coins}` : payment.coins}</td>
                 <td className="px-4 py-3">{payment.promo ?? "—"}</td>
                 <td className="px-4 py-3">

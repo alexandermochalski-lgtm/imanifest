@@ -38,6 +38,7 @@ export function emptyState(): CampusState {
     ],
     streakCount: 0,
     lastDeskDate: "",
+    membershipPaidAt: "",
     profile: {
       name: "",
       phone: "",

@@ -6,6 +6,7 @@ import { appendLivePayment, getAdminOverlay } from "@/lib/admin-state";
 import { jobs, promoCodes, coinPacks, seedForum } from "@/lib/catalog";
 import { DESK_COIN, deskClosedToday, nextStreak, utcToday } from "@/lib/daily-desk";
 import { getLiveCourseById } from "@/lib/live-catalog";
+import { isCampusUnlocked } from "@/lib/membership";
 import { getSession } from "@/lib/session";
 import { getState, mutateState, notify } from "@/lib/state";
 import type { ForumPost, Journal } from "@/lib/types";
@@ -13,6 +14,13 @@ import type { ForumPost, Journal } from "@/lib/types";
 async function authed() {
   const session = await getSession();
   if (!session) redirect("/login");
+  return session;
+}
+
+async function campusAuthed() {
+  const session = await authed();
+  const state = await getState();
+  if (!(await isCampusUnlocked(session.role, state, session.userId, session.email))) redirect("/get");
   return session;
 }
 
@@ -25,7 +33,7 @@ function slugify(value: string) {
 }
 
 export async function enrollCourse(courseId: string, useBalance = true) {
-  const session = await authed();
+  const session = await campusAuthed();
   const course = await getLiveCourseById(courseId);
   if (!course) redirect("/courses?error=missing");
   const current = await getState();
@@ -61,7 +69,7 @@ export async function enrollCourse(courseId: string, useBalance = true) {
 }
 
 export async function completeModule(courseId: string, moduleId: string) {
-  await authed();
+  await campusAuthed();
   await mutateState((state) => {
     if (!state.enrollments.includes(courseId)) return state;
     if (state.completedModules.includes(moduleId)) return state;
@@ -72,7 +80,7 @@ export async function completeModule(courseId: string, moduleId: string) {
 }
 
 export async function submitQuiz(formData: FormData) {
-  const session = await authed();
+  const session = await campusAuthed();
   const courseId = String(formData.get("courseId"));
   const moduleId = String(formData.get("moduleId"));
   const quizId = String(formData.get("quizId"));
@@ -114,7 +122,7 @@ export async function submitQuiz(formData: FormData) {
 }
 
 export async function toggleFavorite(kind: "book" | "job" | "journal" | "bundle", id: string) {
-  await authed();
+  await campusAuthed();
   await mutateState((state) => {
     const key =
       kind === "book"
@@ -133,7 +141,7 @@ export async function toggleFavorite(kind: "book" | "job" | "journal" | "bundle"
 }
 
 export async function applyToJob(formData: FormData) {
-  const session = await authed();
+  const session = await campusAuthed();
   const jobId = String(formData.get("jobId"));
   const note = String(formData.get("note") ?? "").trim();
   const job = jobs.find((item) => item.id === jobId);
@@ -164,7 +172,7 @@ export async function applyToJob(formData: FormData) {
 }
 
 export async function createJournal(formData: FormData) {
-  const session = await authed();
+  const session = await campusAuthed();
   const title = String(formData.get("title") ?? "").trim();
   const body = String(formData.get("body") ?? "").trim();
   const type = String(formData.get("type") ?? "public") === "private" ? "private" : "public";
@@ -186,7 +194,7 @@ export async function createJournal(formData: FormData) {
 }
 
 export async function deleteJournal(journalId: string) {
-  const session = await authed();
+  const session = await campusAuthed();
   await mutateState((state) => ({
     ...state,
     journals: state.journals.filter((journal) => journal.id !== journalId || journal.authorId !== session.userId),
@@ -195,7 +203,7 @@ export async function deleteJournal(journalId: string) {
 }
 
 export async function createForumPost(formData: FormData) {
-  const session = await authed();
+  const session = await campusAuthed();
   const title = String(formData.get("title") ?? "").trim();
   const body = String(formData.get("body") ?? "").trim();
   const category = String(formData.get("category") ?? "wealth-creation");
@@ -217,7 +225,7 @@ export async function createForumPost(formData: FormData) {
 }
 
 export async function replyForum(formData: FormData) {
-  const session = await authed();
+  const session = await campusAuthed();
   const slug = String(formData.get("slug"));
   const body = String(formData.get("body") ?? "").trim();
   if (!body) redirect(`/forum/${slug}`);
@@ -252,7 +260,7 @@ export async function replyForum(formData: FormData) {
 }
 
 export async function likeForum(postId: string, slug: string) {
-  await authed();
+  await campusAuthed();
   await mutateState((state) => {
     const set = new Set(state.likedForum);
     if (set.has(postId)) set.delete(postId);
@@ -263,7 +271,7 @@ export async function likeForum(postId: string, slug: string) {
 }
 
 export async function buyCoins(formData: FormData) {
-  const session = await authed();
+  const session = await campusAuthed();
   const packId = String(formData.get("packId"));
   const promo = String(formData.get("promo") ?? "").trim().toUpperCase();
   const pack = coinPacks.find((item) => item.id === packId);
@@ -299,7 +307,7 @@ export async function buyCoins(formData: FormData) {
 }
 
 export async function buyBundle(bundleId: string) {
-  const session = await authed();
+  const session = await campusAuthed();
   const { bundles } = await import("@/lib/catalog");
   const bundle = bundles.find((item) => item.id === bundleId);
   if (!bundle) redirect("/bundles");
@@ -329,7 +337,7 @@ export async function buyBundle(bundleId: string) {
 }
 
 export async function closeDailyDesk(formData: FormData) {
-  await authed();
+  await campusAuthed();
   const note = String(formData.get("note") ?? "").trim();
   if (note.length < 12) redirect("/campus?error=desk-short");
   const current = await getState();
@@ -356,7 +364,7 @@ export async function closeDailyDesk(formData: FormData) {
 }
 
 export async function updateProfile(formData: FormData) {
-  await authed();
+  await campusAuthed();
   await mutateState((state) => ({
     ...state,
     profile: {
@@ -369,7 +377,7 @@ export async function updateProfile(formData: FormData) {
 }
 
 export async function sendMessage(formData: FormData) {
-  const session = await authed();
+  const session = await campusAuthed();
   const body = String(formData.get("body") ?? "").trim();
   if (!body) redirect("/messages");
   await mutateState((state) => ({
@@ -389,7 +397,7 @@ export async function sendMessage(formData: FormData) {
 }
 
 export async function markNotification(id: string) {
-  await authed();
+  await campusAuthed();
   await mutateState((state) => ({
     ...state,
     notifications: state.notifications.map((item) => (item.id === id ? { ...item, read: true } : item)),

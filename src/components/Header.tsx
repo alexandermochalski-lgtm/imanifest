@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import { hasCampusAccess } from "@/lib/membership";
 import { getSession } from "@/lib/session";
+import { getState } from "@/lib/state";
 
 const nav = [
   { href: "/programs", label: "Programs" },
@@ -11,6 +13,10 @@ const nav = [
 
 export async function Header() {
   const session = await getSession();
+  const state = session ? await getState() : null;
+  const inCampus = Boolean(session && state && hasCampusAccess(session.role, state));
+  const ctaHref = inCampus ? "/campus" : session ? "/get" : "/login";
+  const ctaLabel = inCampus ? "Enter campus" : session ? "Get campus" : "Log in";
   return (
     <header className="sticky top-0 z-40 border-b border-[var(--line)] bg-[#070707]/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-5 py-3">
@@ -27,8 +33,8 @@ export async function Header() {
             </Link>
           ))}
         </nav>
-        <Link href={session ? "/campus" : "/login"} className="gold-btn rounded-xl px-5 py-2.5 text-xs">
-          {session ? "Enter campus" : "Log in"}
+        <Link href={ctaHref} className="gold-btn rounded-xl px-5 py-2.5 text-xs">
+          {ctaLabel}
         </Link>
       </div>
     </header>

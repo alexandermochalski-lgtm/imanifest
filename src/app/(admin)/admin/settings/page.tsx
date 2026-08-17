@@ -24,8 +24,15 @@ export default function AdminSettingsPage() {
         <section className="rounded-2xl border border-[var(--line)] p-5">
           <h2 className="text-lg text-gold">Stripe / cards</h2>
           <p className="mt-2 text-sm text-muted">
-            Coin checkout is simulated. Wire <code className="text-gold">STRIPE_SECRET</code> and webhook signing when this
-            campus leaves staging so Payments becomes a real settlement book.
+            Campus door is the live Payment Link at $49.99 / month. After payment, Stripe must send the student back to{" "}
+            <code className="text-gold">https://imanifest.vercel.app/get/thanks</code> (Payment Link → After payment →
+            redirect). Webhook endpoint: <code className="text-gold">https://imanifest.vercel.app/api/stripe/webhook</code>{" "}
+            for <code className="text-gold">checkout.session.completed</code>, <code className="text-gold">invoice.paid</code>,{" "}
+            <code className="text-gold">customer.subscription.deleted</code>. Set{" "}
+            <code className="text-gold">STRIPE_WEBHOOK_SECRET</code> in Vercel env.
+          </p>
+          <p className="mt-3 text-sm text-muted">
+            Coin packs inside campus are still simulated until those SKUs get their own Stripe prices.
           </p>
         </section>
         <section className="rounded-2xl border border-[var(--line)] p-5">

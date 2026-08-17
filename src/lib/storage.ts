@@ -10,7 +10,7 @@ const LOCAL_OVERLAY = path.join(LOCAL_DIR, "catalog-overlay.json");
 const LOCAL_UPLOADS = path.join(LOCAL_DIR, "uploads");
 
 export function emptyOverlay(): CatalogOverlay {
-  return { courses: [], books: [], media: [] };
+  return { courses: [], books: [], media: [], members: {} };
 }
 
 export function hasBlobToken() {

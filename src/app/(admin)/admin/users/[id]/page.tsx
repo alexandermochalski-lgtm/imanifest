@@ -23,7 +23,9 @@ export default async function AdminUserDetailPage({
   const enrollments = desk.enrollments.filter((item) => item.userId === id);
   const applications = desk.applications.filter((item) => item.userId === id);
   const registration = desk.registrations.find((item) => item.userId === id);
-  const card = payments.filter((item) => item.kind === "coins" && item.status === "paid").reduce((sum, item) => sum + item.amountUsd, 0);
+  const card = payments
+    .filter((item) => (item.kind === "coins" || item.kind === "membership") && item.status === "paid")
+    .reduce((sum, item) => sum + item.amountUsd, 0);
   const note = desk.notes[id] ?? "";
 
   return (

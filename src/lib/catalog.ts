@@ -1073,44 +1073,24 @@ export const coinPacks: CoinPack[] = [
   { id: "coin-desk", name: "Desk", coins: 1000, price: 219, bonus: 150, savePct: 30 },
 ];
 
-const membershipFeatures = [
-  "AI based suggestions",
-  "19 wealth creation methods",
-  "Access to millionaire mentors",
-  "Community chat groups",
-  "No experience needed",
-  "Cancel anytime, risk-free",
-];
+export const premiumMembership: MembershipPackage = {
+  id: "pkg-premium",
+  name: "Campus",
+  price: 49.99,
+  listPrice: 249.5,
+  duration: "Billed monthly",
+  featured: true,
+  features: [
+    "Full campus: courses, library, journals, forum, job board",
+    "Daily desk and streak",
+    "Coin ledger for paid tracks after you are in",
+    "Sovereign Mindset enrolled at zero coins",
+  ],
+  href: "/get",
+  stripeUrl: "https://buy.stripe.com/4gM4gz85b3sY2pr1esdjO01",
+};
 
-export const membershipPackages: MembershipPackage[] = [
-  {
-    id: "pkg-freemium",
-    name: "Freemium Pack",
-    price: 0,
-    duration: "Ongoing",
-    features: membershipFeatures,
-    href: "/register",
-  },
-  {
-    id: "pkg-premium",
-    name: "Premium Pack",
-    price: 49.99,
-    listPrice: 249.5,
-    duration: "Start the journey",
-    featured: true,
-    features: membershipFeatures,
-    href: "/register",
-  },
-  {
-    id: "pkg-special",
-    name: "Special Pack",
-    price: 249.99,
-    listPrice: 499.5,
-    duration: "Full access",
-    features: membershipFeatures,
-    href: "/register",
-  },
-];
+export const membershipPackages: MembershipPackage[] = [premiumMembership];
 
 export const promoCodes: PromoCode[] = [
   { code: "IMU10", discountPct: 10, active: true },

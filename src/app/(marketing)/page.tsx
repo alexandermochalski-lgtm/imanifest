@@ -19,8 +19,8 @@ export default function Home() {
           <Link href="/programs" className="gold-btn rounded-xl px-8 py-3.5 text-xs">
             Browse all courses
           </Link>
-          <Link href="/login" className="ghost-btn rounded-xl px-8 py-3.5 text-xs">
-            Enter campus
+          <Link href="/#pricing" className="ghost-btn rounded-xl px-8 py-3.5 text-xs">
+            Get campus · $49.99/mo
           </Link>
         </div>
       </section>

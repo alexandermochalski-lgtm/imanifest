@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CourseCard } from "@/components/CourseCard";
-import { categories } from "@/lib/catalog";
+import { categories, premiumMembership } from "@/lib/catalog";
 import { getLiveCourses } from "@/lib/live-catalog";
 
 export const metadata: Metadata = { title: "All Courses" };
@@ -19,7 +19,8 @@ export default async function ProgramsPage({
       <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-gold">iMU catalog · from the Laravel campus</p>
       <h1 className="mt-3 font-[family-name:var(--font-cormorant)] text-5xl text-[#fff8e8]">All Courses</h1>
       <p className="mt-4 max-w-2xl text-[#d4d4d4]">
-        {courses.length} methods across the original iMU faculties. Log in to enroll, sit quizzes, and complete modules.
+        {courses.length} methods across the original iMU faculties. Browse free. ${premiumMembership.price.toFixed(2)}/mo{" "}
+        opens campus to enroll, sit quizzes, and run the daily desk.
       </p>
       <div className="mt-8 flex flex-wrap gap-2">
         <Link href="/programs" className="ghost-btn rounded-full px-4 py-1.5 text-[11px]">

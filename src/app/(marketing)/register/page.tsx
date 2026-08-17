@@ -18,7 +18,7 @@ export default async function RegisterPage({
         error={error}
         map={{
           invalid: "Name, email, and a 6+ character password are required.",
-          "demo-only": "This staging build uses seeded seats only. Log in as student@ or admin@ imanifest.money.",
+          "demo-only": "This staging build uses seeded seats only. Log in as student@imanifest.money, then subscribe $49.99 / month at the campus door.",
         }}
       />
       <form action={registerAction} className="mt-8 space-y-4">

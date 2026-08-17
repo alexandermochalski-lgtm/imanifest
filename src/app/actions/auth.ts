@@ -2,24 +2,34 @@
 
 import { redirect } from "next/navigation";
 import { findSeedUser, setSession, clearSession } from "@/lib/session";
-import { emptyState, saveState } from "@/lib/state";
+import { emptyState, getState, saveState } from "@/lib/state";
+import { hasCampusAccess, safeNextPath } from "@/lib/membership";
 
 const DEMO_PASSWORD = "imanifest";
 
 export async function loginAction(formData: FormData) {
   const email = String(formData.get("email") ?? "").trim();
   const password = String(formData.get("password") ?? "");
+  const next = safeNextPath(String(formData.get("next") ?? ""));
   const user = findSeedUser(email);
   if (!user || password !== DEMO_PASSWORD) {
     redirect("/login?error=invalid");
   }
+  const prior = await getState();
   await setSession(user);
   await saveState({
     ...emptyState(),
     profile: { name: user.name, phone: user.phone, bio: user.bio },
     coins: user.role === "admin" ? 5000 : 500,
+    membershipPaidAt: prior.membershipPaidAt,
   });
-  redirect(user.role === "admin" ? "/admin" : "/campus");
+  if (user.role === "admin") {
+    redirect(next.startsWith("/admin") ? next : "/admin");
+  }
+  if (hasCampusAccess(user.role, { ...emptyState(), membershipPaidAt: prior.membershipPaidAt })) {
+    redirect(next && !next.startsWith("/admin") ? next : "/campus");
+  }
+  redirect("/get");
 }
 
 export async function registerAction(formData: FormData) {

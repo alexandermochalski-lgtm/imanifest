@@ -96,10 +96,18 @@ export type MediaAsset = {
   createdAt: string;
 };
 
+export type MemberRecord = {
+  status: "active" | "canceled";
+  paidAt: string;
+  email: string;
+  userId?: string;
+};
+
 export type CatalogOverlay = {
   courses: Course[];
   books: Book[];
   media: MediaAsset[];
+  members: Record<string, MemberRecord>;
 };
 
 export type Guide = {
@@ -185,6 +193,7 @@ export type MembershipPackage = {
   featured?: boolean;
   features: string[];
   href: string;
+  stripeUrl: string;
 };
 
 export type PromoCode = {
@@ -258,6 +267,7 @@ export type CampusState = {
   notifications: NotificationItem[];
   streakCount: number;
   lastDeskDate: string;
+  membershipPaidAt: string;
   profile: {
     name: string;
     phone: string;
@@ -267,7 +277,7 @@ export type CampusState = {
 
 export type AccountStatus = "active" | "suspended" | "pending";
 export type AcquisitionSource = "organic" | "referral" | "promo" | "direct" | "job-board";
-export type PaymentKind = "coins" | "course" | "bundle";
+export type PaymentKind = "coins" | "course" | "bundle" | "membership";
 export type PaymentStatus = "paid" | "refunded" | "failed" | "pending";
 export type RegistrationStatus = "completed" | "abandoned" | "verified";
 
