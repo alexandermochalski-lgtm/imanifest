@@ -2,6 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+import { appendLivePayment, getAdminOverlay } from "@/lib/admin-state";
 import { courseById, jobs, promoCodes, coinPacks, seedForum } from "@/lib/catalog";
 import { getSession } from "@/lib/session";
 import { getState, mutateState, notify } from "@/lib/state";
@@ -22,13 +23,14 @@ function slugify(value: string) {
 }
 
 export async function enrollCourse(courseId: string, useBalance = true) {
-  await authed();
+  const session = await authed();
   const course = courseById(courseId);
   if (!course) redirect("/courses?error=missing");
   const current = await getState();
   if (!current.enrollments.includes(courseId) && course.price > 0 && useBalance && current.coins < course.price) {
     redirect("/pricing?error=coins");
   }
+  const already = current.enrollments.includes(courseId);
   await mutateState((state) => {
     if (state.enrollments.includes(courseId)) return state;
     const paid = course.price > 0 && useBalance ? { ...state, coins: state.coins - course.price } : state;
@@ -39,6 +41,19 @@ export async function enrollCourse(courseId: string, useBalance = true) {
       `/courses/${course.slug}`,
     );
   });
+  if (!already && course.price > 0 && useBalance) {
+    await appendLivePayment({
+      id: `live-course-${courseId}-${Date.now()}`,
+      userId: session.userId,
+      kind: "course",
+      sku: courseId,
+      label: course.title,
+      amountUsd: 0,
+      coins: -course.price,
+      status: "paid",
+      createdAt: new Date().toISOString().slice(0, 10),
+    });
+  }
   revalidatePath("/courses");
   redirect(`/courses/${course.slug}?ok=enrolled`);
 }
@@ -246,13 +261,16 @@ export async function likeForum(postId: string, slug: string) {
 }
 
 export async function buyCoins(formData: FormData) {
-  await authed();
+  const session = await authed();
   const packId = String(formData.get("packId"));
   const promo = String(formData.get("promo") ?? "").trim().toUpperCase();
   const pack = coinPacks.find((item) => item.id === packId);
   if (!pack) redirect("/pricing");
   let payable = pack.price;
-  const code = promoCodes.find((item) => item.code === promo && item.active);
+  const overlay = await getAdminOverlay();
+  const catalogCode = promoCodes.find((item) => item.code === promo);
+  const codeActive = promo ? (overlay.promoActive[promo] ?? catalogCode?.active ?? false) : false;
+  const code = catalogCode && codeActive ? catalogCode : undefined;
   if (promo && !code) redirect(`/pricing/${packId}?error=promo`);
   if (code) payable = Math.round(payable * (1 - code.discountPct / 100));
   await mutateState((state) =>
@@ -263,11 +281,23 @@ export async function buyCoins(formData: FormData) {
       "/pricing",
     ),
   );
+  await appendLivePayment({
+    id: `live-coins-${packId}-${Date.now()}`,
+    userId: session.userId,
+    kind: "coins",
+    sku: packId,
+    label: `${pack.name} pack`,
+    amountUsd: payable,
+    coins: pack.coins + pack.bonus,
+    promo: code?.code,
+    status: "paid",
+    createdAt: new Date().toISOString().slice(0, 10),
+  });
   redirect("/pricing?ok=purchase");
 }
 
 export async function buyBundle(bundleId: string) {
-  await authed();
+  const session = await authed();
   const { bundles } = await import("@/lib/catalog");
   const bundle = bundles.find((item) => item.id === bundleId);
   if (!bundle) redirect("/bundles");
@@ -281,6 +311,17 @@ export async function buyBundle(bundleId: string) {
       `${bundle.title} courses are now enrolled.`,
       `/bundles/${bundle.slug}`,
     );
+  });
+  await appendLivePayment({
+    id: `live-bundle-${bundleId}-${Date.now()}`,
+    userId: session.userId,
+    kind: "bundle",
+    sku: bundleId,
+    label: bundle.title,
+    amountUsd: 0,
+    coins: -bundle.price,
+    status: "paid",
+    createdAt: new Date().toISOString().slice(0, 10),
   });
   redirect(`/bundles/${bundle.slug}?ok=1`);
 }

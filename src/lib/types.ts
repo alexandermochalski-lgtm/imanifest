@@ -224,3 +224,59 @@ export type CampusState = {
     bio: string;
   };
 };
+
+export type AccountStatus = "active" | "suspended" | "pending";
+export type AcquisitionSource = "organic" | "referral" | "promo" | "direct" | "job-board";
+export type PaymentKind = "coins" | "course" | "bundle";
+export type PaymentStatus = "paid" | "refunded" | "failed" | "pending";
+export type RegistrationStatus = "completed" | "abandoned" | "verified";
+
+export type OpsUser = User & {
+  status: AccountStatus;
+  registeredAt: string;
+  lastSeenAt: string;
+  coins: number;
+  courseIds: string[];
+  country: string;
+  source: AcquisitionSource;
+};
+
+export type Registration = {
+  id: string;
+  userId: string | null;
+  email: string;
+  name: string;
+  createdAt: string;
+  source: AcquisitionSource;
+  status: RegistrationStatus;
+};
+
+export type Payment = {
+  id: string;
+  userId: string;
+  kind: PaymentKind;
+  sku: string;
+  label: string;
+  amountUsd: number;
+  coins: number;
+  promo?: string;
+  status: PaymentStatus;
+  createdAt: string;
+};
+
+export type EnrollmentRecord = {
+  id: string;
+  userId: string;
+  courseId: string;
+  enrolledAt: string;
+  progress: number;
+  coinsSpent: number;
+};
+
+export type AdminOverlay = {
+  userStatus: Record<string, AccountStatus>;
+  applicationStatus: Record<string, JobApplication["status"]>;
+  promoActive: Record<string, boolean>;
+  notes: Record<string, string>;
+  livePayments: Payment[];
+};

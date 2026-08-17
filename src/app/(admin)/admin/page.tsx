@@ -1,29 +1,122 @@
-import { books, courses, jobs, seedForum, seedJournals, seedUsers } from "@/lib/catalog";
-import { getState } from "@/lib/state";
+import Link from "next/link";
+import { PageHeader, Kpi, StatusBadge, SparkBars } from "@/components/admin/ui";
+import { getDesk } from "@/lib/desk";
+import { formatDate, opsUserById, usd } from "@/lib/ops";
 
 export default async function AdminHomePage() {
-  const state = await getState();
-  const cards = [
-    ["Courses", String(courses.length)],
-    ["Books", String(books.length)],
-    ["Open jobs", String(jobs.filter((job) => job.status === "open").length)],
-    ["Forum posts", String(seedForum.length + state.forumPosts.length)],
-    ["Journals", String(seedJournals.length + state.journals.length)],
-    ["Applications", String(state.applications.length)],
-    ["Users", String(seedUsers.length)],
-    ["Coin ledger (you)", String(state.coins)],
-  ];
+  const desk = await getDesk();
+  const { kpis } = desk;
+
   return (
     <main>
-      <h1 className="font-[family-name:var(--font-cormorant)] text-4xl text-white">Admin overview</h1>
-      <p className="mt-3 text-muted">Mirrors dashboard-main: catalog, jobs, forum, journals, applications, users.</p>
-      <div className="mt-8 grid gap-4 md:grid-cols-4">
-        {cards.map(([label, value]) => (
-          <div key={label} className="rounded-2xl border border-[var(--line)] bg-panel p-5">
-            <p className="text-xs uppercase tracking-[0.2em] text-gold-deep">{label}</p>
-            <p className="mt-2 font-[family-name:var(--font-cormorant)] text-3xl text-gold">{value}</p>
+      <PageHeader
+        kicker="iManifest University"
+        title="Command"
+        description="Card revenue, registrations, enrollments, and hiring — the numbers you run the campus on."
+      />
+
+      {desk.alerts.length > 0 ? (
+        <div className="mb-8 rounded-2xl border border-[var(--line)] bg-[rgba(247,230,138,0.06)] p-5">
+          <p className="text-xs uppercase tracking-[0.2em] text-gold-deep">Needs attention</p>
+          <ul className="mt-3 space-y-1 text-sm text-[#f6f1e4]">
+            {desk.alerts.map((alert) => (
+              <li key={alert}>· {alert}</li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
+
+      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+        <Kpi href="/admin/payments" label="Card revenue" value={usd(kpis.cardRevenue)} hint={`${usd(kpis.cardRevenue30d)} last 30 days`} />
+        <Kpi href="/admin/users" label="Students & staff" value={String(kpis.users)} hint={`${kpis.activeUsers} active · ${kpis.newUsers7d} new this week`} />
+        <Kpi href="/admin/registrations" label="Reg. conversion" value={`${kpis.conversion}%`} hint={`${kpis.abandoned7d} abandoned in 7d`} />
+        <Kpi href="/admin/enrollments" label="Enrollments" value={String(kpis.enrollments)} hint={`${kpis.enrollments30d} this month · ${kpis.completions} completed`} />
+        <Kpi href="/admin/payments" label="Refunds / failed" value={`${usd(kpis.refunds)} / ${kpis.failed}`} hint={kpis.pendingCash ? `${usd(kpis.pendingCash)} pending` : "No pending captures"} />
+        <Kpi href="/admin/coins" label="Coin liability" value={kpis.coinsOutstanding.toLocaleString()} hint={`${kpis.courseGmvCoins.toLocaleString()} coins spent on catalog`} />
+        <Kpi href="/admin/applications" label="Hiring pipeline" value={String(kpis.applicationsOpen)} hint={`${kpis.hired} hired · ${kpis.openJobs} open roles`} />
+        <Kpi href="/admin/courses" label="Course completions" value={String(kpis.completions)} hint="Modules marked complete at 100%" />
+      </div>
+
+      <div className="mt-8 grid gap-6 xl:grid-cols-5">
+        <section className="imu-card rounded-2xl p-5 xl:col-span-2">
+          <p className="text-xs uppercase tracking-[0.2em] text-gold-deep">Card take · 8 weeks</p>
+          <p className="mt-1 font-[family-name:var(--font-cormorant)] text-2xl text-white">Coin pack captures</p>
+          <div className="mt-6">
+            <SparkBars values={desk.weeklyCard} />
           </div>
-        ))}
+          <p className="mt-3 text-xs text-muted">Oldest week left · this week right. USD from Starter / Operator / Desk packs.</p>
+        </section>
+        <section className="imu-card rounded-2xl p-5 xl:col-span-3">
+          <div className="flex items-center justify-between">
+            <p className="text-xs uppercase tracking-[0.2em] text-gold-deep">Top courses</p>
+            <Link className="text-xs text-gold" href="/admin/courses">
+              Full catalog
+            </Link>
+          </div>
+          <ul className="mt-4 space-y-3">
+            {desk.topCourses.map((course) => (
+              <li key={course.id} className="flex items-center justify-between gap-3 border-b border-[var(--line)] pb-3 last:border-0">
+                <div>
+                  <p className="text-white">{course.title}</p>
+                  <p className="text-xs text-muted">
+                    {course.enrollments} enrolled · {course.coins} coins · {course.completion}% complete
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+      </div>
+
+      <div className="mt-8 grid gap-6 lg:grid-cols-2">
+        <section>
+          <div className="mb-3 flex items-center justify-between">
+            <h2 className="font-[family-name:var(--font-cormorant)] text-2xl text-white">Recent payments</h2>
+            <Link className="text-xs text-gold" href="/admin/payments">
+              Ledger
+            </Link>
+          </div>
+          <ul className="space-y-2">
+            {desk.recentPayments.map((payment) => {
+              const user = opsUserById(payment.userId);
+              return (
+                <li key={payment.id} className="flex items-center justify-between gap-3 rounded-xl border border-[var(--line)] px-4 py-3">
+                  <div>
+                    <p className="text-white">{payment.label}</p>
+                    <p className="text-xs text-muted">
+                      {user?.name ?? payment.userId} · {formatDate(payment.createdAt)}
+                    </p>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-gold">{payment.kind === "coins" ? usd(payment.amountUsd) : `${payment.coins} coins`}</p>
+                    <StatusBadge status={payment.status} />
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+        <section>
+          <div className="mb-3 flex items-center justify-between">
+            <h2 className="font-[family-name:var(--font-cormorant)] text-2xl text-white">Registrations</h2>
+            <Link className="text-xs text-gold" href="/admin/registrations">
+              All
+            </Link>
+          </div>
+          <ul className="space-y-2">
+            {desk.recentRegistrations.map((item) => (
+              <li key={item.id} className="flex items-center justify-between gap-3 rounded-xl border border-[var(--line)] px-4 py-3">
+                <div>
+                  <p className="text-white">{item.name}</p>
+                  <p className="text-xs text-muted">
+                    {item.email} · {item.source} · {formatDate(item.createdAt)}
+                  </p>
+                </div>
+                <StatusBadge status={item.status} />
+              </li>
+            ))}
+          </ul>
+        </section>
       </div>
     </main>
   );
