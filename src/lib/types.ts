@@ -276,6 +276,8 @@ export type CampusState = {
   streakCount: number;
   lastDeskDate: string;
   lastStipendMonth: string;
+  lastCoinPackId: string;
+  lastCoinCreditAt: string;
   membershipPaidAt: string;
   profile: {
     name: string;

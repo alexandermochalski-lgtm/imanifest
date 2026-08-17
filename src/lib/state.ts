@@ -44,6 +44,8 @@ export function emptyState(): CampusState {
     streakCount: 0,
     lastDeskDate: "",
     lastStipendMonth: "",
+    lastCoinPackId: "",
+    lastCoinCreditAt: "",
     membershipPaidAt: "",
     profile: {
       name: "",

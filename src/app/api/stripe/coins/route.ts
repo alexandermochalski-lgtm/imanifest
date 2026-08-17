@@ -2,27 +2,37 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { appendLivePayment } from "@/lib/admin-state";
 import { getSession } from "@/lib/session";
-import { mutateState, notify } from "@/lib/state";
+import { getState, mutateState, notify } from "@/lib/state";
 import { COIN_PENDING_COOKIE, coinPackFromId } from "@/lib/stripe";
+
+const CREDIT_WINDOW_MS = 10 * 60 * 1000;
 
 export async function GET(request: Request) {
   const session = await getSession();
   if (!session) redirect("/login?next=/pricing");
+
   const pending = (await cookies()).get(COIN_PENDING_COOKIE)?.value ?? "";
-  const pack = coinPackFromId(pending);
   const queryPack = new URL(request.url).searchParams.get("pack") ?? "";
-  if (!pack) {
-    redirect(queryPack && coinPackFromId(queryPack) ? "/pricing?ok=purchase" : "/pricing?error=return");
-  }
-  if (queryPack && queryPack !== pack.id) {
-    (await cookies()).delete(COIN_PENDING_COOKIE);
-    redirect("/pricing?error=return");
-  }
-  const credited = pack.coins + pack.bonus;
+  const pack = coinPackFromId(queryPack) ?? coinPackFromId(pending);
   (await cookies()).delete(COIN_PENDING_COOKIE);
+
+  if (!pack) redirect("/pricing?error=return");
+
+  const current = await getState();
+  const lastAt = Date.parse(current.lastCoinCreditAt);
+  const duplicate =
+    current.lastCoinPackId === pack.id && Number.isFinite(lastAt) && Date.now() - lastAt < CREDIT_WINDOW_MS;
+  if (duplicate) redirect("/pricing?ok=purchase");
+
+  const credited = pack.coins + pack.bonus;
   await mutateState((state) =>
     notify(
-      { ...state, coins: state.coins + credited },
+      {
+        ...state,
+        coins: state.coins + credited,
+        lastCoinPackId: pack.id,
+        lastCoinCreditAt: new Date().toISOString(),
+      },
       "Coins credited",
       `${credited} coins from ${pack.name} are on the ledger.`,
       "/pricing",
