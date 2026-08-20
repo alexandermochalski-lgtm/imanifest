@@ -3,7 +3,7 @@ import { enrollCourse } from "@/app/actions/campus";
 import { Flash, GoldButton } from "@/components/ui";
 import { categories, moduleProgress } from "@/lib/catalog";
 import { formatCoins } from "@/lib/daily-desk";
-import { getLiveCourses } from "@/lib/live-catalog";
+import { getDeliverableCourses } from "@/lib/live-catalog";
 import { getState } from "@/lib/state";
 
 export default async function CoursesPage({
@@ -13,12 +13,12 @@ export default async function CoursesPage({
 }) {
   const params = await searchParams;
   const state = await getState();
-  const courses = await getLiveCourses();
+  const courses = await getDeliverableCourses();
   const query = (params.q ?? "").toLowerCase();
   const filtered = courses.filter((course) => {
     const byCat = !params.category || course.category === params.category;
     const byQ = !query || course.title.toLowerCase().includes(query) || course.summary.toLowerCase().includes(query);
-    return byCat && byQ && course.status === "active";
+    return byCat && byQ;
   });
   const mine = courses.filter((course) => state.enrollments.includes(course.id));
   const completed = mine.filter((course) => moduleProgress(course, state.completedModules) === 100);

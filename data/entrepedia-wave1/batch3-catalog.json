@@ -1,0 +1,49 @@
+{
+  "at": "2026-08-20T09:06:58.491Z",
+  "mapped": [
+    {
+      "prefix": "fitness-without-hustle",
+      "course": "Fitness Without Hustle",
+      "audio": 3,
+      "pdfs": 4,
+      "book": true
+    },
+    {
+      "prefix": "habits-without-willpower",
+      "course": "Habits Without Willpower",
+      "audio": 1,
+      "pdfs": 5,
+      "book": true
+    },
+    {
+      "prefix": "the-neuroscience-of-peak-productivity",
+      "course": "Peak Productivity Neuroscience",
+      "audio": 3,
+      "pdfs": 7,
+      "book": true
+    },
+    {
+      "prefix": "the-resilient-leader",
+      "course": "Resilient Leader Desk",
+      "audio": 1,
+      "pdfs": 5,
+      "book": true
+    },
+    {
+      "prefix": "working-smarter-with-virtual-assistants",
+      "course": "VA Operating Desk",
+      "audio": 3,
+      "pdfs": 9,
+      "book": true
+    }
+  ],
+  "prunedCourses": {
+    "removed": 0,
+    "kept": 17
+  },
+  "prunedBooks": {
+    "removed": 0,
+    "kept": 16
+  },
+  "blob": "imu/catalog-overlay.json"
+}

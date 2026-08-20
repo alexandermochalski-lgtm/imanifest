@@ -430,7 +430,7 @@
       "imu_category": "e-commerce",
       "imu_title": "Stores That Convert",
       "imu_summary": "Part of Store That Converts: Stores That Convert.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-2\\build-an-ecommerce-store-that-sells"
     },
     {
@@ -448,7 +448,7 @@
       "imu_category": "e-commerce",
       "imu_title": "7 Conversion Killers Hiding on Your Product Pages",
       "imu_summary": "Part of Store That Converts: 7 Conversion Killers Hiding on Your Product Pages.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-2\\build-an-ecommerce-store-that-sells"
     },
     {
@@ -466,7 +466,7 @@
       "imu_category": "e-commerce",
       "imu_title": "7-day Store Transformation",
       "imu_summary": "Part of Store That Converts: 7-day Store Transformation.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-2\\build-an-ecommerce-store-that-sells"
     },
     {
@@ -484,7 +484,7 @@
       "imu_category": "e-commerce",
       "imu_title": "E-Commerce Store Architect",
       "imu_summary": "Part of Store That Converts: The E-Commerce Store Architect.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-2\\build-an-ecommerce-store-that-sells"
     },
     {
@@ -502,7 +502,7 @@
       "imu_category": "e-commerce",
       "imu_title": "Site Speed Optimization for Non-Technical Store Owners",
       "imu_summary": "Part of Store That Converts: Site Speed Optimization for Non-Technical Store Owners.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-2\\build-an-ecommerce-store-that-sells"
     },
     {
@@ -520,7 +520,7 @@
       "imu_category": "e-commerce",
       "imu_title": "Pre-Launch Store Validation",
       "imu_summary": "Part of Store That Converts: Pre-Launch Store Validation.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-2\\build-an-ecommerce-store-that-sells"
     },
     {
@@ -538,7 +538,7 @@
       "imu_category": "e-commerce",
       "imu_title": "Store That Converts",
       "imu_summary": "Conversion, speed, and validation for e-commerce desks that need paid traffic to pay back.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-2\\build-an-ecommerce-store-that-sells"
     },
     {
@@ -556,7 +556,7 @@
       "imu_category": "marketing",
       "imu_title": "Confident Closer",
       "imu_summary": "Part of Closing Psychology: The Confident Closer.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-2\\the-psychology-of-closing"
     },
     {
@@ -574,7 +574,7 @@
       "imu_category": "marketing",
       "imu_title": "21 Objections That Actually Mean They Want to Buy",
       "imu_summary": "Part of Closing Psychology: 21 Objections That Actually Mean They Want to Buy.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-2\\the-psychology-of-closing"
     },
     {
@@ -592,7 +592,7 @@
       "imu_category": "marketing",
       "imu_title": "Transform Your Sales Confidence",
       "imu_summary": "Part of Closing Psychology: Transform Your Sales Confidence.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-2\\the-psychology-of-closing"
     },
     {
@@ -610,7 +610,7 @@
       "imu_category": "marketing",
       "imu_title": "Mastering Confident Sales Closing",
       "imu_summary": "Part of Closing Psychology: Mastering Confident Sales Closing.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-2\\the-psychology-of-closing"
     },
     {
@@ -628,7 +628,7 @@
       "imu_category": "marketing",
       "imu_title": "3R Method for Objection Handling",
       "imu_summary": "Part of Closing Psychology: The 3R Method for Objection Handling.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-2\\the-psychology-of-closing"
     },
     {
@@ -646,7 +646,7 @@
       "imu_category": "marketing",
       "imu_title": "Pre-Call Confidence & Preparation",
       "imu_summary": "Part of Closing Psychology: The Pre-Call Confidence & Preparation.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-2\\the-psychology-of-closing"
     },
     {
@@ -664,7 +664,7 @@
       "imu_category": "marketing",
       "imu_title": "Closing Psychology",
       "imu_summary": "Objection handling and pre-call confidence for high-trust closes.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-2\\the-psychology-of-closing"
     },
     {
@@ -682,7 +682,7 @@
       "imu_category": "marketing",
       "imu_title": "Marketing to the Subconscious",
       "imu_summary": "Part of Neuromarketing Edge: Marketing to the Subconscious.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-2\\the-neuromarketing-edge"
     },
     {
@@ -700,7 +700,7 @@
       "imu_category": "marketing",
       "imu_title": "21 Brain Triggers That Make People Stop, Read, and Buy",
       "imu_summary": "Part of Neuromarketing Edge: 21 Brain Triggers That Make People Stop, Read, and Buy.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-2\\the-neuromarketing-edge"
     },
     {
@@ -718,7 +718,7 @@
       "imu_category": "marketing",
       "imu_title": "7 Days to Brain-Proof Marketing",
       "imu_summary": "Part of Neuromarketing Edge: 7 Days to Brain-Proof Marketing.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-2\\the-neuromarketing-edge"
     },
     {
@@ -736,7 +736,7 @@
       "imu_category": "marketing",
       "imu_title": "Put Neuromarketing to Work Today",
       "imu_summary": "Part of Neuromarketing Edge: Put Neuromarketing to Work Today.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-2\\the-neuromarketing-edge"
     },
     {
@@ -754,7 +754,7 @@
       "imu_category": "marketing",
       "imu_title": "Complete Neurological Friction Audit",
       "imu_summary": "Part of Neuromarketing Edge: The Complete Neurological Friction Audit.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-2\\the-neuromarketing-edge"
     },
     {
@@ -772,7 +772,7 @@
       "imu_category": "marketing",
       "imu_title": "Is Your Marketing Brain-Ready?",
       "imu_summary": "Part of Neuromarketing Edge: Is Your Marketing Brain-Ready?.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-2\\the-neuromarketing-edge"
     },
     {
@@ -790,7 +790,7 @@
       "imu_category": "marketing",
       "imu_title": "Neuromarketing Edge",
       "imu_summary": "Brain-trigger copy and friction audits for pages that stop the scroll and sell.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-2\\the-neuromarketing-edge"
     },
     {
@@ -808,7 +808,7 @@
       "imu_category": "marketing",
       "imu_title": "Agency Scaling Systems",
       "imu_summary": "Part of Agency Owner Blueprint: Agency Scaling Systems.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-2\\agency-growth-blueprint"
     },
     {
@@ -826,7 +826,7 @@
       "imu_category": "marketing",
       "imu_title": "7 Mistakes That Keep Agencies Stuck in Chaos and Burnout",
       "imu_summary": "Part of Agency Owner Blueprint: 7 Mistakes That Keep Agencies Stuck in Chaos and Burnout.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-2\\agency-growth-blueprint"
     },
     {
@@ -844,7 +844,7 @@
       "imu_category": "marketing",
       "imu_title": "From Agency Operator to Owner",
       "imu_summary": "Part of Agency Owner Blueprint: From Agency Operator to Owner.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-2\\agency-growth-blueprint"
     },
     {
@@ -862,7 +862,7 @@
       "imu_category": "marketing",
       "imu_title": "Agency Operations & Scaling",
       "imu_summary": "Part of Agency Owner Blueprint: Agency Operations & Scaling.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-2\\agency-growth-blueprint"
     },
     {
@@ -880,7 +880,7 @@
       "imu_category": "marketing",
       "imu_title": "Agency Transformation Assistant",
       "imu_summary": "Part of Agency Owner Blueprint: Agency Transformation Assistant.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-2\\agency-growth-blueprint"
     },
     {
@@ -898,7 +898,7 @@
       "imu_category": "marketing",
       "imu_title": "90-Day Agency Transformation",
       "imu_summary": "Part of Agency Owner Blueprint: The 90-Day Agency Transformation.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-2\\agency-growth-blueprint"
     },
     {
@@ -916,7 +916,7 @@
       "imu_category": "marketing",
       "imu_title": "Operator-to-Owner Audit",
       "imu_summary": "Part of Agency Owner Blueprint: The Operator-to-Owner Audit.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-2\\agency-growth-blueprint"
     },
     {
@@ -934,7 +934,7 @@
       "imu_category": "marketing",
       "imu_title": "Agency Owner Blueprint",
       "imu_summary": "Move from operator chaos to owner systems: ops, scaling, and 90-day transformation.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-2\\agency-growth-blueprint"
     },
     {
@@ -952,7 +952,7 @@
       "imu_category": "personal-development",
       "imu_title": "Leadership Without Collapse",
       "imu_summary": "Part of Resilient Leadership: Leadership Without Collapse.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-3\\the-resilient-leader"
     },
     {
@@ -970,7 +970,7 @@
       "imu_category": "personal-development",
       "imu_title": "13 Signs You're Suppressing Your Crisis Instead of Managing It",
       "imu_summary": "Part of Resilient Leadership: 13 Signs You're Suppressing Your Crisis Instead of Managing It.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-3\\the-resilient-leader"
     },
     {
@@ -988,7 +988,7 @@
       "imu_category": "personal-development",
       "imu_title": "Build Your Crisis-Proof Leadership System",
       "imu_summary": "Part of Resilient Leadership: Build Your Crisis-Proof Leadership System.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-3\\the-resilient-leader"
     },
     {
@@ -1006,7 +1006,7 @@
       "imu_category": "personal-development",
       "imu_title": "Disclose Without Losing Authority",
       "imu_summary": "Part of Resilient Leadership: Disclose Without Losing Authority.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-3\\the-resilient-leader"
     },
     {
@@ -1024,7 +1024,7 @@
       "imu_category": "personal-development",
       "imu_title": "Personal Crisis Pre-Flight Check",
       "imu_summary": "Part of Resilient Leadership: Personal Crisis Pre-Flight Check.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-3\\the-resilient-leader"
     },
     {
@@ -1042,7 +1042,7 @@
       "imu_category": "personal-development",
       "imu_title": "Resilient Leadership",
       "imu_summary": "Crisis-proof leadership without collapsing authority or suppressing the hard signal.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-3\\the-resilient-leader"
     },
     {
@@ -1060,7 +1060,7 @@
       "imu_category": "personal-development",
       "imu_title": "Habit Architecture",
       "imu_summary": "Part of Habit Architecture: The Habit Architecture.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-3\\habits-without-willpower"
     },
     {
@@ -1078,7 +1078,7 @@
       "imu_category": "personal-development",
       "imu_title": "13 Mistakes That Trap Everyone in the Restart Cycle",
       "imu_summary": "Part of Habit Architecture: 13 Mistakes That Trap Everyone in the Restart Cycle.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-3\\habits-without-willpower"
     },
     {
@@ -1096,7 +1096,7 @@
       "imu_category": "personal-development",
       "imu_title": "Make Any Habit Automatic in 7 Days",
       "imu_summary": "Part of Habit Architecture: Make Any Habit Automatic in 7 Days.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-3\\habits-without-willpower"
     },
     {
@@ -1114,7 +1114,7 @@
       "imu_category": "personal-development",
       "imu_title": "Build Unbreakable Daily Routines in 30 Days",
       "imu_summary": "Part of Habit Architecture: Build Unbreakable Daily Routines in 30 Days.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-3\\habits-without-willpower"
     },
     {
@@ -1132,7 +1132,7 @@
       "imu_category": "personal-development",
       "imu_title": "Complete Habit Formation System",
       "imu_summary": "Part of Habit Architecture: The Complete Habit Formation System.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-3\\habits-without-willpower"
     },
     {
@@ -1150,7 +1150,7 @@
       "imu_category": "personal-development",
       "imu_title": "Habit Architecture",
       "imu_summary": "Automatic routines that stick without relying on willpower spikes.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-3\\habits-without-willpower"
     },
     {
@@ -1168,7 +1168,7 @@
       "imu_category": "personal-development",
       "imu_title": "Flow Operating System",
       "imu_summary": "Part of Flow Operating System: The Flow Operating System.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-3\\the-neuroscience-of-peak-productivity"
     },
     {
@@ -1186,7 +1186,7 @@
       "imu_category": "personal-development",
       "imu_title": "13 Invisible Focus Killers Blocking Your Flow States",
       "imu_summary": "Part of Flow Operating System: 13 Invisible Focus Killers Blocking Your Flow States.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-3\\the-neuroscience-of-peak-productivity"
     },
     {
@@ -1204,7 +1204,7 @@
       "imu_category": "personal-development",
       "imu_title": "7 Neuroscience-Backed Triggers That Unlock Flow States",
       "imu_summary": "Part of Flow Operating System: 7 Neuroscience-Backed Triggers That Unlock Flow States.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-3\\the-neuroscience-of-peak-productivity"
     },
     {
@@ -1222,7 +1222,7 @@
       "imu_category": "personal-development",
       "imu_title": "Flow State Mastery",
       "imu_summary": "Part of Flow Operating System: Flow State Mastery.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-3\\the-neuroscience-of-peak-productivity"
     },
     {
@@ -1240,7 +1240,7 @@
       "imu_category": "personal-development",
       "imu_title": "Personal Flow Operating System",
       "imu_summary": "Part of Flow Operating System: The Personal Flow Operating System.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-3\\the-neuroscience-of-peak-productivity"
     },
     {
@@ -1258,7 +1258,7 @@
       "imu_category": "personal-development",
       "imu_title": "Remote Worker's Flow Blueprint",
       "imu_summary": "Part of Flow Operating System: The Remote Worker's Flow Blueprint.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-3\\the-neuroscience-of-peak-productivity"
     },
     {
@@ -1276,7 +1276,7 @@
       "imu_category": "personal-development",
       "imu_title": "Focus Killer Elimination Audit",
       "imu_summary": "Part of Flow Operating System: The Focus Killer Elimination Audit.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-3\\the-neuroscience-of-peak-productivity"
     },
     {
@@ -1294,7 +1294,7 @@
       "imu_category": "personal-development",
       "imu_title": "Flow Operating System",
       "imu_summary": "Neuroscience-backed focus and flow design for remote and desk work.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-3\\the-neuroscience-of-peak-productivity"
     },
     {
@@ -1312,7 +1312,7 @@
       "imu_category": "social-media",
       "imu_title": "Build Without Being Seen",
       "imu_summary": "Part of Faceless Brand Desk: Build Without Being Seen.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-2\\building-a-faceless-empire"
     },
     {
@@ -1330,7 +1330,7 @@
       "imu_category": "social-media",
       "imu_title": "21 Faceless Business Models Generating Real Income",
       "imu_summary": "Part of Faceless Brand Desk: 21 Faceless Business Models Generating Real Income.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-2\\building-a-faceless-empire"
     },
     {
@@ -1348,7 +1348,7 @@
       "imu_category": "social-media",
       "imu_title": "Faceless Launch",
       "imu_summary": "Part of Faceless Brand Desk: The Faceless Launch.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-2\\building-a-faceless-empire"
     },
     {
@@ -1366,7 +1366,7 @@
       "imu_category": "social-media",
       "imu_title": "Faceless Digital Business Builder",
       "imu_summary": "Part of Faceless Brand Desk: Faceless Digital Business Builder.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-2\\building-a-faceless-empire"
     },
     {
@@ -1384,7 +1384,7 @@
       "imu_category": "social-media",
       "imu_title": "24-Hour Digital Product Creation Playbook",
       "imu_summary": "Part of Faceless Brand Desk: The 24-Hour Digital Product Creation Playbook.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-2\\building-a-faceless-empire"
     },
     {
@@ -1402,7 +1402,7 @@
       "imu_category": "social-media",
       "imu_title": "60-Minute Weekly Content Factory",
       "imu_summary": "Part of Faceless Brand Desk: The 60-Minute Weekly Content Factory.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-2\\building-a-faceless-empire"
     },
     {
@@ -1420,7 +1420,7 @@
       "imu_category": "social-media",
       "imu_title": "7-Day Faceless Brand Launch Blueprint",
       "imu_summary": "Part of Faceless Brand Desk: The 7-Day Faceless Brand Launch Blueprint.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-2\\building-a-faceless-empire"
     },
     {
@@ -1438,7 +1438,7 @@
       "imu_category": "social-media",
       "imu_title": "Faceless Brand Desk",
       "imu_summary": "Build and monetize digital products without putting your face on every asset.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-2\\building-a-faceless-empire"
     },
     {
@@ -1582,7 +1582,7 @@
       "imu_category": "social-media",
       "imu_title": "Monetization Flywheel",
       "imu_summary": "Part of Attention Monetization Flywheel: The Monetization Flywheel.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-2\\monetizing-attention-without-selling-your-soul"
     },
     {
@@ -1600,7 +1600,7 @@
       "imu_category": "social-media",
       "imu_title": "13 Proven Hook Formulas for Scroll-Stopping Content",
       "imu_summary": "Part of Attention Monetization Flywheel: 13 Proven Hook Formulas for Scroll-Stopping Content.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-2\\monetizing-attention-without-selling-your-soul"
     },
     {
@@ -1618,7 +1618,7 @@
       "imu_category": "social-media",
       "imu_title": "7 Monetization Mistakes Sinking Your Creator Business",
       "imu_summary": "Part of Attention Monetization Flywheel: 7 Monetization Mistakes Sinking Your Creator Business.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-2\\monetizing-attention-without-selling-your-soul"
     },
     {
@@ -1636,7 +1636,7 @@
       "imu_category": "social-media",
       "imu_title": "Proven System for Turning Followers into Profit",
       "imu_summary": "Part of Attention Monetization Flywheel: The Proven System for Turning Followers into Profit.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-2\\monetizing-attention-without-selling-your-soul"
     },
     {
@@ -1654,7 +1654,7 @@
       "imu_category": "social-media",
       "imu_title": "Creator Economy Toolkit",
       "imu_summary": "Part of Attention Monetization Flywheel: Creator Economy Toolkit.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-2\\monetizing-attention-without-selling-your-soul"
     },
     {
@@ -1672,7 +1672,7 @@
       "imu_category": "social-media",
       "imu_title": "Creator's Profit Assistant",
       "imu_summary": "Part of Attention Monetization Flywheel: The Creator's Profit Assistant.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-2\\monetizing-attention-without-selling-your-soul"
     },
     {
@@ -1690,7 +1690,7 @@
       "imu_category": "social-media",
       "imu_title": "Your First Digital Product Launch",
       "imu_summary": "Part of Attention Monetization Flywheel: Your First Digital Product Launch.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-2\\monetizing-attention-without-selling-your-soul"
     },
     {
@@ -1708,7 +1708,7 @@
       "imu_category": "social-media",
       "imu_title": "Scroll-Stopping Content System",
       "imu_summary": "Part of Attention Monetization Flywheel: The Scroll-Stopping Content System.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-2\\monetizing-attention-without-selling-your-soul"
     },
     {
@@ -1726,7 +1726,7 @@
       "imu_category": "social-media",
       "imu_title": "Hook-Story-Monetize Content Creation",
       "imu_summary": "Part of Attention Monetization Flywheel: Hook-Story-Monetize Content Creation.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-2\\monetizing-attention-without-selling-your-soul"
     },
     {
@@ -1744,7 +1744,7 @@
       "imu_category": "social-media",
       "imu_title": "Attention Monetization Flywheel",
       "imu_summary": "Turn followers into profit with hooks, digital products, and a clean monetization path.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-2\\monetizing-attention-without-selling-your-soul"
     },
     {
@@ -1762,7 +1762,7 @@
       "imu_category": "fitness-nutrition",
       "imu_title": "Energy Advantage",
       "imu_summary": "Part of Fitness Without Hustle: The Energy Advantage.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-3\\fitness-without-hustle"
     },
     {
@@ -1780,7 +1780,7 @@
       "imu_category": "fitness-nutrition",
       "imu_title": "7 Fitness Myths Keeping High Performers Burned Out",
       "imu_summary": "Part of Fitness Without Hustle: 7 Fitness Myths Keeping High Performers Burned Out.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-3\\fitness-without-hustle"
     },
     {
@@ -1798,7 +1798,7 @@
       "imu_category": "fitness-nutrition",
       "imu_title": "Smarter Way to Stay Fit and Focused",
       "imu_summary": "Part of Fitness Without Hustle: The Smarter Way to Stay Fit and Focused.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-3\\fitness-without-hustle"
     },
     {
@@ -1816,7 +1816,7 @@
       "imu_category": "fitness-nutrition",
       "imu_title": "3R Daily Reset System",
       "imu_summary": "Part of Fitness Without Hustle: The 3R Daily Reset System.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-3\\fitness-without-hustle"
     },
     {
@@ -1834,7 +1834,7 @@
       "imu_category": "fitness-nutrition",
       "imu_title": "Fitness Without Hustle",
       "imu_summary": "Sustainable energy and reset systems for high performers who refuse burnout fitness.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-3\\fitness-without-hustle"
     },
     {
@@ -1852,7 +1852,7 @@
       "imu_category": "personal-development",
       "imu_title": "Escape the Founder Bottleneck",
       "imu_summary": "Part of VA Desk Systems: Escape the Founder Bottleneck.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-3\\working-smarter-with-virtual-assistants"
     },
     {
@@ -1870,7 +1870,7 @@
       "imu_category": "personal-development",
       "imu_title": "13 Red Flags Your VA System Is Broken",
       "imu_summary": "Part of VA Desk Systems: 13 Red Flags Your VA System Is Broken.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-3\\working-smarter-with-virtual-assistants"
     },
     {
@@ -1888,7 +1888,7 @@
       "imu_category": "personal-development",
       "imu_title": "7 Delegation Mistakes Stealing Your Time With VAs",
       "imu_summary": "Part of VA Desk Systems: 7 Delegation Mistakes Stealing Your Time With VAs.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-3\\working-smarter-with-virtual-assistants"
     },
     {
@@ -1906,7 +1906,7 @@
       "imu_category": "personal-development",
       "imu_title": "Buy Back Your Week with VA",
       "imu_summary": "Part of VA Desk Systems: Buy Back Your Week with VA.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-3\\working-smarter-with-virtual-assistants"
     },
     {
@@ -1924,7 +1924,7 @@
       "imu_category": "personal-development",
       "imu_title": "Virtual Team Management",
       "imu_summary": "Part of VA Desk Systems: Virtual Team Management.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-3\\working-smarter-with-virtual-assistants"
     },
     {
@@ -1942,7 +1942,7 @@
       "imu_category": "personal-development",
       "imu_title": "Virtual Assistant Management",
       "imu_summary": "Part of VA Desk Systems: The Virtual Assistant Management.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-3\\working-smarter-with-virtual-assistants"
     },
     {
@@ -1960,7 +1960,7 @@
       "imu_category": "personal-development",
       "imu_title": "Virtual Assistant Onboarding",
       "imu_summary": "Part of VA Desk Systems: Virtual Assistant Onboarding.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-3\\working-smarter-with-virtual-assistants"
     },
     {
@@ -1978,7 +1978,7 @@
       "imu_category": "personal-development",
       "imu_title": "Preparing Your Business for Virtual Assistant Success",
       "imu_summary": "Part of VA Desk Systems: Preparing Your Business for Virtual Assistant Success.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-3\\working-smarter-with-virtual-assistants"
     },
     {
@@ -1996,7 +1996,7 @@
       "imu_category": "personal-development",
       "imu_title": "Virtual Assistant Hiring Readiness",
       "imu_summary": "Part of VA Desk Systems: The Virtual Assistant Hiring Readiness.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-3\\working-smarter-with-virtual-assistants"
     },
     {
@@ -2014,7 +2014,7 @@
       "imu_category": "personal-development",
       "imu_title": "VA Desk Systems",
       "imu_summary": "Hire, onboard, and delegate so the founder stops being the bottleneck.",
-      "status": "inventory",
+      "status": "uploaded",
       "staging_hint": "iMU-import\\batch-3\\working-smarter-with-virtual-assistants"
     },
     {

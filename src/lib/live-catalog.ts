@@ -1,6 +1,6 @@
 import { books as seedBooks, courses as seedCourses } from "@/lib/catalog";
 import { readOverlay } from "@/lib/storage";
-import type { Book, Course, MediaAsset, Quiz } from "@/lib/types";
+import type { Book, Course, Lesson, MediaAsset, Quiz } from "@/lib/types";
 
 export function defaultQuiz(prefix: string, title: string): Quiz {
   return {
@@ -32,14 +32,48 @@ function mergeById<T extends { id: string }>(seed: T[], extra: T[]): T[] {
   return [...map.values()];
 }
 
+/** True when at least one lesson has attached Blob/local media. */
+export function courseHasPlayableMedia(course: Course): boolean {
+  return course.modules.some((module) => module.lessons.some((lesson) => Boolean(lesson.mediaUrl)));
+}
+
+export function bookHasFile(book: Book): boolean {
+  return Boolean(book.fileUrl);
+}
+
+export function lessonIsPlayable(lesson: Lesson): boolean {
+  return Boolean(lesson.mediaUrl);
+}
+
+/**
+ * Live course catalog.
+ * Once Blob overlay has Wave courses, seed placeholders are dropped entirely
+ * so menus/admin match what is actually deliverable in storage.
+ */
 export async function getLiveCourses(): Promise<Course[]> {
   const overlay = await readOverlay();
+  if (overlay.courses.length > 0) {
+    return [...overlay.courses];
+  }
   return mergeById(seedCourses, overlay.courses);
+}
+
+/** Campus + marketing menu: only active courses that actually have media. */
+export async function getDeliverableCourses(): Promise<Course[]> {
+  return (await getLiveCourses()).filter((course) => course.status === "active" && courseHasPlayableMedia(course));
 }
 
 export async function getLiveBooks(): Promise<Book[]> {
   const overlay = await readOverlay();
+  if (overlay.books.length > 0) {
+    return [...overlay.books];
+  }
   return mergeById(seedBooks, overlay.books);
+}
+
+/** Library menu: only books with an attached PDF/file. */
+export async function getDeliverableBooks(): Promise<Book[]> {
+  return (await getLiveBooks()).filter(bookHasFile);
 }
 
 export async function getLiveCourseBySlug(slug: string) {

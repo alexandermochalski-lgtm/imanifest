@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CourseCard } from "@/components/CourseCard";
 import { categories, premiumMembership } from "@/lib/catalog";
-import { getLiveCourses } from "@/lib/live-catalog";
+import { getDeliverableCourses } from "@/lib/live-catalog";
 
 export const metadata: Metadata = { title: "All Courses" };
 
@@ -12,7 +12,7 @@ export default async function ProgramsPage({
   searchParams: Promise<{ category?: string }>;
 }) {
   const { category } = await searchParams;
-  const courses = (await getLiveCourses()).filter((course) => course.status === "active");
+  const courses = await getDeliverableCourses();
   const filtered = courses.filter((course) => !category || course.category === category);
   return (
     <main className="mx-auto max-w-6xl px-5 py-16">

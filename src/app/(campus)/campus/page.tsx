@@ -1,6 +1,7 @@
 import { DailyDesk } from "@/components/campus/DailyDesk";
-import { books, courses, jobs, moduleProgress, seedJournals } from "@/lib/catalog";
+import { jobs, moduleProgress, seedJournals } from "@/lib/catalog";
 import { buildDailyDesk, deskClosedToday, formatCoins, liveStreak, utcToday } from "@/lib/daily-desk";
+import { getDeliverableBooks, getDeliverableCourses } from "@/lib/live-catalog";
 import { getState } from "@/lib/state";
 import Link from "next/link";
 
@@ -11,6 +12,7 @@ export default async function DashboardPage({
 }) {
   const query = await searchParams;
   const state = await getState();
+  const [courses, books] = await Promise.all([getDeliverableCourses(), getDeliverableBooks()]);
   const enrolled = courses.filter((course) => state.enrollments.includes(course.id));
   const streak = liveStreak(state);
   const closed = deskClosedToday(state);

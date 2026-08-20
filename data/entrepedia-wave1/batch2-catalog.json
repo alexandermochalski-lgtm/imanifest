@@ -1,0 +1,48 @@
+{
+  "at": "2026-08-20T08:29:26.516Z",
+  "mapped": [
+    {
+      "prefix": "agency-growth-blueprint",
+      "course": "Agency Owner Blueprint",
+      "audio": 3,
+      "pdfs": 7,
+      "book": true
+    },
+    {
+      "prefix": "build-an-ecommerce-store-that-sells",
+      "course": "Store That Converts",
+      "audio": 3,
+      "pdfs": 6,
+      "book": true
+    },
+    {
+      "prefix": "building-a-faceless-empire",
+      "course": "Faceless Brand Desk",
+      "audio": 4,
+      "pdfs": 7,
+      "book": true
+    },
+    {
+      "prefix": "monetizing-attention-without-selling-your-soul",
+      "course": "Attention Monetization Flywheel",
+      "audio": 3,
+      "pdfs": 9,
+      "book": true
+    },
+    {
+      "prefix": "the-neuromarketing-edge",
+      "course": "Neuromarketing Edge",
+      "audio": 1,
+      "pdfs": 6,
+      "book": true
+    },
+    {
+      "prefix": "the-psychology-of-closing",
+      "course": "Closing Psychology",
+      "audio": 3,
+      "pdfs": 6,
+      "book": true
+    }
+  ],
+  "blob": "imu/catalog-overlay.json"
+}

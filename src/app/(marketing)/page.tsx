@@ -1,9 +1,17 @@
 import Link from "next/link";
-import { courses, stats } from "@/lib/catalog";
 import { CourseCard } from "@/components/CourseCard";
 import { MembershipPacks } from "@/components/MembershipPacks";
+import { getDeliverableCourses } from "@/lib/live-catalog";
 
-export default function Home() {
+export default async function Home() {
+  const courses = await getDeliverableCourses();
+  const liveCount = String(courses.length);
+  const homeStats = [
+    { value: liveCount, label: "Money-making methods" },
+    { value: liveCount, label: "Campus courses live" },
+    { value: "Faculty", label: "Professors on board" },
+    { value: "Global", label: "Graduates worldwide" },
+  ];
   return (
     <main>
       <section className="mx-auto max-w-6xl px-5 pb-20 pt-16 text-center md:pt-24">
@@ -12,7 +20,7 @@ export default function Home() {
           Shape your financial future with institutional-grade education.
         </h1>
         <p className="mx-auto mt-7 max-w-2xl text-lg leading-8 text-[#d4d4d4]">
-          iMU’s curriculum of 21+ money-making methods — personal finance, investing, e-commerce, marketing, health, and
+          iMU’s curriculum of money-making methods — personal finance, investing, e-commerce, marketing, health, and
           social distribution — rebuilt from the original Laravel campus.
         </p>
         <div className="mt-10 flex flex-wrap justify-center gap-4">
@@ -26,7 +34,7 @@ export default function Home() {
       </section>
 
       <section className="mx-auto grid max-w-6xl grid-cols-2 overflow-hidden rounded-2xl border border-[var(--line)] bg-[#14110c] md:grid-cols-4">
-        {stats.map((item) => (
+        {homeStats.map((item) => (
           <div key={item.label} className="border-[var(--line)] px-6 py-8 md:border-r md:last:border-r-0">
             <p className="font-[family-name:var(--font-cormorant)] text-4xl text-gold">{item.value}</p>
             <p className="mt-2 text-sm text-[#d8d8d8]">{item.label}</p>
@@ -37,7 +45,7 @@ export default function Home() {
       <section className="mx-auto max-w-6xl px-5 py-24">
         <div className="mb-10 flex items-end justify-between gap-6">
           <div>
-            <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-gold">Laravel campus catalog</p>
+            <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-gold">Live campus catalog</p>
             <h2 className="mt-3 font-[family-name:var(--font-cormorant)] text-4xl text-[#fff8e8]">
               {courses.length} iMU courses
             </h2>
