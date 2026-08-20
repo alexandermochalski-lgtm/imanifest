@@ -1,0 +1,48 @@
+{
+  "at": "2026-08-20T07:34:14.730Z",
+  "mapped": [
+    {
+      "prefix": "beyond-side-hustle",
+      "course": "Beyond the Side Hustle",
+      "audio": 1,
+      "pdfs": 5,
+      "book": true
+    },
+    {
+      "prefix": "cost-control-that-compounds",
+      "course": "Cost Control That Compounds",
+      "audio": 1,
+      "pdfs": 0,
+      "book": false
+    },
+    {
+      "prefix": "package-what-you-know-into-a-high-ticket-offer",
+      "course": "High-Ticket Offer Packaging",
+      "audio": 3,
+      "pdfs": 6,
+      "book": true
+    },
+    {
+      "prefix": "the-cash-flow-system-for-small-businesses",
+      "course": "Cash Flow Desk for Operators",
+      "audio": 3,
+      "pdfs": 6,
+      "book": true
+    },
+    {
+      "prefix": "the-first-time-entrepreneur-launchpad",
+      "course": "First Seat Launchpad",
+      "audio": 1,
+      "pdfs": 7,
+      "book": true
+    },
+    {
+      "prefix": "the-freelancers-cash-bridge",
+      "course": "Freelancer Cash Bridge",
+      "audio": 1,
+      "pdfs": 6,
+      "book": true
+    }
+  ],
+  "blob": "imu/catalog-overlay.json"
+}

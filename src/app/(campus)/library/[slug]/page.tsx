@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { toggleFavorite } from "@/app/actions/campus";
+import { campusMediaHref } from "@/lib/blob-access";
 import { getLiveBookBySlug } from "@/lib/live-catalog";
 import { getState } from "@/lib/state";
 
@@ -9,7 +10,7 @@ export default async function BookPage({ params }: { params: Promise<{ slug: str
   const book = await getLiveBookBySlug(slug);
   if (!book) notFound();
   const state = await getState();
-  const fileHref = book.fileUrl ?? `/download/pdf/${book.id}`;
+  const fileHref = campusMediaHref(book.fileUrl) ?? `/download/pdf/${book.id}`;
   return (
     <main>
       <h1 className="font-[family-name:var(--font-cormorant)] text-4xl text-white">{book.title}</h1>
@@ -23,7 +24,7 @@ export default async function BookPage({ params }: { params: Promise<{ slug: str
             {state.favoriteBooks.includes(book.id) ? "Remove favorite" : "Favorite"}
           </button>
         </form>
-        <Link href={fileHref} className="text-sm text-gold" target={book.fileUrl ? "_blank" : undefined}>
+        <Link href={fileHref} className="text-sm text-gold" target="_blank">
           {book.fileUrl ? "Open PDF" : "Download PDF"}
         </Link>
       </div>

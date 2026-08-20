@@ -39,7 +39,7 @@ export function MediaUploader({
         const { upload } = await import("@vercel/blob/client");
         const safe = file.name.replace(/[^a-zA-Z0-9._-]+/g, "-").slice(0, 80);
         const blob = await upload(`imu/media/${safe}`, file, {
-          access: "public",
+          access: "private",
           handleUploadUrl: "/api/admin/upload",
           multipart: true,
           onUploadProgress: (event) => setProgress(Math.round(event.percentage)),

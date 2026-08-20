@@ -3,6 +3,7 @@ import { deleteMedia } from "@/app/actions/catalog";
 import { MediaUploader } from "@/components/admin/MediaUploader";
 import { AdminTable, EmptyRow, PageHeader, StatusBadge } from "@/components/admin/ui";
 import { Flash, GoldButton } from "@/components/ui";
+import { campusMediaHref } from "@/lib/blob-access";
 import { getMediaLibrary } from "@/lib/live-catalog";
 import { storageMode } from "@/lib/storage";
 
@@ -32,7 +33,7 @@ export default async function AdminMediaPage({
       <div className="mb-8 rounded-2xl border border-[var(--line)] p-5 text-sm text-muted">
         Storage: <span className="text-gold">{mode === "blob" ? "Vercel Blob" : mode === "local" ? "local .data (dev only)" : "not connected"}</span>
         {mode === "blob"
-          ? " · browser uploads go directly to the store; this app keeps title, type, and URL."
+          ? " · private Blob store; paid seats stream through /api/campus/media."
           : mode === "local"
             ? " · next dev writes under .data/uploads. Connect Blob before production."
             : " · Vercel cannot keep files on the function filesystem."}
@@ -47,7 +48,7 @@ export default async function AdminMediaPage({
               <tr key={asset.id} className="border-t border-[var(--line)]">
                 <td className="px-4 py-3">
                   <p className="text-white">{asset.title}</p>
-                  <a className="text-xs text-gold" href={asset.url} rel="noreferrer" target="_blank">
+                  <a className="text-xs text-gold" href={campusMediaHref(asset.url) ?? asset.url} rel="noreferrer" target="_blank">
                     Open
                   </a>
                 </td>

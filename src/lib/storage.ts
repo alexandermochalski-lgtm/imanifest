@@ -48,7 +48,7 @@ export async function readOverlay(): Promise<CatalogOverlay> {
       (async () => {
         try {
           const { get } = await import("@vercel/blob");
-          const result = await get(OVERLAY_PATH, { access: "public", abortSignal: AbortSignal.timeout(2000) });
+          const result = await get(OVERLAY_PATH, { access: "private", abortSignal: AbortSignal.timeout(2000) });
           if (!result || result.statusCode !== 200 || !result.stream) return emptyOverlay();
           const text = await new Response(result.stream).text();
           return { ...emptyOverlay(), ...(JSON.parse(text) as CatalogOverlay) };
@@ -83,7 +83,7 @@ export async function writeOverlay(overlay: CatalogOverlay) {
   if (mode === "blob") {
     const { put } = await import("@vercel/blob");
     await put(OVERLAY_PATH, payload, {
-      access: "public",
+      access: "private",
       addRandomSuffix: false,
       allowOverwrite: true,
       cacheControlMaxAge: 0,

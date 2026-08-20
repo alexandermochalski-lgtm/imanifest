@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { attachBookFile } from "@/app/actions/catalog";
 import { PageHeader } from "@/components/admin/ui";
 import { Flash, GoldButton } from "@/components/ui";
+import { campusMediaHref } from "@/lib/blob-access";
 import { getLiveBookById, getMediaLibrary } from "@/lib/live-catalog";
 
 export default async function AdminBookDetailPage({
@@ -34,7 +35,7 @@ export default async function AdminBookDetailPage({
       {book.fileUrl ? (
         <p className="mb-6 text-sm">
           Current file:{" "}
-          <a className="text-gold" href={book.fileUrl} rel="noreferrer" target="_blank">
+          <a className="text-gold" href={campusMediaHref(book.fileUrl) ?? book.fileUrl} rel="noreferrer" target="_blank">
             Open PDF
           </a>
         </p>

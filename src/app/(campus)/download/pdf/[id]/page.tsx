@@ -1,13 +1,16 @@
 import { redirect } from "next/navigation";
+import { campusMediaHref } from "@/lib/blob-access";
 import { getLiveBookById, getLiveCourseById } from "@/lib/live-catalog";
 
 export default async function DownloadPdfPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const book = await getLiveBookById(id);
-  if (book?.fileUrl) redirect(book.fileUrl);
+  const bookHref = campusMediaHref(book?.fileUrl);
+  if (bookHref) redirect(bookHref);
   const course = await getLiveCourseById(id);
   const lesson = course?.modules.flatMap((module) => module.lessons).find((item) => item.kind === "pdf" && item.mediaUrl);
-  if (lesson?.mediaUrl) redirect(lesson.mediaUrl);
+  const lessonHref = campusMediaHref(lesson?.mediaUrl);
+  if (lessonHref) redirect(lessonHref);
   const title = book?.title ?? course?.title ?? id;
   return (
     <main>

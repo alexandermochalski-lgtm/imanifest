@@ -1,0 +1,53 @@
+{
+  "batch": 1,
+  "staging": "C:\\Users\\Por7\\OneDrive\\Desktop\\iMU-import\\batch-1",
+  "downloaded_at": "2026-08-20T04:41:08.503590+00:00",
+  "total_mb": 417.02,
+  "files": [
+    {
+      "path": "beyond-side-hustle\\7-Passive-Income-Lies---Listicle.zip",
+      "mb": 2.24
+    },
+    {
+      "path": "beyond-side-hustle\\Beyond-the-Side-Hustle-Podcast.zip",
+      "mb": 33.96
+    },
+    {
+      "path": "beyond-side-hustle\\Build-Your-First-Passive-Income-Stream---Mini-Course.zip",
+      "mb": 2.2
+    },
+    {
+      "path": "beyond-side-hustle\\Passive-Income-Build--Systematize---Prompts.zip",
+      "mb": 2.55
+    },
+    {
+      "path": "beyond-side-hustle\\Pick-Your-Passive-Income-Stream---Ebook.zip",
+      "mb": 3.36
+    },
+    {
+      "path": "beyond-side-hustle\\Score-Your-Passive-Income-Idea-in-30-Minutes---Guide.zip",
+      "mb": 2.73
+    },
+    {
+      "path": "cost-control-that-compounds\\Cost-Control-That-Compounds-Podcast.zip",
+      "mb": 37.76
+    },
+    {
+      "path": "package-what-you-know-into-a-high-ticket-offer\\package-what-you-know-into-a-high-ticket-offer.zip",
+      "mb": 112.01
+    },
+    {
+      "path": "the-cash-flow-system-for-small-businesses\\the-cash-flow-system-for-small-businesses.zip",
+      "mb": 114.32
+    },
+    {
+      "path": "the-first-time-entrepreneur-launchpad\\the-first-time-entrepreneur-launchpad.zip",
+      "mb": 51.85
+    },
+    {
+      "path": "the-freelancers-cash-bridge\\the-freelancers-cash-bridge.zip",
+      "mb": 54.05
+    }
+  ],
+  "next": "Upload via /admin/media, rewrite titles from inventory.csv, delete local ZIPs after Blob confirm"
+}

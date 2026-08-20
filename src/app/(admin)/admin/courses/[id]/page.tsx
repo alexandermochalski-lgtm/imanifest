@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { attachLessonMedia, setCourseStatus } from "@/app/actions/catalog";
 import { PageHeader, StatusBadge } from "@/components/admin/ui";
 import { Flash, GoldButton } from "@/components/ui";
+import { campusMediaHref } from "@/lib/blob-access";
 import { getLiveCourseById, getMediaLibrary } from "@/lib/live-catalog";
 
 export default async function AdminCourseDetailPage({
@@ -56,7 +57,7 @@ export default async function AdminCourseDetailPage({
                     {lesson.title} · {lesson.kind}
                   </p>
                   {lesson.mediaUrl ? (
-                    <a className="text-xs text-gold" href={lesson.mediaUrl} rel="noreferrer" target="_blank">
+                    <a className="text-xs text-gold" href={campusMediaHref(lesson.mediaUrl) ?? lesson.mediaUrl} rel="noreferrer" target="_blank">
                       Current file
                     </a>
                   ) : (
