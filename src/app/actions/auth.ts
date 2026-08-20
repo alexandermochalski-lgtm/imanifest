@@ -3,7 +3,8 @@
 import { redirect } from "next/navigation";
 import { findSeedUser, sessionUserFromAuth, setSession, clearSession } from "@/lib/session";
 import { emptyState, getState, saveState } from "@/lib/state";
-import { isCampusUnlocked, safeNextPath, syncCampusSeatCookie } from "@/lib/membership";
+import { MEMBERSHIP_STIPEND, claimMonthlyStipend, isCampusUnlocked, safeNextPath, syncCampusSeatCookie } from "@/lib/membership";
+import { utcMonth } from "@/lib/daily-desk";
 import { upsertDirectoryProfile } from "@/lib/directory";
 import { createServerSupabase } from "@/lib/supabase/server";
 import { siteUrl, supabaseConfigured } from "@/lib/supabase/env";
@@ -32,12 +33,14 @@ export async function loginAction(formData: FormData) {
   if (seed && password === DEMO_PASSWORD) {
     const prior = await getState();
     const paidAt = prior.membershipPaidAt || new Date().toISOString().slice(0, 10);
+    const month = utcMonth();
     await setSession(seed);
     await saveState({
       ...emptyState(),
       profile: { name: seed.name, phone: seed.phone, bio: seed.bio },
-      coins: seed.role === "admin" ? 5000 : 500,
+      coins: seed.role === "admin" ? 5000 : 500 + MEMBERSHIP_STIPEND,
       membershipPaidAt: seed.role === "student" ? paidAt : prior.membershipPaidAt,
+      lastStipendMonth: seed.role === "student" ? month : "",
     });
     const state = await getState();
     const paid = await isCampusUnlocked(seed.role, state, seed.id, seed.email);
@@ -66,6 +69,14 @@ export async function loginAction(formData: FormData) {
   const state = await getState();
   const paid = await isCampusUnlocked(user.role, state, user.id, user.email);
   if (paid && !state.membershipPaidAt) await syncCampusSeatCookie(user.id, user.email, state);
+  if (paid) {
+    await claimMonthlyStipend({
+      userId: user.id,
+      email: user.email,
+      name: user.name,
+      role: user.role,
+    });
+  }
   redirect(afterLoginPath(user.role, paid, next));
 }
 

@@ -48,14 +48,20 @@ async function supabaseRecord(userId: string, email: string): Promise<MemberReco
   const admin = createAdminSupabase();
   const client = admin ?? (await createServerSupabase());
   if (!client) return null;
-  const { data: byId } = await client.from("memberships").select("user_id, email, status, paid_at").eq("user_id", userId).maybeSingle();
-  if (byId) return asRecord(byId as MembershipRow);
-  const { data: byEmail } = await client
-    .from("memberships")
-    .select("user_id, email, status, paid_at")
-    .eq("email", email.toLowerCase())
-    .maybeSingle();
-  return byEmail ? asRecord(byEmail as MembershipRow) : null;
+  const query = (async () => {
+    const { data: byId } = await client.from("memberships").select("user_id, email, status, paid_at").eq("user_id", userId).maybeSingle();
+    if (byId) return asRecord(byId as MembershipRow);
+    const { data: byEmail } = await client
+      .from("memberships")
+      .select("user_id, email, status, paid_at")
+      .eq("email", email.toLowerCase())
+      .maybeSingle();
+    return byEmail ? asRecord(byEmail as MembershipRow) : null;
+  })();
+  return Promise.race([
+    query,
+    new Promise<null>((resolve) => setTimeout(() => resolve(null), 2500)),
+  ]);
 }
 
 export async function memberRecord(userId: string, email: string): Promise<MemberRecord | null> {
@@ -151,6 +157,12 @@ export async function stampCampusSeat(paidAt: string, alreadyPaid: boolean): Pro
       "/campus",
     );
   });
+}
+
+export function stipendDue(session: AuthSession, state: CampusState) {
+  if (session.role === "admin") return false;
+  if (!state.membershipPaidAt) return false;
+  return state.lastStipendMonth !== utcMonth();
 }
 
 export async function claimMonthlyStipend(session: AuthSession) {

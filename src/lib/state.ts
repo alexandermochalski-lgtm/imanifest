@@ -75,7 +75,9 @@ export async function saveState(state: CampusState) {
 }
 
 export async function mutateState(mutator: (state: CampusState) => CampusState) {
-  const next = mutator(await getState());
+  const current = await getState();
+  const next = mutator(current);
+  if (JSON.stringify(current) === JSON.stringify(next)) return current;
   await saveState(next);
   return next;
 }

@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 import { CampusShell } from "@/components/campus/CampusShell";
 import { liveStreak } from "@/lib/daily-desk";
-import { claimMonthlyStipend, isCampusUnlocked, syncCampusSeatCookie } from "@/lib/membership";
+import { isCampusUnlocked, stipendDue } from "@/lib/membership";
 import { getSession } from "@/lib/session";
 import { getState } from "@/lib/state";
 
@@ -10,14 +10,11 @@ export default async function CampusLayout({ children }: { children: React.React
   if (!session) redirect("/login");
   const state = await getState();
   if (!(await isCampusUnlocked(session.role, state, session.userId, session.email))) redirect("/get");
-  if (!state.membershipPaidAt && session.role !== "admin") {
-    await syncCampusSeatCookie(session.userId, session.email, state);
-  }
-  await claimMonthlyStipend(session);
-  const live = await getState();
-  const unread = live.notifications.filter((item) => !item.read).length;
+  if (!state.membershipPaidAt && session.role !== "admin") redirect("/api/stripe/return");
+  if (stipendDue(session, state)) redirect("/api/campus/stipend");
+  const unread = state.notifications.filter((item) => !item.read).length;
   return (
-    <CampusShell session={session} coins={live.coins} streak={liveStreak(live)} unread={unread}>
+    <CampusShell session={session} coins={state.coins} streak={liveStreak(state)} unread={unread}>
       {children}
     </CampusShell>
   );

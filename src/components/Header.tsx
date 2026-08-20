@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { isCampusUnlocked } from "@/lib/membership";
+import { hasCampusAccess } from "@/lib/membership";
 import { getSession } from "@/lib/session";
 import { getState } from "@/lib/state";
 
@@ -14,9 +14,7 @@ const nav = [
 export async function Header() {
   const session = await getSession();
   const state = session ? await getState() : null;
-  const inCampus = Boolean(
-    session && state && (await isCampusUnlocked(session.role, state, session.userId, session.email)),
-  );
+  const inCampus = Boolean(session && state && hasCampusAccess(session.role, state));
   const ctaHref = inCampus ? "/campus" : session ? "/get" : "/login";
   const ctaLabel = inCampus ? "Enter campus" : session ? "Get campus" : "Log in";
   return (
