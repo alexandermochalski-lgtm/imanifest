@@ -20,16 +20,6 @@ const protectedPrefixes = [
   "/admin",
 ];
 
-function isPaidMember(raw: string | undefined): boolean {
-  if (!raw) return false;
-  try {
-    const state = JSON.parse(raw) as { membershipPaidAt?: string };
-    return Boolean(state.membershipPaidAt);
-  } catch {
-    return false;
-  }
-}
-
 export async function middleware(request: NextRequest) {
   const supabaseResponse = await updateSupabaseSession(request);
   const { pathname } = request.nextUrl;
@@ -55,10 +45,6 @@ export async function middleware(request: NextRequest) {
       return copyCookies(supabaseResponse, NextResponse.redirect(new URL("/access-denied", request.url)));
     }
     return supabaseResponse;
-  }
-
-  if (role !== "admin" && !isPaidMember(request.cookies.get("imu_state")?.value)) {
-    return copyCookies(supabaseResponse, NextResponse.redirect(new URL("/get", request.url)));
   }
 
   return supabaseResponse;

@@ -3,7 +3,7 @@
 import { redirect } from "next/navigation";
 import { findSeedUser, sessionUserFromAuth, setSession, clearSession } from "@/lib/session";
 import { emptyState, getState, saveState } from "@/lib/state";
-import { isCampusUnlocked, safeNextPath } from "@/lib/membership";
+import { isCampusUnlocked, safeNextPath, syncCampusSeatCookie } from "@/lib/membership";
 import { upsertDirectoryProfile } from "@/lib/directory";
 import { createServerSupabase } from "@/lib/supabase/server";
 import { siteUrl, supabaseConfigured } from "@/lib/supabase/env";
@@ -31,15 +31,18 @@ export async function loginAction(formData: FormData) {
   const seed = findSeedUser(email);
   if (seed && password === DEMO_PASSWORD) {
     const prior = await getState();
+    const paidAt = prior.membershipPaidAt || new Date().toISOString().slice(0, 10);
     await setSession(seed);
     await saveState({
       ...emptyState(),
       profile: { name: seed.name, phone: seed.phone, bio: seed.bio },
       coins: seed.role === "admin" ? 5000 : 500,
-      membershipPaidAt: prior.membershipPaidAt,
+      membershipPaidAt: seed.role === "student" ? paidAt : prior.membershipPaidAt,
     });
     const state = await getState();
-    redirect(afterLoginPath(seed.role, await isCampusUnlocked(seed.role, state, seed.id, seed.email), next));
+    const paid = await isCampusUnlocked(seed.role, state, seed.id, seed.email);
+    if (paid && !state.membershipPaidAt) await syncCampusSeatCookie(seed.id, seed.email, state);
+    redirect(afterLoginPath(seed.role, paid, next));
   }
 
   const supabase = await createServerSupabase();
@@ -61,7 +64,9 @@ export async function loginAction(formData: FormData) {
   });
   await publishSeat(user.id, user.name, user.bio);
   const state = await getState();
-  redirect(afterLoginPath(user.role, await isCampusUnlocked(user.role, state, user.id, user.email), next));
+  const paid = await isCampusUnlocked(user.role, state, user.id, user.email);
+  if (paid && !state.membershipPaidAt) await syncCampusSeatCookie(user.id, user.email, state);
+  redirect(afterLoginPath(user.role, paid, next));
 }
 
 export async function registerAction(formData: FormData) {

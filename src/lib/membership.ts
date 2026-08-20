@@ -7,6 +7,11 @@ import type { AuthSession } from "@/lib/session";
 import type { CampusState, MemberRecord, Role } from "@/lib/types";
 
 export const MEMBERSHIP_STIPEND = 50;
+const DEMO_STUDENT_EMAIL = "student@imanifest.money";
+
+export function isDemoCampusSeat(email: string): boolean {
+  return email.toLowerCase() === DEMO_STUDENT_EMAIL;
+}
 
 type MembershipRow = {
   user_id: string;
@@ -70,10 +75,19 @@ export async function isCampusUnlocked(
   email: string,
 ): Promise<boolean> {
   if (role === "admin") return true;
+  if (isDemoCampusSeat(email)) return true;
   const row = await memberRecord(userId, email);
   if (row?.status === "canceled") return false;
   if (row?.status === "active") return true;
   return Boolean(state.membershipPaidAt);
+}
+
+export async function syncCampusSeatCookie(userId: string, email: string, state: CampusState) {
+  if (state.membershipPaidAt) return;
+  if (!(await isCampusUnlocked(undefined, state, userId, email))) return;
+  const row = await memberRecord(userId, email);
+  const paidAt = row?.paidAt ?? new Date().toISOString().slice(0, 10);
+  await stampCampusSeat(paidAt, false);
 }
 
 async function upsertSupabaseMember(userId: string, email: string, status: MemberRecord["status"], paidAt: string) {

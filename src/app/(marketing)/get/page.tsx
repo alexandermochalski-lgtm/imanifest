@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { premiumMembership } from "@/lib/catalog";
-import { isCampusUnlocked } from "@/lib/membership";
+import { isCampusUnlocked, syncCampusSeatCookie } from "@/lib/membership";
 import { getSession } from "@/lib/session";
 import { getState } from "@/lib/state";
 import { campusCheckoutUrl } from "@/lib/stripe";
@@ -18,7 +18,10 @@ export default async function GetPage({
   const session = await getSession();
   const state = await getState();
   if (session && (await isCampusUnlocked(session.role, state, session.userId, session.email))) {
-    redirect(session.role === "admin" ? "/admin" : "/api/stripe/return");
+    if (!state.membershipPaidAt && session.role !== "admin") {
+      await syncCampusSeatCookie(session.userId, session.email, state);
+    }
+    redirect(session.role === "admin" ? "/admin" : "/campus");
   }
   const pack = premiumMembership;
   const checkout = session ? campusCheckoutUrl(session.email, session.userId) : "";
