@@ -71,7 +71,11 @@ export async function memberRecord(userId: string, email: string): Promise<Membe
   } catch {
     /* table missing or RLS */
   }
-  return overlayRecord(userId, email);
+  try {
+    return await overlayRecord(userId, email);
+  } catch {
+    return null;
+  }
 }
 
 export async function isCampusUnlocked(
@@ -82,10 +86,11 @@ export async function isCampusUnlocked(
 ): Promise<boolean> {
   if (role === "admin") return true;
   if (isDemoCampusSeat(email)) return true;
+  if (state.membershipPaidAt) return true;
   const row = await memberRecord(userId, email);
   if (row?.status === "canceled") return false;
   if (row?.status === "active") return true;
-  return Boolean(state.membershipPaidAt);
+  return false;
 }
 
 export async function syncCampusSeatCookie(userId: string, email: string, state: CampusState) {

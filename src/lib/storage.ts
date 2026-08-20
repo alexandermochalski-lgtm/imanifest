@@ -27,18 +27,38 @@ export function storageMode(): "blob" | "local" | "none" {
   return "none";
 }
 
+async function withTimeout<T>(work: Promise<T>, ms: number, fallback: T): Promise<T> {
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  try {
+    return await Promise.race([
+      work,
+      new Promise<T>((resolve) => {
+        timer = setTimeout(() => resolve(fallback), ms);
+      }),
+    ]);
+  } finally {
+    if (timer) clearTimeout(timer);
+  }
+}
+
 export async function readOverlay(): Promise<CatalogOverlay> {
   const mode = storageMode();
   if (mode === "blob") {
-    try {
-      const { get } = await import("@vercel/blob");
-      const result = await get(OVERLAY_PATH, { access: "public", useCache: false });
-      if (!result || result.statusCode !== 200 || !result.stream) return emptyOverlay();
-      const text = await new Response(result.stream).text();
-      return { ...emptyOverlay(), ...(JSON.parse(text) as CatalogOverlay) };
-    } catch {
-      return emptyOverlay();
-    }
+    return withTimeout(
+      (async () => {
+        try {
+          const { get } = await import("@vercel/blob");
+          const result = await get(OVERLAY_PATH, { access: "public", abortSignal: AbortSignal.timeout(2000) });
+          if (!result || result.statusCode !== 200 || !result.stream) return emptyOverlay();
+          const text = await new Response(result.stream).text();
+          return { ...emptyOverlay(), ...(JSON.parse(text) as CatalogOverlay) };
+        } catch {
+          return emptyOverlay();
+        }
+      })(),
+      2500,
+      emptyOverlay(),
+    );
   }
   if (mode === "local") {
     try {
