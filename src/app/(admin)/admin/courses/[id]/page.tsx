@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { attachLessonMedia, setCourseCover, setCourseStatus } from "@/app/actions/catalog";
 import { CourseCoverField } from "@/components/admin/CourseCoverField";
+import { LessonMediaField } from "@/components/admin/LessonMediaField";
 import { PageHeader, StatusBadge } from "@/components/admin/ui";
 import { Flash, GoldButton } from "@/components/ui";
 import { campusMediaHref } from "@/lib/blob-access";
@@ -21,6 +22,9 @@ export default async function AdminCourseDetailPage({
   if (!course) notFound();
   const media = await getMediaLibrary();
   const images = media.filter((asset) => asset.kind === "image" || asset.contentType.startsWith("image/"));
+  const lessonFiles = media.filter(
+    (asset) => asset.kind === "video" || asset.kind === "audio" || asset.kind === "pdf",
+  );
   const mode = storageMode();
 
   return (
@@ -92,24 +96,20 @@ export default async function AdminCourseDetailPage({
                   ) : (
                     <p className="text-xs text-muted">No file attached</p>
                   )}
-                  <form action={attachLessonMedia} className="mt-3 grid gap-3 md:grid-cols-4">
+                  <form action={attachLessonMedia} className="mt-3 grid max-w-3xl gap-4">
                     <input name="courseId" type="hidden" value={course.id} />
                     <input name="lessonId" type="hidden" value={lesson.id} />
-                    <label className="text-xs text-muted">
-                      Library
-                      <select className="mt-1 w-full px-3 py-2" name="mediaId">
-                        <option value="">Choose file</option>
-                        {media.map((asset) => (
-                          <option key={asset.id} value={asset.id}>
-                            {asset.title} ({asset.kind})
-                          </option>
-                        ))}
-                      </select>
-                    </label>
-                    <label className="text-xs text-muted md:col-span-2">
-                      Or URL
-                      <input className="mt-1 w-full px-3 py-2" defaultValue={lesson.mediaUrl ?? ""} name="mediaUrl" />
-                    </label>
+                    <LessonMediaField
+                      initialMediaId={lesson.mediaId}
+                      initialUrl={lesson.mediaUrl}
+                      library={lessonFiles.map((asset) => ({
+                        id: asset.id,
+                        title: asset.title,
+                        kind: asset.kind,
+                        url: asset.url,
+                      }))}
+                      mode={mode}
+                    />
                     <label className="text-xs text-muted">
                       Kind
                       <select className="mt-1 w-full px-3 py-2" defaultValue={lesson.kind} name="kind">
@@ -119,9 +119,7 @@ export default async function AdminCourseDetailPage({
                         <option value="reading">Reading</option>
                       </select>
                     </label>
-                    <div className="md:col-span-4">
-                      <GoldButton type="submit">Save lesson media</GoldButton>
-                    </div>
+                    <GoldButton type="submit">Save lesson media</GoldButton>
                   </form>
                 </li>
               ))}

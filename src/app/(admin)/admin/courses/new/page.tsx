@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { createCourse } from "@/app/actions/catalog";
 import { CourseCoverField } from "@/components/admin/CourseCoverField";
+import { LessonMediaField } from "@/components/admin/LessonMediaField";
 import { PageHeader } from "@/components/admin/ui";
 import { Flash, GoldButton } from "@/components/ui";
 import { categories } from "@/lib/catalog";
@@ -15,13 +16,16 @@ export default async function NewCoursePage({
   const { error } = await searchParams;
   const media = await getMediaLibrary();
   const images = media.filter((asset) => asset.kind === "image" || asset.contentType.startsWith("image/"));
+  const lessonFiles = media.filter(
+    (asset) => asset.kind === "video" || asset.kind === "audio" || asset.kind === "pdf",
+  );
   const mode = storageMode();
   return (
     <main>
       <PageHeader
         kicker="Catalog"
         title="New course"
-        description="Creates a live campus course with one opening module. Add a cover image, then attach MP4/MP3 from the library or paste a URL."
+        description="Creates a live campus course with one opening module. Upload cover and lesson media here, or reuse files from the library."
         action={
           <Link className="ghost-btn rounded-xl px-4 py-2 text-[10px]" href="/admin/courses">
             Back
@@ -95,21 +99,15 @@ export default async function NewCoursePage({
             <option value="reading">Reading</option>
           </select>
         </label>
-        <label className="text-xs text-muted">
-          Attach from library
-          <select className="mt-1 w-full px-3 py-2" name="mediaId">
-            <option value="">None yet — upload under Media first</option>
-            {media.map((asset) => (
-              <option key={asset.id} value={asset.id}>
-                {asset.title} ({asset.kind})
-              </option>
-            ))}
-          </select>
-        </label>
-        <label className="text-xs text-muted">
-          Or paste a media URL
-          <input className="mt-1 w-full px-3 py-2" name="mediaUrl" placeholder="https://…" />
-        </label>
+        <LessonMediaField
+          library={lessonFiles.map((asset) => ({
+            id: asset.id,
+            title: asset.title,
+            kind: asset.kind,
+            url: asset.url,
+          }))}
+          mode={mode}
+        />
         <GoldButton type="submit">Publish course</GoldButton>
       </form>
     </main>
