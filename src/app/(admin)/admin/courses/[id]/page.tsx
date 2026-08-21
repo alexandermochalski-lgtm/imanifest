@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { attachLessonMedia, setCourseStatus } from "@/app/actions/catalog";
+import { attachLessonMedia, setCourseCover, setCourseStatus } from "@/app/actions/catalog";
+import { CourseCoverField } from "@/components/admin/CourseCoverField";
 import { PageHeader, StatusBadge } from "@/components/admin/ui";
 import { Flash, GoldButton } from "@/components/ui";
 import { campusMediaHref } from "@/lib/blob-access";
 import { getLiveCourseById, getMediaLibrary } from "@/lib/live-catalog";
+import { storageMode } from "@/lib/storage";
 
 export default async function AdminCourseDetailPage({
   params,
@@ -18,6 +20,8 @@ export default async function AdminCourseDetailPage({
   const course = await getLiveCourseById(id);
   if (!course) notFound();
   const media = await getMediaLibrary();
+  const images = media.filter((asset) => asset.kind === "image" || asset.contentType.startsWith("image/"));
+  const mode = storageMode();
 
   return (
     <main>
@@ -32,7 +36,12 @@ export default async function AdminCourseDetailPage({
         }
       />
       <Flash
-        map={{ created: "Course is live on campus.", media: "Lesson media attached.", status: "Visibility updated." }}
+        map={{
+          created: "Course is live on campus.",
+          media: "Lesson media attached.",
+          status: "Visibility updated.",
+          cover: "Course cover saved.",
+        }}
         ok={ok}
       />
       <div className="mb-8 flex flex-wrap items-center gap-3">
@@ -46,6 +55,26 @@ export default async function AdminCourseDetailPage({
           View as student
         </Link>
       </div>
+      <section className="mb-8 rounded-2xl border border-[var(--line)] p-5">
+        <h2 className="text-lg text-white">Cover image</h2>
+        <p className="mt-1 text-sm text-muted">Shown on campus course cards. Upload, paste a URL, or pick from the media library.</p>
+        <form action={setCourseCover} className="mt-4 grid max-w-3xl gap-4">
+          <input name="courseId" type="hidden" value={course.id} />
+          <CourseCoverField initialUrl={course.coverUrl} mode={mode} />
+          <label className="text-xs text-muted">
+            Or pick from library
+            <select className="mt-1 w-full px-3 py-2" name="coverMediaId">
+              <option value="">Keep upload / URL above</option>
+              {images.map((asset) => (
+                <option key={asset.id} value={asset.id}>
+                  {asset.title}
+                </option>
+              ))}
+            </select>
+          </label>
+          <GoldButton type="submit">Save cover</GoldButton>
+        </form>
+      </section>
       <div className="space-y-6">
         {course.modules.map((module) => (
           <section key={module.id} className="rounded-2xl border border-[var(--line)] p-5">

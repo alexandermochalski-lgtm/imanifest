@@ -90,6 +90,8 @@ export async function createCourse(formData: FormData) {
   const lessonKind = (String(formData.get("lessonKind") ?? "video") as LessonKind) || "video";
   const mediaUrl = String(formData.get("mediaUrl") ?? "").trim() || undefined;
   const mediaId = String(formData.get("mediaId") ?? "").trim() || undefined;
+  const coverMediaId = String(formData.get("coverMediaId") ?? "").trim() || undefined;
+  const coverUrl = String(formData.get("coverUrl") ?? "").trim() || undefined;
   if (!title || !faculty || !summary) redirect("/admin/courses/new?error=invalid");
   if (!categories.some((item) => item.slug === category)) redirect("/admin/courses/new?error=invalid");
 
@@ -108,6 +110,7 @@ export async function createCourse(formData: FormData) {
     price: Number.isFinite(price) ? Math.max(0, Math.round(price)) : 0,
     summary,
     status: "active",
+    coverUrl,
     modules: [
       {
         id: `${id}-m1`,
@@ -140,10 +143,37 @@ export async function createCourse(formData: FormData) {
         }
       }
     }
+    const coverAsset = overlay.media.find((item) => item.id === coverMediaId);
+    if (coverAsset?.kind === "image" || coverAsset?.contentType.startsWith("image/")) {
+      course.coverUrl = coverAsset.url;
+    }
     return { ...overlay, courses: [course, ...overlay.courses] };
   });
   revalidateCatalog();
   redirect(`/admin/courses/${course.id}?ok=created`);
+}
+
+export async function setCourseCover(formData: FormData) {
+  await requireAdmin();
+  const courseId = String(formData.get("courseId") ?? "");
+  const coverMediaId = String(formData.get("coverMediaId") ?? "").trim();
+  const coverUrl = String(formData.get("coverUrl") ?? "").trim();
+  const course = await getLiveCourseById(courseId);
+  if (!course) redirect("/admin/courses?error=missing");
+
+  await mutateOverlay((current) => {
+    const fromLibrary = current.media.find((item) => item.id === coverMediaId);
+    const nextCover =
+      fromLibrary && (fromLibrary.kind === "image" || fromLibrary.contentType.startsWith("image/"))
+        ? fromLibrary.url
+        : coverUrl || undefined;
+    return {
+      ...current,
+      courses: upsert(current.courses, { ...course, coverUrl: nextCover || undefined }),
+    };
+  });
+  revalidateCatalog();
+  redirect(`/admin/courses/${courseId}?ok=cover`);
 }
 
 export async function attachLessonMedia(formData: FormData) {

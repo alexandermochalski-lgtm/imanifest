@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { enrollCourse } from "@/app/actions/campus";
 import { Flash, GoldButton } from "@/components/ui";
+import { campusMediaHref } from "@/lib/blob-access";
 import { categories, moduleProgress } from "@/lib/catalog";
 import { formatCoins } from "@/lib/daily-desk";
 import { getDeliverableCourses } from "@/lib/live-catalog";
@@ -56,26 +57,33 @@ export default async function CoursesPage({
       <div className="mt-8 grid gap-5 md:grid-cols-2">
         {filtered.map((course) => {
           const enrolled = state.enrollments.includes(course.id);
+          const cover = campusMediaHref(course.coverUrl);
           return (
-            <article key={course.id} className="imu-card rounded-2xl p-6">
-              <p className="text-xs uppercase tracking-[0.2em] text-gold-deep">{course.faculty}</p>
-              <h2 className="mt-2 font-[family-name:var(--font-cormorant)] text-2xl text-white">{course.title}</h2>
-              <p className="mt-3 text-sm text-muted">{course.summary}</p>
-              <p className="mt-4 text-sm text-gold">
-                {course.price === 0 ? "Free" : `${course.price} coins`} · {course.modules.length} modules
-                {enrolled ? ` · ${moduleProgress(course, state.completedModules)}%` : ""}
-              </p>
-              <div className="mt-5 flex gap-3">
-                <Link href={`/courses/${course.slug}`} className="text-sm text-gold">
-                  Details
-                </Link>
-                {enrolled ? null : (
-                  <form action={enrollCourse.bind(null, course.id, true)}>
-                    <button className="text-sm text-gold" type="submit">
-                      Enroll
-                    </button>
-                  </form>
-                )}
+            <article key={course.id} className="imu-card overflow-hidden rounded-2xl">
+              {cover ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img alt="" className="aspect-[16/9] w-full object-cover" src={cover} />
+              ) : null}
+              <div className="p-6">
+                <p className="text-xs uppercase tracking-[0.2em] text-gold-deep">{course.faculty}</p>
+                <h2 className="mt-2 font-[family-name:var(--font-cormorant)] text-2xl text-white">{course.title}</h2>
+                <p className="mt-3 text-sm text-muted">{course.summary}</p>
+                <p className="mt-4 text-sm text-gold">
+                  {course.price === 0 ? "Free" : `${course.price} coins`} · {course.modules.length} modules
+                  {enrolled ? ` · ${moduleProgress(course, state.completedModules)}%` : ""}
+                </p>
+                <div className="mt-5 flex gap-3">
+                  <Link href={`/courses/${course.slug}`} className="text-sm text-gold">
+                    Details
+                  </Link>
+                  {enrolled ? null : (
+                    <form action={enrollCourse.bind(null, course.id, true)}>
+                      <button className="text-sm text-gold" type="submit">
+                        Enroll
+                      </button>
+                    </form>
+                  )}
+                </div>
               </div>
             </article>
           );

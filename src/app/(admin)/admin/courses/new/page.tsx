@@ -1,9 +1,11 @@
 import Link from "next/link";
 import { createCourse } from "@/app/actions/catalog";
+import { CourseCoverField } from "@/components/admin/CourseCoverField";
 import { PageHeader } from "@/components/admin/ui";
 import { Flash, GoldButton } from "@/components/ui";
 import { categories } from "@/lib/catalog";
 import { getMediaLibrary } from "@/lib/live-catalog";
+import { storageMode } from "@/lib/storage";
 
 export default async function NewCoursePage({
   searchParams,
@@ -12,12 +14,14 @@ export default async function NewCoursePage({
 }) {
   const { error } = await searchParams;
   const media = await getMediaLibrary();
+  const images = media.filter((asset) => asset.kind === "image" || asset.contentType.startsWith("image/"));
+  const mode = storageMode();
   return (
     <main>
       <PageHeader
         kicker="Catalog"
         title="New course"
-        description="Creates a live campus course with one opening module. Attach MP4/MP3 from the library or paste a URL."
+        description="Creates a live campus course with one opening module. Add a cover image, then attach MP4/MP3 from the library or paste a URL."
         action={
           <Link className="ghost-btn rounded-xl px-4 py-2 text-[10px]" href="/admin/courses">
             Back
@@ -65,6 +69,18 @@ export default async function NewCoursePage({
         <label className="text-xs text-muted">
           Summary
           <textarea className="mt-1 min-h-28 w-full px-3 py-2" name="summary" required />
+        </label>
+        <CourseCoverField mode={mode} />
+        <label className="text-xs text-muted">
+          Or pick cover from library
+          <select className="mt-1 w-full px-3 py-2" name="coverMediaId">
+            <option value="">None</option>
+            {images.map((asset) => (
+              <option key={asset.id} value={asset.id}>
+                {asset.title}
+              </option>
+            ))}
+          </select>
         </label>
         <label className="text-xs text-muted">
           Opening lesson title
