@@ -1,18 +1,17 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, Manrope } from "next/font/google";
+import { DM_Sans, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
-/** Body UI — clean geometric sans (replaces Plus Jakarta). */
-const manrope = Manrope({
+/** UI body — geometric, screen-first (modern SaaS / fintech standard). */
+const dmSans = DM_Sans({
   variable: "--font-jakarta",
   subsets: ["latin"],
 });
 
-/** Display headlines — contemporary serif (replaces Cormorant). */
-const instrument = Instrument_Serif({
+/** Display — contemporary geometric grotesk (cool product headlines). */
+const spaceGrotesk = Space_Grotesk({
   variable: "--font-cormorant",
   subsets: ["latin"],
-  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -26,7 +25,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${manrope.variable} ${instrument.variable} dark h-full antialiased`}>
+    <html lang="en" className={`${dmSans.variable} ${spaceGrotesk.variable} dark h-full antialiased`}>
       <body className="mesh min-h-full">{children}</body>
     </html>
   );
