@@ -1,0 +1,1552 @@
+{
+  "wave": 2,
+  "batch": 1,
+  "at": "2026-08-20T10:19:32.786Z",
+  "uploaded": 128,
+  "registered": 128,
+  "assets": [
+    {
+      "title": "ai-prompt-engineering-ebook — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/ai-prompt-engineering-ebook-Artwork-6IbcXFS8vEUtmKgM5AoMdPFc3Xu4gl.jpg",
+      "size": 269173
+    },
+    {
+      "title": "ai-prompt-engineering-ebook — Ep.1 - The Frustration of Unreliable AI and How to Fix It.m4a",
+      "kind": "audio",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/ai-prompt-engineering-ebook-Ep-XrpfFbTxiec0DFYcrLTsgQk5EwhUKm.1---The-Frustration-of-Unreliable-AI-and-How-to-F",
+      "size": 44427589
+    },
+    {
+      "title": "ai-prompt-engineering-ebook — Ep.2 - Why Fail-Proof Prompting Is Now a Must-Have Skill.m4a",
+      "kind": "audio",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/ai-prompt-engineering-ebook-Ep-ETgl0JuvDAQyp0G3alIEuHkFeWCMkD.2---Why-Fail-Proof-Prompting-Is-Now-a-Must-Have-S",
+      "size": 36496369
+    },
+    {
+      "title": "ai-prompt-engineering-ebook — Ep.3 - Inside the System That Prevents AI Failures at Scale.m4a",
+      "kind": "audio",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/ai-prompt-engineering-ebook-Ep-BptRzQXENSHtxM8GpgcXLXcqOjA1QT.3---Inside-the-System-That-Prevents-AI-Failures-a",
+      "size": 44104753
+    },
+    {
+      "title": "ai-prompt-engineering-ebook — AI Prompt Engineering - Ebook.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/ai-prompt-engineering-ebook-AI-Prompt-Engineering---Ebook-w0trv6qUvTOyzXXYvbptP8vsVAS1wR.pdf",
+      "size": 4669650
+    },
+    {
+      "title": "ai-prompt-engineering-ebook — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/ai-prompt-engineering-ebook-Artwork-0S4oeJRgCNoSPAlOLCrtZfKcp17Ao8.jpg",
+      "size": 212000
+    },
+    {
+      "title": "ai-prompt-engineering-ebook — Book Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/ai-prompt-engineering-ebook-Book-Cover-eG7cz3ff30kRvLh1tAS5rXVmVFZR8f.jpg",
+      "size": 295429
+    },
+    {
+      "title": "ai-prompt-engineering-ebook — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/ai-prompt-engineering-ebook-Artwork-BT27WFieCwsivFUAILwL0VZDBb8agK.jpg",
+      "size": 115930
+    },
+    {
+      "title": "ai-prompt-engineering-ebook — Checklist Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/ai-prompt-engineering-ebook-Checklist-Cover-Il1xT2JH10fzqq9g3iKSrdx7KwH4cs.jpg",
+      "size": 246714
+    },
+    {
+      "title": "ai-prompt-engineering-ebook — Is Your AI Prompt Ready for Production - Checklist.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/ai-prompt-engineering-ebook-Is-Your-AI-Prompt-Ready-for-Production---Checklist-G8uyhCZ7cOsWhfYpOkTpZYvSGfpsYw.p",
+      "size": 374087
+    },
+    {
+      "title": "ai-prompt-engineering-ebook — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/ai-prompt-engineering-ebook-Artwork-cA7ovdhlbdH6Dp3weRLUuqVmjJ2frY.jpg",
+      "size": 190425
+    },
+    {
+      "title": "ai-prompt-engineering-ebook — Build Fail-Proof AI Prompts - Guide.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/ai-prompt-engineering-ebook-Build-Fail-Proof-AI-Prompts---Guide-83g64zPCocddok7oHOwojMlU7KuXhN.pdf",
+      "size": 595465
+    },
+    {
+      "title": "ai-prompt-engineering-ebook — Guide Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/ai-prompt-engineering-ebook-Guide-Cover-0KRLblR1K0xHEM92dWkobmobqFi9NO.jpg",
+      "size": 267013
+    },
+    {
+      "title": "ai-prompt-engineering-ebook — 7 Mistakes Costing You Hours with AI - Listicle.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/ai-prompt-engineering-ebook-7-Mistakes-Costing-You-Hours-with-AI---Listicle-ACMsKWPTMoHd7Tjiz6JO6KclYDwabO.pdf",
+      "size": 419992
+    },
+    {
+      "title": "ai-prompt-engineering-ebook — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/ai-prompt-engineering-ebook-Artwork-u1TGUpLFdr2amHMyadzhrEn76Lv1YH.jpg",
+      "size": 148034
+    },
+    {
+      "title": "ai-prompt-engineering-ebook — Listicle Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/ai-prompt-engineering-ebook-Listicle-Cover-krTbOzApSBxjRkgsALnUWZhnPAWitR.jpg",
+      "size": 248603
+    },
+    {
+      "title": "ai-prompt-engineering-ebook — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/ai-prompt-engineering-ebook-Artwork-2pvBJaeaXM9n3Q0G7rUB9Xgd6rYsiE.jpg",
+      "size": 261860
+    },
+    {
+      "title": "ai-prompt-engineering-ebook — How to Use Email Mini-Course.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/ai-prompt-engineering-ebook-How-to-Use-Email-Mini-Course-QAYAtsdIFv1RyNYFTAiIa2PxPT7Df4.pdf",
+      "size": 32359
+    },
+    {
+      "title": "ai-prompt-engineering-ebook — Mini-Course Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/ai-prompt-engineering-ebook-Mini-Course-Cover-jeqPXT7n5vKddCcFSmmhltGqx71YC0.jpg",
+      "size": 319259
+    },
+    {
+      "title": "ai-prompt-engineering-ebook — Start Engineering Your AI Prompts - Mini-Course.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/ai-prompt-engineering-ebook-Start-Engineering-Your-AI-Prompts---Mini-Course-K4p3jktVa3tOz2zzYzvGIYJjzEyOsu.pdf",
+      "size": 429333
+    },
+    {
+      "title": "hire-right-keep-them-longer — Artwork.jpeg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/hire-right-keep-them-longer-Artwork-UDStHCPjVnkk7ozsxt07BiNbD3i53I.jpeg",
+      "size": 915206
+    },
+    {
+      "title": "hire-right-keep-them-longer — Hiring Without Regret.m4a",
+      "kind": "audio",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/hire-right-keep-them-longer-Hiring-Without-Regret-S2Cu4Pcnk9W7ZC7LbUEU9GoKa8yw3j.m4a",
+      "size": 56849272
+    },
+    {
+      "title": "hire-right-keep-them-longer — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/hire-right-keep-them-longer-Artwork-KKZdqv4qD1awSy8MZTFS5T2a0kTZ2r.jpg",
+      "size": 211566
+    },
+    {
+      "title": "hire-right-keep-them-longer — Book Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/hire-right-keep-them-longer-Book-Cover-yVbywU1QoZhnRf5emOCUNiXtaF0igK.jpg",
+      "size": 283055
+    },
+    {
+      "title": "hire-right-keep-them-longer — Hire Right, Keep Them Longer - Book.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/hire-right-keep-them-longer-Hire-Right-Keep-Them-Longer---Book-B9jMBkWeLOCxwt3p69OcE83FgyJ6hw.pdf",
+      "size": 5417779
+    },
+    {
+      "title": "hire-right-keep-them-longer — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/hire-right-keep-them-longer-Artwork-VaeVZhO3kB5mJKISd1O9WB7nGERBbP.jpg",
+      "size": 203761
+    },
+    {
+      "title": "hire-right-keep-them-longer — Checklist.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/hire-right-keep-them-longer-Checklist-aHh3wdLNGANJVlPCSNblNN3p34dqpP.jpg",
+      "size": 276677
+    },
+    {
+      "title": "hire-right-keep-them-longer — Outcome-Based Job Posting Creation - Checklist.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/hire-right-keep-them-longer-Outcome-Based-Job-Posting-Creation---Checklist-ewSCDcHo8tTl5w1k7eSoi5r1zFd2bB.pdf",
+      "size": 448651
+    },
+    {
+      "title": "hire-right-keep-them-longer — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/hire-right-keep-them-longer-Artwork-cmLtDzKhHj7ocMdB1wslOI3yGBGwU6.jpg",
+      "size": 196291
+    },
+    {
+      "title": "hire-right-keep-them-longer — Guide Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/hire-right-keep-them-longer-Guide-Cover-Soph6A6bqC5W1Vyyo9QJpnuVLN2jn4.jpg",
+      "size": 283511
+    },
+    {
+      "title": "hire-right-keep-them-longer — The Structured Interview Playbook - Guide.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/hire-right-keep-them-longer-The-Structured-Interview-Playbook---Guide-tD4s4W7FpcQzXagIDV9mjT8t75WPTA.pdf",
+      "size": 523701
+    },
+    {
+      "title": "hire-right-keep-them-longer — 21 Reasons Why You Keep Losing Candidates to Your Competitors - Listicle.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/hire-right-keep-them-longer-21-Reasons-Why-You-Keep-Losing-Candidates-to-Your-Co-W7Rkb2C45x0vZIPy7tknpzBwMZXFya",
+      "size": 285232
+    },
+    {
+      "title": "hire-right-keep-them-longer — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/hire-right-keep-them-longer-Artwork-y8CvEAjXvBeqAKGwv7KwSiVJS8Kqg0.jpg",
+      "size": 172495
+    },
+    {
+      "title": "hire-right-keep-them-longer — Listicle Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/hire-right-keep-them-longer-Listicle-Cover-K8BK1sYh5UzfOv4cwOrDOrpu90sjP6.jpg",
+      "size": 293192
+    },
+    {
+      "title": "hire-right-keep-them-longer — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/hire-right-keep-them-longer-Artwork-PX79CV79JOvcHXMVAFR8xceoQzUnBv.jpg",
+      "size": 223336
+    },
+    {
+      "title": "hire-right-keep-them-longer — Fix Your Hiring Process - Mini-Course.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/hire-right-keep-them-longer-Fix-Your-Hiring-Process---Mini-Course-j4bpzvi5G25pUkd5sTDdSB6TY1AJqh.pdf",
+      "size": 854592
+    },
+    {
+      "title": "hire-right-keep-them-longer — How to Use Email Mini-Course.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/hire-right-keep-them-longer-How-to-Use-Email-Mini-Course-dVOfX69AZRigDNhanA1VInazOIgXGj.pdf",
+      "size": 32359
+    },
+    {
+      "title": "hire-right-keep-them-longer — Minicourse Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/hire-right-keep-them-longer-Minicourse-Cover-HmyyechgcZ53DbvwaCk0DlmDX6s7sP.jpg",
+      "size": 286194
+    },
+    {
+      "title": "hire-right-keep-them-longer — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/hire-right-keep-them-longer-Artwork-fpLZQ32fWtwT81vcfjWlDlrTFlNVFk.jpg",
+      "size": 235307
+    },
+    {
+      "title": "hire-right-keep-them-longer — Talent Acquisition Assistant - Prompts.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/hire-right-keep-them-longer-Talent-Acquisition-Assistant---Prompts-RtzE4DndeNxV6UjKQ0srPgBX5yTK8d.pdf",
+      "size": 397714
+    },
+    {
+      "title": "humanize-your-ai-copy — Artwork.png",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/humanize-your-ai-copy-Artwork-PvGT5clGjTZaewiX6gIdyxrlOqgnu8.png",
+      "size": 648919
+    },
+    {
+      "title": "humanize-your-ai-copy — Ep.1 - Why Taste Is the New Competitive Advantage in AI Content.m4a",
+      "kind": "audio",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/humanize-your-ai-copy-Ep-JPG5lHfrvJnWhvNt6T9gYZYDoCP5Uh.1---Why-Taste-Is-the-New-Competitive-Advantage-in-AI-Co",
+      "size": 37739905
+    },
+    {
+      "title": "humanize-your-ai-copy — Ep.2 - How to Direct AI Like a Creative Director.m4a",
+      "kind": "audio",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/humanize-your-ai-copy-Ep.2---How-to-Direct-AI-Like-a-Creative-Director-CnH8Kb1uCsh8e5ErdrJItseR5dadbL.m4a",
+      "size": 35062338
+    },
+    {
+      "title": "humanize-your-ai-copy — Ep.3 - The Hidden Patterns That Reveal AI Writing.m4a",
+      "kind": "audio",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/humanize-your-ai-copy-Ep.3---The-Hidden-Patterns-That-Reveal-AI-Writing-NpSzAz9lYHcJj7LKQbKeRNqojoNzce.m4a",
+      "size": 40691751
+    },
+    {
+      "title": "humanize-your-ai-copy — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/humanize-your-ai-copy-Artwork-90cbvztjv3QaeI2LH7WFKOksQfm1u3.jpg",
+      "size": 190699
+    },
+    {
+      "title": "humanize-your-ai-copy — Book Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/humanize-your-ai-copy-Book-Cover-6yRQWZNAZ9Z2GN8PrXPBDDKP5n7GEW.jpg",
+      "size": 315761
+    },
+    {
+      "title": "humanize-your-ai-copy — Humanize Your AI Copy - Ebook.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/humanize-your-ai-copy-Humanize-Your-AI-Copy---Ebook-tetfs5ZMwNPp0P2cyjezUBnQ0z1uNf.pdf",
+      "size": 4371231
+    },
+    {
+      "title": "humanize-your-ai-copy — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/humanize-your-ai-copy-Artwork-36yJT5EjuLuogBLfBZLEoTHNsPXQpC.jpg",
+      "size": 191250
+    },
+    {
+      "title": "humanize-your-ai-copy — Checklist.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/humanize-your-ai-copy-Checklist-AIRop6Wn1GTjOY0ftuUiDO6SvhMwS9.jpg",
+      "size": 278422
+    },
+    {
+      "title": "humanize-your-ai-copy — Kill the Robot Voice - Checklist.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/humanize-your-ai-copy-Kill-the-Robot-Voice---Checklist-1W0f5JnAQucljvzOX6GgX0xhbV3MgQ.pdf",
+      "size": 328716
+    },
+    {
+      "title": "humanize-your-ai-copy — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/humanize-your-ai-copy-Artwork-BbbbIT2oV23t9tfOyo2pPcP18mdxay.jpg",
+      "size": 276120
+    },
+    {
+      "title": "humanize-your-ai-copy — Get 80% Ready Content from AI on First Try - Guide.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/humanize-your-ai-copy-Get-80-Ready-Content-from-AI-on-First-Try---Guide-myUQnEAsbSYKar3hrdS7DGMAa9GZ75.pdf",
+      "size": 1017559
+    },
+    {
+      "title": "humanize-your-ai-copy — Guide Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/humanize-your-ai-copy-Guide-Cover-mDIAoQ1ZODKOLlB1BsijORcePvapJV.jpg",
+      "size": 313476
+    },
+    {
+      "title": "humanize-your-ai-copy — 13 Prompt Tweaks to Make AI Sound Like You - Listicle.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/humanize-your-ai-copy-13-Prompt-Tweaks-to-Make-AI-Sound-Like-You---Listicle-B3o48W0lK0quz6SW6OnmNHSDyGE0Z3.pdf",
+      "size": 472022
+    },
+    {
+      "title": "humanize-your-ai-copy — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/humanize-your-ai-copy-Artwork-i6KvUXbsR2X7lc6TAFRKX5SMJZ0x8i.jpg",
+      "size": 276806
+    },
+    {
+      "title": "humanize-your-ai-copy — Listicle Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/humanize-your-ai-copy-Listicle-Cover-7fJoE625t8MHNOsx14GFM2qDgXTdtO.jpg",
+      "size": 384717
+    },
+    {
+      "title": "humanize-your-ai-copy — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/humanize-your-ai-copy-Artwork-FxO6r3zzrwpB5SHynQ5hHJKwphe0Y4.jpg",
+      "size": 279824
+    },
+    {
+      "title": "humanize-your-ai-copy — How to Use Email Mini-Course.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/humanize-your-ai-copy-How-to-Use-Email-Mini-Course-tRjOahrCT1811fZy38inDHbO5wU3yq.pdf",
+      "size": 32359
+    },
+    {
+      "title": "humanize-your-ai-copy — Mini-Course Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/humanize-your-ai-copy-Mini-Course-Cover-gqfkC3TaD2ptUauzAPKdCvtQBkwRtN.jpg",
+      "size": 351776
+    },
+    {
+      "title": "humanize-your-ai-copy — The 7-Day Hybrid Writer Kickstart - Mini-Course.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/humanize-your-ai-copy-The-7-Day-Hybrid-Writer-Kickstart---Mini-Course-coMhKNCaqdjLpDRmHPw1UtXb0GMs0I.pdf",
+      "size": 618254
+    },
+    {
+      "title": "humanize-your-ai-copy — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/humanize-your-ai-copy-Artwork-pfsZqj2sfGvlFfkXBsJe0O6LKbvvvp.jpg",
+      "size": 198396
+    },
+    {
+      "title": "humanize-your-ai-copy — The Hybrid Writer's Edge - Prompts.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/humanize-your-ai-copy-The-Hybrid-Writer-s-Edge---Prompts-lOHEI7OTprclVr56662kXbxir9vMHU.pdf",
+      "size": 268963
+    },
+    {
+      "title": "sales-automation-chatbots — Artwork.png",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-Artwork-A82lSSexHaw32pCs4HAadDZxruUOHU.png",
+      "size": 1013181
+    },
+    {
+      "title": "sales-automation-chatbots — Ep.1 - Why Instant Response Is the New Standard in Modern Sales.m4a",
+      "kind": "audio",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-Ep-Dz9XHSgFTEGnYbMwuHU60wXdfaDYKS.1---Why-Instant-Response-Is-the-New-Standard-in-Mod",
+      "size": 33472060
+    },
+    {
+      "title": "sales-automation-chatbots — Ep.2 - How to Turn Your Best Sales Script Into an Automated Chatbot.m4a",
+      "kind": "audio",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-Ep-gzHBlPaqa9ufGEU8bCXVNI1RFz4Pty.2---How-to-Turn-Your-Best-Sales-Script-Into-an-Auto",
+      "size": 40493786
+    },
+    {
+      "title": "sales-automation-chatbots — Ep.3 - The Frustration of Building Chatbots That Don’t Sell.m4a",
+      "kind": "audio",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-Ep-c8CfKMcIxtKwVdtP4Mpt9kUgD6V92w.3---The-Frustration-of-Building-Chatbots-That-Don-t",
+      "size": 42017462
+    },
+    {
+      "title": "sales-automation-chatbots — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-Artwork-IlaE7c32GX67N581TV25ibccv9qCwN.jpg",
+      "size": 259546
+    },
+    {
+      "title": "sales-automation-chatbots — Book Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-Book-Cover-mwczAR3fwt1h8u6uQBWIZ2glNbidkW.jpg",
+      "size": 369731
+    },
+    {
+      "title": "sales-automation-chatbots — Sales Automation Chatbots - Ebook.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-Sales-Automation-Chatbots---Ebook-6qkrBVQvcaJJX9sTRbiAGvaMhzj7AN.pdf",
+      "size": 1021823
+    },
+    {
+      "title": "sales-automation-chatbots — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-Artwork-hQ2NCgSh0feRCxrQXbN6MP9pGaxUYL.jpg",
+      "size": 227995
+    },
+    {
+      "title": "sales-automation-chatbots — Checklist Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-Checklist-Cover-2NQbjEKYBEz02DsZvbbvZ58rnERTz5.jpg",
+      "size": 215315
+    },
+    {
+      "title": "sales-automation-chatbots — Sales Bot Strategy Mapping - Checklist.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-Sales-Bot-Strategy-Mapping---Checklist-uzvUuJbcu3mryNcHomqAUo2ghEUL2b.pdf",
+      "size": 207645
+    },
+    {
+      "title": "sales-automation-chatbots — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-Artwork-tCgVPitTiKUFKH6zeytYb4tuPwk2LO.jpg",
+      "size": 389083
+    },
+    {
+      "title": "sales-automation-chatbots — Guide Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-Guide-Cover-MS3qJpANL9Z8xlCNsdWu1qGN1RSjRA.jpg",
+      "size": 350520
+    },
+    {
+      "title": "sales-automation-chatbots — The Sales Bot Conversation Blueprint - Guide.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-The-Sales-Bot-Conversation-Blueprint---Guide-BuHfhST68WqRIxhSG7Phnoh91cCJEl.pdf",
+      "size": 371926
+    },
+    {
+      "title": "sales-automation-chatbots — 7 Chatbot Mistakes Killing Your Sales - Listicle.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-7-Chatbot-Mistakes-Killing-Your-Sales---Listicle-o7NJmLzzYeg1SczoDRd59Z9SXkaKsc.pdf",
+      "size": 292808
+    },
+    {
+      "title": "sales-automation-chatbots — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-Artwork-Qa58CO5KLXeGCEnmYOFO6yPkpvSL8z.jpg",
+      "size": 181041
+    },
+    {
+      "title": "sales-automation-chatbots — Listicle Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-Listicle-Cover-IVdLHJeBa0NHf7prkjKjxFNzmcrGen.jpg",
+      "size": 197275
+    },
+    {
+      "title": "sales-automation-chatbots — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-Artwork-hR6T5jRaby6EuhrRT0qxGtDOL5j2gS.jpg",
+      "size": 203525
+    },
+    {
+      "title": "sales-automation-chatbots — Build Your Sales Bot in 7 Days - Mini-Course.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-Build-Your-Sales-Bot-in-7-Days---Mini-Course-IhHHzp2uV5JiatWvdPX4iGzPCUIb5D.pdf",
+      "size": 448572
+    },
+    {
+      "title": "sales-automation-chatbots — How to Use Email Mini-Course.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-How-to-Use-Email-Mini-Course-s3N9HU5v1W5gDcZKtRXoqbnVMDRncH.pdf",
+      "size": 32359
+    },
+    {
+      "title": "sales-automation-chatbots — Mini-Course Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-Mini-Course-Cover-b4AIoX41BQDPIG9g2SIdH0z9pgzhPP.jpg",
+      "size": 204178
+    },
+    {
+      "title": "sales-automation-chatbots — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-Artwork-ZWHzehh24CkVe6tfeRpvzYXaufEmvs.jpg",
+      "size": 127829
+    },
+    {
+      "title": "sales-automation-chatbots — Build Your Automated Sales Chatbot - Prompts.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-Build-Your-Automated-Sales-Chatbot---Prompts-zB9R96f43xTMC8V7mK0XIPyu9UOFmD.pdf",
+      "size": 300436
+    },
+    {
+      "title": "sales-automation-chatbots — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-Artwork-lo2EDn0TztCeeL8cEknaID0MunLIMm.jpg",
+      "size": 181192
+    },
+    {
+      "title": "sales-automation-chatbots — Sales Automation & Conversational AI - Toolstack.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-Sales-Automation-Conversational-AI---Toolstack-O3YEiprVZfgTYoCgZVmiviQpK3Y7WR.pdf",
+      "size": 358186
+    },
+    {
+      "title": "sales-automation-chatbots — Toolstack Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-Toolstack-Cover-azCR8EzhHdXfgPor5ECgp7QRYa4ufd.jpg",
+      "size": 218717
+    },
+    {
+      "title": "swot-analysis-simplified — Artwork.png",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/swot-analysis-simplified-Artwork-0zJMq9zz1xmlkmjSxZGtyfocGcDwX3.png",
+      "size": 1146535
+    },
+    {
+      "title": "swot-analysis-simplified — Ep.1 - How to Use SWOT to Make Real Strategic Decisions.m4a",
+      "kind": "audio",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/swot-analysis-simplified-Ep-aOUzdyg4ZXxxuIfSFEl2DRHR9ofDbh.1---How-to-Use-SWOT-to-Make-Real-Strategic-Decisions",
+      "size": 29382757
+    },
+    {
+      "title": "swot-analysis-simplified — Ep.2 - Why Asking the Wrong Question Kills Strategy.m4a",
+      "kind": "audio",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/swot-analysis-simplified-Ep.2---Why-Asking-the-Wrong-Question-Kills-Strategy-dIAWXh0UNfyZAn1veWgMVSzSxNAeKb.m4a",
+      "size": 29727258
+    },
+    {
+      "title": "swot-analysis-simplified — Ep.3 - The Hidden Signs Your Strategy Is Already Failing.m4a",
+      "kind": "audio",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/swot-analysis-simplified-Ep-ASyZbXqk4m636CGjSIlNy4LJKAK9iv.3---The-Hidden-Signs-Your-Strategy-Is-Already-Failin",
+      "size": 27152782
+    },
+    {
+      "title": "swot-analysis-simplified — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/swot-analysis-simplified-Artwork-vO1eWtk57ce0ZuMQv40lPDd1UkElpj.jpg",
+      "size": 336270
+    },
+    {
+      "title": "swot-analysis-simplified — Book Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/swot-analysis-simplified-Book-Cover-8NOfeED5HrWOLXtTcuUj7p872B4Pvl.jpg",
+      "size": 384977
+    },
+    {
+      "title": "swot-analysis-simplified — SWOT Analysis Simplified - Ebook.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/swot-analysis-simplified-SWOT-Analysis-Simplified---Ebook-KcmAZe352DSJ8huAwr1wGXKTrIxbo0.pdf",
+      "size": 4475083
+    },
+    {
+      "title": "swot-analysis-simplified — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/swot-analysis-simplified-Artwork-KpfGQ5tN3rjyhpsaGqOo4q4M46TjFQ.jpg",
+      "size": 211655
+    },
+    {
+      "title": "swot-analysis-simplified — Checklist Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/swot-analysis-simplified-Checklist-Cover-o85unlW1Af7rQj1qiyHFI2yK3RDcWd.jpg",
+      "size": 289014
+    },
+    {
+      "title": "swot-analysis-simplified — The SWOT Quality Control - Checklist.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/swot-analysis-simplified-The-SWOT-Quality-Control---Checklist-yK29F2RTTxEEZTaxrz2PEF7a4kBBVS.pdf",
+      "size": 419598
+    },
+    {
+      "title": "swot-analysis-simplified — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/swot-analysis-simplified-Artwork-vKIX030AoPVPda82E897a2mAWxIF2G.jpg",
+      "size": 200454
+    },
+    {
+      "title": "swot-analysis-simplified — Guide Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/swot-analysis-simplified-Guide-Cover-r5lZ7vNJA4APgo1KKX7ptPmMDTVRT7.jpg",
+      "size": 314343
+    },
+    {
+      "title": "swot-analysis-simplified — How to Define the Right Strategic Challenge - Guide.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/swot-analysis-simplified-How-to-Define-the-Right-Strategic-Challenge---Guide-6KF3zgo0GY648VMOzunJ8rrl152Fee.pdf",
+      "size": 371599
+    },
+    {
+      "title": "swot-analysis-simplified — 7 Critical Mistakes That Sabotage Most SWOT Analyses - Listicle.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/swot-analysis-simplified-7-Critical-Mistakes-That-Sabotage-Most-SWOT-Analyses----QoUfq9QALP2wZLOOgmp4ojeKKXFRBz",
+      "size": 336747
+    },
+    {
+      "title": "swot-analysis-simplified — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/swot-analysis-simplified-Artwork-AUQm7jrKzTfJ3m5jpOkqWbIAoxLs8o.jpg",
+      "size": 254610
+    },
+    {
+      "title": "swot-analysis-simplified — Listicle Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/swot-analysis-simplified-Listicle-Cover-1MFLmpoo6WkKwIXIdrYRpAxggGQaXo.jpg",
+      "size": 345364
+    },
+    {
+      "title": "swot-analysis-simplified — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/swot-analysis-simplified-Artwork-ycrjGUc93grwxXit5BLRFh5W2iXodl.jpg",
+      "size": 276478
+    },
+    {
+      "title": "swot-analysis-simplified — How to Use Email Mini-Course.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/swot-analysis-simplified-How-to-Use-Email-Mini-Course-7hINYHTVVA730J4TfjgDBoQre48Kp8.pdf",
+      "size": 32359
+    },
+    {
+      "title": "swot-analysis-simplified — Mini-Course Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/swot-analysis-simplified-Mini-Course-Cover-Zu0SlFHRgqGC5OzkASe5sLB0aZwVC2.jpg",
+      "size": 304283
+    },
+    {
+      "title": "swot-analysis-simplified — Turn SWOT Into Decisions - Mini-Course.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/swot-analysis-simplified-Turn-SWOT-Into-Decisions---Mini-Course-zTKe3UJZ1qbmUssI2cJXO4y4T85l6f.pdf",
+      "size": 689771
+    },
+    {
+      "title": "swot-analysis-simplified — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/swot-analysis-simplified-Artwork-eosgXNdnClrwBqfc9G4aB8gVJ7geLL.jpg",
+      "size": 187180
+    },
+    {
+      "title": "swot-analysis-simplified — Strategic Planning Assistant - Prompts.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/swot-analysis-simplified-Strategic-Planning-Assistant---Prompts-haJ6801FrfoBQNjVPQbnnqC7YetZls.pdf",
+      "size": 395118
+    },
+    {
+      "title": "the-backlink-blueprint — Artwork.png",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/the-backlink-blueprint-Artwork-ZjsKcpM9Iwi4MpMxt6bdpNMQZcuoJM.png",
+      "size": 342462
+    },
+    {
+      "title": "the-backlink-blueprint — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/the-backlink-blueprint-Artwork-6ISUjmR6rJ8QYpUvZ6qmiFdl5Cv7S4.jpg",
+      "size": 181991
+    },
+    {
+      "title": "the-backlink-blueprint — Book.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/the-backlink-blueprint-Book-zoIJZXmis3f9m6A8X4n2lXTpw1O6or.jpg",
+      "size": 439236
+    },
+    {
+      "title": "the-backlink-blueprint — The Backlink Blueprint - Ebook.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/the-backlink-blueprint-The-Backlink-Blueprint---Ebook-bTvVg7iPvmNPn4xRC7E2F00sMxqwKT.pdf",
+      "size": 889509
+    },
+    {
+      "title": "the-backlink-blueprint — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/the-backlink-blueprint-Artwork-jsJftnWjoAdUJX7F4eSrdrMAoJqBfo.jpg",
+      "size": 135676
+    },
+    {
+      "title": "the-backlink-blueprint — Checklist Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/the-backlink-blueprint-Checklist-Cover-IWKAgu1omUqI9WZo1gBTxYLSVvk2vK.jpg",
+      "size": 427295
+    },
+    {
+      "title": "the-backlink-blueprint — Is Your Backlink Profile Ready to Disavow - Checklist.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/the-backlink-blueprint-Is-Your-Backlink-Profile-Ready-to-Disavow---Checklist-31bHbrpCeUVytj3ntkIkoSyMDSBWfE.pdf",
+      "size": 222251
+    },
+    {
+      "title": "the-backlink-blueprint — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/the-backlink-blueprint-Artwork-Zn2xnruvaUvrgvXZAOfeMGXnZTIlC2.jpg",
+      "size": 174390
+    },
+    {
+      "title": "the-backlink-blueprint — Guide Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/the-backlink-blueprint-Guide-Cover-BGNo31ovCSbD0WiBDwS1aAfXEt3WC4.jpg",
+      "size": 391992
+    },
+    {
+      "title": "the-backlink-blueprint — Run the 1-1 Match Reclamation Play - Guide.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/the-backlink-blueprint-Run-the-1-1-Match-Reclamation-Play---Guide-0Jffb447pcyparvnuQjLoo9S0MUjoj.pdf",
+      "size": 284046
+    },
+    {
+      "title": "the-backlink-blueprint — 13 Backlink Mistakes Quietly Killing Your Rankings Right Now - Listicle.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/the-backlink-blueprint-13-Backlink-Mistakes-Quietly-Killing-Your-Rankings-Right--gIJ8frhuyhdiFgVjU6VYFNBTN6iTw1",
+      "size": 311065
+    },
+    {
+      "title": "the-backlink-blueprint — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/the-backlink-blueprint-Artwork-dmbGDZLzgr6K4RXO17RRIjRvg5Lxir.jpg",
+      "size": 225259
+    },
+    {
+      "title": "the-backlink-blueprint — Listicle Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/the-backlink-blueprint-Listicle-Cover-GA8Ei9puFil3QxEO3GKcmPKVxhog9d.jpg",
+      "size": 466489
+    },
+    {
+      "title": "the-backlink-blueprint — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/the-backlink-blueprint-Artwork-ko8KYdegdkGTF2EQYSguylbIFGKFvx.jpg",
+      "size": 128087
+    },
+    {
+      "title": "the-backlink-blueprint — Earn Your First High-Authority Backlinks - Mini-Course.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/the-backlink-blueprint-Earn-Your-First-High-Authority-Backlinks---Mini-Course-N9My93UJXPSGfriDWhboU1nTrglpu3.pd",
+      "size": 301399
+    },
+    {
+      "title": "the-backlink-blueprint — Email Course.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/the-backlink-blueprint-Email-Course-Up0m1ouIiwQ2gVBTBDCgNaLyzaz9Gp.jpg",
+      "size": 401029
+    },
+    {
+      "title": "the-backlink-blueprint — How to Use Email Mini-Course.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/the-backlink-blueprint-How-to-Use-Email-Mini-Course-6DnIh602F5sxR9Uk4iprrYK0KPDmhe.pdf",
+      "size": 32359
+    },
+    {
+      "title": "the-backlink-blueprint — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/the-backlink-blueprint-Artwork-Htx3EwkuUo2vNAnDnSjS7RAXXZKynb.jpg",
+      "size": 273890
+    },
+    {
+      "title": "the-backlink-blueprint — The Link Builder’s Helper - Prompts.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/the-backlink-blueprint-The-Link-Builder-s-Helper---Prompts-1ci67snSn2uEmrHb59nPhg39yKHuuN.pdf",
+      "size": 441308
+    }
+  ],
+  "log": [
+    {
+      "zip": "ai-prompt-engineering-ebook\\ai-prompt-engineering-ebook.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/ai-prompt-engineering-ebook-Artwork-6IbcXFS8vEUtmKgM5AoMdPFc3Xu4gl.jpg",
+      "ok": true
+    },
+    {
+      "zip": "ai-prompt-engineering-ebook\\ai-prompt-engineering-ebook.zip",
+      "file": "Ep.1 - The Frustration of Unreliable AI and How to Fix It.m4a",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/ai-prompt-engineering-ebook-Ep-XrpfFbTxiec0DFYcrLTsgQk5EwhUKm.1---The-Frustration-of-Unreliable-AI-and-How-to-F",
+      "ok": true
+    },
+    {
+      "zip": "ai-prompt-engineering-ebook\\ai-prompt-engineering-ebook.zip",
+      "file": "Ep.2 - Why Fail-Proof Prompting Is Now a Must-Have Skill.m4a",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/ai-prompt-engineering-ebook-Ep-ETgl0JuvDAQyp0G3alIEuHkFeWCMkD.2---Why-Fail-Proof-Prompting-Is-Now-a-Must-Have-S",
+      "ok": true
+    },
+    {
+      "zip": "ai-prompt-engineering-ebook\\ai-prompt-engineering-ebook.zip",
+      "file": "Ep.3 - Inside the System That Prevents AI Failures at Scale.m4a",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/ai-prompt-engineering-ebook-Ep-BptRzQXENSHtxM8GpgcXLXcqOjA1QT.3---Inside-the-System-That-Prevents-AI-Failures-a",
+      "ok": true
+    },
+    {
+      "zip": "ai-prompt-engineering-ebook\\ai-prompt-engineering-ebook.zip",
+      "file": "AI Prompt Engineering - Ebook.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/ai-prompt-engineering-ebook-AI-Prompt-Engineering---Ebook-w0trv6qUvTOyzXXYvbptP8vsVAS1wR.pdf",
+      "ok": true
+    },
+    {
+      "zip": "ai-prompt-engineering-ebook\\ai-prompt-engineering-ebook.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/ai-prompt-engineering-ebook-Artwork-0S4oeJRgCNoSPAlOLCrtZfKcp17Ao8.jpg",
+      "ok": true
+    },
+    {
+      "zip": "ai-prompt-engineering-ebook\\ai-prompt-engineering-ebook.zip",
+      "file": "Book Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/ai-prompt-engineering-ebook-Book-Cover-eG7cz3ff30kRvLh1tAS5rXVmVFZR8f.jpg",
+      "ok": true
+    },
+    {
+      "zip": "ai-prompt-engineering-ebook\\ai-prompt-engineering-ebook.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/ai-prompt-engineering-ebook-Artwork-BT27WFieCwsivFUAILwL0VZDBb8agK.jpg",
+      "ok": true
+    },
+    {
+      "zip": "ai-prompt-engineering-ebook\\ai-prompt-engineering-ebook.zip",
+      "file": "Checklist Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/ai-prompt-engineering-ebook-Checklist-Cover-Il1xT2JH10fzqq9g3iKSrdx7KwH4cs.jpg",
+      "ok": true
+    },
+    {
+      "zip": "ai-prompt-engineering-ebook\\ai-prompt-engineering-ebook.zip",
+      "file": "Is Your AI Prompt Ready for Production - Checklist.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/ai-prompt-engineering-ebook-Is-Your-AI-Prompt-Ready-for-Production---Checklist-G8uyhCZ7cOsWhfYpOkTpZYvSGfpsYw.p",
+      "ok": true
+    },
+    {
+      "zip": "ai-prompt-engineering-ebook\\ai-prompt-engineering-ebook.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/ai-prompt-engineering-ebook-Artwork-cA7ovdhlbdH6Dp3weRLUuqVmjJ2frY.jpg",
+      "ok": true
+    },
+    {
+      "zip": "ai-prompt-engineering-ebook\\ai-prompt-engineering-ebook.zip",
+      "file": "Build Fail-Proof AI Prompts - Guide.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/ai-prompt-engineering-ebook-Build-Fail-Proof-AI-Prompts---Guide-83g64zPCocddok7oHOwojMlU7KuXhN.pdf",
+      "ok": true
+    },
+    {
+      "zip": "ai-prompt-engineering-ebook\\ai-prompt-engineering-ebook.zip",
+      "file": "Guide Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/ai-prompt-engineering-ebook-Guide-Cover-0KRLblR1K0xHEM92dWkobmobqFi9NO.jpg",
+      "ok": true
+    },
+    {
+      "zip": "ai-prompt-engineering-ebook\\ai-prompt-engineering-ebook.zip",
+      "file": "7 Mistakes Costing You Hours with AI - Listicle.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/ai-prompt-engineering-ebook-7-Mistakes-Costing-You-Hours-with-AI---Listicle-ACMsKWPTMoHd7Tjiz6JO6KclYDwabO.pdf",
+      "ok": true
+    },
+    {
+      "zip": "ai-prompt-engineering-ebook\\ai-prompt-engineering-ebook.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/ai-prompt-engineering-ebook-Artwork-u1TGUpLFdr2amHMyadzhrEn76Lv1YH.jpg",
+      "ok": true
+    },
+    {
+      "zip": "ai-prompt-engineering-ebook\\ai-prompt-engineering-ebook.zip",
+      "file": "Listicle Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/ai-prompt-engineering-ebook-Listicle-Cover-krTbOzApSBxjRkgsALnUWZhnPAWitR.jpg",
+      "ok": true
+    },
+    {
+      "zip": "ai-prompt-engineering-ebook\\ai-prompt-engineering-ebook.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/ai-prompt-engineering-ebook-Artwork-2pvBJaeaXM9n3Q0G7rUB9Xgd6rYsiE.jpg",
+      "ok": true
+    },
+    {
+      "zip": "ai-prompt-engineering-ebook\\ai-prompt-engineering-ebook.zip",
+      "file": "How to Use Email Mini-Course.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/ai-prompt-engineering-ebook-How-to-Use-Email-Mini-Course-QAYAtsdIFv1RyNYFTAiIa2PxPT7Df4.pdf",
+      "ok": true
+    },
+    {
+      "zip": "ai-prompt-engineering-ebook\\ai-prompt-engineering-ebook.zip",
+      "file": "Mini-Course Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/ai-prompt-engineering-ebook-Mini-Course-Cover-jeqPXT7n5vKddCcFSmmhltGqx71YC0.jpg",
+      "ok": true
+    },
+    {
+      "zip": "ai-prompt-engineering-ebook\\ai-prompt-engineering-ebook.zip",
+      "file": "Start Engineering Your AI Prompts - Mini-Course.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/ai-prompt-engineering-ebook-Start-Engineering-Your-AI-Prompts---Mini-Course-K4p3jktVa3tOz2zzYzvGIYJjzEyOsu.pdf",
+      "ok": true
+    },
+    {
+      "zip": "hire-right-keep-them-longer\\hire-right-keep-them-longer.zip",
+      "file": "Artwork.jpeg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/hire-right-keep-them-longer-Artwork-UDStHCPjVnkk7ozsxt07BiNbD3i53I.jpeg",
+      "ok": true
+    },
+    {
+      "zip": "hire-right-keep-them-longer\\hire-right-keep-them-longer.zip",
+      "file": "Hiring Without Regret.m4a",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/hire-right-keep-them-longer-Hiring-Without-Regret-S2Cu4Pcnk9W7ZC7LbUEU9GoKa8yw3j.m4a",
+      "ok": true
+    },
+    {
+      "zip": "hire-right-keep-them-longer\\hire-right-keep-them-longer.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/hire-right-keep-them-longer-Artwork-KKZdqv4qD1awSy8MZTFS5T2a0kTZ2r.jpg",
+      "ok": true
+    },
+    {
+      "zip": "hire-right-keep-them-longer\\hire-right-keep-them-longer.zip",
+      "file": "Book Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/hire-right-keep-them-longer-Book-Cover-yVbywU1QoZhnRf5emOCUNiXtaF0igK.jpg",
+      "ok": true
+    },
+    {
+      "zip": "hire-right-keep-them-longer\\hire-right-keep-them-longer.zip",
+      "file": "Hire Right, Keep Them Longer - Book.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/hire-right-keep-them-longer-Hire-Right-Keep-Them-Longer---Book-B9jMBkWeLOCxwt3p69OcE83FgyJ6hw.pdf",
+      "ok": true
+    },
+    {
+      "zip": "hire-right-keep-them-longer\\hire-right-keep-them-longer.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/hire-right-keep-them-longer-Artwork-VaeVZhO3kB5mJKISd1O9WB7nGERBbP.jpg",
+      "ok": true
+    },
+    {
+      "zip": "hire-right-keep-them-longer\\hire-right-keep-them-longer.zip",
+      "file": "Checklist.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/hire-right-keep-them-longer-Checklist-aHh3wdLNGANJVlPCSNblNN3p34dqpP.jpg",
+      "ok": true
+    },
+    {
+      "zip": "hire-right-keep-them-longer\\hire-right-keep-them-longer.zip",
+      "file": "Outcome-Based Job Posting Creation - Checklist.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/hire-right-keep-them-longer-Outcome-Based-Job-Posting-Creation---Checklist-ewSCDcHo8tTl5w1k7eSoi5r1zFd2bB.pdf",
+      "ok": true
+    },
+    {
+      "zip": "hire-right-keep-them-longer\\hire-right-keep-them-longer.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/hire-right-keep-them-longer-Artwork-cmLtDzKhHj7ocMdB1wslOI3yGBGwU6.jpg",
+      "ok": true
+    },
+    {
+      "zip": "hire-right-keep-them-longer\\hire-right-keep-them-longer.zip",
+      "file": "Guide Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/hire-right-keep-them-longer-Guide-Cover-Soph6A6bqC5W1Vyyo9QJpnuVLN2jn4.jpg",
+      "ok": true
+    },
+    {
+      "zip": "hire-right-keep-them-longer\\hire-right-keep-them-longer.zip",
+      "file": "The Structured Interview Playbook - Guide.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/hire-right-keep-them-longer-The-Structured-Interview-Playbook---Guide-tD4s4W7FpcQzXagIDV9mjT8t75WPTA.pdf",
+      "ok": true
+    },
+    {
+      "zip": "hire-right-keep-them-longer\\hire-right-keep-them-longer.zip",
+      "file": "21 Reasons Why You Keep Losing Candidates to Your Competitors - Listicle.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/hire-right-keep-them-longer-21-Reasons-Why-You-Keep-Losing-Candidates-to-Your-Co-W7Rkb2C45x0vZIPy7tknpzBwMZXFya",
+      "ok": true
+    },
+    {
+      "zip": "hire-right-keep-them-longer\\hire-right-keep-them-longer.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/hire-right-keep-them-longer-Artwork-y8CvEAjXvBeqAKGwv7KwSiVJS8Kqg0.jpg",
+      "ok": true
+    },
+    {
+      "zip": "hire-right-keep-them-longer\\hire-right-keep-them-longer.zip",
+      "file": "Listicle Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/hire-right-keep-them-longer-Listicle-Cover-K8BK1sYh5UzfOv4cwOrDOrpu90sjP6.jpg",
+      "ok": true
+    },
+    {
+      "zip": "hire-right-keep-them-longer\\hire-right-keep-them-longer.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/hire-right-keep-them-longer-Artwork-PX79CV79JOvcHXMVAFR8xceoQzUnBv.jpg",
+      "ok": true
+    },
+    {
+      "zip": "hire-right-keep-them-longer\\hire-right-keep-them-longer.zip",
+      "file": "Fix Your Hiring Process - Mini-Course.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/hire-right-keep-them-longer-Fix-Your-Hiring-Process---Mini-Course-j4bpzvi5G25pUkd5sTDdSB6TY1AJqh.pdf",
+      "ok": true
+    },
+    {
+      "zip": "hire-right-keep-them-longer\\hire-right-keep-them-longer.zip",
+      "file": "How to Use Email Mini-Course.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/hire-right-keep-them-longer-How-to-Use-Email-Mini-Course-dVOfX69AZRigDNhanA1VInazOIgXGj.pdf",
+      "ok": true
+    },
+    {
+      "zip": "hire-right-keep-them-longer\\hire-right-keep-them-longer.zip",
+      "file": "Minicourse Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/hire-right-keep-them-longer-Minicourse-Cover-HmyyechgcZ53DbvwaCk0DlmDX6s7sP.jpg",
+      "ok": true
+    },
+    {
+      "zip": "hire-right-keep-them-longer\\hire-right-keep-them-longer.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/hire-right-keep-them-longer-Artwork-fpLZQ32fWtwT81vcfjWlDlrTFlNVFk.jpg",
+      "ok": true
+    },
+    {
+      "zip": "hire-right-keep-them-longer\\hire-right-keep-them-longer.zip",
+      "file": "Talent Acquisition Assistant - Prompts.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/hire-right-keep-them-longer-Talent-Acquisition-Assistant---Prompts-RtzE4DndeNxV6UjKQ0srPgBX5yTK8d.pdf",
+      "ok": true
+    },
+    {
+      "zip": "humanize-your-ai-copy\\humanize-your-ai-copy.zip",
+      "file": "Artwork.png",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/humanize-your-ai-copy-Artwork-PvGT5clGjTZaewiX6gIdyxrlOqgnu8.png",
+      "ok": true
+    },
+    {
+      "zip": "humanize-your-ai-copy\\humanize-your-ai-copy.zip",
+      "file": "Ep.1 - Why Taste Is the New Competitive Advantage in AI Content.m4a",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/humanize-your-ai-copy-Ep-JPG5lHfrvJnWhvNt6T9gYZYDoCP5Uh.1---Why-Taste-Is-the-New-Competitive-Advantage-in-AI-Co",
+      "ok": true
+    },
+    {
+      "zip": "humanize-your-ai-copy\\humanize-your-ai-copy.zip",
+      "file": "Ep.2 - How to Direct AI Like a Creative Director.m4a",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/humanize-your-ai-copy-Ep.2---How-to-Direct-AI-Like-a-Creative-Director-CnH8Kb1uCsh8e5ErdrJItseR5dadbL.m4a",
+      "ok": true
+    },
+    {
+      "zip": "humanize-your-ai-copy\\humanize-your-ai-copy.zip",
+      "file": "Ep.3 - The Hidden Patterns That Reveal AI Writing.m4a",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/humanize-your-ai-copy-Ep.3---The-Hidden-Patterns-That-Reveal-AI-Writing-NpSzAz9lYHcJj7LKQbKeRNqojoNzce.m4a",
+      "ok": true
+    },
+    {
+      "zip": "humanize-your-ai-copy\\humanize-your-ai-copy.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/humanize-your-ai-copy-Artwork-90cbvztjv3QaeI2LH7WFKOksQfm1u3.jpg",
+      "ok": true
+    },
+    {
+      "zip": "humanize-your-ai-copy\\humanize-your-ai-copy.zip",
+      "file": "Book Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/humanize-your-ai-copy-Book-Cover-6yRQWZNAZ9Z2GN8PrXPBDDKP5n7GEW.jpg",
+      "ok": true
+    },
+    {
+      "zip": "humanize-your-ai-copy\\humanize-your-ai-copy.zip",
+      "file": "Humanize Your AI Copy - Ebook.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/humanize-your-ai-copy-Humanize-Your-AI-Copy---Ebook-tetfs5ZMwNPp0P2cyjezUBnQ0z1uNf.pdf",
+      "ok": true
+    },
+    {
+      "zip": "humanize-your-ai-copy\\humanize-your-ai-copy.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/humanize-your-ai-copy-Artwork-36yJT5EjuLuogBLfBZLEoTHNsPXQpC.jpg",
+      "ok": true
+    },
+    {
+      "zip": "humanize-your-ai-copy\\humanize-your-ai-copy.zip",
+      "file": "Checklist.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/humanize-your-ai-copy-Checklist-AIRop6Wn1GTjOY0ftuUiDO6SvhMwS9.jpg",
+      "ok": true
+    },
+    {
+      "zip": "humanize-your-ai-copy\\humanize-your-ai-copy.zip",
+      "file": "Kill the Robot Voice - Checklist.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/humanize-your-ai-copy-Kill-the-Robot-Voice---Checklist-1W0f5JnAQucljvzOX6GgX0xhbV3MgQ.pdf",
+      "ok": true
+    },
+    {
+      "zip": "humanize-your-ai-copy\\humanize-your-ai-copy.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/humanize-your-ai-copy-Artwork-BbbbIT2oV23t9tfOyo2pPcP18mdxay.jpg",
+      "ok": true
+    },
+    {
+      "zip": "humanize-your-ai-copy\\humanize-your-ai-copy.zip",
+      "file": "Get 80% Ready Content from AI on First Try - Guide.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/humanize-your-ai-copy-Get-80-Ready-Content-from-AI-on-First-Try---Guide-myUQnEAsbSYKar3hrdS7DGMAa9GZ75.pdf",
+      "ok": true
+    },
+    {
+      "zip": "humanize-your-ai-copy\\humanize-your-ai-copy.zip",
+      "file": "Guide Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/humanize-your-ai-copy-Guide-Cover-mDIAoQ1ZODKOLlB1BsijORcePvapJV.jpg",
+      "ok": true
+    },
+    {
+      "zip": "humanize-your-ai-copy\\humanize-your-ai-copy.zip",
+      "file": "13 Prompt Tweaks to Make AI Sound Like You - Listicle.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/humanize-your-ai-copy-13-Prompt-Tweaks-to-Make-AI-Sound-Like-You---Listicle-B3o48W0lK0quz6SW6OnmNHSDyGE0Z3.pdf",
+      "ok": true
+    },
+    {
+      "zip": "humanize-your-ai-copy\\humanize-your-ai-copy.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/humanize-your-ai-copy-Artwork-i6KvUXbsR2X7lc6TAFRKX5SMJZ0x8i.jpg",
+      "ok": true
+    },
+    {
+      "zip": "humanize-your-ai-copy\\humanize-your-ai-copy.zip",
+      "file": "Listicle Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/humanize-your-ai-copy-Listicle-Cover-7fJoE625t8MHNOsx14GFM2qDgXTdtO.jpg",
+      "ok": true
+    },
+    {
+      "zip": "humanize-your-ai-copy\\humanize-your-ai-copy.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/humanize-your-ai-copy-Artwork-FxO6r3zzrwpB5SHynQ5hHJKwphe0Y4.jpg",
+      "ok": true
+    },
+    {
+      "zip": "humanize-your-ai-copy\\humanize-your-ai-copy.zip",
+      "file": "How to Use Email Mini-Course.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/humanize-your-ai-copy-How-to-Use-Email-Mini-Course-tRjOahrCT1811fZy38inDHbO5wU3yq.pdf",
+      "ok": true
+    },
+    {
+      "zip": "humanize-your-ai-copy\\humanize-your-ai-copy.zip",
+      "file": "Mini-Course Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/humanize-your-ai-copy-Mini-Course-Cover-gqfkC3TaD2ptUauzAPKdCvtQBkwRtN.jpg",
+      "ok": true
+    },
+    {
+      "zip": "humanize-your-ai-copy\\humanize-your-ai-copy.zip",
+      "file": "The 7-Day Hybrid Writer Kickstart - Mini-Course.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/humanize-your-ai-copy-The-7-Day-Hybrid-Writer-Kickstart---Mini-Course-coMhKNCaqdjLpDRmHPw1UtXb0GMs0I.pdf",
+      "ok": true
+    },
+    {
+      "zip": "humanize-your-ai-copy\\humanize-your-ai-copy.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/humanize-your-ai-copy-Artwork-pfsZqj2sfGvlFfkXBsJe0O6LKbvvvp.jpg",
+      "ok": true
+    },
+    {
+      "zip": "humanize-your-ai-copy\\humanize-your-ai-copy.zip",
+      "file": "The Hybrid Writer's Edge - Prompts.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/humanize-your-ai-copy-The-Hybrid-Writer-s-Edge---Prompts-lOHEI7OTprclVr56662kXbxir9vMHU.pdf",
+      "ok": true
+    },
+    {
+      "zip": "sales-automation-chatbots\\sales-automation-chatbots.zip",
+      "file": "Artwork.png",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-Artwork-A82lSSexHaw32pCs4HAadDZxruUOHU.png",
+      "ok": true
+    },
+    {
+      "zip": "sales-automation-chatbots\\sales-automation-chatbots.zip",
+      "file": "Ep.1 - Why Instant Response Is the New Standard in Modern Sales.m4a",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-Ep-Dz9XHSgFTEGnYbMwuHU60wXdfaDYKS.1---Why-Instant-Response-Is-the-New-Standard-in-Mod",
+      "ok": true
+    },
+    {
+      "zip": "sales-automation-chatbots\\sales-automation-chatbots.zip",
+      "file": "Ep.2 - How to Turn Your Best Sales Script Into an Automated Chatbot.m4a",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-Ep-gzHBlPaqa9ufGEU8bCXVNI1RFz4Pty.2---How-to-Turn-Your-Best-Sales-Script-Into-an-Auto",
+      "ok": true
+    },
+    {
+      "zip": "sales-automation-chatbots\\sales-automation-chatbots.zip",
+      "file": "Ep.3 - The Frustration of Building Chatbots That Don’t Sell.m4a",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-Ep-c8CfKMcIxtKwVdtP4Mpt9kUgD6V92w.3---The-Frustration-of-Building-Chatbots-That-Don-t",
+      "ok": true
+    },
+    {
+      "zip": "sales-automation-chatbots\\sales-automation-chatbots.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-Artwork-IlaE7c32GX67N581TV25ibccv9qCwN.jpg",
+      "ok": true
+    },
+    {
+      "zip": "sales-automation-chatbots\\sales-automation-chatbots.zip",
+      "file": "Book Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-Book-Cover-mwczAR3fwt1h8u6uQBWIZ2glNbidkW.jpg",
+      "ok": true
+    },
+    {
+      "zip": "sales-automation-chatbots\\sales-automation-chatbots.zip",
+      "file": "Sales Automation Chatbots - Ebook.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-Sales-Automation-Chatbots---Ebook-6qkrBVQvcaJJX9sTRbiAGvaMhzj7AN.pdf",
+      "ok": true
+    },
+    {
+      "zip": "sales-automation-chatbots\\sales-automation-chatbots.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-Artwork-hQ2NCgSh0feRCxrQXbN6MP9pGaxUYL.jpg",
+      "ok": true
+    },
+    {
+      "zip": "sales-automation-chatbots\\sales-automation-chatbots.zip",
+      "file": "Checklist Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-Checklist-Cover-2NQbjEKYBEz02DsZvbbvZ58rnERTz5.jpg",
+      "ok": true
+    },
+    {
+      "zip": "sales-automation-chatbots\\sales-automation-chatbots.zip",
+      "file": "Sales Bot Strategy Mapping - Checklist.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-Sales-Bot-Strategy-Mapping---Checklist-uzvUuJbcu3mryNcHomqAUo2ghEUL2b.pdf",
+      "ok": true
+    },
+    {
+      "zip": "sales-automation-chatbots\\sales-automation-chatbots.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-Artwork-tCgVPitTiKUFKH6zeytYb4tuPwk2LO.jpg",
+      "ok": true
+    },
+    {
+      "zip": "sales-automation-chatbots\\sales-automation-chatbots.zip",
+      "file": "Guide Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-Guide-Cover-MS3qJpANL9Z8xlCNsdWu1qGN1RSjRA.jpg",
+      "ok": true
+    },
+    {
+      "zip": "sales-automation-chatbots\\sales-automation-chatbots.zip",
+      "file": "The Sales Bot Conversation Blueprint - Guide.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-The-Sales-Bot-Conversation-Blueprint---Guide-BuHfhST68WqRIxhSG7Phnoh91cCJEl.pdf",
+      "ok": true
+    },
+    {
+      "zip": "sales-automation-chatbots\\sales-automation-chatbots.zip",
+      "file": "7 Chatbot Mistakes Killing Your Sales - Listicle.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-7-Chatbot-Mistakes-Killing-Your-Sales---Listicle-o7NJmLzzYeg1SczoDRd59Z9SXkaKsc.pdf",
+      "ok": true
+    },
+    {
+      "zip": "sales-automation-chatbots\\sales-automation-chatbots.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-Artwork-Qa58CO5KLXeGCEnmYOFO6yPkpvSL8z.jpg",
+      "ok": true
+    },
+    {
+      "zip": "sales-automation-chatbots\\sales-automation-chatbots.zip",
+      "file": "Listicle Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-Listicle-Cover-IVdLHJeBa0NHf7prkjKjxFNzmcrGen.jpg",
+      "ok": true
+    },
+    {
+      "zip": "sales-automation-chatbots\\sales-automation-chatbots.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-Artwork-hR6T5jRaby6EuhrRT0qxGtDOL5j2gS.jpg",
+      "ok": true
+    },
+    {
+      "zip": "sales-automation-chatbots\\sales-automation-chatbots.zip",
+      "file": "Build Your Sales Bot in 7 Days - Mini-Course.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-Build-Your-Sales-Bot-in-7-Days---Mini-Course-IhHHzp2uV5JiatWvdPX4iGzPCUIb5D.pdf",
+      "ok": true
+    },
+    {
+      "zip": "sales-automation-chatbots\\sales-automation-chatbots.zip",
+      "file": "How to Use Email Mini-Course.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-How-to-Use-Email-Mini-Course-s3N9HU5v1W5gDcZKtRXoqbnVMDRncH.pdf",
+      "ok": true
+    },
+    {
+      "zip": "sales-automation-chatbots\\sales-automation-chatbots.zip",
+      "file": "Mini-Course Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-Mini-Course-Cover-b4AIoX41BQDPIG9g2SIdH0z9pgzhPP.jpg",
+      "ok": true
+    },
+    {
+      "zip": "sales-automation-chatbots\\sales-automation-chatbots.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-Artwork-ZWHzehh24CkVe6tfeRpvzYXaufEmvs.jpg",
+      "ok": true
+    },
+    {
+      "zip": "sales-automation-chatbots\\sales-automation-chatbots.zip",
+      "file": "Build Your Automated Sales Chatbot - Prompts.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-Build-Your-Automated-Sales-Chatbot---Prompts-zB9R96f43xTMC8V7mK0XIPyu9UOFmD.pdf",
+      "ok": true
+    },
+    {
+      "zip": "sales-automation-chatbots\\sales-automation-chatbots.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-Artwork-lo2EDn0TztCeeL8cEknaID0MunLIMm.jpg",
+      "ok": true
+    },
+    {
+      "zip": "sales-automation-chatbots\\sales-automation-chatbots.zip",
+      "file": "Sales Automation & Conversational AI - Toolstack.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-Sales-Automation-Conversational-AI---Toolstack-O3YEiprVZfgTYoCgZVmiviQpK3Y7WR.pdf",
+      "ok": true
+    },
+    {
+      "zip": "sales-automation-chatbots\\sales-automation-chatbots.zip",
+      "file": "Toolstack Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/sales-automation-chatbots-Toolstack-Cover-azCR8EzhHdXfgPor5ECgp7QRYa4ufd.jpg",
+      "ok": true
+    },
+    {
+      "zip": "swot-analysis-simplified\\swot-analysis-simplified.zip",
+      "file": "Artwork.png",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/swot-analysis-simplified-Artwork-0zJMq9zz1xmlkmjSxZGtyfocGcDwX3.png",
+      "ok": true
+    },
+    {
+      "zip": "swot-analysis-simplified\\swot-analysis-simplified.zip",
+      "file": "Ep.1 - How to Use SWOT to Make Real Strategic Decisions.m4a",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/swot-analysis-simplified-Ep-aOUzdyg4ZXxxuIfSFEl2DRHR9ofDbh.1---How-to-Use-SWOT-to-Make-Real-Strategic-Decisions",
+      "ok": true
+    },
+    {
+      "zip": "swot-analysis-simplified\\swot-analysis-simplified.zip",
+      "file": "Ep.2 - Why Asking the Wrong Question Kills Strategy.m4a",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/swot-analysis-simplified-Ep.2---Why-Asking-the-Wrong-Question-Kills-Strategy-dIAWXh0UNfyZAn1veWgMVSzSxNAeKb.m4a",
+      "ok": true
+    },
+    {
+      "zip": "swot-analysis-simplified\\swot-analysis-simplified.zip",
+      "file": "Ep.3 - The Hidden Signs Your Strategy Is Already Failing.m4a",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/swot-analysis-simplified-Ep-ASyZbXqk4m636CGjSIlNy4LJKAK9iv.3---The-Hidden-Signs-Your-Strategy-Is-Already-Failin",
+      "ok": true
+    },
+    {
+      "zip": "swot-analysis-simplified\\swot-analysis-simplified.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/swot-analysis-simplified-Artwork-vO1eWtk57ce0ZuMQv40lPDd1UkElpj.jpg",
+      "ok": true
+    },
+    {
+      "zip": "swot-analysis-simplified\\swot-analysis-simplified.zip",
+      "file": "Book Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/swot-analysis-simplified-Book-Cover-8NOfeED5HrWOLXtTcuUj7p872B4Pvl.jpg",
+      "ok": true
+    },
+    {
+      "zip": "swot-analysis-simplified\\swot-analysis-simplified.zip",
+      "file": "SWOT Analysis Simplified - Ebook.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/swot-analysis-simplified-SWOT-Analysis-Simplified---Ebook-KcmAZe352DSJ8huAwr1wGXKTrIxbo0.pdf",
+      "ok": true
+    },
+    {
+      "zip": "swot-analysis-simplified\\swot-analysis-simplified.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/swot-analysis-simplified-Artwork-KpfGQ5tN3rjyhpsaGqOo4q4M46TjFQ.jpg",
+      "ok": true
+    },
+    {
+      "zip": "swot-analysis-simplified\\swot-analysis-simplified.zip",
+      "file": "Checklist Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/swot-analysis-simplified-Checklist-Cover-o85unlW1Af7rQj1qiyHFI2yK3RDcWd.jpg",
+      "ok": true
+    },
+    {
+      "zip": "swot-analysis-simplified\\swot-analysis-simplified.zip",
+      "file": "The SWOT Quality Control - Checklist.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/swot-analysis-simplified-The-SWOT-Quality-Control---Checklist-yK29F2RTTxEEZTaxrz2PEF7a4kBBVS.pdf",
+      "ok": true
+    },
+    {
+      "zip": "swot-analysis-simplified\\swot-analysis-simplified.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/swot-analysis-simplified-Artwork-vKIX030AoPVPda82E897a2mAWxIF2G.jpg",
+      "ok": true
+    },
+    {
+      "zip": "swot-analysis-simplified\\swot-analysis-simplified.zip",
+      "file": "Guide Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/swot-analysis-simplified-Guide-Cover-r5lZ7vNJA4APgo1KKX7ptPmMDTVRT7.jpg",
+      "ok": true
+    },
+    {
+      "zip": "swot-analysis-simplified\\swot-analysis-simplified.zip",
+      "file": "How to Define the Right Strategic Challenge - Guide.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/swot-analysis-simplified-How-to-Define-the-Right-Strategic-Challenge---Guide-6KF3zgo0GY648VMOzunJ8rrl152Fee.pdf",
+      "ok": true
+    },
+    {
+      "zip": "swot-analysis-simplified\\swot-analysis-simplified.zip",
+      "file": "7 Critical Mistakes That Sabotage Most SWOT Analyses - Listicle.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/swot-analysis-simplified-7-Critical-Mistakes-That-Sabotage-Most-SWOT-Analyses----QoUfq9QALP2wZLOOgmp4ojeKKXFRBz",
+      "ok": true
+    },
+    {
+      "zip": "swot-analysis-simplified\\swot-analysis-simplified.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/swot-analysis-simplified-Artwork-AUQm7jrKzTfJ3m5jpOkqWbIAoxLs8o.jpg",
+      "ok": true
+    },
+    {
+      "zip": "swot-analysis-simplified\\swot-analysis-simplified.zip",
+      "file": "Listicle Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/swot-analysis-simplified-Listicle-Cover-1MFLmpoo6WkKwIXIdrYRpAxggGQaXo.jpg",
+      "ok": true
+    },
+    {
+      "zip": "swot-analysis-simplified\\swot-analysis-simplified.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/swot-analysis-simplified-Artwork-ycrjGUc93grwxXit5BLRFh5W2iXodl.jpg",
+      "ok": true
+    },
+    {
+      "zip": "swot-analysis-simplified\\swot-analysis-simplified.zip",
+      "file": "How to Use Email Mini-Course.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/swot-analysis-simplified-How-to-Use-Email-Mini-Course-7hINYHTVVA730J4TfjgDBoQre48Kp8.pdf",
+      "ok": true
+    },
+    {
+      "zip": "swot-analysis-simplified\\swot-analysis-simplified.zip",
+      "file": "Mini-Course Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/swot-analysis-simplified-Mini-Course-Cover-Zu0SlFHRgqGC5OzkASe5sLB0aZwVC2.jpg",
+      "ok": true
+    },
+    {
+      "zip": "swot-analysis-simplified\\swot-analysis-simplified.zip",
+      "file": "Turn SWOT Into Decisions - Mini-Course.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/swot-analysis-simplified-Turn-SWOT-Into-Decisions---Mini-Course-zTKe3UJZ1qbmUssI2cJXO4y4T85l6f.pdf",
+      "ok": true
+    },
+    {
+      "zip": "swot-analysis-simplified\\swot-analysis-simplified.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/swot-analysis-simplified-Artwork-eosgXNdnClrwBqfc9G4aB8gVJ7geLL.jpg",
+      "ok": true
+    },
+    {
+      "zip": "swot-analysis-simplified\\swot-analysis-simplified.zip",
+      "file": "Strategic Planning Assistant - Prompts.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/swot-analysis-simplified-Strategic-Planning-Assistant---Prompts-haJ6801FrfoBQNjVPQbnnqC7YetZls.pdf",
+      "ok": true
+    },
+    {
+      "zip": "the-backlink-blueprint\\the-backlink-blueprint.zip",
+      "file": "Artwork.png",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/the-backlink-blueprint-Artwork-ZjsKcpM9Iwi4MpMxt6bdpNMQZcuoJM.png",
+      "ok": true
+    },
+    {
+      "zip": "the-backlink-blueprint\\the-backlink-blueprint.zip",
+      "file": "Link Building Intelligence.m4a",
+      "error": "Command failed: curl.exe -sS --fail-with-body --max-time 600 -X PUT https://vercel.com/api/blob?pathname=imu%2Fmedia%2Fw2b1%2Fthe-backlink-blueprint-Link-Building-Intelligence.m4a -H Authorization: Bearer vercel_blob_rw_sIBiPtOxPlGvfrxD_ym6tLpeFvkZ2BBc5R7mLm9EkS0XeXk -H x-api-version: 12 -H x-vercel-blob-access: private -H x-add-random-suffix: 1 -H x-allow-overwrite: 0 -H x-content-type: audio/mp4 -T C:\\Users\\Por7\\OneDrive\\Desktop\\iMU-import\\wave2\\batch-1\\_extract\\Audio - Link Building Intelligence\\Link Building Intelligence.m4a\ncurl: (56) schannel: server closed abruptly (missing close_notify)\r\n"
+    },
+    {
+      "zip": "the-backlink-blueprint\\the-backlink-blueprint.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/the-backlink-blueprint-Artwork-6ISUjmR6rJ8QYpUvZ6qmiFdl5Cv7S4.jpg",
+      "ok": true
+    },
+    {
+      "zip": "the-backlink-blueprint\\the-backlink-blueprint.zip",
+      "file": "Book.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/the-backlink-blueprint-Book-zoIJZXmis3f9m6A8X4n2lXTpw1O6or.jpg",
+      "ok": true
+    },
+    {
+      "zip": "the-backlink-blueprint\\the-backlink-blueprint.zip",
+      "file": "The Backlink Blueprint - Ebook.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/the-backlink-blueprint-The-Backlink-Blueprint---Ebook-bTvVg7iPvmNPn4xRC7E2F00sMxqwKT.pdf",
+      "ok": true
+    },
+    {
+      "zip": "the-backlink-blueprint\\the-backlink-blueprint.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/the-backlink-blueprint-Artwork-jsJftnWjoAdUJX7F4eSrdrMAoJqBfo.jpg",
+      "ok": true
+    },
+    {
+      "zip": "the-backlink-blueprint\\the-backlink-blueprint.zip",
+      "file": "Checklist Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/the-backlink-blueprint-Checklist-Cover-IWKAgu1omUqI9WZo1gBTxYLSVvk2vK.jpg",
+      "ok": true
+    },
+    {
+      "zip": "the-backlink-blueprint\\the-backlink-blueprint.zip",
+      "file": "Is Your Backlink Profile Ready to Disavow - Checklist.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/the-backlink-blueprint-Is-Your-Backlink-Profile-Ready-to-Disavow---Checklist-31bHbrpCeUVytj3ntkIkoSyMDSBWfE.pdf",
+      "ok": true
+    },
+    {
+      "zip": "the-backlink-blueprint\\the-backlink-blueprint.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/the-backlink-blueprint-Artwork-Zn2xnruvaUvrgvXZAOfeMGXnZTIlC2.jpg",
+      "ok": true
+    },
+    {
+      "zip": "the-backlink-blueprint\\the-backlink-blueprint.zip",
+      "file": "Guide Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/the-backlink-blueprint-Guide-Cover-BGNo31ovCSbD0WiBDwS1aAfXEt3WC4.jpg",
+      "ok": true
+    },
+    {
+      "zip": "the-backlink-blueprint\\the-backlink-blueprint.zip",
+      "file": "Run the 1-1 Match Reclamation Play - Guide.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/the-backlink-blueprint-Run-the-1-1-Match-Reclamation-Play---Guide-0Jffb447pcyparvnuQjLoo9S0MUjoj.pdf",
+      "ok": true
+    },
+    {
+      "zip": "the-backlink-blueprint\\the-backlink-blueprint.zip",
+      "file": "13 Backlink Mistakes Quietly Killing Your Rankings Right Now - Listicle.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/the-backlink-blueprint-13-Backlink-Mistakes-Quietly-Killing-Your-Rankings-Right--gIJ8frhuyhdiFgVjU6VYFNBTN6iTw1",
+      "ok": true
+    },
+    {
+      "zip": "the-backlink-blueprint\\the-backlink-blueprint.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/the-backlink-blueprint-Artwork-dmbGDZLzgr6K4RXO17RRIjRvg5Lxir.jpg",
+      "ok": true
+    },
+    {
+      "zip": "the-backlink-blueprint\\the-backlink-blueprint.zip",
+      "file": "Listicle Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/the-backlink-blueprint-Listicle-Cover-GA8Ei9puFil3QxEO3GKcmPKVxhog9d.jpg",
+      "ok": true
+    },
+    {
+      "zip": "the-backlink-blueprint\\the-backlink-blueprint.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/the-backlink-blueprint-Artwork-ko8KYdegdkGTF2EQYSguylbIFGKFvx.jpg",
+      "ok": true
+    },
+    {
+      "zip": "the-backlink-blueprint\\the-backlink-blueprint.zip",
+      "file": "Earn Your First High-Authority Backlinks - Mini-Course.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/the-backlink-blueprint-Earn-Your-First-High-Authority-Backlinks---Mini-Course-N9My93UJXPSGfriDWhboU1nTrglpu3.pd",
+      "ok": true
+    },
+    {
+      "zip": "the-backlink-blueprint\\the-backlink-blueprint.zip",
+      "file": "Email Course.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/the-backlink-blueprint-Email-Course-Up0m1ouIiwQ2gVBTBDCgNaLyzaz9Gp.jpg",
+      "ok": true
+    },
+    {
+      "zip": "the-backlink-blueprint\\the-backlink-blueprint.zip",
+      "file": "How to Use Email Mini-Course.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/the-backlink-blueprint-How-to-Use-Email-Mini-Course-6DnIh602F5sxR9Uk4iprrYK0KPDmhe.pdf",
+      "ok": true
+    },
+    {
+      "zip": "the-backlink-blueprint\\the-backlink-blueprint.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/the-backlink-blueprint-Artwork-Htx3EwkuUo2vNAnDnSjS7RAXXZKynb.jpg",
+      "ok": true
+    },
+    {
+      "zip": "the-backlink-blueprint\\the-backlink-blueprint.zip",
+      "file": "The Link Builder’s Helper - Prompts.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b1/the-backlink-blueprint-The-Link-Builder-s-Helper---Prompts-1ci67snSn2uEmrHb59nPhg39yKHuuN.pdf",
+      "ok": true
+    }
+  ]
+}

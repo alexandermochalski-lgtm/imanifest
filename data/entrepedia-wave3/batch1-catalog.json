@@ -1,0 +1,42 @@
+{
+  "at": "2026-08-20T13:15:23.984Z",
+  "mapped": [
+    {
+      "prefix": "google-ads-desk",
+      "course": "Google Ads Desk",
+      "audio": 0,
+      "pdfs": 11,
+      "book": true
+    },
+    {
+      "prefix": "meta-ads-desk",
+      "course": "Meta Ads Desk",
+      "audio": 0,
+      "pdfs": 6,
+      "book": true
+    },
+    {
+      "prefix": "pinterest-profit-desk",
+      "course": "Pinterest Profit Desk",
+      "audio": 0,
+      "pdfs": 6,
+      "book": true
+    },
+    {
+      "prefix": "youtube-ads-desk",
+      "course": "YouTube Ads Desk",
+      "audio": 0,
+      "pdfs": 5,
+      "book": true
+    }
+  ],
+  "prunedCourses": {
+    "removed": 0,
+    "kept": 37
+  },
+  "prunedBooks": {
+    "removed": 0,
+    "kept": 36
+  },
+  "blob": "imu/catalog-overlay.json"
+}

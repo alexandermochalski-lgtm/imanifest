@@ -1,0 +1,56 @@
+{
+  "at": "2026-08-20T12:09:18.771Z",
+  "mapped": [
+    {
+      "prefix": "home-deal-negotiation-ebook",
+      "course": "Home Deal Negotiation",
+      "audio": 3,
+      "pdfs": 6,
+      "book": true
+    },
+    {
+      "prefix": "how-to-build-a-consistent-visual-identity",
+      "course": "Visual Identity System",
+      "audio": 3,
+      "pdfs": 6,
+      "book": true
+    },
+    {
+      "prefix": "the-athlete-brand-blueprint",
+      "course": "Athlete Brand Desk",
+      "audio": 1,
+      "pdfs": 6,
+      "book": true
+    },
+    {
+      "prefix": "the-brand-evolution-system-for-modern-creators",
+      "course": "Creator Brand Evolution",
+      "audio": 3,
+      "pdfs": 6,
+      "book": true
+    },
+    {
+      "prefix": "the-modern-estate-manager",
+      "course": "Modern Estate Manager",
+      "audio": 3,
+      "pdfs": 7,
+      "book": true
+    },
+    {
+      "prefix": "the-telegram-monetization-playbook",
+      "course": "Telegram Monetization Desk",
+      "audio": 1,
+      "pdfs": 6,
+      "book": true
+    }
+  ],
+  "prunedCourses": {
+    "removed": 0,
+    "kept": 29
+  },
+  "prunedBooks": {
+    "removed": 0,
+    "kept": 28
+  },
+  "blob": "imu/catalog-overlay.json"
+}

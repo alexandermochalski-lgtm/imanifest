@@ -1,0 +1,46 @@
+{
+  "at": "2026-08-20T14:34:40.417Z",
+  "mapped": [
+    {
+      "prefix": "affiliate-desk",
+      "course": "High-Ticket Affiliate Desk",
+      "audio": 0,
+      "video": 0,
+      "pdfs": 8,
+      "book": true
+    },
+    {
+      "prefix": "cold-email-desk",
+      "course": "Cold Email Desk",
+      "audio": 0,
+      "video": 0,
+      "pdfs": 6,
+      "book": true
+    },
+    {
+      "prefix": "funnel-desk",
+      "course": "Funnel That Sells Desk",
+      "audio": 9,
+      "video": 0,
+      "pdfs": 6,
+      "book": true
+    },
+    {
+      "prefix": "tiktok-shop-desk",
+      "course": "TikTok Shop Desk",
+      "audio": 0,
+      "video": 5,
+      "pdfs": 7,
+      "book": true
+    }
+  ],
+  "prunedCourses": {
+    "removed": 0,
+    "kept": 44
+  },
+  "prunedBooks": {
+    "removed": 0,
+    "kept": 43
+  },
+  "blob": "imu/catalog-overlay.json"
+}

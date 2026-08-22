@@ -17,18 +17,19 @@ export default async function Home() {
       <section className="mx-auto max-w-6xl px-5 pb-16 pt-20 md:pb-24 md:pt-28">
         <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-gold">iManifest University</p>
         <h1 className="mt-5 max-w-3xl font-[family-name:var(--font-cormorant)] text-5xl font-medium leading-[1.05] tracking-tight text-white md:text-7xl">
-          Institutional education for people who build wealth.
+          For operators,
+          <span className="block text-gold">not spectators.</span>
         </h1>
         <p className="mt-6 max-w-xl text-base leading-7 text-[var(--text-soft)] md:text-lg md:leading-8">
-          Money-making methods across finance, investing, e-commerce, marketing, and personal development — then a
-          campus to practice them.
+          {courses.length} live money methods — finance, investing, e-commerce, marketing, and more. One campus to
+          enroll, practice, and compound. From $49.99/mo.
         </p>
         <div className="mt-10 flex flex-wrap gap-3">
-          <Link href="/programs" className="gold-btn rounded-lg px-7 py-3.5">
-            Browse courses
+          <Link href="/get" className="gold-btn rounded-lg px-7 py-3.5">
+            Start on campus
           </Link>
-          <Link href="/#pricing" className="ghost-btn rounded-lg px-7 py-3.5">
-            Get campus · $49.99/mo
+          <Link href="/programs" className="ghost-btn rounded-lg px-7 py-3.5">
+            Browse {courses.length} courses
           </Link>
         </div>
       </section>
@@ -68,11 +69,11 @@ export default async function Home() {
 
       <section className="mx-auto mb-20 max-w-6xl rounded-2xl border border-[var(--line)] bg-[var(--panel)] px-6 py-12 md:px-12 md:py-14">
         <h2 className="font-[family-name:var(--font-cormorant)] text-3xl font-medium tracking-tight text-white md:text-4xl">
-          Built for operators, not spectators.
+          Not a course library — a campus to run it.
         </h2>
         <p className="mt-4 max-w-2xl text-base leading-7 text-[var(--text-soft)]">
-          Original iMU methods across personal development, fitness, e-commerce, marketing, and social — with a campus
-          desk to enroll, ship, and compound.
+          Enroll in methods, sit quizzes, open the daily desk, and compound — across personal development, fitness,
+          e-commerce, marketing, and social.
         </p>
         <Link href="/about" className="gold-btn mt-8 inline-flex rounded-lg px-7 py-3.5">
           About the university

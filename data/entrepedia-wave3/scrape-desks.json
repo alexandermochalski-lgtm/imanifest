@@ -1,0 +1,708 @@
+[
+  {
+    "batch": 1,
+    "category": "social-media",
+    "match": {},
+    "products": [
+      {
+        "formatGuess": "Guide",
+        "href": "https://www.entrepedia.co/library/product/11205126-874c-4f5c-8d84-807ddaa7494b",
+        "id": "11205126-874c-4f5c-8d84-807ddaa7494b",
+        "title": "Strategic YouTube Campaign Creator",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/Strategic%20YouTube%20Campaign%20Creator%20-%20Guide.zip"
+      },
+      {
+        "formatGuess": "Guide",
+        "href": "https://www.entrepedia.co/library/product/d92733e4-bb68-4432-a569-fc84d682535d",
+        "id": "d92733e4-bb68-4432-a569-fc84d682535d",
+        "title": "How to Setup YouTube Campaign",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/How%20to%20Setup%20YouTube%20Campaign%20-%20Checklist.zip"
+      },
+      {
+        "formatGuess": "Guide",
+        "href": "https://www.entrepedia.co/library/product/2ef126f0-9bea-4093-a6c4-cccf3b9147f5",
+        "id": "2ef126f0-9bea-4093-a6c4-cccf3b9147f5",
+        "title": "YouTube Ads Optimization",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/YouTube%20Ads%20Optimization%20-%20Prompts.zip"
+      },
+      {
+        "formatGuess": "Guide",
+        "href": "https://www.entrepedia.co/library/product/1e74cee2-681b-4d52-b895-0ba2ddf9aca4",
+        "id": "1e74cee2-681b-4d52-b895-0ba2ddf9aca4",
+        "title": "How to Scale with YouTube Ads",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/How%20to%20Scale%20with%20YouTube%20Ads%20-%20Book.zip"
+      },
+      {
+        "formatGuess": "Mini-Course",
+        "href": "https://www.entrepedia.co/library/product/6154605c-45cf-4b46-aed6-2c0e5d3459a1",
+        "id": "6154605c-45cf-4b46-aed6-2c0e5d3459a1",
+        "title": "The 6-Day YouTube Accelerator",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/The%206-Day%20YouTube%20Accelerator%20-%20Mini-Course.zip"
+      }
+    ],
+    "q": "youtube",
+    "slug": "youtube-ads-desk",
+    "summary": "Setup, optimize, and scale YouTube campaigns that buy attention profitably.",
+    "title": "YouTube Ads Desk"
+  },
+  {
+    "batch": 1,
+    "category": "marketing",
+    "match": {},
+    "products": [
+      {
+        "formatGuess": "Guide",
+        "href": "https://www.entrepedia.co/library/product/02209e27-1257-4792-a422-d387acf0ca2d",
+        "id": "02209e27-1257-4792-a422-d387acf0ca2d",
+        "title": "Google Search Ads Unlocked - Guide",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/Google%20Search%20Ads%20Unlocked%20-%20Guide%20%282%29.zip"
+      },
+      {
+        "formatGuess": "Book",
+        "href": "https://www.entrepedia.co/library/product/b23798f1-d7da-4b48-bffb-2b197c3d4a32",
+        "id": "b23798f1-d7da-4b48-bffb-2b197c3d4a32",
+        "title": "Google Search Ads Unlocked - Ebook",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/Google%20Search%20Ads%20Unlocked%20-%20Book%20%282%29.zip"
+      },
+      {
+        "formatGuess": "Checklist",
+        "href": "https://www.entrepedia.co/library/product/0d557898-cf33-41ae-8298-4b6ff76cd5b2",
+        "id": "0d557898-cf33-41ae-8298-4b6ff76cd5b2",
+        "title": "Google Search Ads Unlocked - Checklist",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/Google%20Search%20Ads%20Unlocked%20-%20Checklist%20%283%29.zip"
+      },
+      {
+        "formatGuess": "Toolstack",
+        "href": "https://www.entrepedia.co/library/product/7434d539-9aad-45f6-ba5b-8899d485e0a3",
+        "id": "7434d539-9aad-45f6-ba5b-8899d485e0a3",
+        "title": "Google Search Ads Unlocked - Toolstack",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/Google%20Search%20Ads%20Unlocked%20-%20Toolstack%20%283%29.zip"
+      },
+      {
+        "formatGuess": "Book",
+        "href": "https://www.entrepedia.co/library/product/4d412dff-830c-4907-ab91-9bd137133126",
+        "id": "4d412dff-830c-4907-ab91-9bd137133126",
+        "title": "Google Search Ads Unlocked - Workbook",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/Google%20Search%20Ads%20Unlocked%20-%20Workbook%20%283%29.zip"
+      },
+      {
+        "formatGuess": "Prompt Pack",
+        "href": "https://www.entrepedia.co/library/product/8438eed5-3cd4-4864-a91a-0cc5cdbf7257",
+        "id": "8438eed5-3cd4-4864-a91a-0cc5cdbf7257",
+        "title": "Google Search Ads Unlocked - Prompts",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/Google%20Search%20Ads%20Unlocked%20-%20Prompts%20%283%29.zip"
+      },
+      {
+        "formatGuess": "Guide",
+        "href": "https://www.entrepedia.co/library/product/f216ba5d-cb2c-4da1-9077-7e55c96f6951",
+        "id": "f216ba5d-cb2c-4da1-9077-7e55c96f6951",
+        "title": "Google Performance Max Campaigns Unleashed",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/Google%20Performance%20Max%20-%20Book.zip"
+      },
+      {
+        "formatGuess": "Guide",
+        "href": "https://www.entrepedia.co/library/product/0dbe4a59-9e90-45d0-ad5a-0dff4ca89b11",
+        "id": "0dbe4a59-9e90-45d0-ad5a-0dff4ca89b11",
+        "title": "Google Business Profiles - Guide",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/Google%20Business%20Profiles%20-%20Guide.zip"
+      }
+    ],
+    "q": "google ads",
+    "slug": "google-ads-desk",
+    "summary": "Search, Performance Max, and local Google growth without burning CAC.",
+    "title": "Google Ads Desk"
+  },
+  {
+    "batch": 1,
+    "category": "marketing",
+    "match": {},
+    "products": [
+      {
+        "formatGuess": "Guide",
+        "href": "https://www.entrepedia.co/library/product/8c3d8ea2-a60e-45d6-9817-d469320c428e",
+        "id": "8c3d8ea2-a60e-45d6-9817-d469320c428e",
+        "title": "meta Ads Made Affordable - Guide",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/Meta%20Ads%20Made%20Affordable%20-%20Guide.zip"
+      },
+      {
+        "formatGuess": "Checklist",
+        "href": "https://www.entrepedia.co/library/product/5a9d2980-91b3-4c61-b4b5-34a6cae516e6",
+        "id": "5a9d2980-91b3-4c61-b4b5-34a6cae516e6",
+        "title": "Meta Ads Made Affordable - Checklist",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/Meta%20Ads%20Made%20Affordable%20-%20Checklist.zip"
+      },
+      {
+        "formatGuess": "Prompt Pack",
+        "href": "https://www.entrepedia.co/library/product/b6aed48f-d4e7-4559-ac93-db5279b5954c",
+        "id": "b6aed48f-d4e7-4559-ac93-db5279b5954c",
+        "title": "Meta Ads Made Affordable - Prompts",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/Meta%20Ads%20Made%20Affordable%20-%20Prompts.zip"
+      },
+      {
+        "formatGuess": "Book",
+        "href": "https://www.entrepedia.co/library/product/01f36a6a-8746-4d46-b2fe-9967dea8b5d4",
+        "id": "01f36a6a-8746-4d46-b2fe-9967dea8b5d4",
+        "title": "Meta Ads Made Affordable - Workbook",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/Meta%20Ads%20Made%20Affordable%20-%20Workbook.zip"
+      },
+      {
+        "formatGuess": "Book",
+        "href": "https://www.entrepedia.co/library/product/61150af0-652d-42c0-9933-566a79ac628e",
+        "id": "61150af0-652d-42c0-9933-566a79ac628e",
+        "title": "Meta Ads Made Affordable - Ebook",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/Meta%20Ads%20Made%20Affordable%20-%20Book.zip"
+      },
+      {
+        "formatGuess": "Guide",
+        "href": "https://www.entrepedia.co/library/product/1f6c8e94-94aa-414d-920d-60cb97f43fd8",
+        "id": "1f6c8e94-94aa-414d-920d-60cb97f43fd8",
+        "title": "Custom Audience in Meta Ads",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/Custom%20Audience%20in%20Meta%20Ads%20-%20Guide.zip"
+      }
+    ],
+    "q": "meta ads",
+    "slug": "meta-ads-desk",
+    "summary": "Affordable Meta ads systems for testing, creative, and paid traffic.",
+    "title": "Meta Ads Desk"
+  },
+  {
+    "batch": 1,
+    "category": "social-media",
+    "match": {},
+    "products": [
+      {
+        "formatGuess": "Guide",
+        "href": "https://www.entrepedia.co/library/product/17cdb576-112b-418e-8d57-de163e1ba552",
+        "id": "17cdb576-112b-418e-8d57-de163e1ba552",
+        "title": "Pinterest for Profit",
+        "zip": "https://entrepedia-products.com/products/Pinterest-for-Profit---Ebook.zip"
+      },
+      {
+        "formatGuess": "Guide",
+        "href": "https://www.entrepedia.co/library/product/a2037b2b-fb74-40fb-ab29-e2fc820767ab",
+        "id": "a2037b2b-fb74-40fb-ab29-e2fc820767ab",
+        "title": "Engineer Click-Worthy Pinterest Pins",
+        "zip": "https://entrepedia-products.com/products/Engineer-Click-Worthy-Pinterest-Pins---Guide.zip"
+      },
+      {
+        "formatGuess": "Guide",
+        "href": "https://www.entrepedia.co/library/product/71708266-e698-494e-aa10-b54371d55efb",
+        "id": "71708266-e698-494e-aa10-b54371d55efb",
+        "title": "21 Pinterest Mistakes Costing You Real Revenue",
+        "zip": "https://entrepedia-products.com/products/21-Pinterest-Mistakes-Costing-You-Real-Revenue---Listicle.zip"
+      },
+      {
+        "formatGuess": "Guide",
+        "href": "https://www.entrepedia.co/library/product/5ae4fb0d-dfbe-4fa9-98c0-3e86b3d720e5",
+        "id": "5ae4fb0d-dfbe-4fa9-98c0-3e86b3d720e5",
+        "title": "Has Your Pinterest Profile Been Set Up to Sell?",
+        "zip": "https://entrepedia-products.com/products/Has-Your-Pinterest-Profile-Been-Set-Up-to-Sell---Checklist.zip"
+      },
+      {
+        "formatGuess": "Guide",
+        "href": "https://www.entrepedia.co/library/product/a137ff42-3c27-48e1-b323-84d3a3df688c",
+        "id": "a137ff42-3c27-48e1-b323-84d3a3df688c",
+        "title": "The Evergreen Pin System",
+        "zip": "https://entrepedia-products.com/products/The-Evergreen-Pin-System---Promps.zip"
+      },
+      {
+        "formatGuess": "Guide",
+        "href": "https://www.entrepedia.co/library/product/4327b17d-81c8-4a6e-8cbf-0d02c64499b5",
+        "id": "4327b17d-81c8-4a6e-8cbf-0d02c64499b5",
+        "title": "Build Your Pinterest Traffic Engine",
+        "zip": "https://entrepedia-products.com/products/Build-Your-Pinterest-Traffic-Engine---Mini-Course.zip"
+      }
+    ],
+    "q": "pinterest",
+    "slug": "pinterest-profit-desk",
+    "summary": "Evergreen pin systems that turn search traffic into leads and sales.",
+    "title": "Pinterest Profit Desk"
+  },
+  {
+    "batch": 2,
+    "category": "e-commerce",
+    "match": {},
+    "products": [
+      {
+        "formatGuess": "Guide",
+        "href": "https://www.entrepedia.co/library/product/29d9a571-0823-4e9a-b92f-fd62fc05983b",
+        "id": "29d9a571-0823-4e9a-b92f-fd62fc05983b",
+        "title": "The Power of TikTok Shop",
+        "zip": "https://entrepedia-products.com/products/The-Power-of-TikTok-Shop---Ebook.zip"
+      },
+      {
+        "formatGuess": "Guide",
+        "href": "https://www.entrepedia.co/library/product/2c8cb1e9-7ce9-4169-833b-7b4844a6d70d",
+        "id": "2c8cb1e9-7ce9-4169-833b-7b4844a6d70d",
+        "title": "TikTok Shop Mastery",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/TikTok%20Shop%20Mastery%20-%20Podcast.zip"
+      },
+      {
+        "formatGuess": "Guide",
+        "href": "https://www.entrepedia.co/library/product/9c0acb8c-e328-4981-822e-7cfe1a0f6b10",
+        "id": "9c0acb8c-e328-4981-822e-7cfe1a0f6b10",
+        "title": "21 TikTok Shop Tricks Every Seller Must Use",
+        "zip": "https://entrepedia-products.com/products/21-TikTok-Shop-Tricks-Every-Seller-Must-Use---Listicle.zip"
+      },
+      {
+        "formatGuess": "Guide",
+        "href": "https://www.entrepedia.co/library/product/5dc3a236-822e-48b4-971b-8d853868567c",
+        "id": "5dc3a236-822e-48b4-971b-8d853868567c",
+        "title": "Viral TikTok Shop Content Creation",
+        "zip": "https://entrepedia-products.com/products/Viral-TikTok-Shop-Content-Creation---Checklist.zip"
+      },
+      {
+        "formatGuess": "Guide",
+        "href": "https://www.entrepedia.co/library/product/b2b26439-bdbf-4c8a-82cb-eb593450b580",
+        "id": "b2b26439-bdbf-4c8a-82cb-eb593450b580",
+        "title": "Create Converting Ads on TikTok",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/Create%20Converting%20Ads%20on%20TikTok%20-%20Guide.zip"
+      },
+      {
+        "formatGuess": "Guide",
+        "href": "https://www.entrepedia.co/library/product/7e1b674e-25a3-4b1d-ba7e-8696a18a9786",
+        "id": "7e1b674e-25a3-4b1d-ba7e-8696a18a9786",
+        "title": "The TikTok Shop Content Creation System",
+        "zip": "https://entrepedia-products.com/products/The-TikTok-Shop-Content-Creation-System---Guide.zip"
+      },
+      {
+        "formatGuess": "Guide",
+        "href": "https://www.entrepedia.co/library/product/fbc7456c-182c-49a0-8540-8959ee6d086a",
+        "id": "fbc7456c-182c-49a0-8540-8959ee6d086a",
+        "title": "Unlock TikTok Shop's Opportunity",
+        "zip": "https://entrepedia-products.com/products/Unlock-TikTok-Shops-Opportunity---Mini-Course.zip"
+      },
+      {
+        "formatGuess": "Guide",
+        "href": "https://www.entrepedia.co/library/product/e58add10-8ca2-43a2-858b-6e76c93db56a",
+        "id": "e58add10-8ca2-43a2-858b-6e76c93db56a",
+        "title": "7 Strategies TikTok Sellers Use To Make $10,000 Months",
+        "zip": "https://entrepedia-products.com/products/7-Strategies-TikTok-Sellers-Use-To-Make-10000-Months---Listicle.zip"
+      }
+    ],
+    "q": "tiktok",
+    "slug": "tiktok-shop-desk",
+    "summary": "TikTok Shop content and seller systems for converting short-form attention.",
+    "title": "TikTok Shop Desk"
+  },
+  {
+    "batch": 2,
+    "category": "marketing",
+    "match": {},
+    "products": [
+      {
+        "formatGuess": "Guide",
+        "href": "https://www.entrepedia.co/library/product/7fd1abe8-be13-4b8c-9a39-61d19d6cdbf4",
+        "id": "7fd1abe8-be13-4b8c-9a39-61d19d6cdbf4",
+        "title": "Funnel Mapping Blueprint",
+        "zip": "https://entrepedia-products.com/products/Funnel-Mapping-Blueprint---Guide.zip"
+      },
+      {
+        "formatGuess": "Guide",
+        "href": "https://www.entrepedia.co/library/product/6c44001a-698a-4c08-907b-ab27094d199f",
+        "id": "6c44001a-698a-4c08-907b-ab27094d199f",
+        "title": "The Funnel That Sells",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/The%20Funnel%20That%20Sells%20-%20Podcast.zip"
+      },
+      {
+        "formatGuess": "Guide",
+        "href": "https://www.entrepedia.co/library/product/cab98f09-ef0a-4865-b7b3-208996989c49",
+        "id": "cab98f09-ef0a-4865-b7b3-208996989c49",
+        "title": "Funnel Growth Stack",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/Funnel%20Growth%20Stack%20-%20Toolstack.zip"
+      },
+      {
+        "formatGuess": "Guide",
+        "href": "https://www.entrepedia.co/library/product/f860250f-d347-4a85-996d-c49b71eccd76",
+        "id": "f860250f-d347-4a85-996d-c49b71eccd76",
+        "title": "Crafting Funnel Strategies That Convert",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/Crafting%20Funnel%20Strategies%20That%20Convert%20-%20Email%20Mini-Course.zip"
+      },
+      {
+        "formatGuess": "Guide",
+        "href": "https://www.entrepedia.co/library/product/62355ec8-2d5a-4a1f-8c9f-22e9f024926c",
+        "id": "62355ec8-2d5a-4a1f-8c9f-22e9f024926c",
+        "title": "The Advertising Funnel Blueprint Strategies",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/The%20Ad%20Funnel%20Blueprint%20Strategies%20-%20Ebook.zip"
+      },
+      {
+        "formatGuess": "Guide",
+        "href": "https://www.entrepedia.co/library/product/cc667ddd-e4ee-4f63-95b9-86d7c1591ca5",
+        "id": "cc667ddd-e4ee-4f63-95b9-86d7c1591ca5",
+        "title": "Complete Content Funnel Mapping",
+        "zip": "https://entrepedia-products.com/products/Content-Funnel-Mapping---Checklist.zip"
+      },
+      {
+        "formatGuess": "Guide",
+        "href": "https://www.entrepedia.co/library/product/8dbd808d-320a-49fd-82f1-82ca3e845c14",
+        "id": "8dbd808d-320a-49fd-82f1-82ca3e845c14",
+        "title": "From Funnel to Flywheel",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/From%20Funnel%20to%20Flywheel%20-%20Podcast.zip"
+      },
+      {
+        "formatGuess": "Guide",
+        "href": "https://www.entrepedia.co/library/product/1ba1f3bd-9b29-442f-a2aa-f10320873b57",
+        "id": "1ba1f3bd-9b29-442f-a2aa-f10320873b57",
+        "title": "Converting Content Funnel",
+        "zip": "https://entrepedia-products.com/products/Converting-Content-Funnel---Ebook.zip"
+      }
+    ],
+    "q": "funnel",
+    "slug": "funnel-desk",
+    "summary": "Map and run funnels that convert clicks into cashflow.",
+    "title": "Funnel That Sells Desk"
+  },
+  {
+    "batch": 2,
+    "category": "marketing",
+    "match": {},
+    "products": [
+      {
+        "formatGuess": "Toolstack",
+        "href": "https://www.entrepedia.co/library/product/63b77157-f1a0-423c-956b-8acd7115f754",
+        "id": "63b77157-f1a0-423c-956b-8acd7115f754",
+        "title": "High-Ticket Affiliate Marketing - Toolstack",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/High-Ticket%20Affiliate%20Marketing%20-%20Toolstack%202.zip"
+      },
+      {
+        "formatGuess": "Prompt Pack",
+        "href": "https://www.entrepedia.co/library/product/9626b0a4-ec4c-4703-a760-4c52ff79271a",
+        "id": "9626b0a4-ec4c-4703-a760-4c52ff79271a",
+        "title": "High-Ticket Affiliate Marketing - Prompts",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/High-Ticket%20Affiliate%20Marketing%20-%20Prompts.zip"
+      },
+      {
+        "formatGuess": "Checklist",
+        "href": "https://www.entrepedia.co/library/product/cd531e53-10c7-4ada-9082-52137c98a9a6",
+        "id": "cd531e53-10c7-4ada-9082-52137c98a9a6",
+        "title": "High-Ticket Affiliate Marketing - Checklist",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/High-Ticket%20Affiliate%20Marketing%20-%20Checklist.zip"
+      },
+      {
+        "formatGuess": "Guide",
+        "href": "https://www.entrepedia.co/library/product/119a303f-cfce-4835-a130-b959870bebd7",
+        "id": "119a303f-cfce-4835-a130-b959870bebd7",
+        "title": "High-Ticket Affiliate Marketing - Guide",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/High-Ticket%20Affiliate%20Marketing%20-%20Guide.zip"
+      },
+      {
+        "formatGuess": "Book",
+        "href": "https://www.entrepedia.co/library/product/5fa200b3-2008-424d-a06d-eaf1c208385c",
+        "id": "5fa200b3-2008-424d-a06d-eaf1c208385c",
+        "title": "High-Ticket Affiliate Marketing - Ebook",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/High-Ticket%20Affiliate%20Marketing%20-%20Book.zip"
+      },
+      {
+        "formatGuess": "Book",
+        "href": "https://www.entrepedia.co/library/product/fc12a077-99db-479e-a1fc-20f81b2889e5",
+        "id": "fc12a077-99db-479e-a1fc-20f81b2889e5",
+        "title": "High-Ticket Affiliate Marketing - Workbook",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/High-Ticket%20Affiliate%20Marketing%20-%20Workbook.zip"
+      }
+    ],
+    "q": "affiliate",
+    "slug": "affiliate-desk",
+    "summary": "High-ticket affiliate systems, offers, and promotion stacks.",
+    "title": "High-Ticket Affiliate Desk"
+  },
+  {
+    "batch": 2,
+    "category": "marketing",
+    "match": {},
+    "products": [
+      {
+        "formatGuess": "Prompt Pack",
+        "href": "https://www.entrepedia.co/library/product/94ea565f-b9ce-4faf-be79-2973343b2a1b",
+        "id": "94ea565f-b9ce-4faf-be79-2973343b2a1b",
+        "title": "Cold Email Marketing - Prompts",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/Cold%20Email%20Marketing%20-%20Prompts.zip"
+      },
+      {
+        "formatGuess": "Checklist",
+        "href": "https://www.entrepedia.co/library/product/d37642a8-395b-480d-9ffe-0eebce31a557",
+        "id": "d37642a8-395b-480d-9ffe-0eebce31a557",
+        "title": "Cold Email Marketing - Checklist",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/Cold%20Email%20Marketing%20-%20Checklist.zip"
+      },
+      {
+        "formatGuess": "Guide",
+        "href": "https://www.entrepedia.co/library/product/2ed58d3e-446c-49d1-a748-d0ae3aaabd57",
+        "id": "2ed58d3e-446c-49d1-a748-d0ae3aaabd57",
+        "title": "Cold Email Marketing - Guide",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/Cold%20Email%20Marketing%20-%20Guide.zip"
+      },
+      {
+        "formatGuess": "Book",
+        "href": "https://www.entrepedia.co/library/product/3fe80d99-1511-4b52-ae17-11dd61008856",
+        "id": "3fe80d99-1511-4b52-ae17-11dd61008856",
+        "title": "Cold Email Marketing - Ebook",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/Cold%20Email%20Marketing%20-%20Book.zip"
+      },
+      {
+        "formatGuess": "Book",
+        "href": "https://www.entrepedia.co/library/product/381dba2d-94a4-4929-b141-dea8567ce73f",
+        "id": "381dba2d-94a4-4929-b141-dea8567ce73f",
+        "title": "Cold Email Marketing - Workbook",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/Cold%20Email%20Marketing%20-%20Workbook.zip"
+      },
+      {
+        "formatGuess": "Toolstack",
+        "href": "https://www.entrepedia.co/library/product/521dc47f-2c98-4834-af85-edbed6f78c55",
+        "id": "521dc47f-2c98-4834-af85-edbed6f78c55",
+        "title": "Cold Email Marketing - Toolstack",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/Cold%20Email%20Marketing%20-%20Toolstack.zip"
+      }
+    ],
+    "q": "cold outreach",
+    "slug": "cold-email-desk",
+    "summary": "Cold email sequences that open conversations without spam theater.",
+    "title": "Cold Email Desk"
+  },
+  {
+    "batch": 3,
+    "category": "marketing",
+    "match": {},
+    "products": [
+      {
+        "formatGuess": "Checklist",
+        "href": "https://www.entrepedia.co/library/product/dd9201d5-f72c-45ad-b393-d788504c15f6",
+        "id": "dd9201d5-f72c-45ad-b393-d788504c15f6",
+        "title": "Lifecycle Email Marketing - Checklist",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/Lifecycle%20Email%20Marketing%20-%20Checklist.zip"
+      },
+      {
+        "formatGuess": "Book",
+        "href": "https://www.entrepedia.co/library/product/28297307-24b5-4109-8eab-c8bc7359c03b",
+        "id": "28297307-24b5-4109-8eab-c8bc7359c03b",
+        "title": "Lifecycle Email Marketing - Workbook",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/Lifecycle%20Email%20Marketing%20-%20Workbook.zip"
+      },
+      {
+        "formatGuess": "Book",
+        "href": "https://www.entrepedia.co/library/product/3f4cac25-decf-4972-85f1-5acb88237e41",
+        "id": "3f4cac25-decf-4972-85f1-5acb88237e41",
+        "title": "Lifecycle Email Marketing - Ebook",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/Lifecycle%20Email%20Marketing%20-%20Book.zip"
+      },
+      {
+        "formatGuess": "Prompt Pack",
+        "href": "https://www.entrepedia.co/library/product/f3fb5e39-af17-4a67-86e8-ca8318c68790",
+        "id": "f3fb5e39-af17-4a67-86e8-ca8318c68790",
+        "title": "Lifecycle Email Marketing - Prompts",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/Lifecycle%20Email%20Marketing%20-%20Prompts%202.zip"
+      },
+      {
+        "formatGuess": "Checklist",
+        "href": "https://www.entrepedia.co/library/product/d7b231fc-917e-4b9a-9023-6d93c52d9fb6",
+        "id": "d7b231fc-917e-4b9a-9023-6d93c52d9fb6",
+        "title": "Beyond the Inbox - Checklist",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/Beyond%20the%20Inbox%20-%20Checklist.zip"
+      },
+      {
+        "formatGuess": "Guide",
+        "href": "https://www.entrepedia.co/library/product/5afcd65f-499c-4e05-bbfe-ccffcc9d1c18",
+        "id": "5afcd65f-499c-4e05-bbfe-ccffcc9d1c18",
+        "title": "Lifecycle Email Marketing - Guide",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/Lifecycle%20Email%20Marketing%20-%20Guide.zip"
+      },
+      {
+        "formatGuess": "Toolstack",
+        "href": "https://www.entrepedia.co/library/product/71597ce7-af37-4295-b99f-d3b762ef50df",
+        "id": "71597ce7-af37-4295-b99f-d3b762ef50df",
+        "title": "Lifecycle Email Marketing - Toolstack",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/Lifecycle%20Email%20Marketing%20-%20Toolstack%202.zip"
+      },
+      {
+        "formatGuess": "Book",
+        "href": "https://www.entrepedia.co/library/product/70f7d227-5f4a-427f-84fc-1f5f5c6cffe0",
+        "id": "70f7d227-5f4a-427f-84fc-1f5f5c6cffe0",
+        "title": "Beyond the Inbox - Workbook",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/Beyond%20the%20Inbox%20-%20Workbook.zip"
+      }
+    ],
+    "q": "email list",
+    "slug": "lifecycle-email-desk",
+    "summary": "Lifecycle and inbox systems that keep buyers moving after the first sale.",
+    "title": "Lifecycle Email Desk"
+  },
+  {
+    "batch": 3,
+    "category": "marketing",
+    "match": {},
+    "products": [
+      {
+        "formatGuess": "Guide",
+        "href": "https://www.entrepedia.co/library/product/4b0c6f1e-d7bf-4a1c-9d88-94bbb2789895",
+        "id": "4b0c6f1e-d7bf-4a1c-9d88-94bbb2789895",
+        "title": "LinkedIn Ad Testing Framework",
+        "zip": "https://entrepedia-products.com/products/LinkedIn-Ad-Testing-Framework---Guide.zip"
+      },
+      {
+        "formatGuess": "Guide",
+        "href": "https://www.entrepedia.co/library/product/b3cd3b77-53f7-421a-b466-576063cf0ff0",
+        "id": "b3cd3b77-53f7-421a-b466-576063cf0ff0",
+        "title": "LinkedIn Ad Creative Development",
+        "zip": "https://entrepedia-products.com/products/LinkedIn-Ad-Creative-Development---Checklist.zip"
+      },
+      {
+        "formatGuess": "Guide",
+        "href": "https://www.entrepedia.co/library/product/5a4457ee-5865-41a6-893a-d9a080b86b3e",
+        "id": "5a4457ee-5865-41a6-893a-d9a080b86b3e",
+        "title": "LinkedIn Lead Form Optimization",
+        "zip": "https://entrepedia-products.com/products/LinkedIn-Lead-Form-Optimization---Guide.zip"
+      },
+      {
+        "formatGuess": "Guide",
+        "href": "https://www.entrepedia.co/library/product/4905ca76-0dcb-49a9-b548-b4f17d1f4fd9",
+        "id": "4905ca76-0dcb-49a9-b548-b4f17d1f4fd9",
+        "title": "Lead Generation with LinkedIn Ads",
+        "zip": "https://entrepedia-products.com/products/Lead-Generation-with-LinkedIn-Ads---Ebook.zip"
+      },
+      {
+        "formatGuess": "Guide",
+        "href": "https://www.entrepedia.co/library/product/d3b80040-f93d-49bf-a4ec-39be93993eb4",
+        "id": "d3b80040-f93d-49bf-a4ec-39be93993eb4",
+        "title": "B2B Leads with LinkedIn Ads",
+        "zip": "https://entrepedia-products.com/products/B2B-Leads-with-LinkedIn-Ads---Mini-Course.zip"
+      },
+      {
+        "formatGuess": "Guide",
+        "href": "https://www.entrepedia.co/library/product/3fe2d1ca-64e8-43ec-b548-3cb181747031",
+        "id": "3fe2d1ca-64e8-43ec-b548-3cb181747031",
+        "title": "LinkedIn Leads Lab",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/LinkedIn%20Leads%20Lab%20-%20Podcast.zip"
+      },
+      {
+        "formatGuess": "Guide",
+        "href": "https://www.entrepedia.co/library/product/2f6d7672-35c8-48dc-9448-45843d053781",
+        "id": "2f6d7672-35c8-48dc-9448-45843d053781",
+        "title": "Pre-Campaign LinkedIn Ads Setup",
+        "zip": "https://entrepedia-products.com/products/Pre-Campaign-LinkedIn-Ads-Setup---Checklist.zip"
+      }
+    ],
+    "q": "linkedin",
+    "slug": "linkedin-ads-desk",
+    "summary": "B2B LinkedIn ads for leads, forms, and creative tests.",
+    "title": "LinkedIn Ads Desk"
+  },
+  {
+    "batch": 3,
+    "category": "social-media",
+    "match": {},
+    "products": [
+      {
+        "formatGuess": "Book",
+        "href": "https://www.entrepedia.co/library/product/df9b7d53-2c5e-436d-9c4a-6d42dc21eb30",
+        "id": "df9b7d53-2c5e-436d-9c4a-6d42dc21eb30",
+        "title": "The Podcaster\u2019s Playbook",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/The%20Podcaster%E2%80%99s%20Playbook%20-%20Podcast.zip"
+      },
+      {
+        "formatGuess": "Guide",
+        "href": "https://www.entrepedia.co/library/product/0a91a31e-f5a8-4368-bb83-e79f04768782",
+        "id": "0a91a31e-f5a8-4368-bb83-e79f04768782",
+        "title": "Podcast Episode Recording Readiness",
+        "zip": "https://entrepedia-products.com/products/Podcast-Episode-Recording-Readiness---Checklist.zip"
+      },
+      {
+        "formatGuess": "Guide",
+        "href": "https://www.entrepedia.co/library/product/a8f11766-4726-4dc4-9c32-e19aa6fb9817",
+        "id": "a8f11766-4726-4dc4-9c32-e19aa6fb9817",
+        "title": "Podcast Launchpad",
+        "zip": "https://entrepedia-products.com/products/Podcast-Launchpad---Ebook.zip"
+      },
+      {
+        "formatGuess": "Guide",
+        "href": "https://www.entrepedia.co/library/product/843917d0-9a1f-4ff8-a833-d3fdb7e24c90",
+        "id": "843917d0-9a1f-4ff8-a833-d3fdb7e24c90",
+        "title": "The Podcast Launch Sequence Planner",
+        "zip": "https://entrepedia-products.com/products/The-Podcast-Launch-Sequence-Planner---Guide.zip"
+      },
+      {
+        "formatGuess": "Guide",
+        "href": "https://www.entrepedia.co/library/product/94af0a17-87e5-4b56-9e43-18eada9a225f",
+        "id": "94af0a17-87e5-4b56-9e43-18eada9a225f",
+        "title": "Podcast Creation and Growth",
+        "zip": "https://entrepedia-products.com/products/Podcast-Creation-and-Growth---Prompts.zip"
+      },
+      {
+        "formatGuess": "Guide",
+        "href": "https://www.entrepedia.co/library/product/e2791e36-3d2e-46c3-ac89-fe71f0d38a94",
+        "id": "e2791e36-3d2e-46c3-ac89-fe71f0d38a94",
+        "title": "The 5-Part Podcast Episode Structure Template",
+        "zip": "https://entrepedia-products.com/products/The-5-Part-Podcast-Episode-Structure-Template---Guide.zip"
+      }
+    ],
+    "q": "podcast",
+    "slug": "podcast-desk",
+    "summary": "Launch and grow a podcast that compounds authority and distribution.",
+    "title": "Podcast Launch Desk"
+  },
+  {
+    "batch": 3,
+    "category": "e-commerce",
+    "match": {},
+    "products": [
+      {
+        "formatGuess": "Guide",
+        "href": "https://www.entrepedia.co/library/product/10febc4a-1992-4edd-b980-c9ea0a010c13",
+        "id": "10febc4a-1992-4edd-b980-c9ea0a010c13",
+        "title": "Business Websites Mastery - Guide",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/Business%20Websites%20Mastery%20-%20Guide.zip"
+      },
+      {
+        "formatGuess": "Toolstack",
+        "href": "https://www.entrepedia.co/library/product/f24fbaef-4c1f-4818-959f-ed5ae20b1b30",
+        "id": "f24fbaef-4c1f-4818-959f-ed5ae20b1b30",
+        "title": "Business Websites Mastery - Toolstack",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/Business%20Websites%20Mastery%20-%20Toolstack.zip"
+      },
+      {
+        "formatGuess": "Book",
+        "href": "https://www.entrepedia.co/library/product/8ac88b2d-d49c-44d7-8cd8-2baae0fe3dac",
+        "id": "8ac88b2d-d49c-44d7-8cd8-2baae0fe3dac",
+        "title": "How to Build a Website - Workbook",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/How%20to%20Build%20a%20Website%20-%20Workbook.zip"
+      },
+      {
+        "formatGuess": "Checklist",
+        "href": "https://www.entrepedia.co/library/product/5a182baf-423a-4fdd-96fe-3ec2c077df68",
+        "id": "5a182baf-423a-4fdd-96fe-3ec2c077df68",
+        "title": "Business Websites Mastery - Checklist",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/Business%20Websites%20Mastery%20-%20Checklist.zip"
+      },
+      {
+        "formatGuess": "Book",
+        "href": "https://www.entrepedia.co/library/product/282b2b86-f0c1-4f4c-b020-88fe3de6f169",
+        "id": "282b2b86-f0c1-4f4c-b020-88fe3de6f169",
+        "title": "Business Websites Mastery - Ebook",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/Business%20Websites%20Mastery%20-%20Ebook.zip"
+      },
+      {
+        "formatGuess": "Book",
+        "href": "https://www.entrepedia.co/library/product/548647e1-89bd-4fa2-b973-46c58d74207e",
+        "id": "548647e1-89bd-4fa2-b973-46c58d74207e",
+        "title": "Business Websites Mastery - Workbook",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/Business%20Websites%20Mastery%20-%20Workbook.zip"
+      },
+      {
+        "formatGuess": "Toolstack",
+        "href": "https://www.entrepedia.co/library/product/84bbd7bf-8959-4675-a552-5cd7f63b5737",
+        "id": "84bbd7bf-8959-4675-a552-5cd7f63b5737",
+        "title": "How to Build a Website - Toolstack",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/How%20to%20Build%20a%20Website%20-%20Toolstack.zip"
+      },
+      {
+        "formatGuess": "Checklist",
+        "href": "https://www.entrepedia.co/library/product/8ab566ee-a660-408b-81e2-616cddf3f2aa",
+        "id": "8ab566ee-a660-408b-81e2-616cddf3f2aa",
+        "title": "How to Build a Website - Checklist",
+        "zip": "https://entrepedia-products.com/Mixed%20courses/How%20to%20Build%20a%20Website%20-%20Checklist.zip"
+      }
+    ],
+    "q": "website",
+    "slug": "website-desk",
+    "summary": "Ship business websites that convert instead of decorating.",
+    "title": "Website Builder Desk"
+  }
+]

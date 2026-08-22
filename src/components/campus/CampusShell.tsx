@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { logoutAction } from "@/app/actions/auth";
+import { CampusMobileNav } from "@/components/campus/CampusMobileNav";
 import type { AuthSession } from "@/lib/session";
 import { formatCoins } from "@/lib/daily-desk";
 
@@ -71,19 +72,30 @@ export function CampusShell({
         </form>
       </aside>
       <div className="flex min-w-0 flex-1 flex-col">
-        <header className="flex items-center justify-between border-b border-[var(--line)] bg-[var(--ink)]/80 px-5 py-3 backdrop-blur-xl">
-          <div className="md:hidden">
-            <Link href="/campus" className="text-gold">
-              Campus
-            </Link>
-          </div>
-          <p className="text-sm text-[var(--muted)]">
-            {session.name}
-            {streak > 0 ? ` · Day ${streak}` : ""} · <span className="text-gold">{formatCoins(coins)} coins</span>
+        <header className="flex items-center justify-between gap-3 border-b border-[var(--line)] bg-[var(--ink)]/80 px-5 py-3 backdrop-blur-xl">
+          <CampusMobileNav links={links} unread={unread} isAdmin={session.role === "admin"} />
+          <p className="min-w-0 flex-1 truncate text-center text-sm text-[var(--muted)] md:text-left">
+            <span className="hidden sm:inline">{session.name}</span>
+            {streak > 0 ? (
+              <span className="hidden sm:inline">
+                {session.name ? " · " : ""}Day {streak}
+              </span>
+            ) : null}
+            <span className="sm:ml-0">
+              <span className="hidden sm:inline"> · </span>
+              <span className="text-gold">{formatCoins(coins)} coins</span>
+            </span>
           </p>
-          <Link href="/pricing" className="text-sm text-gold hover:text-white">
-            Top up
-          </Link>
+          <div className="flex shrink-0 items-center gap-4">
+            <Link href="/pricing" className="text-sm text-gold hover:text-white">
+              Top up
+            </Link>
+            <form action={logoutAction}>
+              <button className="text-sm text-[var(--muted)] transition hover:text-gold" type="submit">
+                Log out
+              </button>
+            </form>
+          </div>
         </header>
         <div className="flex-1 px-5 py-8">{children}</div>
       </div>

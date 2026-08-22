@@ -1,0 +1,42 @@
+{
+  "at": "2026-08-20T12:19:52.277Z",
+  "mapped": [
+    {
+      "prefix": "digital-detox-for-founders",
+      "course": "Founder Digital Detox",
+      "audio": 3,
+      "pdfs": 7,
+      "book": true
+    },
+    {
+      "prefix": "self-care-without-the-guilt",
+      "course": "Self-Care Without Guilt",
+      "audio": 4,
+      "pdfs": 6,
+      "book": true
+    },
+    {
+      "prefix": "the-connection-code",
+      "course": "Connection Code Desk",
+      "audio": 3,
+      "pdfs": 5,
+      "book": true
+    },
+    {
+      "prefix": "the-neuroinclusive-managers-playbook",
+      "course": "Neuroinclusive Manager Desk",
+      "audio": 3,
+      "pdfs": 6,
+      "book": true
+    }
+  ],
+  "prunedCourses": {
+    "removed": 0,
+    "kept": 33
+  },
+  "prunedBooks": {
+    "removed": 0,
+    "kept": 32
+  },
+  "blob": "imu/catalog-overlay.json"
+}

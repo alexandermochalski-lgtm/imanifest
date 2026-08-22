@@ -1,7 +1,9 @@
 /**
  * Upload one Entrepedia batch folder to private Vercel Blob.
- * Usage: node scripts/upload_batch_blob.mjs 2
- * Expects: %USERPROFILE%/OneDrive/Desktop/iMU-import/batch-N/<slug>/<slug>.zip
+ * Usage:
+ *   node scripts/upload_batch_blob.mjs 2
+ *   node scripts/upload_batch_blob.mjs wave2 1
+ * Expects: %USERPROFILE%/OneDrive/Desktop/iMU-import/[wave2/]batch-N/<slug>/<slug>.zip
  * Uses Python zipfile extract (handles apostrophes) then curl PUT.
  */
 import { existsSync, mkdirSync, readdirSync, statSync, rmSync, writeFileSync, readFileSync } from "fs";
@@ -28,9 +30,28 @@ if (!TOKEN) {
   process.exit(1);
 }
 
-const BATCH = Number(process.argv[2] || "2");
-const STAGING = path.join(process.env.USERPROFILE || "", "OneDrive", "Desktop", "iMU-import", `batch-${BATCH}`);
+const args = process.argv.slice(2);
+let WAVE = 1;
+let BATCH = 2;
+if (args[0] === "wave3") {
+  WAVE = 3;
+  BATCH = Number(args[1] || "1");
+} else if (args[0] === "wave2") {
+  WAVE = 2;
+  BATCH = Number(args[1] || "1");
+} else if (args[0] === "wave1") {
+  WAVE = 1;
+  BATCH = Number(args[1] || "1");
+} else {
+  BATCH = Number(args[0] || "2");
+}
+const STAGING =
+  WAVE >= 2
+    ? path.join(process.env.USERPROFILE || "", "OneDrive", "Desktop", "iMU-import", `wave${WAVE}`, `batch-${BATCH}`)
+    : path.join(process.env.USERPROFILE || "", "OneDrive", "Desktop", "iMU-import", `batch-${BATCH}`);
 const EXTRACT = path.join(STAGING, "_extract");
+const MEDIA_PREFIX = WAVE >= 2 ? `imu/media/w${WAVE}b${BATCH}` : `imu/media/batch${BATCH}`;
+const DATA_DIR = path.join(process.cwd(), "data", WAVE >= 2 ? `entrepedia-wave${WAVE}` : "entrepedia-wave1");
 const ALLOWED = new Set([".pdf", ".mp3", ".m4a", ".wav", ".aac", ".mp4", ".webm", ".mov", ".jpg", ".jpeg", ".png", ".webp", ".gif"]);
 const MIME = {
   ".pdf": "application/pdf",
@@ -183,7 +204,7 @@ function main() {
     console.error("Missing staging", STAGING);
     process.exit(1);
   }
-  console.log(`Token ok · batch ${BATCH} · ${STAGING}`);
+  console.log(`Token ok · wave ${WAVE} · batch ${BATCH} · ${STAGING}`);
   const zips = listZips(STAGING);
   console.log(`Found ${zips.length} ZIPs`);
   const uploaded = [];
@@ -213,7 +234,7 @@ function main() {
           console.warn("SKIP large", base);
           continue;
         }
-        const pathname = `imu/media/batch${BATCH}/${safeName(`${titlePrefix}-${base}`)}`;
+        const pathname = `${MEDIA_PREFIX}/${safeName(`${titlePrefix}-${base}`)}`;
         console.log(`  PUT ${base} (${(size / 1048576).toFixed(2)} MB)`);
         const blob = putBlob(f, pathname, contentType);
         const asset = {
@@ -244,6 +265,7 @@ function main() {
   writeOverlay(overlay);
 
   const report = {
+    wave: WAVE,
     batch: BATCH,
     at: new Date().toISOString(),
     uploaded: uploaded.length,
@@ -252,7 +274,8 @@ function main() {
     log,
   };
   writeFileSync(path.join(STAGING, "UPLOAD_REPORT.json"), JSON.stringify(report, null, 2));
-  writeFileSync(path.join(process.cwd(), "data", "entrepedia-wave1", `batch${BATCH}-manifest.json`), JSON.stringify(report, null, 2));
+  mkdirSync(DATA_DIR, { recursive: true });
+  writeFileSync(path.join(DATA_DIR, `batch${BATCH}-manifest.json`), JSON.stringify(report, null, 2));
   console.log("Done.", path.join(STAGING, "UPLOAD_REPORT.json"));
 }
 

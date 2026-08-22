@@ -1,0 +1,1115 @@
+{
+  "wave": 2,
+  "batch": 3,
+  "at": "2026-08-20T12:18:49.647Z",
+  "uploaded": 92,
+  "registered": 92,
+  "assets": [
+    {
+      "title": "digital-detox-for-founders — Artwork.png",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-Artwork-3xNNKHjSXjbXE4O5xuAw0oXJs4LDWQ.png",
+      "size": 1711502
+    },
+    {
+      "title": "digital-detox-for-founders — Ep.1 - What Constant Notifications Are Doing to Your Brain as a Founder.m4a",
+      "kind": "audio",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-Ep-ePw0PR3uhrqr4G9nO1BaoktMEq86PK.1---What-Constant-Notifications-Are-Doing-to-Your-",
+      "size": 26684273
+    },
+    {
+      "title": "digital-detox-for-founders — Ep.2 - Why You Can’t Fix Focus Until You Measure Attention.m4a",
+      "kind": "audio",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-Ep-FF1JiyWZesaWd1uGt52vbTBIppcFEV.2---Why-You-Can-t-Fix-Focus-Until-You-Measure-Atte",
+      "size": 24012566
+    },
+    {
+      "title": "digital-detox-for-founders — Ep.3 - The Mental Drain You Feel Every Day at Your Desk.m4a",
+      "kind": "audio",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-Ep-oxOJAOAf1qWUMuEVkWEgISwK5H4PkN.3---The-Mental-Drain-You-Feel-Every-Day-at-Your-De",
+      "size": 22081522
+    },
+    {
+      "title": "digital-detox-for-founders — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-Artwork-DmzmcgDEWpDIvk8JeSS9Zc3ABuK8Du.jpg",
+      "size": 233599
+    },
+    {
+      "title": "digital-detox-for-founders — Book Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-Book-Cover-sbKUwg2K0e5EkqMEro3v4aP7DGFbtE.jpg",
+      "size": 226896
+    },
+    {
+      "title": "digital-detox-for-founders — Digital Detox for Founders - Ebook.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-Digital-Detox-for-Founders---Ebook-wDa3wIdIuYyveGf5cvTPVoqUKrU7UL.pdf",
+      "size": 3391835
+    },
+    {
+      "title": "digital-detox-for-founders — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-Artwork-j1QySw1eugydcjrM2ixXsCZG4rjlXe.jpg",
+      "size": 202563
+    },
+    {
+      "title": "digital-detox-for-founders — Checklist Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-Checklist-Cover-3BCHMMbCK5t3xysVyPvvgRRWnFLcKq.jpg",
+      "size": 227205
+    },
+    {
+      "title": "digital-detox-for-founders — Identifying Digital Distraction Patterns - Checklist.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-Identifying-Digital-Distraction-Patterns---Checklist-p7BPon6jTJkZMvOi8K29LnxOJ30BAP.",
+      "size": 496007
+    },
+    {
+      "title": "digital-detox-for-founders — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-Artwork-Rjrl5AJz7qs7jTm82aJuWbWwsSk0ZF.jpg",
+      "size": 197299
+    },
+    {
+      "title": "digital-detox-for-founders — Checklist Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-Checklist-Cover-Rrg4ITAZ4UqCKD3Kt91A9l86xr7RGx.jpg",
+      "size": 212711
+    },
+    {
+      "title": "digital-detox-for-founders — Optimize Your Workspace - Checklist.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-Optimize-Your-Workspace---Checklist-Va9RGCNKHut0w8CCj8jafhbapwNCsd.pdf",
+      "size": 628580
+    },
+    {
+      "title": "digital-detox-for-founders — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-Artwork-SsLowtDBi79u8ZJm34idL4blDUcIU3.jpg",
+      "size": 255821
+    },
+    {
+      "title": "digital-detox-for-founders — Guide Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-Guide-Cover-NxbgnL3cF29zHcQcuBCGT05tYoQlRv.jpg",
+      "size": 233707
+    },
+    {
+      "title": "digital-detox-for-founders — The 3-Day Attention Audit - Guide.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-The-3-Day-Attention-Audit---Guide-6jyW5QEm1A0FZkS6Cc7UZY4XVSg22F.pdf",
+      "size": 1353131
+    },
+    {
+      "title": "digital-detox-for-founders — 13 Signs Your Phone Is the Real CEO - Listicle.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-13-Signs-Your-Phone-Is-the-Real-CEO---Listicle-vmBYmiE3vY9c99foBubuxk9YDlvFcV.pdf",
+      "size": 288516
+    },
+    {
+      "title": "digital-detox-for-founders — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-Artwork-grFnmAfXKN8jyA6wqL3Ic1Gsec5FZe.jpg",
+      "size": 135612
+    },
+    {
+      "title": "digital-detox-for-founders — Listicle Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-Listicle-Cover-VL4HHWAt2urLK8xj36xfg9rFNduApN.jpg",
+      "size": 155120
+    },
+    {
+      "title": "digital-detox-for-founders — 7 Attention Traps That Quietly Kill Progress - Listicle.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-7-Attention-Traps-That-Quietly-Kill-Progress---Listic-hmGYURFTim33G0A3ZojLDbKwBlm9f6",
+      "size": 331420
+    },
+    {
+      "title": "digital-detox-for-founders — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-Artwork-sYnvObsSOatmWmZ3PFS1x5x13Xe89u.jpg",
+      "size": 222895
+    },
+    {
+      "title": "digital-detox-for-founders — Listicle Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-Listicle-Cover-DT1mKtLO0iLverQf0DvEcG4t5sB5IO.jpg",
+      "size": 245005
+    },
+    {
+      "title": "digital-detox-for-founders — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-Artwork-Ec79vviqSzOGOz5Pp707YKoYcU0M0U.jpg",
+      "size": 229467
+    },
+    {
+      "title": "digital-detox-for-founders — How to Use Email Mini-Course.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-How-to-Use-Email-Mini-Course-AiF5JugfaXwrRBHQxcfKZgiMkzFzsn.pdf",
+      "size": 32359
+    },
+    {
+      "title": "digital-detox-for-founders — Mini-Course Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-Mini-Course-Cover-cw5JdAkcbYfgUHhoXGNgkhlc2unsC5.jpg",
+      "size": 227363
+    },
+    {
+      "title": "digital-detox-for-founders — Rebuild Focus in an Always-On World - Mini-Course.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-Rebuild-Focus-in-an-Always-On-World---Mini-Course-1hPboGfPaAw0NU45ynoLbyZJTAqpZl.pdf",
+      "size": 670256
+    },
+    {
+      "title": "self-care-without-the-guilt — Artwork.png",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-Artwork-HkgLnvin1zlfAGmpX1XmlJ9DfoDl1S.png",
+      "size": 1048880
+    },
+    {
+      "title": "self-care-without-the-guilt — Ep.1 - How to Practice Self-Care Without Feeling Guilty.m4a",
+      "kind": "audio",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-Ep-Ueu6AmO1MVocXTjyfeTP8NYdeYYb7d.1---How-to-Practice-Self-Care-Without-Feeling-Gui",
+      "size": 49586252
+    },
+    {
+      "title": "self-care-without-the-guilt — Ep.2 - The Real Reason You Can’t Focus for Long.m4a",
+      "kind": "audio",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-Ep.2---The-Real-Reason-You-Can-t-Focus-for-Long-n6GQ476XeFrHRq0j1snj8q9859hGKb.m4a",
+      "size": 43419486
+    },
+    {
+      "title": "self-care-without-the-guilt — Ep.3 - Why Most Productivity Systems Collapse Under Stress.m4a",
+      "kind": "audio",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-Ep-QLs8oJBaQo4MD8G1IBjpyqWDNkT815.3---Why-Most-Productivity-Systems-Collapse-Under-",
+      "size": 38201691
+    },
+    {
+      "title": "self-care-without-the-guilt — Ep.4 - Inside the 5 Minute Ritual That Changes Your Entire Day.m4a",
+      "kind": "audio",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-Ep-6SjBDKD8i6uRyU1y68iROk9q6fgH8r.4---Inside-the-5-Minute-Ritual-That-Changes-Your-",
+      "size": 38840641
+    },
+    {
+      "title": "self-care-without-the-guilt — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-Artwork-pAIPoEZ4sDmPEwiX10CGggw1I59hqy.jpg",
+      "size": 286013
+    },
+    {
+      "title": "self-care-without-the-guilt — Book Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-Book-Cover-tgZKz9PdIYPwrrkx7Xc2eAzOfBcAJ5.jpg",
+      "size": 291600
+    },
+    {
+      "title": "self-care-without-the-guilt — Self-Care Without the Guilt - Ebook.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-Self-Care-Without-the-Guilt---Ebook-vnPenm06Kt7m0a7Mv1jri4sALL81JJ.pdf",
+      "size": 2489243
+    },
+    {
+      "title": "self-care-without-the-guilt — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-Artwork-aQ5Rxkc0CGHIB6clbirGMhUKLWeMWK.jpg",
+      "size": 238874
+    },
+    {
+      "title": "self-care-without-the-guilt — Checklist.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-Checklist-is1N974jX6RgsFm7oCe3ilUWLp3pPn.jpg",
+      "size": 250376
+    },
+    {
+      "title": "self-care-without-the-guilt — Your 5-Minute Morning and Evening Ritual - Checklist.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-Your-5-Minute-Morning-and-Evening-Ritual---Checklist-0SoiGncEgdKJVTfWQKCZWO3l1dGTLX",
+      "size": 484123
+    },
+    {
+      "title": "self-care-without-the-guilt — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-Artwork-yXWRaE90GvqVTPbPafjJ23QRl1Lr65.jpg",
+      "size": 284358
+    },
+    {
+      "title": "self-care-without-the-guilt — Guide Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-Guide-Cover-y2RvZuAIOW5aWMkA85N6uErB5aaw1k.jpg",
+      "size": 257117
+    },
+    {
+      "title": "self-care-without-the-guilt — Personal Energy Mapping - Guide.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-Personal-Energy-Mapping---Guide-LJXPDPYZ4fb5Bi5JxcXzxyGClizhMg.pdf",
+      "size": 1356593
+    },
+    {
+      "title": "self-care-without-the-guilt — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-Artwork-Qm8J3Ytd6UVaJRE1442bwSgTfR8pk2.jpg",
+      "size": 414351
+    },
+    {
+      "title": "self-care-without-the-guilt — Guide Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-Guide-Cover-EtGnpej2ybGowiZTGrZD1i3tZWA90P.jpg",
+      "size": 307589
+    },
+    {
+      "title": "self-care-without-the-guilt — The Bad Day Protocol - Guide.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-The-Bad-Day-Protocol---Guide-3KIeHyYEtNWpkreYUe2eD5Iaew7H1M.pdf",
+      "size": 825061
+    },
+    {
+      "title": "self-care-without-the-guilt — 13 Silent Signs the Daily Grind Has Stolen More Than It Should - Listicle.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-13-Silent-Signs-the-Daily-Grind-Has-Stolen-More-Than-1IakzJpiwu5X7dN69BjnZEtuVGAyAO",
+      "size": 270386
+    },
+    {
+      "title": "self-care-without-the-guilt — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-Artwork-WtSU8aHJaD91UTPXE10jJGv9AzPniQ.jpg",
+      "size": 206361
+    },
+    {
+      "title": "self-care-without-the-guilt — Listicle Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-Listicle-Cover-B7sbMJivdKmOczbJvmj8BjMIc90ThY.jpg",
+      "size": 209998
+    },
+    {
+      "title": "self-care-without-the-guilt — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-Artwork-i3T3h128HEZjOx17qo98AGE9XjFtYC.jpg",
+      "size": 233287
+    },
+    {
+      "title": "self-care-without-the-guilt — Build a Self-Care System in 7 Days - Mini-Course.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-Build-a-Self-Care-System-in-7-Days---Mini-Course-b3t43xt8VyEm4GWXk97kRw4ymzNL0h.pdf",
+      "size": 442590
+    },
+    {
+      "title": "self-care-without-the-guilt — How to Use Email Mini-Course.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-How-to-Use-Email-Mini-Course-RoXNFFwumeTzmoDdfzFK79J2y1zO9H.pdf",
+      "size": 32359
+    },
+    {
+      "title": "self-care-without-the-guilt — Mini-Course Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-Mini-Course-Cover-5ymrA4DuNRZvTRLSvbaO0DZvyfG7sC.jpg",
+      "size": 251505
+    },
+    {
+      "title": "the-connection-code — Artwork.png",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-connection-code-Artwork-1Uvj9fhhe4uuhyBRYqlRKc79xSsxfH.png",
+      "size": 374002
+    },
+    {
+      "title": "the-connection-code — Ep.1 - Build Trust and Communication With Your Teen Again.m4a",
+      "kind": "audio",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-connection-code-Ep.1---Build-Trust-and-Communication-With-Your-Teen-Again-LiDB4kmMIWebteXi6uLOHGiBhJSqck.m4",
+      "size": 31647096
+    },
+    {
+      "title": "the-connection-code — Ep.2 - How to Get Your Teen to Open Up Again.m4a",
+      "kind": "audio",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-connection-code-Ep.2---How-to-Get-Your-Teen-to-Open-Up-Again-6HVRpt2MrWSLQYCXRhuybarqVfnHnV.m4a",
+      "size": 47689572
+    },
+    {
+      "title": "the-connection-code — Ep.3 - Why Hard Talks With Teens Go Wrong.m4a",
+      "kind": "audio",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-connection-code-Ep.3---Why-Hard-Talks-With-Teens-Go-Wrong-ObjJPNO8PDgLJZhUQBrYB7wDW9gFEc.m4a",
+      "size": 44092800
+    },
+    {
+      "title": "the-connection-code — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-connection-code-Artwork-Ie8hu2i8EBDiENtBqycnEBMLqb1hsD.jpg",
+      "size": 248336
+    },
+    {
+      "title": "the-connection-code — Book Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-connection-code-Book-Cover-YIZTvXbfE62Hx01WxTvgzfRyd3534P.jpg",
+      "size": 212536
+    },
+    {
+      "title": "the-connection-code — The Connection Code - Ebook.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-connection-code-The-Connection-Code---Ebook-KMzx7mZUvUHI1IoochoiDxdYrk56Ol.pdf",
+      "size": 3036021
+    },
+    {
+      "title": "the-connection-code — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-connection-code-Artwork-vCXbbKbQ658iboYq6KM0WO3kziT6Rn.jpg",
+      "size": 168423
+    },
+    {
+      "title": "the-connection-code — Checklist Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-connection-code-Checklist-Cover-NxqvQERvXNZgwsz9ECCO6Mc9dOmouA.jpg",
+      "size": 199772
+    },
+    {
+      "title": "the-connection-code — Prepare Before the Hard Talk With Your Teen - Checklist.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-connection-code-Prepare-Before-the-Hard-Talk-With-Your-Teen---Checklist-chIVhCqaEleezRhGPVbYrAlcODfCKy.pdf",
+      "size": 514867
+    },
+    {
+      "title": "the-connection-code — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-connection-code-Artwork-LYbO4stOHNrOxVtdRlMiMaGkw0nq6F.jpg",
+      "size": 243009
+    },
+    {
+      "title": "the-connection-code — Get Your Teen to Open Up Again - Guide.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-connection-code-Get-Your-Teen-to-Open-Up-Again---Guide-4BEj4b2C1bsCMyCagD3DxW1G1ZcyJZ.pdf",
+      "size": 1029522
+    },
+    {
+      "title": "the-connection-code — Guide Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-connection-code-Guide-Cover-GAOWw9BzUlxz5bfZusjoUSjbMqlBo6.jpg",
+      "size": 237744
+    },
+    {
+      "title": "the-connection-code — 21 Small Shifts That Transform How Your Teen Talks to You - Listicle.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-connection-code-21-Small-Shifts-That-Transform-How-Your-Teen-Talks-to-You----TOyJE95n7QxEnK5L0cl6ccUpwNdgJM",
+      "size": 341478
+    },
+    {
+      "title": "the-connection-code — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-connection-code-Artwork-A7jU5I6LCzdq6HNdHRKlzBiknof1u0.jpg",
+      "size": 384355
+    },
+    {
+      "title": "the-connection-code — Listicle Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-connection-code-Listicle-Cover-zoxnucuBepZAlpSc3lIKWJq6xYjcvI.jpg",
+      "size": 311450
+    },
+    {
+      "title": "the-connection-code — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-connection-code-Artwork-QMjPGi6LQxhfpJPupYSsZrUKDh06c1.jpg",
+      "size": 203044
+    },
+    {
+      "title": "the-connection-code — How to Use Email Mini-Course.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-connection-code-How-to-Use-Email-Mini-Course-uP2TaJcUFqx9zwulyrvBec2NPREd2C.pdf",
+      "size": 32359
+    },
+    {
+      "title": "the-connection-code — Mini-Course Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-connection-code-Mini-Course-Cover-2KR2N2RZsi9lXdLn6pOT9a50wsOI5H.jpg",
+      "size": 196370
+    },
+    {
+      "title": "the-connection-code — Reconnect With Your Teen in 7 Days - Mini-Course.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-connection-code-Reconnect-With-Your-Teen-in-7-Days---Mini-Course-jsUAj7C34Rd9A4K2HlWnBC4C0n3ZrF.pdf",
+      "size": 436743
+    },
+    {
+      "title": "the-neuroinclusive-managers-playbook — Artwork.png",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-neuroinclusive-managers-playbook-Artwork-L3J8tOFkPTI6CStZPcWG0vprKHIwou.png",
+      "size": 340647
+    },
+    {
+      "title": "the-neuroinclusive-managers-playbook — Ep.1 - Why Your Best Employees Might Be the Most Misunderstood.m4a",
+      "kind": "audio",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-neuroinclusive-managers-playbook-Ep-3M2UVU8JOvsIl3ACngt2OB1OZ5089t.1---Why-Your-Best-Employees-Might-Be-the",
+      "size": 50523387
+    },
+    {
+      "title": "the-neuroinclusive-managers-playbook — Ep.2 - The Hidden Reason Your Hiring Process Is Failing.m4a",
+      "kind": "audio",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-neuroinclusive-managers-playbook-Ep-ZsbElsQtqk2V88SQk6hZrHOSKIpDJz.2---The-Hidden-Reason-Your-Hiring-Proces",
+      "size": 44714568
+    },
+    {
+      "title": "the-neuroinclusive-managers-playbook — Ep.3 - How to Build a Brain Friendly Hiring Process.m4a",
+      "kind": "audio",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-neuroinclusive-managers-playbook-Ep-oF7dCXh2QkUlgwQuKkgQ2MwrQw710l.3---How-to-Build-a-Brain-Friendly-Hiring",
+      "size": 49187218
+    },
+    {
+      "title": "the-neuroinclusive-managers-playbook — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-neuroinclusive-managers-playbook-Artwork-avlYod5U8b6QJL2FxJAgqqfgDGLanN.jpg",
+      "size": 131644
+    },
+    {
+      "title": "the-neuroinclusive-managers-playbook — Book Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-neuroinclusive-managers-playbook-Book-Cover-BQcGPy4e6kaJnoU8jJNWV8ms3mNEn1.jpg",
+      "size": 362361
+    },
+    {
+      "title": "the-neuroinclusive-managers-playbook — The Neuroinclusive Manager's Playbook - Ebook.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-neuroinclusive-managers-playbook-The-Neuroinclusive-Manager-s-Playbook---Ebo-6kqaIWO1NyuauT8AJkBm2mImKweT8T",
+      "size": 1104665
+    },
+    {
+      "title": "the-neuroinclusive-managers-playbook — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-neuroinclusive-managers-playbook-Artwork-gMYCS8TkzBMcjT26vKh4l3mxU177KN.jpg",
+      "size": 107131
+    },
+    {
+      "title": "the-neuroinclusive-managers-playbook — Checklist Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-neuroinclusive-managers-playbook-Checklist-Cover-VwGkDUbcmH72j1q9gXpuXmqjYdP2BU.jpg",
+      "size": 262465
+    },
+    {
+      "title": "the-neuroinclusive-managers-playbook — The Brain-Friendly Hiring - Checklist.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-neuroinclusive-managers-playbook-The-Brain-Friendly-Hiring---Checklist-mcfJDabAPq9OKZa6wjrAMga2CEqMVB.pdf",
+      "size": 195402
+    },
+    {
+      "title": "the-neuroinclusive-managers-playbook — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-neuroinclusive-managers-playbook-Artwork-j7BXZC5ADKVzEdbGZ0IYGiM3ayZsvV.jpg",
+      "size": 96990
+    },
+    {
+      "title": "the-neuroinclusive-managers-playbook — Guide Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-neuroinclusive-managers-playbook-Guide-Cover-UGZJDfx7GpmJtNbo5h30XTxBsND00D.jpg",
+      "size": 249984
+    },
+    {
+      "title": "the-neuroinclusive-managers-playbook — Stop Losing Top Talent at the Interview Stage - Guide.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-neuroinclusive-managers-playbook-Stop-Losing-Top-Talent-at-the-Interview-Sta-eeUsszMQNX0cQKJwwLks7uptMUw1aP",
+      "size": 293745
+    },
+    {
+      "title": "the-neuroinclusive-managers-playbook — 7 Workplace Policies That Accidentally Block Neurodivergent Talent - Listicle.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-neuroinclusive-managers-playbook-7-Workplace-Policies-That-Accidentally-Bloc-q2eA7RbBE2lptwQSIixroi0kxNmqtf",
+      "size": 298694
+    },
+    {
+      "title": "the-neuroinclusive-managers-playbook — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-neuroinclusive-managers-playbook-Artwork-nMYni5jo9Dq4Lg3LEPAI3od7v6WfPb.jpg",
+      "size": 135245
+    },
+    {
+      "title": "the-neuroinclusive-managers-playbook — Listicle Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-neuroinclusive-managers-playbook-Listicle-Cover-y1q4bv2vVJXb5FbOZjj6uX2NsNmNZ2.jpg",
+      "size": 289694
+    },
+    {
+      "title": "the-neuroinclusive-managers-playbook — 7 Days to a Neuroinclusive Management - Mini-Course.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-neuroinclusive-managers-playbook-7-Days-to-a-Neuroinclusive-Management---Min-7dA3YvcurLQD6aBdyOc8lNje5ZEw0y",
+      "size": 300985
+    },
+    {
+      "title": "the-neuroinclusive-managers-playbook — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-neuroinclusive-managers-playbook-Artwork-Bv96wlTJccN57PhbEGF2FTg5r7pia0.jpg",
+      "size": 68573
+    },
+    {
+      "title": "the-neuroinclusive-managers-playbook — How to Use Email Mini-Course.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-neuroinclusive-managers-playbook-How-to-Use-Email-Mini-Course-f85cZ17ObCOL2sgq1Ld7Eqxmd2xGDR.pdf",
+      "size": 32359
+    },
+    {
+      "title": "the-neuroinclusive-managers-playbook — Mini-Course Cover.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-neuroinclusive-managers-playbook-Mini-Course-Cover-88yvmqy3bMKD5Ykv4svUrxZ3W5kpG4.jpg",
+      "size": 256663
+    },
+    {
+      "title": "the-neuroinclusive-managers-playbook — Artwork.jpg",
+      "kind": "image",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-neuroinclusive-managers-playbook-Artwork-L1OL78A5NHwifCkCmd8aq4eS192PIr.jpg",
+      "size": 96063
+    },
+    {
+      "title": "the-neuroinclusive-managers-playbook — Neuroinclusive Leadership Copilot - Prompts.pdf",
+      "kind": "pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-neuroinclusive-managers-playbook-Neuroinclusive-Leadership-Copilot---Prompts-1eLwPNIQauqmmJbZlu3M3NzBoRS2xW",
+      "size": 211900
+    }
+  ],
+  "log": [
+    {
+      "zip": "digital-detox-for-founders\\digital-detox-for-founders.zip",
+      "file": "Artwork.png",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-Artwork-3xNNKHjSXjbXE4O5xuAw0oXJs4LDWQ.png",
+      "ok": true
+    },
+    {
+      "zip": "digital-detox-for-founders\\digital-detox-for-founders.zip",
+      "file": "Ep.1 - What Constant Notifications Are Doing to Your Brain as a Founder.m4a",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-Ep-ePw0PR3uhrqr4G9nO1BaoktMEq86PK.1---What-Constant-Notifications-Are-Doing-to-Your-",
+      "ok": true
+    },
+    {
+      "zip": "digital-detox-for-founders\\digital-detox-for-founders.zip",
+      "file": "Ep.2 - Why You Can’t Fix Focus Until You Measure Attention.m4a",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-Ep-FF1JiyWZesaWd1uGt52vbTBIppcFEV.2---Why-You-Can-t-Fix-Focus-Until-You-Measure-Atte",
+      "ok": true
+    },
+    {
+      "zip": "digital-detox-for-founders\\digital-detox-for-founders.zip",
+      "file": "Ep.3 - The Mental Drain You Feel Every Day at Your Desk.m4a",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-Ep-oxOJAOAf1qWUMuEVkWEgISwK5H4PkN.3---The-Mental-Drain-You-Feel-Every-Day-at-Your-De",
+      "ok": true
+    },
+    {
+      "zip": "digital-detox-for-founders\\digital-detox-for-founders.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-Artwork-DmzmcgDEWpDIvk8JeSS9Zc3ABuK8Du.jpg",
+      "ok": true
+    },
+    {
+      "zip": "digital-detox-for-founders\\digital-detox-for-founders.zip",
+      "file": "Book Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-Book-Cover-sbKUwg2K0e5EkqMEro3v4aP7DGFbtE.jpg",
+      "ok": true
+    },
+    {
+      "zip": "digital-detox-for-founders\\digital-detox-for-founders.zip",
+      "file": "Digital Detox for Founders - Ebook.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-Digital-Detox-for-Founders---Ebook-wDa3wIdIuYyveGf5cvTPVoqUKrU7UL.pdf",
+      "ok": true
+    },
+    {
+      "zip": "digital-detox-for-founders\\digital-detox-for-founders.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-Artwork-j1QySw1eugydcjrM2ixXsCZG4rjlXe.jpg",
+      "ok": true
+    },
+    {
+      "zip": "digital-detox-for-founders\\digital-detox-for-founders.zip",
+      "file": "Checklist Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-Checklist-Cover-3BCHMMbCK5t3xysVyPvvgRRWnFLcKq.jpg",
+      "ok": true
+    },
+    {
+      "zip": "digital-detox-for-founders\\digital-detox-for-founders.zip",
+      "file": "Identifying Digital Distraction Patterns - Checklist.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-Identifying-Digital-Distraction-Patterns---Checklist-p7BPon6jTJkZMvOi8K29LnxOJ30BAP.",
+      "ok": true
+    },
+    {
+      "zip": "digital-detox-for-founders\\digital-detox-for-founders.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-Artwork-Rjrl5AJz7qs7jTm82aJuWbWwsSk0ZF.jpg",
+      "ok": true
+    },
+    {
+      "zip": "digital-detox-for-founders\\digital-detox-for-founders.zip",
+      "file": "Checklist Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-Checklist-Cover-Rrg4ITAZ4UqCKD3Kt91A9l86xr7RGx.jpg",
+      "ok": true
+    },
+    {
+      "zip": "digital-detox-for-founders\\digital-detox-for-founders.zip",
+      "file": "Optimize Your Workspace - Checklist.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-Optimize-Your-Workspace---Checklist-Va9RGCNKHut0w8CCj8jafhbapwNCsd.pdf",
+      "ok": true
+    },
+    {
+      "zip": "digital-detox-for-founders\\digital-detox-for-founders.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-Artwork-SsLowtDBi79u8ZJm34idL4blDUcIU3.jpg",
+      "ok": true
+    },
+    {
+      "zip": "digital-detox-for-founders\\digital-detox-for-founders.zip",
+      "file": "Guide Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-Guide-Cover-NxbgnL3cF29zHcQcuBCGT05tYoQlRv.jpg",
+      "ok": true
+    },
+    {
+      "zip": "digital-detox-for-founders\\digital-detox-for-founders.zip",
+      "file": "The 3-Day Attention Audit - Guide.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-The-3-Day-Attention-Audit---Guide-6jyW5QEm1A0FZkS6Cc7UZY4XVSg22F.pdf",
+      "ok": true
+    },
+    {
+      "zip": "digital-detox-for-founders\\digital-detox-for-founders.zip",
+      "file": "13 Signs Your Phone Is the Real CEO - Listicle.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-13-Signs-Your-Phone-Is-the-Real-CEO---Listicle-vmBYmiE3vY9c99foBubuxk9YDlvFcV.pdf",
+      "ok": true
+    },
+    {
+      "zip": "digital-detox-for-founders\\digital-detox-for-founders.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-Artwork-grFnmAfXKN8jyA6wqL3Ic1Gsec5FZe.jpg",
+      "ok": true
+    },
+    {
+      "zip": "digital-detox-for-founders\\digital-detox-for-founders.zip",
+      "file": "Listicle Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-Listicle-Cover-VL4HHWAt2urLK8xj36xfg9rFNduApN.jpg",
+      "ok": true
+    },
+    {
+      "zip": "digital-detox-for-founders\\digital-detox-for-founders.zip",
+      "file": "7 Attention Traps That Quietly Kill Progress - Listicle.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-7-Attention-Traps-That-Quietly-Kill-Progress---Listic-hmGYURFTim33G0A3ZojLDbKwBlm9f6",
+      "ok": true
+    },
+    {
+      "zip": "digital-detox-for-founders\\digital-detox-for-founders.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-Artwork-sYnvObsSOatmWmZ3PFS1x5x13Xe89u.jpg",
+      "ok": true
+    },
+    {
+      "zip": "digital-detox-for-founders\\digital-detox-for-founders.zip",
+      "file": "Listicle Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-Listicle-Cover-DT1mKtLO0iLverQf0DvEcG4t5sB5IO.jpg",
+      "ok": true
+    },
+    {
+      "zip": "digital-detox-for-founders\\digital-detox-for-founders.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-Artwork-Ec79vviqSzOGOz5Pp707YKoYcU0M0U.jpg",
+      "ok": true
+    },
+    {
+      "zip": "digital-detox-for-founders\\digital-detox-for-founders.zip",
+      "file": "How to Use Email Mini-Course.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-How-to-Use-Email-Mini-Course-AiF5JugfaXwrRBHQxcfKZgiMkzFzsn.pdf",
+      "ok": true
+    },
+    {
+      "zip": "digital-detox-for-founders\\digital-detox-for-founders.zip",
+      "file": "Mini-Course Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-Mini-Course-Cover-cw5JdAkcbYfgUHhoXGNgkhlc2unsC5.jpg",
+      "ok": true
+    },
+    {
+      "zip": "digital-detox-for-founders\\digital-detox-for-founders.zip",
+      "file": "Rebuild Focus in an Always-On World - Mini-Course.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/digital-detox-for-founders-Rebuild-Focus-in-an-Always-On-World---Mini-Course-1hPboGfPaAw0NU45ynoLbyZJTAqpZl.pdf",
+      "ok": true
+    },
+    {
+      "zip": "self-care-without-the-guilt\\self-care-without-the-guilt.zip",
+      "file": "Artwork.png",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-Artwork-HkgLnvin1zlfAGmpX1XmlJ9DfoDl1S.png",
+      "ok": true
+    },
+    {
+      "zip": "self-care-without-the-guilt\\self-care-without-the-guilt.zip",
+      "file": "Ep.1 - How to Practice Self-Care Without Feeling Guilty.m4a",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-Ep-Ueu6AmO1MVocXTjyfeTP8NYdeYYb7d.1---How-to-Practice-Self-Care-Without-Feeling-Gui",
+      "ok": true
+    },
+    {
+      "zip": "self-care-without-the-guilt\\self-care-without-the-guilt.zip",
+      "file": "Ep.2 - The Real Reason You Can’t Focus for Long.m4a",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-Ep.2---The-Real-Reason-You-Can-t-Focus-for-Long-n6GQ476XeFrHRq0j1snj8q9859hGKb.m4a",
+      "ok": true
+    },
+    {
+      "zip": "self-care-without-the-guilt\\self-care-without-the-guilt.zip",
+      "file": "Ep.3 - Why Most Productivity Systems Collapse Under Stress.m4a",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-Ep-QLs8oJBaQo4MD8G1IBjpyqWDNkT815.3---Why-Most-Productivity-Systems-Collapse-Under-",
+      "ok": true
+    },
+    {
+      "zip": "self-care-without-the-guilt\\self-care-without-the-guilt.zip",
+      "file": "Ep.4 - Inside the 5 Minute Ritual That Changes Your Entire Day.m4a",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-Ep-6SjBDKD8i6uRyU1y68iROk9q6fgH8r.4---Inside-the-5-Minute-Ritual-That-Changes-Your-",
+      "ok": true
+    },
+    {
+      "zip": "self-care-without-the-guilt\\self-care-without-the-guilt.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-Artwork-pAIPoEZ4sDmPEwiX10CGggw1I59hqy.jpg",
+      "ok": true
+    },
+    {
+      "zip": "self-care-without-the-guilt\\self-care-without-the-guilt.zip",
+      "file": "Book Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-Book-Cover-tgZKz9PdIYPwrrkx7Xc2eAzOfBcAJ5.jpg",
+      "ok": true
+    },
+    {
+      "zip": "self-care-without-the-guilt\\self-care-without-the-guilt.zip",
+      "file": "Self-Care Without the Guilt - Ebook.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-Self-Care-Without-the-Guilt---Ebook-vnPenm06Kt7m0a7Mv1jri4sALL81JJ.pdf",
+      "ok": true
+    },
+    {
+      "zip": "self-care-without-the-guilt\\self-care-without-the-guilt.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-Artwork-aQ5Rxkc0CGHIB6clbirGMhUKLWeMWK.jpg",
+      "ok": true
+    },
+    {
+      "zip": "self-care-without-the-guilt\\self-care-without-the-guilt.zip",
+      "file": "Checklist.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-Checklist-is1N974jX6RgsFm7oCe3ilUWLp3pPn.jpg",
+      "ok": true
+    },
+    {
+      "zip": "self-care-without-the-guilt\\self-care-without-the-guilt.zip",
+      "file": "Your 5-Minute Morning and Evening Ritual - Checklist.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-Your-5-Minute-Morning-and-Evening-Ritual---Checklist-0SoiGncEgdKJVTfWQKCZWO3l1dGTLX",
+      "ok": true
+    },
+    {
+      "zip": "self-care-without-the-guilt\\self-care-without-the-guilt.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-Artwork-yXWRaE90GvqVTPbPafjJ23QRl1Lr65.jpg",
+      "ok": true
+    },
+    {
+      "zip": "self-care-without-the-guilt\\self-care-without-the-guilt.zip",
+      "file": "Guide Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-Guide-Cover-y2RvZuAIOW5aWMkA85N6uErB5aaw1k.jpg",
+      "ok": true
+    },
+    {
+      "zip": "self-care-without-the-guilt\\self-care-without-the-guilt.zip",
+      "file": "Personal Energy Mapping - Guide.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-Personal-Energy-Mapping---Guide-LJXPDPYZ4fb5Bi5JxcXzxyGClizhMg.pdf",
+      "ok": true
+    },
+    {
+      "zip": "self-care-without-the-guilt\\self-care-without-the-guilt.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-Artwork-Qm8J3Ytd6UVaJRE1442bwSgTfR8pk2.jpg",
+      "ok": true
+    },
+    {
+      "zip": "self-care-without-the-guilt\\self-care-without-the-guilt.zip",
+      "file": "Guide Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-Guide-Cover-EtGnpej2ybGowiZTGrZD1i3tZWA90P.jpg",
+      "ok": true
+    },
+    {
+      "zip": "self-care-without-the-guilt\\self-care-without-the-guilt.zip",
+      "file": "The Bad Day Protocol - Guide.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-The-Bad-Day-Protocol---Guide-3KIeHyYEtNWpkreYUe2eD5Iaew7H1M.pdf",
+      "ok": true
+    },
+    {
+      "zip": "self-care-without-the-guilt\\self-care-without-the-guilt.zip",
+      "file": "13 Silent Signs the Daily Grind Has Stolen More Than It Should - Listicle.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-13-Silent-Signs-the-Daily-Grind-Has-Stolen-More-Than-1IakzJpiwu5X7dN69BjnZEtuVGAyAO",
+      "ok": true
+    },
+    {
+      "zip": "self-care-without-the-guilt\\self-care-without-the-guilt.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-Artwork-WtSU8aHJaD91UTPXE10jJGv9AzPniQ.jpg",
+      "ok": true
+    },
+    {
+      "zip": "self-care-without-the-guilt\\self-care-without-the-guilt.zip",
+      "file": "Listicle Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-Listicle-Cover-B7sbMJivdKmOczbJvmj8BjMIc90ThY.jpg",
+      "ok": true
+    },
+    {
+      "zip": "self-care-without-the-guilt\\self-care-without-the-guilt.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-Artwork-i3T3h128HEZjOx17qo98AGE9XjFtYC.jpg",
+      "ok": true
+    },
+    {
+      "zip": "self-care-without-the-guilt\\self-care-without-the-guilt.zip",
+      "file": "Build a Self-Care System in 7 Days - Mini-Course.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-Build-a-Self-Care-System-in-7-Days---Mini-Course-b3t43xt8VyEm4GWXk97kRw4ymzNL0h.pdf",
+      "ok": true
+    },
+    {
+      "zip": "self-care-without-the-guilt\\self-care-without-the-guilt.zip",
+      "file": "How to Use Email Mini-Course.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-How-to-Use-Email-Mini-Course-RoXNFFwumeTzmoDdfzFK79J2y1zO9H.pdf",
+      "ok": true
+    },
+    {
+      "zip": "self-care-without-the-guilt\\self-care-without-the-guilt.zip",
+      "file": "Mini-Course Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/self-care-without-the-guilt-Mini-Course-Cover-5ymrA4DuNRZvTRLSvbaO0DZvyfG7sC.jpg",
+      "ok": true
+    },
+    {
+      "zip": "the-connection-code\\the-connection-code.zip",
+      "file": "Artwork.png",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-connection-code-Artwork-1Uvj9fhhe4uuhyBRYqlRKc79xSsxfH.png",
+      "ok": true
+    },
+    {
+      "zip": "the-connection-code\\the-connection-code.zip",
+      "file": "Ep.1 - Build Trust and Communication With Your Teen Again.m4a",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-connection-code-Ep.1---Build-Trust-and-Communication-With-Your-Teen-Again-LiDB4kmMIWebteXi6uLOHGiBhJSqck.m4",
+      "ok": true
+    },
+    {
+      "zip": "the-connection-code\\the-connection-code.zip",
+      "file": "Ep.2 - How to Get Your Teen to Open Up Again.m4a",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-connection-code-Ep.2---How-to-Get-Your-Teen-to-Open-Up-Again-6HVRpt2MrWSLQYCXRhuybarqVfnHnV.m4a",
+      "ok": true
+    },
+    {
+      "zip": "the-connection-code\\the-connection-code.zip",
+      "file": "Ep.3 - Why Hard Talks With Teens Go Wrong.m4a",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-connection-code-Ep.3---Why-Hard-Talks-With-Teens-Go-Wrong-ObjJPNO8PDgLJZhUQBrYB7wDW9gFEc.m4a",
+      "ok": true
+    },
+    {
+      "zip": "the-connection-code\\the-connection-code.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-connection-code-Artwork-Ie8hu2i8EBDiENtBqycnEBMLqb1hsD.jpg",
+      "ok": true
+    },
+    {
+      "zip": "the-connection-code\\the-connection-code.zip",
+      "file": "Book Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-connection-code-Book-Cover-YIZTvXbfE62Hx01WxTvgzfRyd3534P.jpg",
+      "ok": true
+    },
+    {
+      "zip": "the-connection-code\\the-connection-code.zip",
+      "file": "The Connection Code - Ebook.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-connection-code-The-Connection-Code---Ebook-KMzx7mZUvUHI1IoochoiDxdYrk56Ol.pdf",
+      "ok": true
+    },
+    {
+      "zip": "the-connection-code\\the-connection-code.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-connection-code-Artwork-vCXbbKbQ658iboYq6KM0WO3kziT6Rn.jpg",
+      "ok": true
+    },
+    {
+      "zip": "the-connection-code\\the-connection-code.zip",
+      "file": "Checklist Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-connection-code-Checklist-Cover-NxqvQERvXNZgwsz9ECCO6Mc9dOmouA.jpg",
+      "ok": true
+    },
+    {
+      "zip": "the-connection-code\\the-connection-code.zip",
+      "file": "Prepare Before the Hard Talk With Your Teen - Checklist.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-connection-code-Prepare-Before-the-Hard-Talk-With-Your-Teen---Checklist-chIVhCqaEleezRhGPVbYrAlcODfCKy.pdf",
+      "ok": true
+    },
+    {
+      "zip": "the-connection-code\\the-connection-code.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-connection-code-Artwork-LYbO4stOHNrOxVtdRlMiMaGkw0nq6F.jpg",
+      "ok": true
+    },
+    {
+      "zip": "the-connection-code\\the-connection-code.zip",
+      "file": "Get Your Teen to Open Up Again - Guide.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-connection-code-Get-Your-Teen-to-Open-Up-Again---Guide-4BEj4b2C1bsCMyCagD3DxW1G1ZcyJZ.pdf",
+      "ok": true
+    },
+    {
+      "zip": "the-connection-code\\the-connection-code.zip",
+      "file": "Guide Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-connection-code-Guide-Cover-GAOWw9BzUlxz5bfZusjoUSjbMqlBo6.jpg",
+      "ok": true
+    },
+    {
+      "zip": "the-connection-code\\the-connection-code.zip",
+      "file": "21 Small Shifts That Transform How Your Teen Talks to You - Listicle.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-connection-code-21-Small-Shifts-That-Transform-How-Your-Teen-Talks-to-You----TOyJE95n7QxEnK5L0cl6ccUpwNdgJM",
+      "ok": true
+    },
+    {
+      "zip": "the-connection-code\\the-connection-code.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-connection-code-Artwork-A7jU5I6LCzdq6HNdHRKlzBiknof1u0.jpg",
+      "ok": true
+    },
+    {
+      "zip": "the-connection-code\\the-connection-code.zip",
+      "file": "Listicle Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-connection-code-Listicle-Cover-zoxnucuBepZAlpSc3lIKWJq6xYjcvI.jpg",
+      "ok": true
+    },
+    {
+      "zip": "the-connection-code\\the-connection-code.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-connection-code-Artwork-QMjPGi6LQxhfpJPupYSsZrUKDh06c1.jpg",
+      "ok": true
+    },
+    {
+      "zip": "the-connection-code\\the-connection-code.zip",
+      "file": "How to Use Email Mini-Course.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-connection-code-How-to-Use-Email-Mini-Course-uP2TaJcUFqx9zwulyrvBec2NPREd2C.pdf",
+      "ok": true
+    },
+    {
+      "zip": "the-connection-code\\the-connection-code.zip",
+      "file": "Mini-Course Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-connection-code-Mini-Course-Cover-2KR2N2RZsi9lXdLn6pOT9a50wsOI5H.jpg",
+      "ok": true
+    },
+    {
+      "zip": "the-connection-code\\the-connection-code.zip",
+      "file": "Reconnect With Your Teen in 7 Days - Mini-Course.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-connection-code-Reconnect-With-Your-Teen-in-7-Days---Mini-Course-jsUAj7C34Rd9A4K2HlWnBC4C0n3ZrF.pdf",
+      "ok": true
+    },
+    {
+      "zip": "the-neuroinclusive-managers-playbook\\the-neuroinclusive-managers-playbook.zip",
+      "file": "Artwork.png",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-neuroinclusive-managers-playbook-Artwork-L3J8tOFkPTI6CStZPcWG0vprKHIwou.png",
+      "ok": true
+    },
+    {
+      "zip": "the-neuroinclusive-managers-playbook\\the-neuroinclusive-managers-playbook.zip",
+      "file": "Ep.1 - Why Your Best Employees Might Be the Most Misunderstood.m4a",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-neuroinclusive-managers-playbook-Ep-3M2UVU8JOvsIl3ACngt2OB1OZ5089t.1---Why-Your-Best-Employees-Might-Be-the",
+      "ok": true
+    },
+    {
+      "zip": "the-neuroinclusive-managers-playbook\\the-neuroinclusive-managers-playbook.zip",
+      "file": "Ep.2 - The Hidden Reason Your Hiring Process Is Failing.m4a",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-neuroinclusive-managers-playbook-Ep-ZsbElsQtqk2V88SQk6hZrHOSKIpDJz.2---The-Hidden-Reason-Your-Hiring-Proces",
+      "ok": true
+    },
+    {
+      "zip": "the-neuroinclusive-managers-playbook\\the-neuroinclusive-managers-playbook.zip",
+      "file": "Ep.3 - How to Build a Brain Friendly Hiring Process.m4a",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-neuroinclusive-managers-playbook-Ep-oF7dCXh2QkUlgwQuKkgQ2MwrQw710l.3---How-to-Build-a-Brain-Friendly-Hiring",
+      "ok": true
+    },
+    {
+      "zip": "the-neuroinclusive-managers-playbook\\the-neuroinclusive-managers-playbook.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-neuroinclusive-managers-playbook-Artwork-avlYod5U8b6QJL2FxJAgqqfgDGLanN.jpg",
+      "ok": true
+    },
+    {
+      "zip": "the-neuroinclusive-managers-playbook\\the-neuroinclusive-managers-playbook.zip",
+      "file": "Book Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-neuroinclusive-managers-playbook-Book-Cover-BQcGPy4e6kaJnoU8jJNWV8ms3mNEn1.jpg",
+      "ok": true
+    },
+    {
+      "zip": "the-neuroinclusive-managers-playbook\\the-neuroinclusive-managers-playbook.zip",
+      "file": "The Neuroinclusive Manager's Playbook - Ebook.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-neuroinclusive-managers-playbook-The-Neuroinclusive-Manager-s-Playbook---Ebo-6kqaIWO1NyuauT8AJkBm2mImKweT8T",
+      "ok": true
+    },
+    {
+      "zip": "the-neuroinclusive-managers-playbook\\the-neuroinclusive-managers-playbook.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-neuroinclusive-managers-playbook-Artwork-gMYCS8TkzBMcjT26vKh4l3mxU177KN.jpg",
+      "ok": true
+    },
+    {
+      "zip": "the-neuroinclusive-managers-playbook\\the-neuroinclusive-managers-playbook.zip",
+      "file": "Checklist Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-neuroinclusive-managers-playbook-Checklist-Cover-VwGkDUbcmH72j1q9gXpuXmqjYdP2BU.jpg",
+      "ok": true
+    },
+    {
+      "zip": "the-neuroinclusive-managers-playbook\\the-neuroinclusive-managers-playbook.zip",
+      "file": "The Brain-Friendly Hiring - Checklist.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-neuroinclusive-managers-playbook-The-Brain-Friendly-Hiring---Checklist-mcfJDabAPq9OKZa6wjrAMga2CEqMVB.pdf",
+      "ok": true
+    },
+    {
+      "zip": "the-neuroinclusive-managers-playbook\\the-neuroinclusive-managers-playbook.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-neuroinclusive-managers-playbook-Artwork-j7BXZC5ADKVzEdbGZ0IYGiM3ayZsvV.jpg",
+      "ok": true
+    },
+    {
+      "zip": "the-neuroinclusive-managers-playbook\\the-neuroinclusive-managers-playbook.zip",
+      "file": "Guide Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-neuroinclusive-managers-playbook-Guide-Cover-UGZJDfx7GpmJtNbo5h30XTxBsND00D.jpg",
+      "ok": true
+    },
+    {
+      "zip": "the-neuroinclusive-managers-playbook\\the-neuroinclusive-managers-playbook.zip",
+      "file": "Stop Losing Top Talent at the Interview Stage - Guide.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-neuroinclusive-managers-playbook-Stop-Losing-Top-Talent-at-the-Interview-Sta-eeUsszMQNX0cQKJwwLks7uptMUw1aP",
+      "ok": true
+    },
+    {
+      "zip": "the-neuroinclusive-managers-playbook\\the-neuroinclusive-managers-playbook.zip",
+      "file": "7 Workplace Policies That Accidentally Block Neurodivergent Talent - Listicle.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-neuroinclusive-managers-playbook-7-Workplace-Policies-That-Accidentally-Bloc-q2eA7RbBE2lptwQSIixroi0kxNmqtf",
+      "ok": true
+    },
+    {
+      "zip": "the-neuroinclusive-managers-playbook\\the-neuroinclusive-managers-playbook.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-neuroinclusive-managers-playbook-Artwork-nMYni5jo9Dq4Lg3LEPAI3od7v6WfPb.jpg",
+      "ok": true
+    },
+    {
+      "zip": "the-neuroinclusive-managers-playbook\\the-neuroinclusive-managers-playbook.zip",
+      "file": "Listicle Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-neuroinclusive-managers-playbook-Listicle-Cover-y1q4bv2vVJXb5FbOZjj6uX2NsNmNZ2.jpg",
+      "ok": true
+    },
+    {
+      "zip": "the-neuroinclusive-managers-playbook\\the-neuroinclusive-managers-playbook.zip",
+      "file": "7 Days to a Neuroinclusive Management - Mini-Course.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-neuroinclusive-managers-playbook-7-Days-to-a-Neuroinclusive-Management---Min-7dA3YvcurLQD6aBdyOc8lNje5ZEw0y",
+      "ok": true
+    },
+    {
+      "zip": "the-neuroinclusive-managers-playbook\\the-neuroinclusive-managers-playbook.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-neuroinclusive-managers-playbook-Artwork-Bv96wlTJccN57PhbEGF2FTg5r7pia0.jpg",
+      "ok": true
+    },
+    {
+      "zip": "the-neuroinclusive-managers-playbook\\the-neuroinclusive-managers-playbook.zip",
+      "file": "How to Use Email Mini-Course.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-neuroinclusive-managers-playbook-How-to-Use-Email-Mini-Course-f85cZ17ObCOL2sgq1Ld7Eqxmd2xGDR.pdf",
+      "ok": true
+    },
+    {
+      "zip": "the-neuroinclusive-managers-playbook\\the-neuroinclusive-managers-playbook.zip",
+      "file": "Mini-Course Cover.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-neuroinclusive-managers-playbook-Mini-Course-Cover-88yvmqy3bMKD5Ykv4svUrxZ3W5kpG4.jpg",
+      "ok": true
+    },
+    {
+      "zip": "the-neuroinclusive-managers-playbook\\the-neuroinclusive-managers-playbook.zip",
+      "file": "Artwork.jpg",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-neuroinclusive-managers-playbook-Artwork-L1OL78A5NHwifCkCmd8aq4eS192PIr.jpg",
+      "ok": true
+    },
+    {
+      "zip": "the-neuroinclusive-managers-playbook\\the-neuroinclusive-managers-playbook.zip",
+      "file": "Neuroinclusive Leadership Copilot - Prompts.pdf",
+      "url": "https://sibiptoxplgvfrxd.private.blob.vercel-storage.com/imu/media/w2b3/the-neuroinclusive-managers-playbook-Neuroinclusive-Leadership-Copilot---Prompts-1eLwPNIQauqmmJbZlu3M3NzBoRS2xW",
+      "ok": true
+    }
+  ]
+}

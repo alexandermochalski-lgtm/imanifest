@@ -1,0 +1,56 @@
+{
+  "at": "2026-08-20T10:20:02.091Z",
+  "mapped": [
+    {
+      "prefix": "ai-prompt-engineering-ebook",
+      "course": "AI Prompt Engineering Desk",
+      "audio": 3,
+      "pdfs": 5,
+      "book": true
+    },
+    {
+      "prefix": "hire-right-keep-them-longer",
+      "course": "Hire & Retain Desk",
+      "audio": 1,
+      "pdfs": 6,
+      "book": true
+    },
+    {
+      "prefix": "humanize-your-ai-copy",
+      "course": "Humanize AI Copy Desk",
+      "audio": 3,
+      "pdfs": 6,
+      "book": true
+    },
+    {
+      "prefix": "sales-automation-chatbots",
+      "course": "Sales Chatbot Automation",
+      "audio": 3,
+      "pdfs": 7,
+      "book": true
+    },
+    {
+      "prefix": "swot-analysis-simplified",
+      "course": "SWOT Decision Desk",
+      "audio": 3,
+      "pdfs": 6,
+      "book": true
+    },
+    {
+      "prefix": "the-backlink-blueprint",
+      "course": "Backlink Blueprint Desk",
+      "audio": 0,
+      "pdfs": 6,
+      "book": true
+    }
+  ],
+  "prunedCourses": {
+    "removed": 0,
+    "kept": 23
+  },
+  "prunedBooks": {
+    "removed": 0,
+    "kept": 22
+  },
+  "blob": "imu/catalog-overlay.json"
+}

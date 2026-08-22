@@ -16,12 +16,19 @@ export default async function ProgramsPage({
   const filtered = courses.filter((course) => !category || course.category === category);
   return (
     <main className="mx-auto max-w-6xl px-5 py-16">
-      <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-gold">iMU catalog · from the Laravel campus</p>
-      <h1 className="mt-3 font-[family-name:var(--font-cormorant)] text-5xl text-[#fff8e8]">All Courses</h1>
+      <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-gold">iMU catalog</p>
+      <h1 className="mt-3 font-[family-name:var(--font-cormorant)] text-5xl text-[#fff8e8]">
+        For operators, not spectators.
+      </h1>
       <p className="mt-4 max-w-2xl text-[#d4d4d4]">
-        {courses.length} methods across the original iMU faculties. Browse free. ${premiumMembership.price.toFixed(2)}/mo{" "}
-        opens campus to enroll, sit quizzes, and run the daily desk.
+        {courses.length} live money methods across finance, investing, e-commerce, marketing, and more. Browse free —
+        ${premiumMembership.price.toFixed(2)}/mo opens campus to enroll, sit quizzes, and run the daily desk.
       </p>
+      <div className="mt-6">
+        <Link href="/get" className="gold-btn inline-flex rounded-lg px-7 py-3.5">
+          Start on campus
+        </Link>
+      </div>
       <div className="mt-8 flex flex-wrap gap-2">
         <Link href="/programs" className="ghost-btn rounded-full px-4 py-1.5 text-[11px]">
           All
