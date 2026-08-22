@@ -67,20 +67,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="mx-auto mb-20 max-w-6xl rounded-2xl border border-[var(--line)] bg-[var(--panel)] px-6 py-12 md:px-12 md:py-14">
-        <h2 className="font-[family-name:var(--font-cormorant)] text-3xl font-medium tracking-tight text-white md:text-4xl">
-          Not a course library — a campus to run it.
-        </h2>
-        <p className="mt-4 max-w-2xl text-base leading-7 text-[var(--text-soft)]">
-          Enroll in methods, sit quizzes, open the daily desk, and compound — across personal development, fitness,
-          e-commerce, marketing, and social.
-        </p>
-        <Link href="/about" className="gold-btn mt-8 inline-flex rounded-lg px-7 py-3.5">
-          About the university
-        </Link>
-      </section>
-
-      <MembershipPacks />
+      <MembershipPacks courseCount={courses.length} />
     </main>
   );
 }

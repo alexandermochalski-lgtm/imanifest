@@ -215,6 +215,7 @@ export type MembershipPackage = {
   name: string;
   price: number;
   listPrice?: number;
+  listPriceLabel?: string;
   duration: string;
   featured?: boolean;
   features: string[];
