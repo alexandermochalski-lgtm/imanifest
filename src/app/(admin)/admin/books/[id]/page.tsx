@@ -33,7 +33,7 @@ export default async function AdminBookDetailPage({
         title={book.title}
         description={`${book.author} · ${book.pages} pages · ${book.price === 0 ? "free" : `${book.price} coins`}`}
         action={
-          <Link className="ghost-btn rounded-xl px-4 py-2 text-[10px]" href="/admin/books">
+          <Link className="ghost-btn rounded-lg px-5 py-2.5 text-[11px]" href="/admin/books">
             All books
           </Link>
         }

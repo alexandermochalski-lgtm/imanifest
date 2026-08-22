@@ -30,7 +30,7 @@ export default async function AdminMediaPage({
         description="MP4 lectures, MP3 audio, PDFs, and covers. Files go to Vercel Blob in production — never the Next.js server disk."
       />
       <Flash map={{ deleted: "Asset removed from the library." }} ok={ok} />
-      <div className="mb-8 rounded-2xl border border-[var(--line)] p-5 text-sm text-muted">
+      <div className="mb-8 imu-section rounded-2xl p-5 md:p-6 text-sm text-muted">
         Storage: <span className="text-gold">{mode === "blob" ? "Vercel Blob" : mode === "local" ? "local .data (dev only)" : "not connected"}</span>
         {mode === "blob"
           ? " · private Blob store; paid seats stream through /api/campus/media."

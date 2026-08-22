@@ -50,7 +50,7 @@ export default async function AdminApplicationsPage({
         {rows.map((item) => {
           const user = opsUserById(item.userId);
           return (
-            <article key={item.id} className="rounded-2xl border border-[var(--line)] p-5">
+            <article key={item.id} className="imu-section rounded-2xl p-5 md:p-6">
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <div>
                   <p className="text-white">{jobTitle(item.jobId)}</p>
@@ -67,7 +67,7 @@ export default async function AdminApplicationsPage({
                 </div>
                 <StatusBadge status={item.status} />
               </div>
-              <p className="mt-3 text-sm text-[#f6f1e4]">{item.note}</p>
+              <p className="mt-3 text-sm text-[var(--text-soft)]">{item.note}</p>
               <form action={setApplicationStatus} className="mt-4 flex flex-wrap items-end gap-3">
                 <input name="applicationId" type="hidden" value={item.id} />
                 <label className="text-xs text-muted">

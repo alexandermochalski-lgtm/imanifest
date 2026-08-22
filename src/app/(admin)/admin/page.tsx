@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PageHeader, Kpi, StatusBadge, SparkBars } from "@/components/admin/ui";
+import { AlertPanel, Kpi, ListRow, PageHeader, SparkBars, StatusBadge } from "@/components/admin/ui";
 import { getDesk } from "@/lib/desk";
 import { formatDate, opsUserById, usd } from "@/lib/ops";
 
@@ -16,14 +16,13 @@ export default async function AdminHomePage() {
       />
 
       {desk.alerts.length > 0 ? (
-        <div className="mb-8 rounded-2xl border border-[var(--line)] bg-[rgba(247,230,138,0.06)] p-5">
-          <p className="text-xs uppercase tracking-[0.2em] text-gold-deep">Needs attention</p>
-          <ul className="mt-3 space-y-1 text-sm text-[#f6f1e4]">
+        <AlertPanel title="Needs attention">
+          <ul className="space-y-1">
             {desk.alerts.map((alert) => (
               <li key={alert}>· {alert}</li>
             ))}
           </ul>
-        </div>
+        </AlertPanel>
       ) : null}
 
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
@@ -38,7 +37,7 @@ export default async function AdminHomePage() {
       </div>
 
       <div className="mt-8 grid gap-6 xl:grid-cols-5">
-        <section className="imu-card rounded-2xl p-5 xl:col-span-2">
+        <section className="imu-card rounded-2xl p-5 md:p-6 xl:col-span-2">
           <p className="text-xs uppercase tracking-[0.2em] text-gold-deep">Card take · 8 weeks</p>
           <p className="mt-1 font-[family-name:var(--font-cormorant)] text-2xl text-white">Coin pack captures</p>
           <div className="mt-6">
@@ -46,7 +45,7 @@ export default async function AdminHomePage() {
           </div>
           <p className="mt-3 text-xs text-muted">Oldest week left · this week right. USD from Starter / Operator / Desk packs.</p>
         </section>
-        <section className="imu-card rounded-2xl p-5 xl:col-span-3">
+        <section className="imu-card rounded-2xl p-5 md:p-6 xl:col-span-3">
           <div className="flex items-center justify-between">
             <p className="text-xs uppercase tracking-[0.2em] text-gold-deep">Top courses</p>
             <Link className="text-xs text-gold" href="/admin/courses">
@@ -80,7 +79,7 @@ export default async function AdminHomePage() {
             {desk.recentPayments.map((payment) => {
               const user = opsUserById(payment.userId);
               return (
-                <li key={payment.id} className="flex items-center justify-between gap-3 rounded-xl border border-[var(--line)] px-4 py-3">
+                <ListRow key={payment.id} className="flex items-center justify-between gap-3">
                   <div>
                     <p className="text-white">{payment.label}</p>
                     <p className="text-xs text-muted">
@@ -91,7 +90,7 @@ export default async function AdminHomePage() {
                     <p className="text-gold">{payment.kind === "coins" ? usd(payment.amountUsd) : `${payment.coins} coins`}</p>
                     <StatusBadge status={payment.status} />
                   </div>
-                </li>
+                </ListRow>
               );
             })}
           </ul>
@@ -105,7 +104,7 @@ export default async function AdminHomePage() {
           </div>
           <ul className="space-y-2">
             {desk.recentRegistrations.map((item) => (
-              <li key={item.id} className="flex items-center justify-between gap-3 rounded-xl border border-[var(--line)] px-4 py-3">
+              <ListRow key={item.id} className="flex items-center justify-between gap-3">
                 <div>
                   <p className="text-white">{item.name}</p>
                   <p className="text-xs text-muted">
@@ -113,7 +112,7 @@ export default async function AdminHomePage() {
                   </p>
                 </div>
                 <StatusBadge status={item.status} />
-              </li>
+              </ListRow>
             ))}
           </ul>
         </section>

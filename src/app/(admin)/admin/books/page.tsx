@@ -17,7 +17,7 @@ export default async function AdminBooksPage({
         title="Books"
         description="Library titles. Attach a PDF from Media, then students can open it from /library."
         action={
-          <Link className="gold-btn rounded-xl px-4 py-2 text-[10px]" href="/admin/books/new">
+          <Link className="gold-btn rounded-lg px-5 py-2.5 text-[11px]" href="/admin/books/new">
             New book
           </Link>
         }

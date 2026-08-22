@@ -35,7 +35,7 @@ export default async function AdminContentPage({
         ok={ok}
       />
 
-      <section className="mb-8 rounded-2xl border border-[var(--line)] p-5">
+      <section className="mb-8 imu-section rounded-2xl p-5 md:p-6">
         <h2 className="text-lg text-white">Daily desk</h2>
         <p className="mt-1 text-sm text-muted">
           Edit the pinned Master Tenet and append Daily Notes from the Founder. Notes rotate on the student dashboard.
@@ -82,7 +82,7 @@ export default async function AdminContentPage({
       </section>
 
       <div className="grid gap-6 lg:grid-cols-2">
-        <section className="rounded-2xl border border-[var(--line)] p-5">
+        <section className="imu-section rounded-2xl p-5 md:p-6">
           <h2 className="text-lg text-white">Forum</h2>
           <ul className="mt-4 space-y-3">
             {forum.map((post) => (
@@ -95,7 +95,7 @@ export default async function AdminContentPage({
             ))}
           </ul>
         </section>
-        <section className="rounded-2xl border border-[var(--line)] p-5">
+        <section className="imu-section rounded-2xl p-5 md:p-6">
           <h2 className="text-lg text-white">Journals</h2>
           <ul className="mt-4 space-y-3">
             {journals.map((journal) => (
@@ -112,7 +112,7 @@ export default async function AdminContentPage({
           </ul>
         </section>
       </div>
-      <section className="mt-6 rounded-2xl border border-[var(--line)] p-5">
+      <section className="mt-6 imu-section rounded-2xl p-5 md:p-6">
         <h2 className="text-lg text-white">Public pages</h2>
         <ul className="mt-4 space-y-2 text-sm text-muted">
           {dynamicPages.map((page) => (

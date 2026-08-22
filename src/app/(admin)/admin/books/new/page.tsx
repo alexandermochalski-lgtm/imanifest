@@ -24,7 +24,7 @@ export default async function NewBookPage({
         title="New book"
         description="Adds a library title with cover preview and one or more category tags."
         action={
-          <Link className="ghost-btn rounded-xl px-4 py-2 text-[10px]" href="/admin/books">
+          <Link className="ghost-btn rounded-lg px-5 py-2.5 text-[11px]" href="/admin/books">
             Back
           </Link>
         }

@@ -207,6 +207,66 @@ select:focus {
   color: var(--gold);
 }
 
+.imu-section {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.imu-alert {
+  background: rgba(232, 201, 106, 0.06);
+  border: 1px solid rgba(232, 201, 106, 0.22);
+  box-shadow: var(--shadow);
+}
+
+.imu-list-row {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+  transition: border-color 0.18s ease, background 0.18s ease, transform 0.18s ease;
+}
+
+.imu-list-row:hover {
+  border-color: rgba(232, 201, 106, 0.22);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.admin-table-wrap {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.admin-table tbody tr {
+  border-top: 1px solid var(--line);
+  transition: background 0.15s ease;
+}
+
+.admin-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.admin-table tbody td {
+  padding: 0.85rem 1rem;
+  vertical-align: top;
+}
+
+.admin-table thead th {
+  padding: 0.85rem 1rem;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+}
+
+.imu-field {
+  display: block;
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  font-size: 0.875rem;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .imu-card,
   .gold-btn,

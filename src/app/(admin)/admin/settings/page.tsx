@@ -10,8 +10,8 @@ export default function AdminSettingsPage() {
         description="What is live on this staging desk, and what still needs production rails."
       />
       <div className="grid gap-4 lg:grid-cols-2">
-        <section className="rounded-2xl border border-[var(--line)] p-5">
-          <h2 className="text-lg text-gold">Ledger</h2>
+        <section className="imu-section rounded-2xl p-5 md:p-6">
+          <h2 className="font-[family-name:var(--font-cormorant)] text-xl font-medium text-white">Ledger</h2>
           <p className="mt-2 text-sm text-muted">
             Command numbers are a seeded campus ledger plus this browser&apos;s live coin checkouts, enrollments, and job
             applications. Account status, hiring moves, promo toggles, and internal notes persist in an admin cookie.
@@ -21,8 +21,8 @@ export default function AdminSettingsPage() {
             {catalogCounts.jobs} jobs.
           </p>
         </section>
-        <section className="rounded-2xl border border-[var(--line)] p-5">
-          <h2 className="text-lg text-gold">Stripe / cards</h2>
+        <section className="imu-section rounded-2xl p-5 md:p-6">
+          <h2 className="font-[family-name:var(--font-cormorant)] text-xl font-medium text-white">Stripe / cards</h2>
           <p className="mt-2 text-sm text-muted">
             Campus door is the live Payment Link at $49.99 / month. After payment, Stripe must send the student back to{" "}
             <code className="text-gold">https://imanifest.vercel.app/get/thanks</code> (Payment Link → After payment →
@@ -38,16 +38,16 @@ export default function AdminSettingsPage() {
             seat credits 50 coins each UTC month. Peer DMs cost 1 coin.
           </p>
         </section>
-        <section className="rounded-2xl border border-[var(--line)] p-5">
-          <h2 className="text-lg text-gold">Mail &amp; auth</h2>
+        <section className="imu-section rounded-2xl p-5 md:p-6">
+          <h2 className="font-[family-name:var(--font-cormorant)] text-xl font-medium text-white">Mail &amp; auth</h2>
           <p className="mt-2 text-sm text-muted">
             Demo seats still work: <span className="text-white">admin@imanifest.money</span> and{" "}
             <span className="text-white">student@imanifest.money</span> / <span className="text-white">imanifest</span>.
             New students register into Supabase Auth. Confirm emails if the project has confirmations on.
           </p>
         </section>
-        <section className="rounded-2xl border border-[var(--line)] p-5">
-          <h2 className="text-lg text-gold">Supabase</h2>
+        <section className="imu-section rounded-2xl p-5 md:p-6">
+          <h2 className="font-[family-name:var(--font-cormorant)] text-xl font-medium text-white">Supabase</h2>
           <p className="mt-2 text-sm text-muted">
             Project <code className="text-gold">xjeapgcecjpjuigokarq</code>. Publishable key lives in env, not in git.
             Paste <code className="text-gold">supabase/migrations/001_memberships.sql</code>,{" "}
@@ -63,8 +63,8 @@ export default function AdminSettingsPage() {
             <code className="text-gold">https://imanifest.vercel.app/**</code>.
           </p>
         </section>
-        <section className="rounded-2xl border border-[var(--line)] p-5">
-          <h2 className="text-lg text-gold">Media storage</h2>
+        <section className="imu-section rounded-2xl p-5 md:p-6">
+          <h2 className="font-[family-name:var(--font-cormorant)] text-xl font-medium text-white">Media storage</h2>
           <p className="mt-2 text-sm text-muted">
             Course video/audio and book PDFs are not saved inside the Next.js app. On Vercel the filesystem is
             ephemeral. Production files go to <span className="text-white">Vercel Blob</span> (object storage): browser

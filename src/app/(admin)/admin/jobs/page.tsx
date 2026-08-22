@@ -12,7 +12,7 @@ export default async function AdminJobsPage() {
         title="Jobs"
         description="Open roles and inbound volume. Pipeline lives under Applications."
         action={
-          <Link className="ghost-btn rounded-xl px-4 py-2 text-[10px]" href="/admin/applications">
+          <Link className="ghost-btn rounded-lg px-5 py-2.5 text-[11px]" href="/admin/applications">
             Pipeline
           </Link>
         }

@@ -13,15 +13,65 @@ export function PageHeader({
   action?: ReactNode;
 }) {
   return (
-    <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
+    <div className="mb-8 flex flex-wrap items-end justify-between gap-4 border-b border-[var(--line)] pb-6">
       <div>
-        {kicker ? <p className="text-xs uppercase tracking-[0.22em] text-gold-deep">{kicker}</p> : null}
-        <h1 className="mt-1 font-[family-name:var(--font-cormorant)] text-4xl text-white">{title}</h1>
-        {description ? <p className="mt-2 max-w-2xl text-sm text-muted">{description}</p> : null}
+        {kicker ? (
+          <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-gold">{kicker}</p>
+        ) : null}
+        <h1 className="mt-2 font-[family-name:var(--font-cormorant)] text-4xl font-medium tracking-tight text-white md:text-5xl">
+          {title}
+        </h1>
+        {description ? <p className="mt-3 max-w-2xl text-sm leading-6 text-[var(--text-soft)] md:text-base">{description}</p> : null}
       </div>
       {action}
     </div>
   );
+}
+
+export function AdminSection({
+  title,
+  description,
+  action,
+  children,
+  className = "",
+}: {
+  title?: string;
+  description?: string;
+  action?: ReactNode;
+  children: ReactNode;
+  className?: string;
+}) {
+  return (
+    <section className={`imu-section rounded-2xl p-5 md:p-6 ${className}`}>
+      {title || action ? (
+        <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
+          <div>
+            {title ? (
+              <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium tracking-tight text-white">
+                {title}
+              </h2>
+            ) : null}
+            {description ? <p className="mt-1 text-sm text-[var(--muted)]">{description}</p> : null}
+          </div>
+          {action}
+        </div>
+      ) : null}
+      {children}
+    </section>
+  );
+}
+
+export function AlertPanel({ title, children }: { title: string; children: ReactNode }) {
+  return (
+    <div className="imu-alert mb-8 rounded-2xl p-5 md:p-6">
+      <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold-deep">{title}</p>
+      <div className="mt-3 text-sm leading-6 text-[var(--text-soft)]">{children}</div>
+    </div>
+  );
+}
+
+export function ListRow({ children, className = "" }: { children: ReactNode; className?: string }) {
+  return <li className={`imu-list-row px-4 py-3 ${className}`}>{children}</li>;
 }
 
 export function Kpi({
@@ -37,12 +87,14 @@ export function Kpi({
 }) {
   const body = (
     <>
-      <p className="text-[11px] uppercase tracking-[0.2em] text-gold-deep">{label}</p>
-      <p className="mt-2 font-[family-name:var(--font-cormorant)] text-3xl text-gold">{value}</p>
-      {hint ? <p className="mt-1 text-xs text-muted">{hint}</p> : null}
+      <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-gold-deep">{label}</p>
+      <p className="mt-2 font-[family-name:var(--font-cormorant)] text-3xl font-medium tracking-tight text-gold md:text-4xl">
+        {value}
+      </p>
+      {hint ? <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{hint}</p> : null}
     </>
   );
-  const className = "imu-card rounded-2xl p-5";
+  const className = "imu-card rounded-2xl p-5 md:p-6";
   if (href) {
     return (
       <Link href={href} className={`${className} block`}>
@@ -64,7 +116,7 @@ export function StatusBadge({
       : status === "failed" || status === "suspended" || status === "rejected" || status === "abandoned"
         ? "border-red-400/40 bg-red-400/10 text-red-200"
         : status === "pending" || status === "submitted" || status === "reviewing"
-          ? "border-[var(--line)] bg-[rgba(247,230,138,0.08)] text-gold"
+          ? "border-[var(--line-gold)] bg-[rgba(232,201,106,0.08)] text-gold"
           : status === "refunded" || status === "closed" || status === "hidden"
             ? "border-white/15 bg-white/5 text-muted"
             : "border-[var(--line)] text-muted";
@@ -83,18 +135,16 @@ export function AdminTable({
   children: ReactNode;
 }) {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-[var(--line)] bg-black/30">
-      <table className="w-full min-w-[720px] text-left text-sm">
-        <thead className="border-b border-[var(--line)] text-[11px] uppercase tracking-[0.16em] text-gold-deep">
+    <div className="admin-table-wrap overflow-x-auto rounded-2xl">
+      <table className="admin-table w-full min-w-[720px] text-left text-sm">
+        <thead className="border-b border-[var(--line)]">
           <tr>
             {columns.map((column) => (
-              <th key={column} className="px-4 py-3 font-medium">
-                {column}
-              </th>
+              <th key={column}>{column}</th>
             ))}
           </tr>
         </thead>
-        <tbody className="text-muted">{children}</tbody>
+        <tbody className="text-[var(--text-soft)]">{children}</tbody>
       </table>
     </div>
   );
@@ -102,9 +152,9 @@ export function AdminTable({
 
 export function FilterBar({ action, children }: { action: string; children: ReactNode }) {
   return (
-    <form action={action} className="mb-6 flex flex-wrap items-end gap-3" method="get">
+    <form action={action} className="imu-section mb-6 flex flex-wrap items-end gap-3 rounded-2xl p-4 md:p-5" method="get">
       {children}
-      <button className="ghost-btn rounded-xl px-4 py-2 text-[10px]" type="submit">
+      <button className="ghost-btn rounded-lg px-4 py-2.5 text-[11px]" type="submit">
         Filter
       </button>
     </form>
@@ -123,10 +173,10 @@ export function Field({
   placeholder?: string;
 }) {
   return (
-    <label className="text-xs text-muted">
+    <label className="min-w-[180px] text-xs text-[var(--muted)]">
       {label}
       <input
-        className="mt-1 block min-w-[180px] px-3 py-2 text-sm"
+        className="imu-field mt-1.5"
         defaultValue={defaultValue}
         name={name}
         placeholder={placeholder}
@@ -147,9 +197,9 @@ export function SelectField({
   options: Array<{ value: string; label: string }>;
 }) {
   return (
-    <label className="text-xs text-muted">
+    <label className="min-w-[160px] text-xs text-[var(--muted)]">
       {label}
-      <select className="mt-1 block min-w-[160px] px-3 py-2 text-sm" defaultValue={defaultValue} name={name}>
+      <select className="imu-field mt-1.5" defaultValue={defaultValue} name={name}>
         {options.map((option) => (
           <option key={option.value} value={option.value}>
             {option.label}
@@ -163,7 +213,7 @@ export function SelectField({
 export function EmptyRow({ cols, children }: { cols: number; children: ReactNode }) {
   return (
     <tr>
-      <td className="px-4 py-8 text-center text-muted" colSpan={cols}>
+      <td className="px-4 py-10 text-center text-[var(--muted)]" colSpan={cols}>
         {children}
       </td>
     </tr>
@@ -177,7 +227,7 @@ export function SparkBars({ values }: { values: number[] }) {
       {values.map((value, index) => (
         <div key={index} className="flex flex-1 flex-col items-center gap-1">
           <div
-            className="w-full rounded-t-md bg-[linear-gradient(180deg,#f7e68a,#8a5623)]"
+            className="w-full rounded-t-md bg-[linear-gradient(180deg,#f3e0a0,#e8c96a_45%,#c4a44a)]"
             style={{ height: `${Math.max(8, (value / max) * 100)}%` }}
             title={String(value)}
           />

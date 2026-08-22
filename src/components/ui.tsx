@@ -18,7 +18,11 @@ export function Flash({
   if (!message) return null;
   return (
     <p
-      className={`mb-6 rounded-xl border px-4 py-3 text-sm ${error ? "border-red-500/40 text-red-200" : "border-[var(--line)] text-gold"}`}
+      className={`mb-6 rounded-xl border px-4 py-3 text-sm ${
+        error
+          ? "border-red-500/40 bg-red-500/5 text-red-200"
+          : "imu-alert border-[rgba(232,201,106,0.22)] text-[var(--text-soft)]"
+      }`}
     >
       {message}
     </p>

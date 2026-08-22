@@ -35,7 +35,7 @@ export default async function AdminUserDetailPage({
         title={user.name}
         description={`${user.email} · ${user.country} · ${user.source}`}
         action={
-          <Link className="ghost-btn rounded-xl px-4 py-2 text-[10px]" href="/admin/users">
+          <Link className="ghost-btn rounded-lg px-5 py-2.5 text-[11px]" href="/admin/users">
             All users
           </Link>
         }
@@ -66,7 +66,7 @@ export default async function AdminUserDetailPage({
       </div>
 
       <div className="mt-8 grid gap-6 lg:grid-cols-2">
-        <section className="rounded-2xl border border-[var(--line)] p-5">
+        <section className="imu-section rounded-2xl p-5 md:p-6">
           <h2 className="text-lg text-white">Account controls</h2>
           <p className="mt-1 text-sm text-muted">{user.phone} · @{user.username}</p>
           <p className="mt-3 text-sm text-muted">{user.bio}</p>
@@ -88,7 +88,7 @@ export default async function AdminUserDetailPage({
             <GoldButton type="submit">Update</GoldButton>
           </form>
         </section>
-        <section className="rounded-2xl border border-[var(--line)] p-5">
+        <section className="imu-section rounded-2xl p-5 md:p-6">
           <h2 className="text-lg text-white">Internal note</h2>
           <p className="mt-1 text-sm text-muted">Visible only on this desk. Not shown to the student.</p>
           <form action={saveUserNote} className="mt-4 space-y-3">

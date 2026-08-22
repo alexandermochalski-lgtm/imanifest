@@ -27,7 +27,7 @@ export default async function NewCoursePage({
         title="New course"
         description="Creates a live campus course with one opening module. Upload cover and lesson media here, or reuse files from the library."
         action={
-          <Link className="ghost-btn rounded-xl px-4 py-2 text-[10px]" href="/admin/courses">
+          <Link className="ghost-btn rounded-lg px-5 py-2.5 text-[11px]" href="/admin/courses">
             Back
           </Link>
         }

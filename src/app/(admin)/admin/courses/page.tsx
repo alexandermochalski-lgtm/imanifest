@@ -28,7 +28,7 @@ export default async function AdminCoursesPage({
         title="Courses"
         description="Publish courses with cover + lesson uploads, then edit modules and lessons on each course."
         action={
-          <Link className="gold-btn rounded-xl px-4 py-2 text-[10px]" href="/admin/courses/new">
+          <Link className="gold-btn rounded-lg px-5 py-2.5 text-[11px]" href="/admin/courses/new">
             New course
           </Link>
         }
@@ -47,7 +47,7 @@ export default async function AdminCoursesPage({
           const stats = byCourse.get(course.id);
           const enrolled = stats?.enrollments ?? 0;
           return (
-            <tr key={course.id} className="border-t border-[var(--line)]">
+            <tr key={course.id}>
               <td className="px-4 py-3">
                 <Link className="text-white hover:text-gold" href={`/admin/courses/${course.id}`}>
                   {course.title}

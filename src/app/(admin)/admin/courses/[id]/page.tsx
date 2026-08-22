@@ -48,7 +48,7 @@ export default async function AdminCourseDetailPage({
         title={course.title}
         description={`${course.category} · ${course.price === 0 ? "free" : `${course.price} coins`} · ${course.modules.length} modules`}
         action={
-          <Link className="ghost-btn rounded-xl px-4 py-2 text-[10px]" href="/admin/courses">
+          <Link className="ghost-btn rounded-lg px-5 py-2.5 text-[11px]" href="/admin/courses">
             Catalog
           </Link>
         }
@@ -94,7 +94,7 @@ export default async function AdminCourseDetailPage({
         </form>
       </div>
 
-      <section className="mb-8 rounded-2xl border border-[var(--line)] p-5">
+      <section className="mb-8 imu-section rounded-2xl p-5 md:p-6">
         <h2 className="text-lg text-white">Edit course</h2>
         <form action={updateCourse} className="mt-4 grid max-w-3xl gap-4">
           <input name="courseId" type="hidden" value={course.id} />
@@ -144,7 +144,7 @@ export default async function AdminCourseDetailPage({
         </form>
       </section>
 
-      <section className="mb-8 rounded-2xl border border-[var(--line)] p-5">
+      <section className="mb-8 imu-section rounded-2xl p-5 md:p-6">
         <h2 className="text-lg text-white">Cover image</h2>
         <p className="mt-1 text-sm text-muted">Shown on campus course cards. Upload, paste a URL, or pick from the media library.</p>
         <form action={setCourseCover} className="mt-4 grid max-w-3xl gap-4">
@@ -167,7 +167,7 @@ export default async function AdminCourseDetailPage({
         </form>
       </section>
 
-      <section className="mb-8 rounded-2xl border border-[var(--line)] p-5">
+      <section className="mb-8 imu-section rounded-2xl p-5 md:p-6">
         <h2 className="text-lg text-white">Add module</h2>
         <form action={addModule} className="mt-4 flex max-w-3xl flex-wrap items-end gap-3">
           <input name="courseId" type="hidden" value={course.id} />
@@ -183,7 +183,7 @@ export default async function AdminCourseDetailPage({
 
       <div className="space-y-6">
         {course.modules.map((module) => (
-          <section key={module.id} className="rounded-2xl border border-[var(--line)] p-5">
+          <section key={module.id} className="imu-section rounded-2xl p-5 md:p-6">
             <div className="flex flex-wrap items-start justify-between gap-3">
               <form action={updateModule} className="flex min-w-[16rem] flex-1 flex-wrap items-end gap-3">
                 <input name="courseId" type="hidden" value={course.id} />

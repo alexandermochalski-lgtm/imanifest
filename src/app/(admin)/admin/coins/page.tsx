@@ -70,7 +70,7 @@ export default async function AdminCoinsPage({
       <h2 className="mt-10 font-[family-name:var(--font-cormorant)] text-2xl text-white">Promo codes</h2>
       <div className="mt-4 space-y-3">
         {desk.promos.map((promo) => (
-          <article key={promo.code} className="flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-[var(--line)] p-5">
+          <article key={promo.code} className="flex flex-wrap items-center justify-between gap-4 imu-section rounded-2xl p-5 md:p-6">
             <div>
               <p className="text-white">
                 {promo.code} · {promo.discountPct}%
