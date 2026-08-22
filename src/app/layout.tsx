@@ -1,16 +1,18 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
+import { Instrument_Serif, Manrope } from "next/font/google";
 import "./globals.css";
 
-const jakarta = Plus_Jakarta_Sans({
+/** Body UI — clean geometric sans (replaces Plus Jakarta). */
+const manrope = Manrope({
   variable: "--font-jakarta",
   subsets: ["latin"],
 });
 
-const cormorant = Cormorant_Garamond({
+/** Display headlines — contemporary serif (replaces Cormorant). */
+const instrument = Instrument_Serif({
   variable: "--font-cormorant",
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -24,7 +26,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${jakarta.variable} ${cormorant.variable} dark h-full antialiased`}>
+    <html lang="en" className={`${manrope.variable} ${instrument.variable} dark h-full antialiased`}>
       <body className="mesh min-h-full">{children}</body>
     </html>
   );

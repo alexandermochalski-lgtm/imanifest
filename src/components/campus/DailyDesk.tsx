@@ -18,7 +18,7 @@ export function DailyDesk({
   error?: string;
 }) {
   return (
-    <section id="desk" className="mt-10 rounded-2xl border border-[var(--line)] bg-panel p-6">
+    <section id="desk" className="imu-panel mt-10 rounded-2xl p-6">
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
           <p className="text-xs uppercase tracking-[0.2em] text-gold-deep">Daily desk</p>

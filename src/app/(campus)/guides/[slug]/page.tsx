@@ -1,20 +1,18 @@
-import { notFound } from "next/navigation";
-import { campusMediaHref } from "@/lib/blob-access";
+import { CoverMedia } from "@/components/CoverMedia";
 import { categories } from "@/lib/catalog";
 import { getLiveGuideBySlug, guideTags } from "@/lib/live-catalog";
+import { notFound } from "next/navigation";
 
 export default async function GuidePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const guide = await getLiveGuideBySlug(slug);
   if (!guide) notFound();
-  const cover = campusMediaHref(guide.coverUrl);
   const tags = guideTags(guide);
   return (
     <main>
-      {cover ? (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img alt="" className="mb-6 aspect-[21/9] w-full max-w-4xl rounded-2xl object-cover" src={cover} />
-      ) : null}
+      <div className="imu-card mb-6 max-w-4xl overflow-hidden rounded-2xl">
+        <CoverMedia alt="" ratio="wide" url={guide.coverUrl} />
+      </div>
       {guide.series ? <p className="text-xs uppercase tracking-[0.2em] text-gold-deep">{guide.series}</p> : null}
       <div className="mt-2 flex flex-wrap gap-2 text-xs uppercase tracking-[0.2em] text-gold">
         {tags.map((tag) => (

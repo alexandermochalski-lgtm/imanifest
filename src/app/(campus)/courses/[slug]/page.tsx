@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { completeModule, enrollCourse } from "@/app/actions/campus";
+import { CoverMedia } from "@/components/CoverMedia";
 import { LessonPlayer } from "@/components/campus/LessonPlayer";
 import { Flash, GoldButton } from "@/components/ui";
 import { getLiveCourseBySlug } from "@/lib/live-catalog";
@@ -22,6 +23,11 @@ export default async function CourseDetailPage({
 
   return (
     <main>
+      {course.coverUrl ? (
+        <div className="imu-card mb-8 max-w-3xl overflow-hidden rounded-2xl">
+          <CoverMedia alt="" ratio="landscape" url={course.coverUrl} />
+        </div>
+      ) : null}
       <p className="text-xs uppercase tracking-[0.2em] text-gold">{course.faculty}</p>
       <h1 className="mt-2 font-[family-name:var(--font-cormorant)] text-4xl text-white">{course.title}</h1>
       <p className="mt-4 max-w-2xl text-muted">{course.summary}</p>

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { enrollCourse } from "@/app/actions/campus";
+import { CoverMedia } from "@/components/CoverMedia";
 import { Flash, GoldButton } from "@/components/ui";
-import { campusMediaHref } from "@/lib/blob-access";
 import { categories, moduleProgress } from "@/lib/catalog";
 import { formatCoins } from "@/lib/daily-desk";
 import { getDeliverableCourses } from "@/lib/live-catalog";
@@ -38,14 +38,17 @@ export default async function CoursesPage({
         <GoldButton type="submit">Search</GoldButton>
       </form>
       <div className="mt-4 flex flex-wrap gap-2 text-xs">
-        <Link href="/courses" className="rounded-full border border-[var(--line)] px-3 py-1 text-gold">
+        <Link
+          href="/courses"
+          className="rounded-full border border-[var(--line)] px-3 py-1 text-gold transition hover:border-gold hover:bg-gold/10"
+        >
           All
         </Link>
         {categories.map((category) => (
           <Link
             key={category.slug}
             href={`/courses?category=${category.slug}`}
-            className="rounded-full border border-[var(--line)] px-3 py-1 text-muted hover:text-gold"
+            className="rounded-full border border-[var(--line)] px-3 py-1 text-muted transition hover:border-gold hover:text-gold"
           >
             {category.label}
           </Link>
@@ -57,14 +60,10 @@ export default async function CoursesPage({
       <div className="mt-8 grid gap-5 md:grid-cols-2">
         {filtered.map((course) => {
           const enrolled = state.enrollments.includes(course.id);
-          const cover = campusMediaHref(course.coverUrl);
           return (
             <article key={course.id} className="imu-card overflow-hidden rounded-2xl">
-              {cover ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img alt="" className="aspect-[16/9] w-full object-cover" src={cover} />
-              ) : null}
-              <div className="p-6">
+              <CoverMedia alt="" ratio="landscape" url={course.coverUrl} />
+              <div className="relative p-6">
                 <p className="text-xs uppercase tracking-[0.2em] text-gold-deep">{course.faculty}</p>
                 <h2 className="mt-2 font-[family-name:var(--font-cormorant)] text-2xl text-white">{course.title}</h2>
                 <p className="mt-3 text-sm text-muted">{course.summary}</p>
@@ -73,12 +72,12 @@ export default async function CoursesPage({
                   {enrolled ? ` · ${moduleProgress(course, state.completedModules)}%` : ""}
                 </p>
                 <div className="mt-5 flex gap-3">
-                  <Link href={`/courses/${course.slug}`} className="text-sm text-gold">
+                  <Link href={`/courses/${course.slug}`} className="text-sm text-gold hover:underline">
                     Details
                   </Link>
                   {enrolled ? null : (
                     <form action={enrollCourse.bind(null, course.id, true)}>
-                      <button className="text-sm text-gold" type="submit">
+                      <button className="text-sm text-gold hover:underline" type="submit">
                         Enroll
                       </button>
                     </form>

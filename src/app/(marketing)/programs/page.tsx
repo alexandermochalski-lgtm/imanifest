@@ -39,7 +39,7 @@ export default async function ProgramsPage({
       <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {filtered.map((course) => (
           <div key={course.slug} id={course.slug}>
-            <CourseCard course={course} href="/login" />
+            <CourseCard course={course} href={`/get?from=${course.slug}`} />
           </div>
         ))}
       </div>

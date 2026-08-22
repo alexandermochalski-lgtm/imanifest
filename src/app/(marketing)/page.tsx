@@ -33,9 +33,9 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-6xl grid-cols-2 overflow-hidden rounded-2xl border border-[var(--line)] bg-[#14110c] md:grid-cols-4">
+      <section className="mx-auto grid max-w-6xl grid-cols-2 overflow-hidden rounded-2xl border border-[var(--line)] imu-panel md:grid-cols-4">
         {homeStats.map((item) => (
-          <div key={item.label} className="border-[var(--line)] px-6 py-8 md:border-r md:last:border-r-0">
+          <div key={item.label} className="border-[var(--line)] px-6 py-8 transition hover:bg-white/[0.03] md:border-r md:last:border-r-0">
             <p className="font-[family-name:var(--font-cormorant)] text-4xl text-gold">{item.value}</p>
             <p className="mt-2 text-sm text-[#d8d8d8]">{item.label}</p>
           </div>
@@ -61,7 +61,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="mx-auto mb-24 max-w-6xl rounded-3xl border border-[var(--line)] bg-[#14110c] px-6 py-14 shadow-[0_30px_80px_rgba(0,0,0,0.45)] md:px-12">
+      <section className="mx-auto mb-24 max-w-6xl rounded-3xl border border-[var(--line)] imu-panel px-6 py-14 md:px-12">
         <h2 className="font-[family-name:var(--font-cormorant)] text-4xl text-[#fff8e8]">Shaping your future</h2>
         <p className="mt-5 max-w-3xl leading-8 text-[#d4d4d4]">
           Guaranteed money-makers from the original iManifest University: chain-breaking methods across personal

@@ -12,7 +12,7 @@ export function MembershipPacks({ id = "pricing" }: { id?: string }) {
       <p className="mx-auto mt-4 max-w-2xl text-center text-[#d4d4d4]">
         The catalog is free to browse. Campus is ${pack.price.toFixed(2)} / month on Stripe. Coins are a separate ledger after you are in — not a second membership.
       </p>
-      <article className="mx-auto mt-12 max-w-md rounded-2xl border border-gold bg-[#14110c] p-8">
+      <article className="imu-card mx-auto mt-12 max-w-md rounded-2xl p-8">
         <p className="text-xs uppercase tracking-[0.2em] text-gold-deep">{pack.duration}</p>
         <h3 className="mt-2 font-[family-name:var(--font-cormorant)] text-3xl text-white">{pack.name}</h3>
         <p className="mt-3 font-[family-name:var(--font-cormorant)] text-4xl text-gold">
