@@ -1,7 +1,38 @@
 import { jobs, seedForum } from "@/lib/catalog";
-import type { CampusState, Course, ForumPost, JobPost } from "@/lib/types";
+import type { CampusState, Course, DeskPin, ForumPost, FounderNote, JobPost } from "@/lib/types";
 
 export const DESK_COIN = 0.5;
+
+/** Default pinned Master Tenet — editable from admin Content. */
+export const DEFAULT_DESK_PIN: DeskPin = {
+  title: "The iManifest Master Tenet",
+  body: "I affirm that by adopting a growth mindset, aligning my thoughts with my desires, taking consistent action, and embracing failure as a necessary stepping-stone to success, I am able to manifest abundance and effortlessly achieve my goals in all areas of my life.",
+  attribution: "Steven Zee",
+};
+
+/** Rotating Daily Notes from the Founder when no overlay notes are set. */
+export const DEFAULT_FOUNDER_NOTES: FounderNote[] = [
+  {
+    id: "fn-1",
+    title: "Daily Note · Surplus first",
+    body: "Before you open a new method, name the surplus you already produce. If you cannot measure it, you are collecting hobbies.",
+  },
+  {
+    id: "fn-2",
+    title: "Daily Note · Failure is tuition",
+    body: "A failed offer that taught you the buyer is cheaper than a ‘successful’ offer that taught you nothing. Log the lesson. Keep the streak.",
+  },
+  {
+    id: "fn-3",
+    title: "Daily Note · Align then act",
+    body: "Thought without action is fantasy. Action without alignment is thrash. Today: one aligned move that a stranger could pay for.",
+  },
+  {
+    id: "fn-4",
+    title: "Daily Note · Growth mindset",
+    body: "Skill compounds. Mood does not. Ask what the desk needs from you this week — not what you feel like doing.",
+  },
+];
 
 const prompts = [
   "Name one outflow you will kill this week. Be specific.",
@@ -65,6 +96,8 @@ function pick<T>(items: T[], date: string, salt: number): T {
 export type DailyDeskContent = {
   date: string;
   prompt: string;
+  pin: DeskPin;
+  founderNote: FounderNote;
   clip: { title: string; href: string; duration: string; courseTitle: string };
   job: { title: string; href: string; company: string };
   forum: { title: string; href: string; line: string };
@@ -75,6 +108,8 @@ export function buildDailyDesk(
   courses: Course[],
   enrolledIds: string[],
   extraPosts: ForumPost[] = [],
+  pin: DeskPin = DEFAULT_DESK_PIN,
+  founderNotes: FounderNote[] = DEFAULT_FOUNDER_NOTES,
 ): DailyDeskContent {
   const enrolled = courses.filter((course) => enrolledIds.includes(course.id) && course.status === "active");
   const pool = enrolled.length ? enrolled : courses.filter((course) => course.status === "active");
@@ -84,10 +119,13 @@ export function buildDailyDesk(
   const job: JobPost = pick(openJobs.length ? openJobs : jobs, date, 2);
   const posts = [...extraPosts, ...seedForum];
   const post = pick(posts, date, 3);
+  const notes = founderNotes.length ? founderNotes : DEFAULT_FOUNDER_NOTES;
 
   return {
     date,
     prompt: pick(prompts, date, 0),
+    pin: pin.title.trim() ? pin : DEFAULT_DESK_PIN,
+    founderNote: pick(notes, date, 4),
     clip: {
       title: lesson?.title ?? "Open a lesson",
       href: course ? `/courses/${course.slug}` : "/courses",

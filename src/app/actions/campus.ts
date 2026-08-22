@@ -236,11 +236,12 @@ export async function createForumPost(formData: FormData) {
 export async function replyForum(formData: FormData) {
   const session = await campusAuthed();
   const slug = String(formData.get("slug"));
-  const body = String(formData.get("body") ?? "").trim();
-  if (!body) redirect(`/forum/${slug}`);
+  const body = String(formData.get("body") ?? "").trim().slice(0, 800);
+  if (!body) redirect(`/forum/${slug}?error=empty`);
   await mutateState((state) => {
-    const all = [...seedForum, ...state.forumPosts];
-    const existing = all.find((post) => post.slug === slug);
+    // Prefer the live overlay so prior student replies are not wiped by seed copies.
+    const existing =
+      state.forumPosts.find((post) => post.slug === slug) ?? seedForum.find((post) => post.slug === slug);
     if (!existing) return state;
     const reply = {
       id: `r-${Date.now()}`,
@@ -249,23 +250,17 @@ export async function replyForum(formData: FormData) {
       body,
       createdAt: new Date().toISOString().slice(0, 10),
     };
-    if (seedForum.some((post) => post.slug === slug)) {
-      return {
-        ...state,
-        forumPosts: [
-          { ...existing, replies: [...existing.replies, reply] },
-          ...state.forumPosts.filter((post) => post.slug !== slug),
-        ],
-      };
-    }
+    const nextPost = {
+      ...existing,
+      replies: [...existing.replies, reply].slice(-40),
+    };
+    const others = state.forumPosts.filter((post) => post.slug !== slug);
     return {
       ...state,
-      forumPosts: state.forumPosts.map((post) =>
-        post.slug === slug ? { ...post, replies: [...post.replies, reply] } : post,
-      ),
+      forumPosts: [nextPost, ...others].slice(0, 40),
     };
   });
-  redirect(`/forum/${slug}`);
+  redirect(`/forum/${slug}?ok=replied`);
 }
 
 export async function likeForum(postId: string, slug: string) {

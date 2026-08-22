@@ -76,6 +76,8 @@ export type Book = {
   title: string;
   author: string;
   category: CategorySlug;
+  /** Extra category tags so a title can live in more than one desk. */
+  tags?: CategorySlug[];
   pages: number;
   summary: string;
   price: number;
@@ -103,20 +105,43 @@ export type MemberRecord = {
   userId?: string;
 };
 
-export type CatalogOverlay = {
-  courses: Course[];
-  books: Book[];
-  media: MediaAsset[];
-  members: Record<string, MemberRecord>;
+export type DeskPin = {
+  title: string;
+  body: string;
+  attribution?: string;
+};
+
+export type FounderNote = {
+  id: string;
+  title: string;
+  body: string;
 };
 
 export type Guide = {
   id: string;
   slug: string;
   title: string;
+  /** Primary label shown on cards. */
   tag: string;
+  /** Extra category tags for filtering (personal-development + wealth-creation, etc.). */
+  tags?: string[];
   summary: string;
   body: string;
+  series?: string;
+  author?: string;
+  coverUrl?: string;
+};
+
+export type CatalogOverlay = {
+  courses: Course[];
+  books: Book[];
+  media: MediaAsset[];
+  members: Record<string, MemberRecord>;
+  guides?: Guide[];
+  desk?: {
+    pin?: DeskPin;
+    founderNotes?: FounderNote[];
+  };
 };
 
 export type Journal = {

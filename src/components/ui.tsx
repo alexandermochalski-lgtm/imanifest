@@ -1,5 +1,8 @@
+"use client";
+
 import type { ButtonHTMLAttributes, ReactNode } from "react";
 import Link from "next/link";
+import { useFormStatus } from "react-dom";
 
 export function Flash({
   ok,
@@ -25,11 +28,17 @@ export function Flash({
 export function GoldButton({
   children,
   className = "",
+  pendingLabel,
   ...props
-}: ButtonHTMLAttributes<HTMLButtonElement>) {
+}: ButtonHTMLAttributes<HTMLButtonElement> & { pendingLabel?: string }) {
+  const { pending } = useFormStatus();
   return (
-    <button {...props} className={`gold-btn rounded-xl px-5 py-2.5 text-xs disabled:opacity-50 ${className}`}>
-      {children}
+    <button
+      {...props}
+      className={`gold-btn rounded-xl px-5 py-2.5 text-xs disabled:opacity-50 ${className}`}
+      disabled={props.disabled || pending}
+    >
+      {pending ? pendingLabel || "Working…" : children}
     </button>
   );
 }

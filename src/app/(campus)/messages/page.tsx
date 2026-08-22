@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { Flash } from "@/components/ui";
 import { formatCoins } from "@/lib/daily-desk";
 import { getLiveCourses } from "@/lib/live-catalog";
@@ -20,7 +21,7 @@ export default async function MessagesPage({
 }) {
   const query = await searchParams;
   const session = await getSession();
-  if (!session) return null;
+  if (!session) redirect("/login");
   const state = await getState();
   const courses = await getLiveCourses();
   let remote: Message[] = [];

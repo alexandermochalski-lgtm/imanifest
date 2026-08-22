@@ -1,6 +1,6 @@
 import { books as seedBooks, courses as seedCourses } from "@/lib/catalog";
 import { readOverlay } from "@/lib/storage";
-import type { Book, Course, Lesson, MediaAsset, Quiz } from "@/lib/types";
+import type { Book, CategorySlug, Course, Lesson, MediaAsset, Quiz } from "@/lib/types";
 
 export function defaultQuiz(prefix: string, title: string): Quiz {
   return {
@@ -95,4 +95,46 @@ export async function getLiveBookById(id: string) {
 export async function getMediaLibrary(): Promise<MediaAsset[]> {
   const overlay = await readOverlay();
   return [...overlay.media].sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1));
+}
+
+export function bookCategories(book: Book): CategorySlug[] {
+  const tags = book.tags ?? [];
+  return [...new Set([book.category, ...tags])];
+}
+
+export function bookMatchesCategory(book: Book, category?: string) {
+  if (!category) return true;
+  return bookCategories(book).includes(category as CategorySlug);
+}
+
+export async function getLiveGuides() {
+  const { guides: seedGuides } = await import("@/lib/catalog");
+  const overlay = await readOverlay();
+  if (overlay.guides && overlay.guides.length > 0) {
+    const map = new Map(seedGuides.map((item) => [item.id, item]));
+    for (const item of overlay.guides) map.set(item.id, item);
+    return [...map.values()];
+  }
+  return seedGuides;
+}
+
+export async function getLiveGuideBySlug(slug: string) {
+  return (await getLiveGuides()).find((guide) => guide.slug === slug);
+}
+
+export function guideTags(guide: { tag: string; tags?: string[] }) {
+  return [...new Set([guide.tag, ...(guide.tags ?? [])])];
+}
+
+export function guideMatchesTag(guide: { tag: string; tags?: string[] }, tag?: string) {
+  if (!tag) return true;
+  return guideTags(guide).includes(tag);
+}
+
+export async function getDeskContent() {
+  const overlay = await readOverlay();
+  return {
+    pin: overlay.desk?.pin,
+    founderNotes: overlay.desk?.founderNotes ?? [],
+  };
 }

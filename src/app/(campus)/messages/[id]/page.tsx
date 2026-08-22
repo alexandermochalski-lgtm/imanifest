@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { redirect } from "next/navigation";
 import { sendMessage } from "@/app/actions/campus";
 import { Flash, GoldButton } from "@/components/ui";
 import { formatCoins } from "@/lib/daily-desk";
@@ -26,12 +26,12 @@ export default async function MessageThreadPage({
   const { id } = await params;
   const query = await searchParams;
   const session = await getSession();
-  if (!session) return null;
+  if (!session) redirect("/login");
   const state = await getState();
   const courses = await getLiveCourses();
   const contact =
     findContact(id, courses, session.userId) ?? (await findDirectoryContact(id, session.userId));
-  if (!contact) notFound();
+  if (!contact) redirect("/messages?error=missing");
   let remote: Message[] = [];
   try {
     remote = await loadRemoteMessages(session.userId);
@@ -61,6 +61,7 @@ export default async function MessageThreadPage({
           coins: `Need ${PEER_MESSAGE_COST} coins. Top up, then send.`,
           enroll: "Enroll in this course to write the mentor.",
           invalid: "Write at least a short sentence.",
+          missing: "That contact is gone. Pick another thread.",
         }}
       />
       <div className="mt-8 space-y-3">
@@ -70,7 +71,7 @@ export default async function MessageThreadPage({
           return (
             <article
               key={message.id}
-              className={`rounded-xl border border-[var(--line)] p-4 ${mine ? "bg-black/30" : "bg-panel"}`}
+              className={`rounded-xl border border-[var(--line)] bg-panel p-4 ${mine ? "bg-black/30" : ""}`}
             >
               <p className="text-xs text-gold">
                 {message.fromName} · {message.createdAt.slice(0, 10)}

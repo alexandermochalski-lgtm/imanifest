@@ -1,8 +1,17 @@
 import { DailyDesk } from "@/components/campus/DailyDesk";
 import { jobs, moduleProgress, seedJournals } from "@/lib/catalog";
-import { buildDailyDesk, deskClosedToday, formatCoins, liveStreak, utcToday } from "@/lib/daily-desk";
+import {
+  buildDailyDesk,
+  DEFAULT_DESK_PIN,
+  DEFAULT_FOUNDER_NOTES,
+  deskClosedToday,
+  formatCoins,
+  liveStreak,
+  utcToday,
+} from "@/lib/daily-desk";
 import { getDeliverableBooks, getDeliverableCourses } from "@/lib/live-catalog";
 import { getState } from "@/lib/state";
+import { readOverlay } from "@/lib/storage";
 import Link from "next/link";
 
 export default async function DashboardPage({
@@ -12,11 +21,22 @@ export default async function DashboardPage({
 }) {
   const query = await searchParams;
   const state = await getState();
-  const [courses, books] = await Promise.all([getDeliverableCourses(), getDeliverableBooks()]);
+  const [courses, books, overlay] = await Promise.all([
+    getDeliverableCourses(),
+    getDeliverableBooks(),
+    readOverlay(),
+  ]);
   const enrolled = courses.filter((course) => state.enrollments.includes(course.id));
   const streak = liveStreak(state);
   const closed = deskClosedToday(state);
-  const desk = buildDailyDesk(utcToday(), courses, state.enrollments, state.forumPosts);
+  const desk = buildDailyDesk(
+    utcToday(),
+    courses,
+    state.enrollments,
+    state.forumPosts,
+    overlay.desk?.pin ?? DEFAULT_DESK_PIN,
+    overlay.desk?.founderNotes?.length ? overlay.desk.founderNotes : DEFAULT_FOUNDER_NOTES,
+  );
 
   return (
     <main>

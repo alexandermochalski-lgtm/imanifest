@@ -26,7 +26,8 @@ export function DailyDesk({
             {closed ? `Campus day ${streak}` : streak > 0 ? `Day ${streak} · close today’s desk` : "Open today’s desk"}
           </h2>
           <p className="mt-2 max-w-2xl text-sm text-muted">
-            Sixty seconds: one prompt, one clip, one mandate, one thread. {DESK_COIN} coins when you close it — once per UTC day. Miss a day and the streak resets. Missed days do not stack.
+            Master Tenet pinned. Founder note of the day. Then one prompt, one clip, one mandate, one thread.{" "}
+            {DESK_COIN} coins when you close it — once per UTC day.
           </p>
         </div>
         <p className="text-sm text-gold">{closed ? "Closed" : "Open"}</p>
@@ -39,6 +40,21 @@ export function DailyDesk({
           "desk-short": "Write one real line on the prompt — at least a sentence.",
         }}
       />
+
+      <article className="mt-6 rounded-xl border border-gold/30 bg-black/40 p-5">
+        <p className="text-xs uppercase tracking-[0.16em] text-gold-deep">Pinned · Master Tenet</p>
+        <h3 className="mt-2 font-[family-name:var(--font-cormorant)] text-xl text-white">{desk.pin.title}</h3>
+        <p className="mt-3 max-w-3xl text-sm leading-7 text-[#e8e8e8]">‘{desk.pin.body}’</p>
+        {desk.pin.attribution ? <p className="mt-3 text-sm text-gold">— {desk.pin.attribution}</p> : null}
+      </article>
+
+      <article className="mt-4 rounded-xl border border-[var(--line)] bg-black/30 p-5">
+        <p className="text-xs uppercase tracking-[0.16em] text-gold-deep">Daily Notes · Founder</p>
+        <h3 className="mt-2 text-lg text-white">{desk.founderNote.title}</h3>
+        <p className="mt-2 max-w-3xl text-sm leading-7 text-muted">{desk.founderNote.body}</p>
+        <p className="mt-3 text-xs text-gold">Steven Zee</p>
+      </article>
+
       <div className="mt-6 grid gap-4 md:grid-cols-2">
         <article className="rounded-xl border border-[var(--line)] bg-black/30 p-4">
           <p className="text-xs uppercase tracking-[0.16em] text-gold-deep">Prompt</p>
@@ -74,7 +90,9 @@ export function DailyDesk({
             placeholder="Answer the prompt in one line."
             className="w-full rounded-xl border border-[var(--line)] bg-black/40 px-3 py-2 text-sm"
           />
-          <GoldButton type="submit">Close desk · {DESK_COIN} coins</GoldButton>
+          <GoldButton pendingLabel="Closing…" type="submit">
+            Close desk · {DESK_COIN} coins
+          </GoldButton>
         </form>
       )}
     </section>

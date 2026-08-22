@@ -1,9 +1,17 @@
 import Link from "next/link";
+import { deleteCourse } from "@/app/actions/catalog";
+import { ConfirmGoldButton } from "@/components/admin/ConfirmGoldButton";
 import { AdminTable, PageHeader, StatusBadge } from "@/components/admin/ui";
+import { Flash } from "@/components/ui";
 import { getDesk } from "@/lib/desk";
 import { getLiveCourses } from "@/lib/live-catalog";
 
-export default async function AdminCoursesPage() {
+export default async function AdminCoursesPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ ok?: string; error?: string }>;
+}) {
+  const { ok, error } = await searchParams;
   const [desk, courses] = await Promise.all([getDesk(), getLiveCourses()]);
   const byCourse = new Map<string, { enrollments: number; done: number }>();
   for (const row of desk.enrollments) {
@@ -18,18 +26,26 @@ export default async function AdminCoursesPage() {
       <PageHeader
         kicker="Catalog"
         title="Courses"
-        description="Seed catalog plus courses you publish. Upload MP4/MP3 under Media, then attach on the course."
+        description="Publish courses with cover + lesson uploads, then edit modules and lessons on each course."
         action={
           <Link className="gold-btn rounded-xl px-4 py-2 text-[10px]" href="/admin/courses/new">
             New course
           </Link>
         }
       />
-      <AdminTable columns={["Title", "Faculty", "Price", "Modules", "Enrolled", "Completion", "Status"]}>
+      <Flash
+        error={error}
+        map={{
+          created: "Course published. Open it to edit modules, lessons, and media.",
+          deleted: "Course removed from the catalog.",
+          missing: "That course could not be found. Try again from this list.",
+        }}
+        ok={ok}
+      />
+      <AdminTable columns={["Title", "Faculty", "Price", "Modules", "Enrolled", "Status", ""]}>
         {courses.map((course) => {
           const stats = byCourse.get(course.id);
           const enrolled = stats?.enrollments ?? 0;
-          const completion = !stats || stats.enrollments === 0 ? 0 : Math.round((stats.done / stats.enrollments) * 100);
           return (
             <tr key={course.id} className="border-t border-[var(--line)]">
               <td className="px-4 py-3">
@@ -46,9 +62,25 @@ export default async function AdminCoursesPage() {
                   {enrolled}
                 </Link>
               </td>
-              <td className="px-4 py-3">{enrolled ? `${completion}%` : "—"}</td>
               <td className="px-4 py-3">
                 <StatusBadge status={course.status} />
+              </td>
+              <td className="px-4 py-3">
+                <div className="flex flex-wrap items-center gap-3">
+                  <Link className="text-sm text-gold" href={`/admin/courses/${course.id}`}>
+                    Edit
+                  </Link>
+                  <form action={deleteCourse}>
+                    <input name="courseId" type="hidden" value={course.id} />
+                    <ConfirmGoldButton
+                      className="!bg-transparent !px-0 !py-0 !text-red-200"
+                      confirmMessage={`Delete “${course.title}”? This cannot be undone.`}
+                      pendingLabel="Deleting…"
+                    >
+                      Delete
+                    </ConfirmGoldButton>
+                  </form>
+                </div>
               </td>
             </tr>
           );

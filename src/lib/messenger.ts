@@ -83,14 +83,14 @@ export function findContact(id: string, courses: Course[], selfId: string): Mess
   const found = [...mentors, ...peerContacts(selfId), facultyFallback()].find((item) => item.id === id);
   if (found) return found;
   const courseId = courseIdFromMentor(id);
-  const course = courseId ? courses.find((item) => item.id === courseId) : undefined;
-  if (course) {
+  if (courseId) {
+    const course = courses.find((item) => item.id === courseId);
     return {
       id,
       name: "Dean Okonkwo",
       kind: "mentor",
-      subtitle: `${course.title} · ${course.faculty}`,
-      courseId: course.id,
+      subtitle: course ? `${course.title} · ${course.faculty}` : "Mentor desk",
+      courseId,
     };
   }
   const user = opsUsers.find((item) => item.id === id) ?? seedUsers.find((item) => item.id === id);

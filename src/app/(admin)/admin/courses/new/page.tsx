@@ -108,7 +108,9 @@ export default async function NewCoursePage({
           }))}
           mode={mode}
         />
-        <GoldButton type="submit">Publish course</GoldButton>
+        <GoldButton pendingLabel="Publishing…" type="submit">
+          Publish course
+        </GoldButton>
       </form>
     </main>
   );
