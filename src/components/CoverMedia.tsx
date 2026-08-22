@@ -1,4 +1,4 @@
-import { campusMediaHref } from "@/lib/blob-access";
+import { catalogCoverHref } from "@/lib/blob-access";
 
 /** Full-bleed frame that shows the whole cover (no crop). */
 export function CoverMedia({
@@ -10,7 +10,7 @@ export function CoverMedia({
   alt?: string;
   ratio?: "landscape" | "portrait" | "wide";
 }) {
-  const src = campusMediaHref(url);
+  const src = catalogCoverHref(url);
   if (!src) return null;
   return (
     <div className={`imu-cover imu-cover--${ratio}`} aria-hidden={alt ? undefined : true}>

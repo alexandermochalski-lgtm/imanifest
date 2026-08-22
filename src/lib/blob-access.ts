@@ -29,3 +29,15 @@ export function campusMediaHref(rawUrl: string | undefined | null): string | und
   }
   return rawUrl;
 }
+
+/** Public catalog cover art — no login required (marketing + browse pages). */
+export function catalogCoverHref(rawUrl: string | undefined | null): string | undefined {
+  if (!rawUrl) return undefined;
+  if (rawUrl.startsWith("/api/catalog/cover") || rawUrl.startsWith("/api/media/")) return rawUrl;
+  if (isPrivateBlobUrl(rawUrl)) {
+    const pathname = pathnameFromBlobUrl(rawUrl);
+    if (!pathname) return rawUrl;
+    return `/api/catalog/cover?pathname=${encodeURIComponent(pathname)}`;
+  }
+  return rawUrl;
+}
