@@ -4,7 +4,9 @@ import {
   buildDailyDesk,
   DEFAULT_DESK_PIN,
   DEFAULT_FOUNDER_NOTES,
+  campusDayHint,
   deskClosedToday,
+  formatCampusDay,
   formatCoins,
   liveStreak,
   utcToday,
@@ -46,9 +48,16 @@ export default async function DashboardPage({
         Same surface as the Laravel campus: courses in progress, library, journals, and open mandates.
       </p>
       <div className="mt-8 grid gap-4 md:grid-cols-4">
+        <div className="rounded-2xl border border-[var(--line)] bg-panel p-5">
+          <p className="text-xs uppercase tracking-[0.2em] text-gold-deep">Coins</p>
+          <p className="mt-2 font-[family-name:var(--font-cormorant)] text-3xl text-gold">{formatCoins(state.coins)}</p>
+        </div>
+        <div className="rounded-2xl border border-[var(--line)] bg-panel p-5">
+          <p className="text-xs uppercase tracking-[0.2em] text-gold-deep">Desk streak</p>
+          <p className="mt-2 font-[family-name:var(--font-cormorant)] text-3xl text-gold">{formatCampusDay(streak)}</p>
+          <p className="mt-2 text-xs text-[var(--muted)]">{campusDayHint(streak, closed)}</p>
+        </div>
         {[
-          ["Coins", formatCoins(state.coins)],
-          ["Campus day", streak > 0 ? String(streak) : "—"],
           ["Enrolled", String(enrolled.length)],
           ["Unread", String(state.notifications.filter((item) => !item.read).length)],
         ].map(([label, value]) => (

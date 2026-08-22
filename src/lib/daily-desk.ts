@@ -69,6 +69,17 @@ export function formatCoins(value: number): string {
   return Number.isInteger(value) ? String(value) : value.toFixed(1);
 }
 
+/** Display streak count — always a number (0 = not started yet). */
+export function formatCampusDay(streak: number): string {
+  return String(Math.max(0, streak));
+}
+
+export function campusDayHint(streak: number, closedToday = false): string {
+  if (streak > 0) return "Consecutive UTC days with a closed desk.";
+  if (closedToday) return "Desk closed today. Return after UTC midnight for day 2.";
+  return "Close today's desk to start your streak.";
+}
+
 export function liveStreak(state: CampusState): number {
   const last = state.lastDeskDate;
   if (last === utcToday() || last === utcYesterday()) return state.streakCount;

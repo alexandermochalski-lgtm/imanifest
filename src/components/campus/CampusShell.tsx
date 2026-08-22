@@ -80,7 +80,11 @@ export function CampusShell({
               <span className="hidden sm:inline">
                 {session.name ? " · " : ""}Day {streak}
               </span>
-            ) : null}
+            ) : (
+              <Link href="/campus#desk" className="hidden text-gold hover:text-white sm:inline">
+                {session.name ? " · " : ""}Start desk
+              </Link>
+            )}
             <span className="sm:ml-0">
               <span className="hidden sm:inline"> · </span>
               <span className="text-gold">{formatCoins(coins)} coins</span>

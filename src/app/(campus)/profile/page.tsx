@@ -1,6 +1,6 @@
 import { updateProfile } from "@/app/actions/campus";
 import { Flash, GoldButton } from "@/components/ui";
-import { formatCoins, liveStreak } from "@/lib/daily-desk";
+import { campusDayHint, deskClosedToday, formatCampusDay, formatCoins, liveStreak } from "@/lib/daily-desk";
 import { loadOwnProfile } from "@/lib/directory";
 import { PEER_MESSAGE_COST } from "@/lib/messenger";
 import { getSession } from "@/lib/session";
@@ -16,6 +16,7 @@ export default async function ProfilePage({
   const session = await getSession();
   const state = await getState();
   const streak = liveStreak(state);
+  const closedToday = deskClosedToday(state);
   let listed = true;
   try {
     const own = session ? await loadOwnProfile(session.userId) : null;
@@ -30,11 +31,9 @@ export default async function ProfilePage({
       <p className="mt-3 text-sm text-muted">{session?.email} · {session?.role}</p>
       <div className="mt-6 grid max-w-xl gap-4 md:grid-cols-2">
         <div className="rounded-2xl border border-[var(--line)] bg-panel p-5">
-          <p className="text-xs uppercase tracking-[0.2em] text-gold-deep">Campus day</p>
-          <p className="mt-2 font-[family-name:var(--font-cormorant)] text-3xl text-gold">{streak > 0 ? streak : "—"}</p>
-          <p className="mt-2 text-sm text-muted">
-            {streak > 0 ? "Consecutive UTC days with a closed desk." : "Close today’s desk to start a streak."}
-          </p>
+          <p className="text-xs uppercase tracking-[0.2em] text-gold-deep">Desk streak</p>
+          <p className="mt-2 font-[family-name:var(--font-cormorant)] text-3xl text-gold">{formatCampusDay(streak)}</p>
+          <p className="mt-2 text-sm text-muted">{campusDayHint(streak, closedToday)}</p>
         </div>
         <div className="rounded-2xl border border-[var(--line)] bg-panel p-5">
           <p className="text-xs uppercase tracking-[0.2em] text-gold-deep">Ledger</p>
