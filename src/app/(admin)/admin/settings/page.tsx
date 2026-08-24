@@ -41,9 +41,11 @@ export default function AdminSettingsPage() {
         <section className="imu-section rounded-2xl p-5 md:p-6">
           <h2 className="font-[family-name:var(--font-cormorant)] text-xl font-medium text-white">Mail &amp; auth</h2>
           <p className="mt-2 text-sm text-muted">
-            Demo seats still work: <span className="text-white">admin@imanifest.money</span> and{" "}
+            Demo seats still work: <span className="text-white">admin@imanifest.money</span>,{" "}
+            <span className="text-white">steve@imanifest.money</span>, and{" "}
             <span className="text-white">student@imanifest.money</span> / <span className="text-white">imanifest</span>.
-            New students register into Supabase Auth. Confirm emails if the project has confirmations on.
+            Steve and admin open the registrar desk. New students register into Supabase Auth. Confirm emails if the
+            project has confirmations on.
           </p>
         </section>
         <section className="imu-section rounded-2xl p-5 md:p-6">

@@ -12,6 +12,8 @@ import {
   utcToday,
 } from "@/lib/daily-desk";
 import { getDeliverableBooks, getDeliverableCourses } from "@/lib/live-catalog";
+import { loginStreakLive } from "@/lib/login-bonus";
+import { rankHint, studentRank } from "@/lib/ranks";
 import { getState } from "@/lib/state";
 import { readOverlay } from "@/lib/storage";
 import Link from "next/link";
@@ -30,7 +32,9 @@ export default async function DashboardPage({
   ]);
   const enrolled = courses.filter((course) => state.enrollments.includes(course.id));
   const streak = liveStreak(state);
+  const loginStreak = loginStreakLive(state);
   const closed = deskClosedToday(state);
+  const rank = studentRank(state);
   const desk = buildDailyDesk(
     utcToday(),
     courses,
@@ -45,27 +49,33 @@ export default async function DashboardPage({
       <p className="text-xs uppercase tracking-[0.28em] text-gold">Student workspace</p>
       <h1 className="mt-2 font-[family-name:var(--font-cormorant)] text-4xl text-white">Dashboard</h1>
       <p className="mt-3 max-w-2xl text-muted">
-        Same surface as the Laravel campus: courses in progress, library, journals, and open mandates.
+        Run methods, close the desk, and climb the operator ladder — Observer → Architect.
       </p>
-      <div className="mt-8 grid gap-4 md:grid-cols-4">
+      <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="rounded-2xl border border-[var(--line)] bg-panel p-5">
+          <p className="text-xs uppercase tracking-[0.2em] text-gold-deep">Rank</p>
+          <p className="mt-2 font-[family-name:var(--font-cormorant)] text-3xl text-gold">{rank}</p>
+          <p className="mt-2 text-xs text-[var(--muted)]">{rankHint(state)}</p>
+        </div>
         <div className="rounded-2xl border border-[var(--line)] bg-panel p-5">
           <p className="text-xs uppercase tracking-[0.2em] text-gold-deep">Coins</p>
           <p className="mt-2 font-[family-name:var(--font-cormorant)] text-3xl text-gold">{formatCoins(state.coins)}</p>
+          <p className="mt-2 text-xs text-[var(--muted)]">+1 coin daily login · bonuses at 7 / 14 / 21 / 30</p>
         </div>
         <div className="rounded-2xl border border-[var(--line)] bg-panel p-5">
           <p className="text-xs uppercase tracking-[0.2em] text-gold-deep">Desk streak</p>
           <p className="mt-2 font-[family-name:var(--font-cormorant)] text-3xl text-gold">{formatCampusDay(streak)}</p>
           <p className="mt-2 text-xs text-[var(--muted)]">{campusDayHint(streak, closed)}</p>
         </div>
-        {[
-          ["Enrolled", String(enrolled.length)],
-          ["Unread", String(state.notifications.filter((item) => !item.read).length)],
-        ].map(([label, value]) => (
-          <div key={label} className="rounded-2xl border border-[var(--line)] bg-panel p-5">
-            <p className="text-xs uppercase tracking-[0.2em] text-gold-deep">{label}</p>
-            <p className="mt-2 font-[family-name:var(--font-cormorant)] text-3xl text-gold">{value}</p>
-          </div>
-        ))}
+        <div className="rounded-2xl border border-[var(--line)] bg-panel p-5">
+          <p className="text-xs uppercase tracking-[0.2em] text-gold-deep">Login streak</p>
+          <p className="mt-2 font-[family-name:var(--font-cormorant)] text-3xl text-gold">{formatCampusDay(loginStreak)}</p>
+          <p className="mt-2 text-xs text-[var(--muted)]">UTC days opening campus</p>
+        </div>
+        <div className="rounded-2xl border border-[var(--line)] bg-panel p-5">
+          <p className="text-xs uppercase tracking-[0.2em] text-gold-deep">Enrolled</p>
+          <p className="mt-2 font-[family-name:var(--font-cormorant)] text-3xl text-gold">{enrolled.length}</p>
+        </div>
       </div>
       <DailyDesk desk={desk} streak={streak} closed={closed} ok={query.ok} error={query.error} />
       <section className="mt-10">

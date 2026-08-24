@@ -10,9 +10,16 @@ const COVER_ACCEPT = "image/jpeg,image/png,image/webp,image/gif";
 export function CourseCoverField({
   mode,
   initialUrl,
+  label = "Cover image",
+  refreshOnUpload = false,
+  inputName = "coverUrl",
 }: {
   mode: "blob" | "local" | "none";
   initialUrl?: string;
+  label?: string;
+  /** Avoid refreshing when this field sits inside a text form — it wipes unsaved edits. */
+  refreshOnUpload?: boolean;
+  inputName?: string;
 }) {
   const router = useRouter();
   const [url, setUrl] = useState(initialUrl ?? "");
@@ -72,7 +79,7 @@ export function CourseCoverField({
       }
       await registerMedia({ title: file.name, url: uploadedUrl, pathname, contentType, size });
       setUrl(uploadedUrl);
-      router.refresh();
+      if (refreshOnUpload) router.refresh();
     } catch (err) {
       setError(err instanceof Error ? err.message : "Cover upload failed");
     } finally {
@@ -82,11 +89,11 @@ export function CourseCoverField({
 
   return (
     <div className="rounded-2xl border border-dashed border-[var(--line)] p-5">
-      <input name="coverUrl" type="hidden" value={url} />
-      <p className="text-xs text-muted">Course cover</p>
+      <input name={inputName} type="hidden" value={url} />
+      <p className="text-xs text-muted">{label}</p>
       {preview ? (
         // eslint-disable-next-line @next/next/no-img-element
-        <img alt="Course cover preview" className="mt-3 h-40 w-full max-w-sm rounded-xl object-cover" src={preview} />
+        <img alt="Cover preview" className="mt-3 h-40 w-full max-w-sm rounded-xl object-cover" src={preview} />
       ) : (
         <p className="mt-2 text-sm text-muted">No cover yet.</p>
       )}

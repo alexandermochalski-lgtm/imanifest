@@ -8,9 +8,15 @@ import type { CampusState, MemberRecord, Role } from "@/lib/types";
 
 export const MEMBERSHIP_STIPEND = 50;
 const DEMO_STUDENT_EMAIL = "student@imanifest.money";
+const DEMO_ADMIN_EMAILS = new Set([
+  "admin@imanifest.money",
+  "dean@imanifest.money",
+  "steve@imanifest.money",
+]);
 
 export function isDemoCampusSeat(email: string): boolean {
-  return email.toLowerCase() === DEMO_STUDENT_EMAIL;
+  const normalized = email.toLowerCase();
+  return normalized === DEMO_STUDENT_EMAIL || DEMO_ADMIN_EMAILS.has(normalized);
 }
 
 type MembershipRow = {

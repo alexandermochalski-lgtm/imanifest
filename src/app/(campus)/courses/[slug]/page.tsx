@@ -30,7 +30,7 @@ export default async function CourseDetailPage({
       ) : null}
       <p className="text-xs uppercase tracking-[0.2em] text-gold">{course.faculty}</p>
       <h1 className="mt-2 font-[family-name:var(--font-cormorant)] text-4xl text-white">{course.title}</h1>
-      <p className="mt-4 max-w-2xl text-muted">{course.summary}</p>
+      <p className="mt-4 max-w-2xl imu-prose text-muted">{course.summary}</p>
       <Flash
         ok={query.ok ?? query.quiz}
         error={query.error}

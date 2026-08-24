@@ -36,14 +36,14 @@ export async function getCatalogCoverPathnames(): Promise<Set<string>> {
 export function isCatalogCoverPathname(pathname: string): boolean {
   const normalized = pathname.replace(/^\/+/, "");
   if (!IMAGE_EXT.test(normalized)) return false;
-  if (normalized.startsWith("imu/covers/")) return true;
+  if (normalized.startsWith("imu/covers/") || normalized.startsWith("imu/campus/")) return true;
   return false;
 }
 
 export async function isAllowedCatalogCover(pathname: string): Promise<boolean> {
   const normalized = pathname.replace(/^\/+/, "");
   if (!IMAGE_EXT.test(normalized)) return false;
-  if (normalized.startsWith("imu/covers/")) return true;
+  if (normalized.startsWith("imu/covers/") || normalized.startsWith("imu/campus/")) return true;
   const allowed = await getCatalogCoverPathnames();
   return allowed.has(normalized);
 }

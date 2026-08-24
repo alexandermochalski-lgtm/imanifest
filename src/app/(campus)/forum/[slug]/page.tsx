@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { likeForum, replyForum } from "@/app/actions/campus";
 import { Flash, GoldButton } from "@/components/ui";
+import { campusMediaHref } from "@/lib/blob-access";
 import { seedForum } from "@/lib/catalog";
 import { getState } from "@/lib/state";
 
@@ -18,19 +19,29 @@ export default async function ForumDetailPage({
     state.forumPosts.find((item) => item.slug === slug) ??
     seedForum.find((item) => item.slug === slug);
   if (!post) notFound();
+  const imageSrc = campusMediaHref(post.imageUrl);
   return (
     <main>
       <p className="text-xs text-gold">
         {post.authorName} · {post.category} · {post.createdAt}
       </p>
       <h1 className="mt-2 font-[family-name:var(--font-cormorant)] text-4xl text-white">{post.title}</h1>
-      <p className="mt-6 max-w-2xl leading-8 text-muted">{post.body}</p>
+      <p className="mt-6 max-w-2xl imu-prose leading-8 text-muted">{post.body}</p>
+      {imageSrc ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          alt=""
+          className="mt-6 max-h-96 w-full max-w-2xl rounded-2xl border border-[var(--line)] object-contain"
+          src={imageSrc}
+        />
+      ) : null}
       <div className="mt-4">
         <Flash
           error={error}
           map={{
             replied: "Reply posted.",
             empty: "Write a reply before sending.",
+            photo: "Posted with photo — field coins credited.",
           }}
           ok={ok}
         />
@@ -48,7 +59,7 @@ export default async function ForumDetailPage({
             <p className="text-gold">
               {reply.authorName} · {reply.createdAt}
             </p>
-            <p className="mt-2">{reply.body}</p>
+            <p className="mt-2 imu-prose">{reply.body}</p>
           </article>
         ))}
       </div>

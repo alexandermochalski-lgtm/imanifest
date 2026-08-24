@@ -2,6 +2,7 @@
 
 import { closeDailyDesk } from "@/app/actions/campus";
 import { Flash, GoldButton } from "@/components/ui";
+import { campusMediaHref } from "@/lib/blob-access";
 import type { DailyDeskContent } from "@/lib/daily-desk";
 import { DESK_COIN } from "@/lib/daily-desk";
 import Link from "next/link";
@@ -93,7 +94,15 @@ export function DailyDesk({
           <article className="mt-4 rounded-xl border border-[var(--line)] bg-black/30 p-5">
             <p className="text-xs uppercase tracking-[0.16em] text-gold-deep">Daily Notes · Founder</p>
             <h3 className="mt-2 text-lg text-white">{desk.founderNote.title}</h3>
-            <p className="mt-2 max-w-3xl text-sm leading-7 text-muted">{desk.founderNote.body}</p>
+            <p className="mt-2 max-w-3xl imu-prose text-sm leading-7 text-muted">{desk.founderNote.body}</p>
+            {desk.founderNote.imageUrl ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                alt=""
+                className="mt-4 max-h-64 w-full max-w-lg rounded-xl object-contain"
+                src={campusMediaHref(desk.founderNote.imageUrl) ?? desk.founderNote.imageUrl}
+              />
+            ) : null}
             <p className="mt-3 text-xs text-gold">Steven Zee</p>
           </article>
 

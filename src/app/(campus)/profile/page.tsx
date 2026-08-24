@@ -2,7 +2,9 @@ import { updateProfile } from "@/app/actions/campus";
 import { Flash, GoldButton } from "@/components/ui";
 import { campusDayHint, deskClosedToday, formatCampusDay, formatCoins, liveStreak } from "@/lib/daily-desk";
 import { loadOwnProfile } from "@/lib/directory";
+import { loginStreakLive } from "@/lib/login-bonus";
 import { PEER_MESSAGE_COST } from "@/lib/messenger";
+import { rankHint, STUDENT_RANKS, studentRank } from "@/lib/ranks";
 import { getSession } from "@/lib/session";
 import { getState } from "@/lib/state";
 import Link from "next/link";
@@ -16,7 +18,9 @@ export default async function ProfilePage({
   const session = await getSession();
   const state = await getState();
   const streak = liveStreak(state);
+  const loginStreak = loginStreakLive(state);
   const closedToday = deskClosedToday(state);
+  const rank = studentRank(state);
   let listed = true;
   try {
     const own = session ? await loadOwnProfile(session.userId) : null;
@@ -28,8 +32,16 @@ export default async function ProfilePage({
     <main>
       <h1 className="font-[family-name:var(--font-cormorant)] text-4xl text-white">Profile</h1>
       <Flash ok={ok} map={{ "1": "Profile updated." }} />
-      <p className="mt-3 text-sm text-muted">{session?.email} · {session?.role}</p>
-      <div className="mt-6 grid max-w-xl gap-4 md:grid-cols-2">
+      <p className="mt-3 text-sm text-muted">
+        {session?.email} · {session?.role} · <span className="text-gold">{rank}</span>
+      </p>
+      <div className="mt-6 grid max-w-2xl gap-4 md:grid-cols-3">
+        <div className="rounded-2xl border border-[var(--line)] bg-panel p-5">
+          <p className="text-xs uppercase tracking-[0.2em] text-gold-deep">Rank</p>
+          <p className="mt-2 font-[family-name:var(--font-cormorant)] text-3xl text-gold">{rank}</p>
+          <p className="mt-2 text-sm text-muted">{rankHint(state)}</p>
+          <p className="mt-3 text-[11px] leading-5 text-[var(--muted)]">{STUDENT_RANKS.join(" → ")}</p>
+        </div>
         <div className="rounded-2xl border border-[var(--line)] bg-panel p-5">
           <p className="text-xs uppercase tracking-[0.2em] text-gold-deep">Desk streak</p>
           <p className="mt-2 font-[family-name:var(--font-cormorant)] text-3xl text-gold">{formatCampusDay(streak)}</p>
@@ -39,7 +51,11 @@ export default async function ProfilePage({
           <p className="text-xs uppercase tracking-[0.2em] text-gold-deep">Ledger</p>
           <p className="mt-2 font-[family-name:var(--font-cormorant)] text-3xl text-gold">{formatCoins(state.coins)}</p>
           <p className="mt-2 text-sm text-muted">
-            <Link href="/campus#desk" className="text-gold">Daily desk</Link> pays 0.5 once per UTC day.
+            Login day {formatCampusDay(loginStreak)} ·{" "}
+            <Link href="/campus#desk" className="text-gold">
+              Daily desk
+            </Link>{" "}
+            +0.5
           </p>
         </div>
       </div>

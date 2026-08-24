@@ -115,6 +115,7 @@ export type FounderNote = {
   id: string;
   title: string;
   body: string;
+  imageUrl?: string;
 };
 
 export type Guide = {
@@ -164,6 +165,8 @@ export type ForumPost = {
   authorId: string;
   authorName: string;
   body: string;
+  /** Optional campus field photo — earns a one-time coin bonus when posted. */
+  imageUrl?: string;
   createdAt: string;
   replies: ForumReply[];
 };
@@ -301,6 +304,9 @@ export type CampusState = {
   notifications: NotificationItem[];
   streakCount: number;
   lastDeskDate: string;
+  /** Consecutive UTC days the student opened campus (daily login award). */
+  loginStreakCount: number;
+  lastLoginDate: string;
   lastStipendMonth: string;
   lastCoinPackId: string;
   lastCoinCreditAt: string;

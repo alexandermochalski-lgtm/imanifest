@@ -15,8 +15,9 @@ export default async function LoginPage({
     <main className="mx-auto max-w-md px-5 py-20">
       <h1 className="font-[family-name:var(--font-cormorant)] text-4xl text-[#fff8e8]">Campus login</h1>
       <p className="mt-3 text-sm text-[#d4d4d4]">
-        New seats register into Supabase. Demo desk: <code>student@imanifest.money</code> or{" "}
-        <code>admin@imanifest.money</code> / <code>imanifest</code>
+        New seats register into Supabase. Demo desks / <code>imanifest</code>:{" "}
+        <code>student@imanifest.money</code>, <code>admin@imanifest.money</code>, or{" "}
+        <code>steve@imanifest.money</code>
       </p>
       <p className="mt-2 text-sm text-muted">Students subscribe $49.99 / month on Stripe, then campus opens. Admin skips the door.</p>
       <Flash

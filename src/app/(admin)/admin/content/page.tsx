@@ -1,10 +1,12 @@
 import { saveDeskContent } from "@/app/actions/catalog";
+import { CourseCoverField } from "@/components/admin/CourseCoverField";
 import { PageHeader, StatusBadge } from "@/components/admin/ui";
 import { Flash, GoldButton } from "@/components/ui";
 import { dynamicPages, seedForum, seedJournals } from "@/lib/catalog";
 import { DEFAULT_DESK_PIN, DEFAULT_FOUNDER_NOTES } from "@/lib/daily-desk";
 import { getDeskContent } from "@/lib/live-catalog";
 import { getState } from "@/lib/state";
+import { storageMode } from "@/lib/storage";
 
 export default async function AdminContentPage({
   searchParams,
@@ -16,6 +18,7 @@ export default async function AdminContentPage({
   const desk = await getDeskContent();
   const pin = desk.pin ?? DEFAULT_DESK_PIN;
   const notes = desk.founderNotes.length ? desk.founderNotes : DEFAULT_FOUNDER_NOTES;
+  const mode = storageMode();
   const forum = [...state.forumPosts, ...seedForum.filter((post) => !state.forumPosts.some((live) => live.id === post.id))];
   const journals = [...state.journals, ...seedJournals.filter((item) => !state.journals.some((live) => live.id === item.id))];
 
@@ -24,7 +27,7 @@ export default async function AdminContentPage({
       <PageHeader
         kicker="Campus"
         title="Content"
-        description="Daily desk pin + founder notes, forum, journals, and public pages."
+        description="Daily desk pin + multiple founder notes (with optional photos), forum, journals, and public pages."
       />
       <Flash
         error={error}
@@ -38,7 +41,8 @@ export default async function AdminContentPage({
       <section className="mb-8 imu-section rounded-2xl p-5 md:p-6">
         <h2 className="text-lg text-white">Daily desk</h2>
         <p className="mt-1 text-sm text-muted">
-          Edit the pinned Master Tenet and append Daily Notes from the Founder. Notes rotate on the student dashboard.
+          Edit the pinned Master Tenet and append as many founder Daily Notes as you want. Notes rotate on the student
+          dashboard — each new note is another post of the day in the pool.
         </p>
         <form action={saveDeskContent} className="mt-4 grid max-w-3xl gap-4">
           <label className="text-xs text-muted">
@@ -54,15 +58,24 @@ export default async function AdminContentPage({
             <input className="mt-1 w-full px-3 py-2" defaultValue={pin.attribution ?? "Steven Zee"} name="pinAttribution" />
           </label>
           <div className="rounded-xl border border-dashed border-[var(--line)] p-4">
-            <p className="text-xs text-muted">Add a new founder Daily Note (optional — leave blank to only update the pin)</p>
+            <p className="text-xs text-muted">
+              Add another founder Daily Note (optional — leave blank to only update the pin). Stack as many as you like.
+            </p>
             <label className="mt-3 block text-xs text-muted">
               Note title
               <input className="mt-1 w-full px-3 py-2" name="noteTitle" placeholder="Daily Note · …" />
             </label>
             <label className="mt-3 block text-xs text-muted">
               Note body
-              <textarea className="mt-1 min-h-24 w-full px-3 py-2" name="noteBody" placeholder="Short field note from Steven Zee…" />
+              <textarea
+                className="mt-1 min-h-24 w-full px-3 py-2"
+                name="noteBody"
+                placeholder="Short field note from Steven Zee…"
+              />
             </label>
+            <div className="mt-4">
+              <CourseCoverField inputName="noteImageUrl" label="Note photo (optional)" mode={mode} />
+            </div>
           </div>
           <GoldButton pendingLabel="Saving…" type="submit">
             Save desk content
@@ -73,7 +86,8 @@ export default async function AdminContentPage({
           <ul className="mt-3 space-y-2 text-sm text-muted">
             {notes.slice(0, 8).map((note) => (
               <li key={note.id}>
-                <span className="text-white">{note.title}</span> — {note.body.slice(0, 100)}
+                <span className="text-white">{note.title}</span>
+                {note.imageUrl ? <span className="text-gold"> · photo</span> : null} — {note.body.slice(0, 100)}
                 {note.body.length > 100 ? "…" : ""}
               </li>
             ))}

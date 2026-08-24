@@ -267,6 +267,11 @@ select:focus {
   font-size: 0.875rem;
 }
 
+.imu-prose {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .imu-card,
   .gold-btn,

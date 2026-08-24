@@ -5,6 +5,12 @@ import { redirect } from "next/navigation";
 import { appendLivePayment } from "@/lib/admin-state";
 import { jobs, seedForum } from "@/lib/catalog";
 import { DESK_COIN, deskClosedToday, nextStreak, utcToday } from "@/lib/daily-desk";
+import {
+  FORUM_PHOTO_COIN,
+  LOGIN_COIN,
+  loginBonusForStreak,
+  nextLoginStreak,
+} from "@/lib/login-bonus";
 import { getLiveCourseById, getLiveCourses } from "@/lib/live-catalog";
 import { isCampusUnlocked } from "@/lib/membership";
 import { getSession } from "@/lib/session";
@@ -216,6 +222,7 @@ export async function createForumPost(formData: FormData) {
   const title = String(formData.get("title") ?? "").trim();
   const body = String(formData.get("body") ?? "").trim();
   const category = String(formData.get("category") ?? "wealth-creation");
+  const imageUrl = String(formData.get("imageUrl") ?? "").trim() || undefined;
   if (!title || !body) redirect("/forum/new?error=invalid");
   const slug = `${slugify(title)}-${Date.now().toString().slice(-4)}`;
   const post: ForumPost = {
@@ -226,11 +233,26 @@ export async function createForumPost(formData: FormData) {
     authorId: session.userId,
     authorName: session.name,
     body,
+    imageUrl,
     createdAt: new Date().toISOString().slice(0, 10),
     replies: [],
   };
-  await mutateState((state) => ({ ...state, forumPosts: [post, ...state.forumPosts].slice(0, 30) }));
-  redirect(`/forum/${slug}`);
+  const photoBonus = imageUrl ? FORUM_PHOTO_COIN : 0;
+  await mutateState((state) => {
+    const next = {
+      ...state,
+      forumPosts: [post, ...state.forumPosts].slice(0, 30),
+      coins: state.coins + photoBonus,
+    };
+    if (!photoBonus) return next;
+    return notify(
+      next,
+      "Field photo credited",
+      `+${FORUM_PHOTO_COIN} coins for posting campus work with a photo.`,
+      `/forum/${slug}`,
+    );
+  });
+  redirect(`/forum/${slug}${photoBonus ? "?ok=photo" : ""}`);
 }
 
 export async function replyForum(formData: FormData) {
@@ -343,6 +365,36 @@ export async function closeDailyDesk(formData: FormData) {
   revalidatePath("/campus");
   revalidatePath("/profile");
   redirect("/campus?ok=desk");
+}
+
+/** Credit free coins once per UTC day when the student opens campus. */
+export async function claimDailyLogin() {
+  await campusAuthed();
+  const today = utcToday();
+  const current = await getState();
+  if (current.lastLoginDate === today) return { credited: false, coins: 0, streak: current.loginStreakCount ?? 0 };
+
+  const streak = nextLoginStreak(current, today);
+  const milestone = loginBonusForStreak(streak);
+  const credited = LOGIN_COIN + milestone;
+
+  await mutateState((state) => {
+    if (state.lastLoginDate === today) return state;
+    const next = {
+      ...state,
+      coins: state.coins + credited,
+      loginStreakCount: streak,
+      lastLoginDate: today,
+    };
+    const body =
+      milestone > 0
+        ? `Day ${streak} login · +${LOGIN_COIN} daily + ${milestone} streak bonus.`
+        : `Day ${streak} login · +${LOGIN_COIN} coin. Hit 7 / 14 / 21 / 30 for bonuses.`;
+    return notify(next, "Daily login", body, "/campus");
+  });
+  revalidatePath("/campus");
+  revalidatePath("/profile");
+  return { credited: true, coins: credited, streak };
 }
 
 export async function updateProfile(formData: FormData) {

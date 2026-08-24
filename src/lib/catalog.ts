@@ -58,6 +58,16 @@ export const seedUsers: User[] = [
     bio: "Faculty lead, markets and operator mindset.",
     avatarLabel: "DO",
   },
+  {
+    id: "u-steve",
+    name: "Steve Zee",
+    username: "steve",
+    email: "steve@imanifest.money",
+    phone: "",
+    role: "admin",
+    bio: "Founder desk — content, daily notes, and campus direction.",
+    avatarLabel: "SZ",
+  },
 ];
 
 function q(id: string, prompt: string, options: string[], answerIndex: number): Question {

@@ -500,6 +500,10 @@ export async function updateBook(formData: FormData) {
       coverAsset && (coverAsset.kind === "image" || coverAsset.contentType.startsWith("image/"))
         ? coverAsset.url
         : coverUrl || book.coverUrl;
+    let slug = slugify(title);
+    if (current.books.some((item) => item.slug === slug && item.id !== bookId)) {
+      slug = `${slug}-${bookId.slice(-4)}`;
+    }
     return {
       ...current,
       books: upsert(current.books, {
@@ -507,6 +511,7 @@ export async function updateBook(formData: FormData) {
         title,
         author,
         summary,
+        slug,
         category,
         tags: tags.length ? tags : undefined,
         pages: Number.isFinite(pages) ? Math.max(1, Math.round(pages)) : book.pages,
@@ -517,6 +522,29 @@ export async function updateBook(formData: FormData) {
   });
   revalidateCatalog([`/admin/books/${bookId}`, "/library"]);
   redirect(`/admin/books/${bookId}?ok=updated`);
+}
+
+export async function setBookCover(formData: FormData) {
+  await requireAdmin();
+  const bookId = String(formData.get("bookId") ?? "");
+  const coverMediaId = String(formData.get("coverMediaId") ?? "").trim();
+  const coverUrl = String(formData.get("coverUrl") ?? "").trim();
+  const book = await getLiveBookById(bookId);
+  if (!book) redirect("/admin/books?error=missing");
+
+  await mutateOverlay((current) => {
+    const fromLibrary = current.media.find((item) => item.id === coverMediaId);
+    const nextCover =
+      fromLibrary && (fromLibrary.kind === "image" || fromLibrary.contentType.startsWith("image/"))
+        ? fromLibrary.url
+        : coverUrl || undefined;
+    return {
+      ...current,
+      books: upsert(current.books, { ...book, coverUrl: nextCover || undefined }),
+    };
+  });
+  revalidateCatalog([`/admin/books/${bookId}`, "/library"]);
+  redirect(`/admin/books/${bookId}?ok=cover`);
 }
 
 export async function attachBookFile(formData: FormData) {
@@ -548,9 +576,18 @@ export async function saveDeskContent(formData: FormData) {
 
   await mutateOverlay((current) => {
     const existingNotes = current.desk?.founderNotes ?? [];
+    const noteImage = String(formData.get("noteImageUrl") ?? "").trim() || undefined;
     const founderNotes =
       noteTitle && noteBody
-        ? [{ id: `fn-${Date.now().toString(36)}`, title: noteTitle, body: noteBody }, ...existingNotes].slice(0, 60)
+        ? [
+            {
+              id: `fn-${Date.now().toString(36)}`,
+              title: noteTitle,
+              body: noteBody,
+              imageUrl: noteImage,
+            },
+            ...existingNotes,
+          ].slice(0, 60)
         : existingNotes;
     return {
       ...current,

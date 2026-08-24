@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { attachBookFile, updateBook } from "@/app/actions/catalog";
+import { attachBookFile, setBookCover, updateBook } from "@/app/actions/catalog";
 import { CourseCoverField } from "@/components/admin/CourseCoverField";
 import { PageHeader } from "@/components/admin/ui";
 import { Flash, GoldButton } from "@/components/ui";
@@ -40,9 +40,15 @@ export default async function AdminBookDetailPage({
       />
       <Flash
         error={error}
-        map={{ file: "PDF attached.", updated: "Book saved.", invalid: "Title, author, and summary are required." }}
+        map={{
+          file: "PDF attached.",
+          updated: "Book details saved.",
+          cover: "Cover saved.",
+          invalid: "Title, author, and summary are required.",
+        }}
         ok={ok}
       />
+
       <form action={updateBook} className="mb-10 grid max-w-3xl gap-4">
         <input name="bookId" type="hidden" value={book.id} />
         <label className="text-xs text-muted">
@@ -86,9 +92,19 @@ export default async function AdminBookDetailPage({
         </fieldset>
         <label className="text-xs text-muted">
           Summary
-          <textarea className="mt-1 min-h-28 w-full px-3 py-2" defaultValue={book.summary} name="summary" required />
+          <span className="mt-0.5 block font-normal text-[10px] text-[var(--muted)]">
+            Blank lines become paragraphs on campus.
+          </span>
+          <textarea className="mt-1 min-h-36 w-full px-3 py-2" defaultValue={book.summary} name="summary" required />
         </label>
-        <CourseCoverField initialUrl={book.coverUrl} mode={mode} />
+        <GoldButton pendingLabel="Saving…" type="submit">
+          Save book details
+        </GoldButton>
+      </form>
+
+      <form action={setBookCover} className="mb-10 grid max-w-3xl gap-4">
+        <input name="bookId" type="hidden" value={book.id} />
+        <CourseCoverField initialUrl={book.coverUrl} label="Book cover" mode={mode} />
         <label className="text-xs text-muted">
           Or cover from library
           <select className="mt-1 w-full px-3 py-2" name="coverMediaId">
@@ -101,7 +117,7 @@ export default async function AdminBookDetailPage({
           </select>
         </label>
         <GoldButton pendingLabel="Saving…" type="submit">
-          Save book
+          Save cover
         </GoldButton>
       </form>
 

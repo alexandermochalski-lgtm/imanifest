@@ -136,7 +136,10 @@ export default async function AdminCourseDetailPage({
           </label>
           <label className="text-xs text-muted">
             Summary
-            <textarea className="mt-1 min-h-28 w-full px-3 py-2" defaultValue={course.summary} name="summary" required />
+            <span className="mt-0.5 block font-normal text-[10px] text-[var(--muted)]">
+              Blank lines become paragraphs on campus.
+            </span>
+            <textarea className="mt-1 min-h-36 w-full px-3 py-2" defaultValue={course.summary} name="summary" required />
           </label>
           <GoldButton pendingLabel="Saving…" type="submit">
             Save details
