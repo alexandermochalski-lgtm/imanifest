@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { ProfileTab } from "@/lib/social";
+import type { ProfileTab } from "@/lib/social-shared";
 
 const TABS: { id: ProfileTab; label: string }[] = [
   { id: "posts", label: "Posts" },

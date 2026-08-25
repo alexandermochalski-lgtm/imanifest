@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { saveSocialProfile } from "@/app/actions/social";
 import { ProfileImageUpload } from "@/components/profile/ProfileImageUpload";
-import type { SocialProfile } from "@/lib/social";
+import type { SocialProfile } from "@/lib/social-shared";
 
 export function EditProfileModal({
   profile,

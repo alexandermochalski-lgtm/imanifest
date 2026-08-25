@@ -1,6 +1,6 @@
 import { createProfilePost } from "@/app/actions/social";
 import { CampusImageField } from "@/components/campus/CampusImageField";
-import { MAX_POST_LEN } from "@/lib/social";
+import { MAX_POST_LEN } from "@/lib/social-shared";
 
 export function PostComposer({
   handle,

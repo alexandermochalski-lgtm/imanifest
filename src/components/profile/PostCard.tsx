@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { createProfilePost, deleteProfilePost, pinProfilePost, togglePostLike } from "@/app/actions/social";
 import { campusMediaHref } from "@/lib/blob-access";
-import { initialsFromName, MAX_POST_LEN, type ProfilePost, type ProfileTab } from "@/lib/social";
+import { initialsFromName, MAX_POST_LEN, type ProfilePost, type ProfileTab } from "@/lib/social-shared";
 
 function formatWhen(iso: string) {
   const d = new Date(iso);

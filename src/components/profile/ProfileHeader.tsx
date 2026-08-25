@@ -2,7 +2,7 @@ import Link from "next/link";
 import { EditProfileModal } from "@/components/profile/EditProfileModal";
 import { FollowButton } from "@/components/profile/FollowButton";
 import { campusMediaHref } from "@/lib/blob-access";
-import { initialsFromName, type SocialProfile } from "@/lib/social";
+import { initialsFromName, type SocialProfile } from "@/lib/social-shared";
 
 function formatJoined(iso: string) {
   if (!iso) return null;
