@@ -1166,11 +1166,11 @@ export const premiumMembership: MembershipPackage = {
   duration: "Billed monthly",
   featured: true,
   features: [
-    "49+ live money methods — finance, e-commerce, marketing, and more",
+    "100+ live money methods — finance, e-commerce, marketing, and more",
     "Daily desk + streak — one session per day, 0.5 coins when you close it",
     "50 coins included every month — for enrollments and campus actions",
     "Library, journals, forum & job board — run methods, don't just watch them",
-    "Sovereign Mindset included — flagship course, no extra enrollment cost",
+    "Everything in Free — plus every paid desk and stack",
   ],
   href: "/get",
   stripeUrl: "https://buy.stripe.com/4gM4gz85b3sY2pr1esdjO01",

@@ -6,7 +6,7 @@ const STATE_COOKIE = "imu_state";
 export function emptyState(): CampusState {
   return {
     coins: 500,
-    enrollments: ["c-mindset"],
+    enrollments: ["c-mindset", "c-personal-finance"],
     completedModules: [],
     quizResults: [],
     favoriteBooks: [],
@@ -49,6 +49,7 @@ export function emptyState(): CampusState {
     lastCoinPackId: "",
     lastCoinCreditAt: "",
     membershipPaidAt: "",
+    freeSeatAt: "",
     profile: {
       name: "",
       phone: "",

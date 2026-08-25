@@ -12,7 +12,7 @@ import {
   nextLoginStreak,
 } from "@/lib/login-bonus";
 import { getLiveCourseById, getLiveCourses } from "@/lib/live-catalog";
-import { isCampusUnlocked } from "@/lib/membership";
+import { isCampusUnlocked, isFreeCourseId, isFreeSeat } from "@/lib/membership";
 import { getSession } from "@/lib/session";
 import { getState, mutateState, notify } from "@/lib/state";
 import { COIN_PENDING_COOKIE, coinCheckoutUrl, coinPackFromId } from "@/lib/stripe";
@@ -52,6 +52,9 @@ export async function enrollCourse(courseId: string, useBalance = true) {
   const course = await getLiveCourseById(courseId);
   if (!course) redirect("/courses?error=missing");
   const current = await getState();
+  if (isFreeSeat(current) && !isFreeCourseId(courseId)) {
+    redirect("/get?error=upgrade");
+  }
   if (!current.enrollments.includes(courseId) && course.price > 0 && useBalance && current.coins < course.price) {
     redirect("/pricing?error=coins");
   }

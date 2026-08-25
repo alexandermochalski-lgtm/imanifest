@@ -3,7 +3,7 @@
 import { redirect } from "next/navigation";
 import { findSeedUser, sessionUserFromAuth, setSession, clearSession } from "@/lib/session";
 import { emptyState, getState, saveState } from "@/lib/state";
-import { MEMBERSHIP_STIPEND, claimMonthlyStipend, isCampusUnlocked, safeNextPath, syncCampusSeatCookie } from "@/lib/membership";
+import { MEMBERSHIP_STIPEND, claimMonthlyStipend, isCampusUnlocked, recordFreeMember, safeNextPath, stampFreeSeat, syncCampusSeatCookie } from "@/lib/membership";
 import { utcMonth } from "@/lib/daily-desk";
 import { upsertDirectoryProfile } from "@/lib/directory";
 import { createServerSupabase } from "@/lib/supabase/server";
@@ -19,10 +19,10 @@ async function publishSeat(userId: string, name: string, bio = "") {
 
 const DEMO_PASSWORD = "imanifest";
 
-function afterLoginPath(role: "student" | "admin", paid: boolean, next: string) {
+function afterLoginPath(role: "student" | "admin", campusOpen: boolean, next: string) {
   if (role === "admin") return next.startsWith("/admin") ? next : "/admin";
-  if (paid) return next && !next.startsWith("/admin") ? next : "/campus";
-  return "/get";
+  if (campusOpen) return next && !next.startsWith("/admin") ? next : "/campus";
+  return "/register";
 }
 
 export async function loginAction(formData: FormData) {
@@ -67,9 +67,9 @@ export async function loginAction(formData: FormData) {
   });
   await publishSeat(user.id, user.name, user.bio);
   const state = await getState();
-  const paid = await isCampusUnlocked(user.role, state, user.id, user.email);
-  if (paid && !state.membershipPaidAt) await syncCampusSeatCookie(user.id, user.email, state);
-  if (paid) {
+  const campusOpen = await isCampusUnlocked(user.role, state, user.id, user.email);
+  if (campusOpen) await syncCampusSeatCookie(user.id, user.email, state);
+  if (campusOpen && state.membershipPaidAt) {
     await claimMonthlyStipend({
       userId: user.id,
       email: user.email,
@@ -77,7 +77,13 @@ export async function loginAction(formData: FormData) {
       role: user.role,
     });
   }
-  redirect(afterLoginPath(user.role, paid, next));
+  // Legacy accounts with no membership row yet → freemium seat
+  if (!campusOpen) {
+    await recordFreeMember(user.id, user.email);
+    await stampFreeSeat(new Date().toISOString().slice(0, 10));
+    redirect(afterLoginPath(user.role, true, next));
+  }
+  redirect(afterLoginPath(user.role, true, next));
 }
 
 export async function registerAction(formData: FormData) {
@@ -111,10 +117,12 @@ export async function registerAction(formData: FormData) {
   await saveState({
     ...emptyState(),
     profile: { name, phone: "", bio: "" },
-    coins: 500,
+    coins: 100,
   });
   await publishSeat(user.id, name);
-  redirect("/get");
+  const freeAt = await recordFreeMember(user.id, user.email);
+  await stampFreeSeat(freeAt);
+  redirect("/campus");
 }
 
 export async function logoutAction() {

@@ -13,7 +13,10 @@ export default async function RegisterPage({
   const { error, ok } = await searchParams;
   return (
     <main className="mx-auto max-w-md px-5 py-20">
-      <h1 className="font-[family-name:var(--font-cormorant)] text-4xl text-white">Create a campus seat</h1>
+      <h1 className="font-[family-name:var(--font-cormorant)] text-4xl text-white">Create a free campus seat</h1>
+      <p className="mt-3 text-sm text-muted">
+        $0 forever — Sovereign Mindset and Personal Finance included. Upgrade later for the full catalog.
+      </p>
       <Flash
         ok={ok}
         error={error}
@@ -37,7 +40,7 @@ export default async function RegisterPage({
           Password
           <input name="password" type="password" required className="mt-1 w-full rounded-xl border border-[var(--line)] bg-black/40 px-3 py-2 text-white" />
         </label>
-        <GoldButton type="submit">Register</GoldButton>
+        <GoldButton type="submit">Start free</GoldButton>
       </form>
       <Link href="/login" className="mt-6 inline-block text-sm text-gold">
         Back to login

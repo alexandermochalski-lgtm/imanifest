@@ -5,6 +5,7 @@ import { CoverMedia } from "@/components/CoverMedia";
 import { LessonPlayer } from "@/components/campus/LessonPlayer";
 import { Flash, GoldButton } from "@/components/ui";
 import { getLiveCourseBySlug } from "@/lib/live-catalog";
+import { isFreeCourseId, isFreeSeat } from "@/lib/membership";
 import { getState } from "@/lib/state";
 
 export default async function CourseDetailPage({
@@ -20,6 +21,7 @@ export default async function CourseDetailPage({
   if (!course) notFound();
   const state = await getState();
   const enrolled = state.enrollments.includes(course.id);
+  const locked = isFreeSeat(state) && !isFreeCourseId(course.id) && !enrolled;
 
   return (
     <main>
@@ -42,11 +44,20 @@ export default async function CourseDetailPage({
         }}
       />
       {!enrolled ? (
-        <form action={enrollCourse.bind(null, course.id, true)} className="mt-6">
-          <GoldButton type="submit">
-            {course.price === 0 ? "Enroll free" : `Enroll · ${course.price} coins`}
-          </GoldButton>
-        </form>
+        locked ? (
+          <div className="mt-6 space-y-3">
+            <p className="text-sm text-muted">This desk needs full membership.</p>
+            <Link href="/get" className="gold-btn inline-flex rounded-xl px-5 py-2.5 text-xs">
+              Upgrade to enroll
+            </Link>
+          </div>
+        ) : (
+          <form action={enrollCourse.bind(null, course.id, true)} className="mt-6">
+            <GoldButton type="submit">
+              {course.price === 0 ? "Enroll free" : `Enroll · ${course.price} coins`}
+            </GoldButton>
+          </form>
+        )
       ) : (
         <div className="mt-6 flex flex-wrap items-center gap-4">
           <p className="text-sm text-gold">Enrolled · spend coins only once</p>

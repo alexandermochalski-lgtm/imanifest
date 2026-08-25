@@ -109,7 +109,7 @@ export type MediaAsset = {
 };
 
 export type MemberRecord = {
-  status: "active" | "canceled";
+  status: "active" | "canceled" | "free";
   paidAt: string;
   email: string;
   userId?: string;
@@ -333,6 +333,8 @@ export type CampusState = {
   lastCoinPackId: string;
   lastCoinCreditAt: string;
   membershipPaidAt: string;
+  /** Freemium seat — campus open, catalog gated. Do not treat as paid. */
+  freeSeatAt?: string;
   profile: {
     name: string;
     phone: string;

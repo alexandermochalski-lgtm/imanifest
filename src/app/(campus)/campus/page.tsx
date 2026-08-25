@@ -13,6 +13,7 @@ import {
 } from "@/lib/daily-desk";
 import { getDeliverableBooks, getDeliverableCourses } from "@/lib/live-catalog";
 import { loginStreakLive } from "@/lib/login-bonus";
+import { isFreeSeat } from "@/lib/membership";
 import { rankHint, studentRank } from "@/lib/ranks";
 import { getState } from "@/lib/state";
 import { readOverlay } from "@/lib/storage";
@@ -25,6 +26,7 @@ export default async function DashboardPage({
 }) {
   const query = await searchParams;
   const state = await getState();
+  const free = isFreeSeat(state);
   const [courses, books, overlay] = await Promise.all([
     getDeliverableCourses(),
     getDeliverableBooks(),
@@ -77,6 +79,24 @@ export default async function DashboardPage({
           <p className="mt-2 font-[family-name:var(--font-cormorant)] text-3xl text-gold">{enrolled.length}</p>
         </div>
       </div>
+
+      {free ? (
+        <Link
+          href="/get"
+          className="mt-6 flex flex-col gap-3 rounded-2xl border border-gold/40 bg-gold/5 p-5 transition hover:border-gold/60 sm:flex-row sm:items-center sm:justify-between"
+        >
+          <div>
+            <p className="text-xs uppercase tracking-[0.2em] text-gold">Free seat</p>
+            <p className="mt-2 font-[family-name:var(--font-cormorant)] text-2xl text-white">
+              Two desks unlocked. Upgrade for the full catalog.
+            </p>
+            <p className="mt-1 text-sm text-muted">
+              Sovereign Mindset + Personal Finance are yours. Full membership opens every method and stipend coins.
+            </p>
+          </div>
+          <span className="gold-btn rounded-lg px-5 py-2.5 text-center text-[11px]">Upgrade · $49.99/mo</span>
+        </Link>
+      ) : null}
 
       <Link
         href="/campus/feed"

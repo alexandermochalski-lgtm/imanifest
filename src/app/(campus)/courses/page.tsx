@@ -5,6 +5,7 @@ import { Flash, GoldButton } from "@/components/ui";
 import { categories, moduleProgress } from "@/lib/catalog";
 import { formatCoins } from "@/lib/daily-desk";
 import { getDeliverableCourses } from "@/lib/live-catalog";
+import { isFreeCourseId, isFreeSeat } from "@/lib/membership";
 import { getState } from "@/lib/state";
 
 export default async function CoursesPage({
@@ -14,6 +15,7 @@ export default async function CoursesPage({
 }) {
   const params = await searchParams;
   const state = await getState();
+  const free = isFreeSeat(state);
   const courses = await getDeliverableCourses();
   const query = (params.q ?? "").toLowerCase();
   const filtered = courses.filter((course) => {
@@ -27,7 +29,19 @@ export default async function CoursesPage({
   return (
     <main>
       <h1 className="font-[family-name:var(--font-cormorant)] text-4xl text-white">Courses</h1>
-      <Flash error={params.error} map={{ missing: "Course missing.", coins: "Not enough coins." }} />
+      {free ? (
+        <p className="mt-3 max-w-2xl text-sm text-muted">
+          Free seat: Sovereign Mindset and Personal Finance are yours.{" "}
+          <Link href="/get" className="text-gold">
+            Upgrade
+          </Link>{" "}
+          to enroll the full catalog.
+        </p>
+      ) : null}
+      <Flash
+        error={params.error}
+        map={{ missing: "Course missing.", coins: "Not enough coins.", upgrade: "Upgrade to enroll this desk." }}
+      />
       <form className="mt-6 flex flex-wrap gap-3">
         <input
           name="q"
@@ -60,6 +74,7 @@ export default async function CoursesPage({
       <div className="mt-8 grid gap-5 md:grid-cols-2">
         {filtered.map((course) => {
           const enrolled = state.enrollments.includes(course.id);
+          const locked = free && !isFreeCourseId(course.id) && !enrolled;
           return (
             <article key={course.id} className="imu-card overflow-hidden rounded-2xl">
               <CoverMedia alt="" ratio="landscape" url={course.coverUrl} />
@@ -68,14 +83,19 @@ export default async function CoursesPage({
                 <h2 className="mt-2 font-[family-name:var(--font-cormorant)] text-2xl text-white">{course.title}</h2>
                 <p className="mt-3 text-sm text-muted">{course.summary}</p>
                 <p className="mt-4 text-sm text-gold">
-                  {course.price === 0 ? "Free" : `${course.price} coins`} · {course.modules.length} modules
+                  {locked ? "Full membership" : course.price === 0 ? "Free" : `${course.price} coins`} ·{" "}
+                  {course.modules.length} modules
                   {enrolled ? ` · ${moduleProgress(course, state.completedModules)}%` : ""}
                 </p>
                 <div className="mt-5 flex gap-3">
                   <Link href={`/courses/${course.slug}`} className="text-sm text-gold hover:underline">
                     Details
                   </Link>
-                  {enrolled ? null : (
+                  {enrolled ? null : locked ? (
+                    <Link href="/get" className="text-sm text-gold hover:underline">
+                      Upgrade to enroll
+                    </Link>
+                  ) : (
                     <form action={enrollCourse.bind(null, course.id, true)}>
                       <button className="text-sm text-gold hover:underline" type="submit">
                         Enroll

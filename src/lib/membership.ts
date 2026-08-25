@@ -7,6 +7,10 @@ import type { AuthSession } from "@/lib/session";
 import type { CampusState, MemberRecord, Role } from "@/lib/types";
 
 export const MEMBERSHIP_STIPEND = 50;
+
+/** Freemium desk — enrolled for every free seat. Paid unlocks the full catalog. */
+export const FREE_COURSE_IDS = ["c-mindset", "c-personal-finance"] as const;
+
 const DEMO_STUDENT_EMAIL = "student@imanifest.money";
 const DEMO_ADMIN_EMAILS = new Set([
   "admin@imanifest.money",
@@ -17,6 +21,25 @@ const DEMO_ADMIN_EMAILS = new Set([
 export function isDemoCampusSeat(email: string): boolean {
   const normalized = email.toLowerCase();
   return normalized === DEMO_STUDENT_EMAIL || DEMO_ADMIN_EMAILS.has(normalized);
+}
+
+export function isFreeCourseId(courseId: string) {
+  return (FREE_COURSE_IDS as readonly string[]).includes(courseId);
+}
+
+/** Cookie-level: paid OR freemium seat can enter campus chrome. */
+export function hasCampusAccess(role: Role | undefined, state: CampusState): boolean {
+  if (role === "admin") return true;
+  return Boolean(state.membershipPaidAt || state.freeSeatAt);
+}
+
+/** Full catalog / stipend — paid seat only. */
+export function hasPaidCampus(state: CampusState): boolean {
+  return Boolean(state.membershipPaidAt);
+}
+
+export function isFreeSeat(state: CampusState): boolean {
+  return Boolean(state.freeSeatAt) && !state.membershipPaidAt;
 }
 
 type MembershipRow = {
@@ -33,11 +56,6 @@ function asRecord(row: MembershipRow): MemberRecord {
     email: row.email,
     userId: row.user_id,
   };
-}
-
-export function hasCampusAccess(role: Role | undefined, state: CampusState): boolean {
-  if (role === "admin") return true;
-  return Boolean(state.membershipPaidAt);
 }
 
 export function safeNextPath(value: string): string {
@@ -92,19 +110,36 @@ export async function isCampusUnlocked(
 ): Promise<boolean> {
   if (role === "admin") return true;
   if (isDemoCampusSeat(email)) return true;
-  if (state.membershipPaidAt) return true;
+  if (state.membershipPaidAt || state.freeSeatAt) return true;
   const row = await memberRecord(userId, email);
   if (row?.status === "canceled") return false;
-  if (row?.status === "active") return true;
+  if (row?.status === "active" || row?.status === "free") return true;
   return false;
+}
+
+export async function isPaidMember(
+  role: Role | undefined,
+  state: CampusState,
+  userId: string,
+  email: string,
+): Promise<boolean> {
+  if (role === "admin") return true;
+  if (isDemoCampusSeat(email)) return true;
+  if (state.membershipPaidAt) return true;
+  const row = await memberRecord(userId, email);
+  return row?.status === "active";
 }
 
 export async function syncCampusSeatCookie(userId: string, email: string, state: CampusState) {
   if (state.membershipPaidAt) return;
-  if (!(await isCampusUnlocked(undefined, state, userId, email))) return;
   const row = await memberRecord(userId, email);
-  const paidAt = row?.paidAt ?? new Date().toISOString().slice(0, 10);
-  await stampCampusSeat(paidAt, false);
+  if (row?.status === "active") {
+    await stampCampusSeat(row.paidAt, false);
+    return;
+  }
+  if (row?.status === "free" && !state.freeSeatAt) {
+    await stampFreeSeat(row.paidAt);
+  }
 }
 
 async function upsertSupabaseMember(userId: string, email: string, status: MemberRecord["status"], paidAt: string) {
@@ -148,6 +183,44 @@ export async function recordPaidMember(
   return paidAt;
 }
 
+/** Register freemium seat — campus open, no stipend. */
+export async function recordFreeMember(userId: string, email: string): Promise<string> {
+  const existing = await memberRecord(userId, email);
+  if (existing?.status === "active") return existing.paidAt;
+  const at = new Date().toISOString().slice(0, 10);
+  const record: MemberRecord = { status: "free", paidAt: at, email: email.toLowerCase(), userId };
+  try {
+    await upsertSupabaseMember(userId, email, "free", at);
+  } catch {
+    /* overlay fallback */
+  }
+  await mutateOverlay((overlay) => ({
+    ...overlay,
+    members: {
+      ...(overlay.members ?? {}),
+      [userId]: record,
+      [email.toLowerCase()]: record,
+    },
+  }));
+  return at;
+}
+
+export async function stampFreeSeat(at: string) {
+  return mutateState((state) => {
+    if (state.membershipPaidAt || state.freeSeatAt) return state;
+    return notify(
+      {
+        ...state,
+        freeSeatAt: at,
+        enrollments: [...new Set([...state.enrollments, ...FREE_COURSE_IDS])],
+      },
+      "Free campus seat",
+      "Two foundation desks are on your ledger. Upgrade anytime for the full catalog.",
+      "/campus",
+    );
+  });
+}
+
 export async function stampCampusSeat(paidAt: string, alreadyPaid: boolean): Promise<CampusState | void> {
   if (alreadyPaid) return;
   const month = utcMonth();
@@ -158,6 +231,7 @@ export async function stampCampusSeat(paidAt: string, alreadyPaid: boolean): Pro
       {
         ...state,
         membershipPaidAt: paidAt,
+        freeSeatAt: state.freeSeatAt || paidAt,
         coins: state.coins + grant,
         lastStipendMonth: grant ? month : state.lastStipendMonth,
       },

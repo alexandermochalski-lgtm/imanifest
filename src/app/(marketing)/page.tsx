@@ -21,18 +21,36 @@ export default async function Home() {
           <span className="block text-gold">not spectators.</span>
         </h1>
         <p className="mt-6 max-w-xl text-base leading-7 text-[var(--text-soft)] md:text-lg md:leading-8">
-          {courses.length} live money methods — finance, investing, e-commerce, marketing, and more. Match your path,
-          claim an @handle, and compound with the campus. From $49.99/mo.
+          {courses.length} live money methods. Start free with two foundation desks — then unlock the full campus when
+          you&apos;re ready. Free forever, or $49.99/mo for everything.
         </p>
         <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap">
-          <Link href="/match" className="gold-btn w-full rounded-lg px-7 py-3.5 sm:w-auto">
+          <Link href="/register" className="gold-btn w-full rounded-lg px-7 py-3.5 sm:w-auto">
+            Start free · $0
+          </Link>
+          <Link href="/match" className="ghost-btn w-full rounded-lg px-7 py-3.5 sm:w-auto">
             Find your desk
           </Link>
-          <Link href="/get" className="ghost-btn w-full rounded-lg px-7 py-3.5 sm:w-auto">
-            Start on campus
+          <Link href="/#pricing" className="ghost-btn w-full rounded-lg px-7 py-3.5 sm:w-auto">
+            See pricing
           </Link>
-          <Link href="/programs" className="ghost-btn w-full rounded-lg px-7 py-3.5 sm:w-auto">
-            Browse {courses.length} courses
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 pb-6 sm:px-5">
+        <div className="rounded-2xl border border-gold/35 bg-gold/5 px-6 py-8 md:flex md:items-center md:justify-between md:gap-10 md:px-10">
+          <div className="max-w-xl">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-gold">Free campus seat</p>
+            <h2 className="mt-3 font-[family-name:var(--font-cormorant)] text-3xl font-medium text-white md:text-4xl">
+              $0 to log in. Two desks to ship.
+            </h2>
+            <p className="mt-3 text-sm leading-7 text-[var(--text-soft)]">
+              Create an account, open campus, and study Sovereign Mindset plus Personal Finance — no card. Upgrade when
+              you want the full catalog, stipend coins, and every operator stack.
+            </p>
+          </div>
+          <Link href="/register" className="gold-btn mt-6 inline-flex shrink-0 rounded-lg px-7 py-3.5 md:mt-0">
+            Create free account
           </Link>
         </div>
       </section>
@@ -68,7 +86,7 @@ export default async function Home() {
                 ones you want to work with. Profiles, posts, and follows — built for the floor, not the feed.
               </p>
             </div>
-            <Link href="/get" className="gold-btn mt-6 inline-flex shrink-0 rounded-lg px-7 py-3.5 md:mt-1">
+            <Link href="/register" className="gold-btn mt-6 inline-flex shrink-0 rounded-lg px-7 py-3.5 md:mt-1">
               Claim your seat
             </Link>
           </div>
