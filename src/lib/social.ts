@@ -351,6 +351,40 @@ async function attachAuthors(posts: ProfilePost[]): Promise<ProfilePost[]> {
   });
 }
 
+/** Load nested replies for parent posts and attach as post.replies (oldest first). */
+async function attachReplies(posts: ProfilePost[], viewerId?: string): Promise<ProfilePost[]> {
+  if (!posts.length) return posts;
+  const supabase = await client();
+  if (!supabase) return posts;
+  const parentIds = posts.map((p) => p.id);
+  const { data } = await supabase
+    .from("profile_posts")
+    .select("*")
+    .in("reply_to_id", parentIds)
+    .order("created_at", { ascending: true })
+    .limit(200);
+  const rows = (data ?? []) as Record<string, unknown>[];
+  if (!rows.length) {
+    return posts.map((p) => ({ ...p, replies: p.replies ?? [] }));
+  }
+  const ids = rows.map((r) => String(r.id));
+  const { counts, liked } = await likeMeta(ids, viewerId);
+  const replies = await attachAuthors(
+    rows.map((row) => mapPost(row, counts.get(String(row.id)) ?? 0, liked.has(String(row.id)))),
+  );
+  const byParent = new Map<string, ProfilePost[]>();
+  for (const reply of replies) {
+    if (!reply.replyToId) continue;
+    const list = byParent.get(reply.replyToId) ?? [];
+    list.push(reply);
+    byParent.set(reply.replyToId, list);
+  }
+  return posts.map((post) => ({
+    ...post,
+    replies: byParent.get(post.id) ?? [],
+  }));
+}
+
 export async function createPost(input: {
   authorId: string;
   body: string;
@@ -370,7 +404,10 @@ export async function createPost(input: {
     reply_to_id: input.replyToId || null,
     created_at: new Date().toISOString(),
   });
-  if (error) return { ok: false as const, error: "insert" };
+  if (error) {
+    console.error("[createPost]", error.message, error.code, error.details);
+    return { ok: false as const, error: "insert" };
+  }
   return { ok: true as const, id };
 }
 
@@ -495,6 +532,14 @@ export async function listPosts(input: {
     }
   }
 
+  if (input.tab === "posts") {
+    posts = await attachReplies(posts, input.viewerId);
+    if (pinned) {
+      const [withReplies] = await attachReplies([pinned], input.viewerId);
+      pinned = withReplies ?? pinned;
+    }
+  }
+
   return { posts, pinned };
 }
 
@@ -544,9 +589,10 @@ export async function listCampusFeed(input: {
 
   const postIds = rows.map((r) => String(r.id));
   const { counts, liked } = await likeMeta(postIds, input.viewerId);
-  return attachAuthors(
+  const posts = await attachAuthors(
     rows.map((row) => mapPost(row, counts.get(String(row.id)) ?? 0, liked.has(String(row.id)))),
   );
+  return attachReplies(posts, input.viewerId);
 }
 
 /** Directory-friendly list with handles for search. */

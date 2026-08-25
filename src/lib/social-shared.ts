@@ -26,6 +26,7 @@ export type ProfilePost = {
   authorName?: string;
   authorHandle?: string;
   authorAvatarUrl?: string;
+  replies?: ProfilePost[];
 };
 
 export type ProfileTab = "posts" | "replies" | "media" | "likes";
