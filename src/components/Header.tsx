@@ -35,12 +35,16 @@ export async function Header() {
           ))}
         </nav>
         <div className="flex shrink-0 items-center gap-2">
-          <Link href={ctaHref} className="gold-btn hidden rounded-lg px-5 py-2.5 md:inline-flex">
-            {ctaLabel}
-          </Link>
-          <Link href={ctaHref} className="gold-btn rounded-lg px-3 py-2 text-[10px] md:hidden">
-            {inCampus ? "Campus" : session ? "Get" : "Log in"}
-          </Link>
+          <div className="hidden md:block">
+            <Link href={ctaHref} className="gold-btn rounded-lg px-5 py-2.5">
+              {ctaLabel}
+            </Link>
+          </div>
+          <div className="md:hidden">
+            <Link href={ctaHref} className="gold-btn rounded-lg px-3 py-2 text-[10px]">
+              {inCampus ? "Campus" : session ? "Get" : "Log in"}
+            </Link>
+          </div>
           <MarketingMobileNav ctaHref={ctaHref} ctaLabel={ctaLabel} />
         </div>
       </div>
