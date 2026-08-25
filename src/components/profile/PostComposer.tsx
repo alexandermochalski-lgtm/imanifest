@@ -5,16 +5,19 @@ import { MAX_POST_LEN } from "@/lib/social-shared";
 export function PostComposer({
   handle,
   replyToId,
+  returnTo,
   placeholder = "What's happening on campus?",
 }: {
   handle: string;
   replyToId?: string;
+  returnTo?: string;
   placeholder?: string;
 }) {
   return (
     <form action={createProfilePost} className="rounded-2xl border border-[var(--line)] bg-[var(--panel)] p-4 md:p-5">
       <input name="handle" type="hidden" value={handle} />
       {replyToId ? <input name="replyToId" type="hidden" value={replyToId} /> : null}
+      {returnTo ? <input name="returnTo" type="hidden" value={returnTo} /> : null}
       <textarea
         name="body"
         required

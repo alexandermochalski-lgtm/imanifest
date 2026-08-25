@@ -18,15 +18,15 @@ export function EditProfileModal({
 
   return (
     <>
-      <button className="ghost-btn rounded-full px-5 py-2 text-[11px]" type="button" onClick={() => setOpen(true)}>
+      <button className="ghost-btn w-full rounded-full px-5 py-2 text-[11px] sm:w-auto" type="button" onClick={() => setOpen(true)}>
         Edit profile
       </button>
       {open ? (
-        <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/70 p-4 sm:items-center">
-          <div className="max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-2xl border border-[var(--line)] bg-[var(--panel)] p-5 shadow-2xl">
-            <div className="mb-4 flex items-center justify-between">
+        <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/70 sm:items-center sm:p-4">
+          <div className="max-h-[92dvh] w-full max-w-lg overflow-y-auto rounded-t-2xl border border-[var(--line)] bg-[var(--panel)] p-4 pb-[max(1.25rem,env(safe-area-inset-bottom))] shadow-2xl sm:rounded-2xl sm:p-5">
+            <div className="mb-4 flex items-center justify-between gap-3">
               <h2 className="font-[family-name:var(--font-cormorant)] text-2xl text-white">Edit profile</h2>
-              <button className="text-sm text-muted hover:text-gold" type="button" onClick={() => setOpen(false)}>
+              <button className="min-h-11 px-2 text-sm text-muted hover:text-gold" type="button" onClick={() => setOpen(false)}>
                 Close
               </button>
             </div>

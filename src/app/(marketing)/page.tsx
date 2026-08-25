@@ -14,9 +14,9 @@ export default async function Home() {
   ];
   return (
     <main>
-      <section className="mx-auto max-w-6xl px-5 pb-16 pt-20 md:pb-24 md:pt-28">
+      <section className="mx-auto max-w-6xl px-4 pb-12 pt-12 sm:px-5 sm:pb-16 sm:pt-20 md:pb-24 md:pt-28">
         <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-gold">iManifest University</p>
-        <h1 className="mt-5 max-w-3xl font-[family-name:var(--font-cormorant)] text-5xl font-medium leading-[1.05] tracking-tight text-white md:text-7xl">
+        <h1 className="mt-5 max-w-3xl font-[family-name:var(--font-cormorant)] text-4xl font-medium leading-[1.05] tracking-tight text-white sm:text-5xl md:text-7xl">
           For operators,
           <span className="block text-gold">not spectators.</span>
         </h1>
@@ -24,14 +24,14 @@ export default async function Home() {
           {courses.length} live money methods — finance, investing, e-commerce, marketing, and more. Match your path,
           claim an @handle, and compound with the campus. From $49.99/mo.
         </p>
-        <div className="mt-10 flex flex-wrap gap-3">
-          <Link href="/match" className="gold-btn rounded-lg px-7 py-3.5">
+        <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap">
+          <Link href="/match" className="gold-btn w-full rounded-lg px-7 py-3.5 sm:w-auto">
             Find your desk
           </Link>
-          <Link href="/get" className="ghost-btn rounded-lg px-7 py-3.5">
+          <Link href="/get" className="ghost-btn w-full rounded-lg px-7 py-3.5 sm:w-auto">
             Start on campus
           </Link>
-          <Link href="/programs" className="ghost-btn rounded-lg px-7 py-3.5">
+          <Link href="/programs" className="ghost-btn w-full rounded-lg px-7 py-3.5 sm:w-auto">
             Browse {courses.length} courses
           </Link>
         </div>

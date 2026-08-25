@@ -8,7 +8,9 @@ function FollowSubmit({ following }: { following: boolean }) {
   return (
     <button
       className={
-        following ? "ghost-btn rounded-full px-5 py-2 text-[11px]" : "gold-btn rounded-full px-5 py-2 text-[11px]"
+        following
+          ? "ghost-btn w-full rounded-full px-5 py-2 text-[11px] sm:w-auto"
+          : "gold-btn w-full rounded-full px-5 py-2 text-[11px] sm:w-auto"
       }
       disabled={pending}
       type="submit"
@@ -28,7 +30,7 @@ export function FollowButton({
   initiallyFollowing: boolean;
 }) {
   return (
-    <form action={toggleFollowAction}>
+    <form action={toggleFollowAction} className="w-full sm:w-auto">
       <input name="targetId" type="hidden" value={targetId} />
       <input name="handle" type="hidden" value={handle} />
       <input name="currently" type="hidden" value={initiallyFollowing ? "1" : "0"} />

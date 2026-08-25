@@ -19,6 +19,7 @@ export function PostCard({
   viewerId,
   tab = "posts",
   pinned = false,
+  returnTo,
 }: {
   post: ProfilePost;
   handle: string;
@@ -26,6 +27,7 @@ export function PostCard({
   viewerId: string;
   tab?: ProfileTab;
   pinned?: boolean;
+  returnTo?: string;
 }) {
   const [replyOpen, setReplyOpen] = useState(false);
   const avatar = campusMediaHref(post.authorAvatarUrl);
@@ -67,6 +69,7 @@ export function PostCard({
               <input name="postId" type="hidden" value={post.id} />
               <input name="handle" type="hidden" value={handle} />
               <input name="tab" type="hidden" value={tab} />
+              {returnTo ? <input name="returnTo" type="hidden" value={returnTo} /> : null}
               <button className={post.likedByMe ? "text-gold" : "hover:text-gold"} type="submit">
                 {post.likedByMe ? "Liked" : "Like"} · {post.likeCount}
               </button>
@@ -81,6 +84,7 @@ export function PostCard({
                 <input name="postId" type="hidden" value={post.id} />
                 <input name="handle" type="hidden" value={handle} />
                 <input name="unpin" type="hidden" value={pinned ? "1" : "0"} />
+                {returnTo ? <input name="returnTo" type="hidden" value={returnTo} /> : null}
                 <button className="hover:text-gold" type="submit">
                   {pinned ? "Unpin" : "Pin"}
                 </button>
@@ -90,6 +94,7 @@ export function PostCard({
               <form action={deleteProfilePost}>
                 <input name="postId" type="hidden" value={post.id} />
                 <input name="handle" type="hidden" value={handle} />
+                {returnTo ? <input name="returnTo" type="hidden" value={returnTo} /> : null}
                 <button className="hover:text-red-200" type="submit">
                   Delete
                 </button>
@@ -100,6 +105,7 @@ export function PostCard({
             <form action={createProfilePost} className="mt-3 space-y-2">
               <input name="handle" type="hidden" value={handle} />
               <input name="replyToId" type="hidden" value={post.id} />
+              {returnTo ? <input name="returnTo" type="hidden" value={returnTo} /> : null}
               <textarea
                 name="body"
                 required

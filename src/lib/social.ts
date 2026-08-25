@@ -498,6 +498,57 @@ export async function listPosts(input: {
   return { posts, pinned };
 }
 
+/** Campus timeline: following (you + people you follow) or all listed seats. */
+export async function listCampusFeed(input: {
+  viewerId: string;
+  mode?: "following" | "campus";
+  limit?: number;
+}): Promise<ProfilePost[]> {
+  const supabase = await client();
+  if (!supabase) return [];
+  const limit = input.limit ?? 50;
+  const mode = input.mode ?? "campus";
+
+  let authorIds: string[] | null = null;
+  if (mode === "following") {
+    const { data: followRows } = await supabase
+      .from("profile_follows")
+      .select("following_id")
+      .eq("follower_id", input.viewerId);
+    authorIds = [input.viewerId, ...((followRows ?? []).map((r) => r.following_id as string))];
+  }
+
+  let query = supabase
+    .from("profile_posts")
+    .select("*")
+    .is("reply_to_id", null)
+    .order("created_at", { ascending: false })
+    .limit(limit);
+
+  if (authorIds) {
+    query = query.in("author_id", authorIds);
+  }
+
+  const { data } = await query;
+  let rows = (data ?? []) as Record<string, unknown>[];
+
+  // Campus mode: only posts from listed profiles (or viewer)
+  if (mode === "campus" && rows.length) {
+    const ids = [...new Set(rows.map((r) => String(r.author_id)))];
+    const profiles = await loadProfilesByIds(ids);
+    const allowed = new Set(
+      profiles.filter((p) => p.listed || p.userId === input.viewerId).map((p) => p.userId),
+    );
+    rows = rows.filter((r) => allowed.has(String(r.author_id)));
+  }
+
+  const postIds = rows.map((r) => String(r.id));
+  const { counts, liked } = await likeMeta(postIds, input.viewerId);
+  return attachAuthors(
+    rows.map((row) => mapPost(row, counts.get(String(row.id)) ?? 0, liked.has(String(row.id)))),
+  );
+}
+
 /** Directory-friendly list with handles for search. */
 export async function listSocialDirectory(selfId: string, query = ""): Promise<SocialProfile[]> {
   const supabase = await client();

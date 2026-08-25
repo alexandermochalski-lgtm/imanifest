@@ -79,8 +79,20 @@ export default async function DashboardPage({
       </div>
 
       <Link
+        href="/campus/feed"
+        className="mt-4 flex flex-col gap-3 rounded-2xl border border-[var(--line)] bg-panel p-5 transition hover:border-gold/40 sm:flex-row sm:items-center sm:justify-between"
+      >
+        <div>
+          <p className="text-xs uppercase tracking-[0.2em] text-gold">Campus feed</p>
+          <p className="mt-2 font-[family-name:var(--font-cormorant)] text-2xl text-white">See what operators are posting</p>
+          <p className="mt-1 text-sm text-muted">Campus-wide timeline, plus a Following tab for seats you track.</p>
+        </div>
+        <span className="ghost-btn rounded-lg px-5 py-2.5 text-center text-[11px]">Open feed</span>
+      </Link>
+
+      <Link
         href="/campus/match"
-        className="mt-6 flex flex-col gap-3 rounded-2xl border border-gold/30 bg-gold/5 p-5 transition hover:border-gold/50 sm:flex-row sm:items-center sm:justify-between"
+        className="mt-4 flex flex-col gap-3 rounded-2xl border border-gold/30 bg-gold/5 p-5 transition hover:border-gold/50 sm:flex-row sm:items-center sm:justify-between"
       >
         <div>
           <p className="text-xs uppercase tracking-[0.2em] text-gold">AI Matching</p>

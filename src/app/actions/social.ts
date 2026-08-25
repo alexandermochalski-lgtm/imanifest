@@ -23,11 +23,20 @@ async function campusAuthed() {
 function revalidateProfile(handle?: string) {
   revalidatePath("/directory");
   revalidatePath("/profile");
+  revalidatePath("/campus/feed");
   if (handle) {
     revalidatePath(`/u/${handle}`);
     revalidatePath(`/u/${handle}/followers`);
     revalidatePath(`/u/${handle}/following`);
   }
+}
+
+function safeReturnTo(raw: string, fallback: string) {
+  const value = raw.trim();
+  if (value.startsWith("/campus") || value.startsWith("/u/") || value === "/profile" || value === "/directory") {
+    return value;
+  }
+  return fallback;
 }
 
 export async function saveSocialProfile(formData: FormData) {
@@ -112,6 +121,7 @@ export async function createProfilePost(formData: FormData) {
   const imageUrl = String(formData.get("imageUrl") ?? "").trim();
   const replyToId = String(formData.get("replyToId") ?? "").trim() || null;
   const handle = String(formData.get("handle") ?? "");
+  const returnTo = String(formData.get("returnTo") ?? "").trim();
   const result = await createPost({
     authorId: session.userId,
     body,
@@ -124,10 +134,12 @@ export async function createProfilePost(formData: FormData) {
     email: session.email,
   });
   if (!result.ok) {
-    redirect(handle ? `/u/${handle}?error=post_${result.error}` : `/u/${own.handle}?error=post`);
+    const dest = safeReturnTo(returnTo, handle ? `/u/${handle}` : `/u/${own.handle}`);
+    redirect(`${dest}${dest.includes("?") ? "&" : "?"}error=post_${result.error}`);
   }
   revalidateProfile(handle);
   revalidateProfile(own.handle);
+  if (returnTo) redirect(safeReturnTo(returnTo, `/u/${own.handle}`));
   if (replyToId) redirect(`/u/${own.handle}?tab=replies`);
   redirect(handle ? `/u/${handle}` : `/u/${own.handle}`);
 }
@@ -136,9 +148,10 @@ export async function deleteProfilePost(formData: FormData) {
   const session = await campusAuthed();
   const postId = String(formData.get("postId") ?? "");
   const handle = String(formData.get("handle") ?? "");
+  const returnTo = String(formData.get("returnTo") ?? "").trim();
   if (postId) await deletePost(session.userId, postId);
   revalidateProfile(handle);
-  redirect(handle ? `/u/${handle}` : "/profile");
+  redirect(safeReturnTo(returnTo, handle ? `/u/${handle}` : "/profile"));
 }
 
 export async function togglePostLike(formData: FormData) {
@@ -146,8 +159,10 @@ export async function togglePostLike(formData: FormData) {
   const postId = String(formData.get("postId") ?? "");
   const handle = String(formData.get("handle") ?? "");
   const tab = String(formData.get("tab") ?? "posts");
+  const returnTo = String(formData.get("returnTo") ?? "").trim();
   if (postId) await toggleLike(session.userId, postId);
   revalidateProfile(handle);
+  if (returnTo) redirect(safeReturnTo(returnTo, "/campus/feed"));
   const qs = tab && tab !== "posts" ? `?tab=${tab}` : "";
   redirect(handle ? `/u/${handle}${qs}` : "/profile");
 }
@@ -156,8 +171,9 @@ export async function pinProfilePost(formData: FormData) {
   const session = await campusAuthed();
   const postId = String(formData.get("postId") ?? "");
   const handle = String(formData.get("handle") ?? "");
+  const returnTo = String(formData.get("returnTo") ?? "").trim();
   const unpin = String(formData.get("unpin") ?? "") === "1";
   await setPinnedPost(session.userId, unpin ? null : postId || null);
   revalidateProfile(handle);
-  redirect(handle ? `/u/${handle}` : "/profile");
+  redirect(safeReturnTo(returnTo, handle ? `/u/${handle}` : "/profile"));
 }

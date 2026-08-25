@@ -23,6 +23,13 @@ export const metadata: Metadata = {
     "iManifest University — personal finance, investing, and wealth creation. A modern campus for operators.",
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover" as const,
+  themeColor: "#050505",
+};
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${dmSans.variable} ${spaceGrotesk.variable} dark h-full antialiased`}>

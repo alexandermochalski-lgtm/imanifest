@@ -50,15 +50,15 @@ export function ProfileHeader({
 
   return (
     <header className="overflow-hidden rounded-2xl border border-[var(--line)] bg-[var(--panel)]">
-      <div className="relative h-36 bg-gradient-to-br from-[#1a1510] via-[#0c0b0a] to-[#2a2118] md:h-44">
+      <div className="relative h-28 bg-gradient-to-br from-[#1a1510] via-[#0c0b0a] to-[#2a2118] sm:h-36 md:h-44">
         {banner ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img alt="" className="h-full w-full object-cover" src={banner} />
         ) : null}
       </div>
-      <div className="relative px-5 pb-6 pt-0 md:px-8">
-        <div className="-mt-12 flex items-end justify-between gap-4 md:-mt-14">
-          <div className="flex h-24 w-24 items-center justify-center overflow-hidden rounded-full border-4 border-[var(--panel)] bg-black text-2xl font-medium text-gold md:h-28 md:w-28 md:text-3xl">
+      <div className="relative px-4 pb-5 pt-0 sm:px-5 sm:pb-6 md:px-8">
+        <div className="-mt-10 flex flex-wrap items-end justify-between gap-3 sm:-mt-12 md:-mt-14">
+          <div className="flex h-20 w-20 items-center justify-center overflow-hidden rounded-full border-4 border-[var(--panel)] bg-black text-xl font-medium text-gold sm:h-24 sm:w-24 sm:text-2xl md:h-28 md:w-28 md:text-3xl">
             {avatar ? (
               // eslint-disable-next-line @next/next/no-img-element
               <img alt="" className="h-full w-full object-cover" src={avatar} />
@@ -66,7 +66,7 @@ export function ProfileHeader({
               initialsFromName(profile.name)
             )}
           </div>
-          <div className="mb-1 flex flex-wrap justify-end gap-2">
+          <div className="mb-1 flex w-full flex-wrap justify-stretch gap-2 sm:w-auto sm:justify-end">
             {isOwn ? (
               <EditProfileModal profile={profile} phone={phone} listed={profile.listed} />
             ) : (
@@ -76,7 +76,7 @@ export function ProfileHeader({
                   handle={profile.handle}
                   initiallyFollowing={isFollowing}
                 />
-                <Link className="ghost-btn rounded-full px-5 py-2 text-[11px]" href={`/messages/${profile.userId}`}>
+                <Link className="ghost-btn flex-1 rounded-full px-5 py-2 text-center text-[11px] sm:flex-none" href={`/messages/${profile.userId}`}>
                   Message
                 </Link>
               </>
@@ -85,20 +85,20 @@ export function ProfileHeader({
         </div>
 
         <div className="mt-4">
-          <h1 className="font-[family-name:var(--font-cormorant)] text-3xl text-white md:text-4xl">{profile.name}</h1>
+          <h1 className="break-words font-[family-name:var(--font-cormorant)] text-2xl text-white sm:text-3xl md:text-4xl">{profile.name}</h1>
           <p className="mt-1 text-sm text-muted">@{profile.handle}</p>
           {rank && isOwn ? <p className="mt-2 text-xs uppercase tracking-[0.18em] text-gold">{rank}</p> : null}
           {profile.bio ? <p className="mt-4 max-w-2xl text-sm leading-6 text-[var(--text-soft)]">{profile.bio}</p> : null}
           <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-sm text-muted">
             {profile.location ? <span>{profile.location}</span> : null}
             {site ? (
-              <a className="text-gold hover:text-white" href={site} rel="noopener noreferrer" target="_blank">
+              <a className="break-all text-gold hover:text-white" href={site} rel="noopener noreferrer" target="_blank">
                 {websiteLabel(profile.website)}
               </a>
             ) : null}
             {joined ? <span>Joined {joined}</span> : null}
           </div>
-          <div className="mt-5 flex flex-wrap gap-5 text-sm">
+          <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm">
             <span>
               <span className="font-medium text-white">{posts}</span> <span className="text-muted">Posts</span>
             </span>
