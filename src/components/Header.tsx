@@ -5,6 +5,7 @@ import { getSession } from "@/lib/session";
 import { getState } from "@/lib/state";
 
 const nav = [
+  { href: "/match", label: "AI Matching" },
   { href: "/programs", label: "Programs" },
   { href: "/#pricing", label: "Pricing" },
   { href: "/about", label: "University" },

@@ -1,11 +1,14 @@
 import Link from "next/link";
 import { AlertPanel, Kpi, ListRow, PageHeader, SparkBars, StatusBadge } from "@/components/admin/ui";
 import { getDesk } from "@/lib/desk";
+import { emptyMatchingAnalytics } from "@/lib/matching";
 import { formatDate, opsUserById, usd } from "@/lib/ops";
+import { readOverlay } from "@/lib/storage";
 
 export default async function AdminHomePage() {
-  const desk = await getDesk();
+  const [desk, overlay] = await Promise.all([getDesk(), readOverlay()]);
   const { kpis } = desk;
+  const matching = { ...emptyMatchingAnalytics(), ...(overlay.matching ?? {}) };
 
   return (
     <main>
@@ -34,6 +37,12 @@ export default async function AdminHomePage() {
         <Kpi href="/admin/coins" label="Coin liability" value={kpis.coinsOutstanding.toLocaleString()} hint={`${kpis.courseGmvCoins.toLocaleString()} coins spent on catalog`} />
         <Kpi href="/admin/applications" label="Hiring pipeline" value={String(kpis.applicationsOpen)} hint={`${kpis.hired} hired · ${kpis.openJobs} open roles`} />
         <Kpi href="/admin/courses" label="Course completions" value={String(kpis.completions)} hint="Modules marked complete at 100%" />
+        <Kpi
+          href="/admin/matching"
+          label="AI Matching"
+          value={String(matching.completions)}
+          hint={`${matching.starts} starts · ${matching.lastAt ? `last ${matching.lastAt}` : "no runs yet"}`}
+        />
       </div>
 
       <div className="mt-8 grid gap-6 xl:grid-cols-5">

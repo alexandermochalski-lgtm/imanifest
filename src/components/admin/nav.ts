@@ -27,6 +27,7 @@ export const adminNavGroups: AdminNavGroup[] = [
     links: [
       { href: "/admin/courses", label: "Courses" },
       { href: "/admin/books", label: "Books" },
+      { href: "/admin/bundles", label: "Bundles" },
       { href: "/admin/media", label: "Media" },
       { href: "/admin/jobs", label: "Jobs" },
       { href: "/admin/coins", label: "Coins & promo" },
@@ -35,6 +36,7 @@ export const adminNavGroups: AdminNavGroup[] = [
   {
     label: "Campus",
     links: [
+      { href: "/admin/matching", label: "AI Matching" },
       { href: "/admin/content", label: "Content" },
       { href: "/admin/settings", label: "Settings" },
     ],

@@ -312,8 +312,8 @@ export async function startCoinCheckout(formData: FormData) {
 
 export async function buyBundle(bundleId: string) {
   const session = await campusAuthed();
-  const { bundles } = await import("@/lib/catalog");
-  const bundle = bundles.find((item) => item.id === bundleId);
+  const { getLiveBundleById } = await import("@/lib/live-catalog");
+  const bundle = await getLiveBundleById(bundleId);
   if (!bundle) redirect("/bundles");
   const current = await getState();
   if (current.coins < bundle.price) redirect("/pricing?error=coins");

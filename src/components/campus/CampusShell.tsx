@@ -8,6 +8,7 @@ import { formatCoins } from "@/lib/daily-desk";
 
 const links = [
   { href: "/campus", label: "Dashboard" },
+  { href: "/campus/match", label: "AI Matching" },
   { href: "/campus#desk", label: "Daily desk" },
   { href: "/courses", label: "Courses" },
   { href: "/library", label: "Books" },

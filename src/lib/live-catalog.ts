@@ -1,6 +1,6 @@
-import { books as seedBooks, courses as seedCourses } from "@/lib/catalog";
+import { books as seedBooks, bundles as seedBundles, courses as seedCourses } from "@/lib/catalog";
 import { readOverlay } from "@/lib/storage";
-import type { Book, CategorySlug, Course, Lesson, MediaAsset, Quiz } from "@/lib/types";
+import type { Book, Bundle, CategorySlug, Course, Lesson, MediaAsset, Quiz } from "@/lib/types";
 
 export function defaultQuiz(prefix: string, title: string): Quiz {
   return {
@@ -107,6 +107,21 @@ export async function getLiveBookBySlug(slug: string) {
 
 export async function getLiveBookById(id: string) {
   return (await getLiveBooks()).find((book) => book.id === id);
+}
+
+/** Seed bundles plus any admin-created overlay bundles (overlay wins on id). */
+export async function getLiveBundles(): Promise<Bundle[]> {
+  const overlay = await readOverlay();
+  const deleted = new Set(overlay.deletedBundleIds ?? []);
+  return mergeById(seedBundles, overlay.bundles ?? []).filter((bundle) => !deleted.has(bundle.id));
+}
+
+export async function getLiveBundleBySlug(slug: string) {
+  return (await getLiveBundles()).find((bundle) => bundle.slug === slug);
+}
+
+export async function getLiveBundleById(id: string) {
+  return (await getLiveBundles()).find((bundle) => bundle.id === id);
 }
 
 export async function getMediaLibrary(): Promise<MediaAsset[]> {

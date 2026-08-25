@@ -3,10 +3,10 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { categories } from "@/lib/catalog";
-import { defaultQuiz, getLiveBookById, getLiveCourseById, getLiveCourses, slugify } from "@/lib/live-catalog";
+import { defaultQuiz, getLiveBookById, getLiveBundleById, getLiveCourseById, getLiveCourses, slugify } from "@/lib/live-catalog";
 import { getSession } from "@/lib/session";
 import { hasBlobToken, kindFromContentType, mutateOverlay, readOverlay } from "@/lib/storage";
-import type { Book, CategorySlug, Course, LessonKind, MediaAsset } from "@/lib/types";
+import type { Book, Bundle, CategorySlug, Course, LessonKind, MediaAsset } from "@/lib/types";
 
 async function requireAdmin() {
   const session = await getSession();
@@ -19,8 +19,10 @@ function revalidateCatalog(extra: string[] = []) {
   revalidatePath("/admin/media");
   revalidatePath("/admin/courses");
   revalidatePath("/admin/books");
+  revalidatePath("/admin/bundles");
   revalidatePath("/courses");
   revalidatePath("/library");
+  revalidatePath("/bundles");
   revalidatePath("/programs");
   revalidatePath("/campus");
   for (const path of extra) revalidatePath(path);
@@ -587,6 +589,96 @@ export async function attachBookFile(formData: FormData) {
   });
   revalidateCatalog();
   redirect(`/admin/books/${bookId}?ok=file`);
+}
+
+function parseIdList(formData: FormData, key: string) {
+  return [...new Set(formData.getAll(key).map((value) => String(value).trim()).filter(Boolean))];
+}
+
+export async function createBundle(formData: FormData) {
+  await requireAdmin();
+  const title = String(formData.get("title") ?? "").trim();
+  const summary = String(formData.get("summary") ?? "").trim();
+  const price = Number(formData.get("price") ?? 0);
+  const courseIds = parseIdList(formData, "courseIds");
+  const bookIds = parseIdList(formData, "bookIds");
+  if (!title || !summary) redirect("/admin/bundles/new?error=invalid");
+  if (!courseIds.length && !bookIds.length) redirect("/admin/bundles/new?error=empty");
+
+  const id = `bun-${Date.now().toString(36)}`;
+  let slug = slugify(title);
+  await mutateOverlay((overlay) => {
+    if ((overlay.bundles ?? []).some((item) => item.slug === slug)) slug = `${slug}-${id.slice(-4)}`;
+    const bundle: Bundle = {
+      id,
+      slug,
+      title,
+      summary,
+      price: Number.isFinite(price) ? Math.max(0, Math.round(price)) : 0,
+      courseIds,
+      bookIds,
+    };
+    return {
+      ...overlay,
+      bundles: [bundle, ...(overlay.bundles ?? [])],
+      deletedBundleIds: (overlay.deletedBundleIds ?? []).filter((item) => item !== id),
+    };
+  });
+  revalidateCatalog([`/admin/bundles/${id}`, `/bundles/${slug}`]);
+  redirect("/admin/bundles?ok=created");
+}
+
+export async function updateBundle(formData: FormData) {
+  await requireAdmin();
+  const bundleId = String(formData.get("bundleId") ?? "");
+  const existing = await getLiveBundleById(bundleId);
+  if (!existing) redirect("/admin/bundles?error=missing");
+  const title = String(formData.get("title") ?? "").trim();
+  const summary = String(formData.get("summary") ?? "").trim();
+  const price = Number(formData.get("price") ?? existing.price);
+  const courseIds = parseIdList(formData, "courseIds");
+  const bookIds = parseIdList(formData, "bookIds");
+  if (!title || !summary) redirect(`/admin/bundles/${bundleId}?error=invalid`);
+  if (!courseIds.length && !bookIds.length) redirect(`/admin/bundles/${bundleId}?error=empty`);
+
+  let nextSlug = slugify(title);
+  await mutateOverlay((current) => {
+    const list = current.bundles ?? [];
+    if (list.some((item) => item.slug === nextSlug && item.id !== bundleId)) {
+      nextSlug = `${nextSlug}-${bundleId.slice(-4)}`;
+    }
+    const bundle: Bundle = {
+      ...existing,
+      id: bundleId,
+      title,
+      summary,
+      slug: nextSlug,
+      price: Number.isFinite(price) ? Math.max(0, Math.round(price)) : existing.price,
+      courseIds,
+      bookIds,
+    };
+    return {
+      ...current,
+      bundles: upsert(list, bundle),
+      deletedBundleIds: (current.deletedBundleIds ?? []).filter((item) => item !== bundleId),
+    };
+  });
+  revalidateCatalog([`/admin/bundles/${bundleId}`, `/bundles/${nextSlug}`]);
+  redirect(`/admin/bundles/${bundleId}?ok=updated`);
+}
+
+export async function deleteBundle(formData: FormData) {
+  await requireAdmin();
+  const bundleId = String(formData.get("bundleId") ?? "");
+  const existing = await getLiveBundleById(bundleId);
+  if (!existing) redirect("/admin/bundles?error=missing");
+  await mutateOverlay((current) => ({
+    ...current,
+    bundles: (current.bundles ?? []).filter((item) => item.id !== bundleId),
+    deletedBundleIds: [...new Set([...(current.deletedBundleIds ?? []), bundleId])],
+  }));
+  revalidateCatalog(["/admin/bundles", "/bundles"]);
+  redirect("/admin/bundles?ok=deleted");
 }
 
 export async function saveDeskContent(formData: FormData) {

@@ -85,6 +85,16 @@ export type Book = {
   coverUrl?: string;
 };
 
+export type Bundle = {
+  id: string;
+  slug: string;
+  title: string;
+  price: number;
+  summary: string;
+  courseIds: string[];
+  bookIds: string[];
+};
+
 export type MediaKind = "video" | "audio" | "pdf" | "image" | "other";
 
 export type MediaAsset = {
@@ -136,12 +146,34 @@ export type Guide = {
 export type CatalogOverlay = {
   courses: Course[];
   books: Book[];
+  bundles?: Bundle[];
+  /** Seed bundle ids removed from campus via admin delete. */
+  deletedBundleIds?: string[];
   media: MediaAsset[];
   members: Record<string, MemberRecord>;
   guides?: Guide[];
   desk?: {
     pin?: DeskPin;
     founderNotes?: FounderNote[];
+  };
+  /** Guided AI Matching funnel analytics (not an LLM). */
+  matching?: {
+    completions: number;
+    starts: number;
+    lastAt?: string;
+    byGoal: Record<string, number>;
+    byFormat: Record<string, number>;
+    byPath: Record<string, number>;
+    recent: {
+      at: string;
+      pathLabel: string;
+      goal?: string;
+      format?: string;
+      topCourseIds: string[];
+      topBookIds: string[];
+      topBundleIds: string[];
+      source: "marketing" | "campus";
+    }[];
   };
 };
 
@@ -191,16 +223,6 @@ export type JobPost = {
   summary: string;
   body: string;
   status: "open" | "closed";
-};
-
-export type Bundle = {
-  id: string;
-  slug: string;
-  title: string;
-  price: number;
-  summary: string;
-  courseIds: string[];
-  bookIds: string[];
 };
 
 export type CoinPack = {
@@ -315,6 +337,14 @@ export type CampusState = {
     name: string;
     phone: string;
     bio: string;
+  };
+  /** Last AI Matching result for the student dashboard. */
+  lastMatch?: {
+    at: string;
+    pathLabel: string;
+    courseIds: string[];
+    bookIds: string[];
+    bundleIds: string[];
   };
 };
 

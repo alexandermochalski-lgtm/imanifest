@@ -77,6 +77,26 @@ export default async function DashboardPage({
           <p className="mt-2 font-[family-name:var(--font-cormorant)] text-3xl text-gold">{enrolled.length}</p>
         </div>
       </div>
+
+      <Link
+        href="/campus/match"
+        className="mt-6 flex flex-col gap-3 rounded-2xl border border-gold/30 bg-gold/5 p-5 transition hover:border-gold/50 sm:flex-row sm:items-center sm:justify-between"
+      >
+        <div>
+          <p className="text-xs uppercase tracking-[0.2em] text-gold">AI Matching</p>
+          <p className="mt-2 font-[family-name:var(--font-cormorant)] text-2xl text-white">
+            {state.lastMatch ? `Continue your ${state.lastMatch.pathLabel}` : "Find your next desk"}
+          </p>
+          <p className="mt-1 text-sm text-muted">
+            {state.lastMatch
+              ? "Retake anytime — new courses are scored automatically."
+              : "Six questions. A live path across courses, books, and stacks."}
+          </p>
+        </div>
+        <span className="gold-btn rounded-lg px-5 py-2.5 text-center text-[11px]">
+          {state.lastMatch ? "Open Matching" : "Run Matching"}
+        </span>
+      </Link>
       <DailyDesk desk={desk} streak={streak} closed={closed} ok={query.ok} error={query.error} />
       <section className="mt-10">
         <h2 className="font-[family-name:var(--font-cormorant)] text-2xl text-white">My courses</h2>

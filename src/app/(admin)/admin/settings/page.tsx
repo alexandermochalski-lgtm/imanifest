@@ -1,7 +1,9 @@
 import { PageHeader } from "@/components/admin/ui";
 import { catalogCounts } from "@/lib/desk";
+import { getLiveBooks, getLiveBundles, getLiveCourses } from "@/lib/live-catalog";
 
-export default function AdminSettingsPage() {
+export default async function AdminSettingsPage() {
+  const [courses, books, bundles] = await Promise.all([getLiveCourses(), getLiveBooks(), getLiveBundles()]);
   return (
     <main>
       <PageHeader
@@ -17,8 +19,8 @@ export default function AdminSettingsPage() {
             applications. Account status, hiring moves, promo toggles, and internal notes persist in an admin cookie.
           </p>
           <p className="mt-3 text-sm text-muted">
-            Catalog now: {catalogCounts.courses} courses · {catalogCounts.books} books · {catalogCounts.bundles} bundles ·{" "}
-            {catalogCounts.jobs} jobs.
+            Catalog now: {courses.length} courses · {books.length} books · {bundles.length} bundles · {catalogCounts.jobs}{" "}
+            jobs.
           </p>
         </section>
         <section className="imu-section rounded-2xl p-5 md:p-6">

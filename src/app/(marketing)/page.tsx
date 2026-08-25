@@ -25,11 +25,32 @@ export default async function Home() {
           enroll, practice, and compound. From $49.99/mo.
         </p>
         <div className="mt-10 flex flex-wrap gap-3">
-          <Link href="/get" className="gold-btn rounded-lg px-7 py-3.5">
+          <Link href="/match" className="gold-btn rounded-lg px-7 py-3.5">
+            Find your desk
+          </Link>
+          <Link href="/get" className="ghost-btn rounded-lg px-7 py-3.5">
             Start on campus
           </Link>
           <Link href="/programs" className="ghost-btn rounded-lg px-7 py-3.5">
             Browse {courses.length} courses
+          </Link>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-5 pb-6">
+        <div className="rounded-2xl border border-[var(--line)] bg-[var(--panel)] px-6 py-8 md:flex md:items-center md:justify-between md:gap-10 md:px-10">
+          <div className="max-w-xl">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-gold">AI Matching</p>
+            <h2 className="mt-3 font-[family-name:var(--font-cormorant)] text-3xl font-medium text-white md:text-4xl">
+              Six questions. One operator path.
+            </h2>
+            <p className="mt-3 text-sm leading-7 text-[var(--text-soft)]">
+              Matching scores the live campus catalog — courses, books, and stacks — against what you need to ship.
+              New desks are included automatically.
+            </p>
+          </div>
+          <Link href="/match" className="gold-btn mt-6 inline-flex rounded-lg px-7 py-3.5 md:mt-0">
+            Run AI Matching
           </Link>
         </div>
       </section>
