@@ -13,6 +13,8 @@ export type MessengerContact = {
   kind: MessageKind;
   subtitle: string;
   courseId?: string;
+  handle?: string;
+  avatarUrl?: string;
 };
 
 export function mentorContactId(courseId: string) {

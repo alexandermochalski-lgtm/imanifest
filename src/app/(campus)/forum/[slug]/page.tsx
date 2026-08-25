@@ -1,8 +1,10 @@
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import { likeForum, replyForum } from "@/app/actions/campus";
 import { Flash, GoldButton } from "@/components/ui";
 import { campusMediaHref } from "@/lib/blob-access";
 import { seedForum } from "@/lib/catalog";
+import { getProfileByUserId } from "@/lib/social";
 import { getState } from "@/lib/state";
 
 export default async function ForumDetailPage({
@@ -20,10 +22,24 @@ export default async function ForumDetailPage({
     seedForum.find((item) => item.slug === slug);
   if (!post) notFound();
   const imageSrc = campusMediaHref(post.imageUrl);
+  let authorHandle = "";
+  try {
+    const profile = await getProfileByUserId(post.authorId);
+    authorHandle = profile?.handle ?? "";
+  } catch {
+    authorHandle = "";
+  }
   return (
     <main>
       <p className="text-xs text-gold">
-        {post.authorName} · {post.category} · {post.createdAt}
+        {authorHandle ? (
+          <Link href={`/u/${authorHandle}`} className="hover:text-white">
+            {post.authorName}
+          </Link>
+        ) : (
+          post.authorName
+        )}{" "}
+        · {post.category} · {post.createdAt}
       </p>
       <h1 className="mt-2 font-[family-name:var(--font-cormorant)] text-4xl text-white">{post.title}</h1>
       <p className="mt-6 max-w-2xl imu-prose leading-8 text-muted">{post.body}</p>

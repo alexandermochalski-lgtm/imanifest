@@ -337,6 +337,8 @@ export type CampusState = {
     name: string;
     phone: string;
     bio: string;
+    handle?: string;
+    avatarUrl?: string;
   };
   /** Last AI Matching result for the student dashboard. */
   lastMatch?: {

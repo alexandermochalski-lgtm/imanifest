@@ -1,81 +1,49 @@
-import { updateProfile } from "@/app/actions/campus";
-import { Flash, GoldButton } from "@/components/ui";
-import { campusDayHint, deskClosedToday, formatCampusDay, formatCoins, liveStreak } from "@/lib/daily-desk";
-import { loadOwnProfile } from "@/lib/directory";
-import { loginStreakLive } from "@/lib/login-bonus";
-import { PEER_MESSAGE_COST } from "@/lib/messenger";
-import { rankHint, STUDENT_RANKS, studentRank } from "@/lib/ranks";
+import { claimHandleAndOpen } from "@/app/actions/social";
+import { Flash } from "@/components/ui";
+import { ensureProfileHandle } from "@/lib/social";
 import { getSession } from "@/lib/session";
-import { getState } from "@/lib/state";
-import Link from "next/link";
+import { redirect } from "next/navigation";
 
 export default async function ProfilePage({
   searchParams,
 }: {
-  searchParams: Promise<{ ok?: string }>;
+  searchParams: Promise<{ ok?: string; error?: string }>;
 }) {
-  const { ok } = await searchParams;
+  const { error } = await searchParams;
   const session = await getSession();
-  const state = await getState();
-  const streak = liveStreak(state);
-  const loginStreak = loginStreakLive(state);
-  const closedToday = deskClosedToday(state);
-  const rank = studentRank(state);
-  let listed = true;
+  if (!session) redirect("/login");
+
   try {
-    const own = session ? await loadOwnProfile(session.userId) : null;
-    if (own) listed = own.listed;
+    const profile = await ensureProfileHandle({
+      userId: session.userId,
+      name: session.name,
+      email: session.email,
+    });
+    if (profile.handle) redirect(`/u/${profile.handle}`);
   } catch {
-    listed = true;
+    /* fall through to claim UI */
   }
+
   return (
-    <main>
-      <h1 className="font-[family-name:var(--font-cormorant)] text-4xl text-white">Profile</h1>
-      <Flash ok={ok} map={{ "1": "Profile updated." }} />
+    <main className="mx-auto max-w-lg">
+      <h1 className="font-[family-name:var(--font-cormorant)] text-4xl text-white">Claim your handle</h1>
       <p className="mt-3 text-sm text-muted">
-        {session?.email} · {session?.role} · <span className="text-gold">{rank}</span>
+        Campus profiles need an @handle so other operators can find you. We&apos;ll suggest one from your name —
+        you can change it anytime.
       </p>
-      <div className="mt-6 grid max-w-2xl gap-4 md:grid-cols-3">
-        <div className="rounded-2xl border border-[var(--line)] bg-panel p-5">
-          <p className="text-xs uppercase tracking-[0.2em] text-gold-deep">Rank</p>
-          <p className="mt-2 font-[family-name:var(--font-cormorant)] text-3xl text-gold">{rank}</p>
-          <p className="mt-2 text-sm text-muted">{rankHint(state)}</p>
-          <p className="mt-3 text-[11px] leading-5 text-[var(--muted)]">{STUDENT_RANKS.join(" → ")}</p>
-        </div>
-        <div className="rounded-2xl border border-[var(--line)] bg-panel p-5">
-          <p className="text-xs uppercase tracking-[0.2em] text-gold-deep">Desk streak</p>
-          <p className="mt-2 font-[family-name:var(--font-cormorant)] text-3xl text-gold">{formatCampusDay(streak)}</p>
-          <p className="mt-2 text-sm text-muted">{campusDayHint(streak, closedToday)}</p>
-        </div>
-        <div className="rounded-2xl border border-[var(--line)] bg-panel p-5">
-          <p className="text-xs uppercase tracking-[0.2em] text-gold-deep">Ledger</p>
-          <p className="mt-2 font-[family-name:var(--font-cormorant)] text-3xl text-gold">{formatCoins(state.coins)}</p>
-          <p className="mt-2 text-sm text-muted">
-            Login day {formatCampusDay(loginStreak)} ·{" "}
-            <Link href="/campus#desk" className="text-gold">
-              Daily desk
-            </Link>{" "}
-            +0.5
-          </p>
-        </div>
-      </div>
-      <form action={updateProfile} className="mt-8 max-w-xl space-y-4">
-        <input name="name" defaultValue={state.profile.name || session?.name} className="w-full rounded-xl border border-[var(--line)] bg-black/40 px-3 py-2" />
-        <input name="phone" defaultValue={state.profile.phone} className="w-full rounded-xl border border-[var(--line)] bg-black/40 px-3 py-2" />
-        <textarea name="bio" rows={5} defaultValue={state.profile.bio} className="w-full rounded-xl border border-[var(--line)] bg-black/40 px-3 py-2" />
-        <label className="flex items-start gap-3 text-sm text-muted">
-          <input name="listed" type="checkbox" defaultChecked={listed} className="mt-1" />
-          <span>
-            List me in the{" "}
-            <Link href="/directory" className="text-gold">
-              campus directory
-            </Link>
-            . Other students can find this name and bio, then open a {PEER_MESSAGE_COST}-coin thread. Uncheck to hide.
-          </span>
-        </label>
-        <GoldButton type="submit">Save profile</GoldButton>
+      <Flash
+        error={error}
+        map={{
+          unavailable: "Profile storage is offline. Paste migration 004 in Supabase, then retry.",
+          handle_taken: "That handle is taken — try again.",
+          handle_invalid: "Invalid handle.",
+        }}
+      />
+      <form action={claimHandleAndOpen} className="mt-8">
+        <button className="gold-btn rounded-xl px-6 py-3 text-xs" type="submit">
+          Open my profile
+        </button>
       </form>
-      <p className="mt-6 text-sm text-muted">Password / avatar / cover uploads stay on the live Laravel stack until storage is wired. This desk updates name, phone, and bio on the campus ledger.</p>
     </main>
   );
 }

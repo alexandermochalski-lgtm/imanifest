@@ -17,6 +17,7 @@ const protectedPrefixes = [
   "/directory",
   "/messages",
   "/notifications",
+  "/u",
   "/admin",
 ];
 

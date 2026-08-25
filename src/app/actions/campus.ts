@@ -403,12 +403,15 @@ export async function updateProfile(formData: FormData) {
   const phone = String(formData.get("phone") ?? "");
   const bio = String(formData.get("bio") ?? "");
   const listed = formData.get("listed") === "on";
+
   await mutateState((state) => ({
     ...state,
     profile: {
       name: name || state.profile.name,
       phone,
       bio,
+      handle: state.profile.handle,
+      avatarUrl: state.profile.avatarUrl,
     },
   }));
   try {
@@ -423,6 +426,7 @@ export async function updateProfile(formData: FormData) {
   }
   revalidatePath("/directory");
   revalidatePath("/messages");
+  revalidatePath("/profile");
   redirect("/profile?ok=1");
 }
 
