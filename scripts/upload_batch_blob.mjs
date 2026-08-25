@@ -33,14 +33,9 @@ if (!TOKEN) {
 const args = process.argv.slice(2);
 let WAVE = 1;
 let BATCH = 2;
-if (args[0] === "wave3") {
-  WAVE = 3;
-  BATCH = Number(args[1] || "1");
-} else if (args[0] === "wave2") {
-  WAVE = 2;
-  BATCH = Number(args[1] || "1");
-} else if (args[0] === "wave1") {
-  WAVE = 1;
+const waveMatch = args[0] && String(args[0]).match(/^wave(\d+)$/i);
+if (waveMatch) {
+  WAVE = Number(waveMatch[1]);
   BATCH = Number(args[1] || "1");
 } else {
   BATCH = Number(args[0] || "2");

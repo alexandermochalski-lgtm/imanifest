@@ -7,12 +7,20 @@ import { campusMediaHref } from "@/lib/blob-access";
 
 const COVER_ACCEPT = "image/jpeg,image/png,image/webp,image/gif";
 
+type LibraryItem = { id: string; title: string };
+
+function shortLabel(title: string) {
+  const cleaned = title.replace(/^[^—–-]+[—–-]\s*/, "");
+  return cleaned.length > 64 ? `${cleaned.slice(0, 61)}…` : cleaned || title;
+}
+
 export function CourseCoverField({
   mode,
   initialUrl,
   label = "Cover image",
   refreshOnUpload = false,
   inputName = "coverUrl",
+  library = [],
 }: {
   mode: "blob" | "local" | "none";
   initialUrl?: string;
@@ -20,6 +28,7 @@ export function CourseCoverField({
   /** Avoid refreshing when this field sits inside a text form — it wipes unsaved edits. */
   refreshOnUpload?: boolean;
   inputName?: string;
+  library?: LibraryItem[];
 }) {
   const router = useRouter();
   const [url, setUrl] = useState(initialUrl ?? "");
@@ -93,7 +102,7 @@ export function CourseCoverField({
       <p className="text-xs text-muted">{label}</p>
       {preview ? (
         // eslint-disable-next-line @next/next/no-img-element
-        <img alt="Cover preview" className="mt-3 h-40 w-full max-w-sm rounded-xl object-cover" src={preview} />
+        <img alt="Cover preview" className="mt-3 h-36 w-full max-w-xs rounded-xl object-cover" src={preview} />
       ) : (
         <p className="mt-2 text-sm text-muted">No cover yet.</p>
       )}
@@ -101,7 +110,7 @@ export function CourseCoverField({
         <p className="mt-3 text-sm text-muted">Connect Vercel Blob to upload covers, or paste a URL below.</p>
       ) : (
         <label className="mt-3 block text-sm text-muted">
-          Upload image (JPEG, PNG, WebP, GIF)
+          Upload image
           <input
             accept={COVER_ACCEPT}
             className="mt-2 block w-full text-sm"
@@ -114,7 +123,7 @@ export function CourseCoverField({
       {busy ? <p className="mt-3 text-sm text-gold">Uploading {progress}%</p> : null}
       {error ? <p className="mt-3 text-sm text-red-200">{error}</p> : null}
       <label className="mt-4 block text-xs text-muted">
-        Or paste cover URL
+        Or paste URL
         <input
           className="mt-1 w-full px-3 py-2"
           onChange={(event) => setUrl(event.target.value)}
@@ -122,6 +131,19 @@ export function CourseCoverField({
           value={url}
         />
       </label>
+      {library.length ? (
+        <label className="mt-3 block text-xs text-muted">
+          Or pick from library
+          <select className="mt-1 w-full px-3 py-2" defaultValue="" name="coverMediaId">
+            <option value="">Keep upload / URL above</option>
+            {library.map((asset) => (
+              <option key={asset.id} value={asset.id}>
+                {shortLabel(asset.title)}
+              </option>
+            ))}
+          </select>
+        </label>
+      ) : null}
     </div>
   );
 }

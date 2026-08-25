@@ -313,23 +313,47 @@ export async function updateLesson(formData: FormData) {
   await requireAdmin();
   const courseId = String(formData.get("courseId") ?? "");
   const lessonId = String(formData.get("lessonId") ?? "");
-  const title = String(formData.get("title") ?? "").trim();
+  const title = String(formData.get("title") ?? "")
+    .trim()
+    .replace(/\.(wav|m4a|mp3|mp4|pdf|mov|webm)$/i, "");
   const kind = (String(formData.get("kind") ?? "video") as LessonKind) || "video";
   const duration = String(formData.get("duration") ?? "").trim() || "12 min";
+  const mediaId = String(formData.get("mediaId") ?? "").trim();
+  const mediaUrl = String(formData.get("mediaUrl") ?? "").trim();
   const course = await getLiveCourseById(courseId);
   if (!course || !title) redirect(`/admin/courses/${courseId}?error=invalid`);
-  await mutateOverlay((current) => ({
-    ...current,
-    courses: upsert(current.courses, {
-      ...course,
-      modules: course.modules.map((module) => ({
-        ...module,
-        lessons: module.lessons.map((lesson) =>
-          lesson.id === lessonId ? { ...lesson, title, kind, duration } : lesson,
-        ),
-      })),
-    }),
-  }));
+  await mutateOverlay((current) => {
+    const library = mediaId ? current.media.find((item) => item.id === mediaId) : undefined;
+    const url = library?.url || mediaUrl || undefined;
+    const nextKind =
+      library?.kind === "audio" || library?.kind === "video" || library?.kind === "pdf"
+        ? library.kind
+        : kind || "video";
+    return {
+      ...current,
+      courses: upsert(current.courses, {
+        ...course,
+        modules: course.modules.map((module) => ({
+          ...module,
+          lessons: module.lessons.map((lesson) =>
+            lesson.id === lessonId
+              ? {
+                  ...lesson,
+                  title,
+                  kind: nextKind,
+                  duration,
+                  ...(url
+                    ? { mediaUrl: url, mediaId: library?.id ?? lesson.mediaId }
+                    : mediaId === "" && mediaUrl === ""
+                      ? {}
+                      : { mediaUrl: undefined, mediaId: undefined }),
+                }
+              : lesson,
+          ),
+        })),
+      }),
+    };
+  });
   revalidateCatalog([`/admin/courses/${courseId}`]);
   redirect(`/admin/courses/${courseId}?ok=lesson`);
 }

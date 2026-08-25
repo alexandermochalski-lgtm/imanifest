@@ -3,7 +3,6 @@ import { redirect } from "next/navigation";
 import {
   addLesson,
   addModule,
-  attachLessonMedia,
   deleteCourse,
   deleteLesson,
   deleteModule,
@@ -18,10 +17,18 @@ import { ConfirmGoldButton } from "@/components/admin/ConfirmGoldButton";
 import { LessonMediaField } from "@/components/admin/LessonMediaField";
 import { PageHeader, StatusBadge } from "@/components/admin/ui";
 import { Flash, GoldButton } from "@/components/ui";
-import { campusMediaHref } from "@/lib/blob-access";
 import { categories } from "@/lib/catalog";
 import { getLiveCourseById, getMediaLibrary } from "@/lib/live-catalog";
 import { storageMode } from "@/lib/storage";
+
+function relatedLessonFiles(
+  files: { id: string; title: string; kind: string; url: string }[],
+  slug: string,
+) {
+  const needle = slug.toLowerCase();
+  const related = files.filter((asset) => asset.title.toLowerCase().includes(needle));
+  return related.length ? related : files.slice(0, 80);
+}
 
 export default async function AdminCourseDetailPage({
   params,
@@ -35,10 +42,13 @@ export default async function AdminCourseDetailPage({
   const course = await getLiveCourseById(id);
   if (!course) redirect("/admin/courses?error=missing");
   const media = await getMediaLibrary();
-  const images = media.filter((asset) => asset.kind === "image" || asset.contentType.startsWith("image/"));
-  const lessonFiles = media.filter(
-    (asset) => asset.kind === "video" || asset.kind === "audio" || asset.kind === "pdf",
-  );
+  const images = media
+    .filter((asset) => asset.kind === "image" || asset.contentType.startsWith("image/"))
+    .map((asset) => ({ id: asset.id, title: asset.title }));
+  const lessonFiles = media
+    .filter((asset) => asset.kind === "video" || asset.kind === "audio" || asset.kind === "pdf")
+    .map((asset) => ({ id: asset.id, title: asset.title, kind: asset.kind, url: asset.url }));
+  const courseFiles = relatedLessonFiles(lessonFiles, course.slug);
   const mode = storageMode();
 
   return (
@@ -70,6 +80,7 @@ export default async function AdminCourseDetailPage({
         }}
         ok={ok}
       />
+
       <div className="mb-8 flex flex-wrap items-center gap-3">
         <StatusBadge status={course.status} />
         <form action={setCourseStatus} className="flex items-center gap-2">
@@ -95,7 +106,7 @@ export default async function AdminCourseDetailPage({
       </div>
 
       <section className="mb-8 imu-section rounded-2xl p-5 md:p-6">
-        <h2 className="text-lg text-white">Edit course</h2>
+        <h2 className="text-lg text-white">Course details</h2>
         <form action={updateCourse} className="mt-4 grid max-w-3xl gap-4">
           <input name="courseId" type="hidden" value={course.id} />
           <label className="text-xs text-muted">
@@ -148,164 +159,160 @@ export default async function AdminCourseDetailPage({
       </section>
 
       <section className="mb-8 imu-section rounded-2xl p-5 md:p-6">
-        <h2 className="text-lg text-white">Cover image</h2>
-        <p className="mt-1 text-sm text-muted">Shown on campus course cards. Upload, paste a URL, or pick from the media library.</p>
+        <h2 className="text-lg text-white">Cover</h2>
         <form action={setCourseCover} className="mt-4 grid max-w-3xl gap-4">
           <input name="courseId" type="hidden" value={course.id} />
-          <CourseCoverField initialUrl={course.coverUrl} mode={mode} />
-          <label className="text-xs text-muted">
-            Or pick from library
-            <select className="mt-1 w-full px-3 py-2" name="coverMediaId">
-              <option value="">Keep upload / URL above</option>
-              {images.map((asset) => (
-                <option key={asset.id} value={asset.id}>
-                  {asset.title}
-                </option>
-              ))}
-            </select>
-          </label>
+          <CourseCoverField
+            initialUrl={course.coverUrl}
+            library={(() => {
+              const related = images.filter((asset) =>
+                asset.title.toLowerCase().includes(course.slug.toLowerCase()),
+              );
+              return related.length ? related : images.slice(0, 60);
+            })()}
+            mode={mode}
+          />
           <GoldButton pendingLabel="Saving…" type="submit">
             Save cover
           </GoldButton>
         </form>
       </section>
 
-      <section className="mb-8 imu-section rounded-2xl p-5 md:p-6">
-        <h2 className="text-lg text-white">Add module</h2>
-        <form action={addModule} className="mt-4 flex max-w-3xl flex-wrap items-end gap-3">
+      <section className="mb-8">
+        <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
+          <div>
+            <h2 className="text-lg text-white">Curriculum</h2>
+            <p className="mt-1 text-sm text-muted">
+              One save per lesson updates title, type, duration, and file.
+            </p>
+          </div>
+        </div>
+
+        <div className="space-y-6">
+          {course.modules.map((module, moduleIndex) => (
+            <section key={module.id} className="imu-section rounded-2xl p-5 md:p-6">
+              <div className="flex flex-wrap items-start justify-between gap-3">
+                <form action={updateModule} className="flex min-w-[16rem] flex-1 flex-wrap items-end gap-3">
+                  <input name="courseId" type="hidden" value={course.id} />
+                  <input name="moduleId" type="hidden" value={module.id} />
+                  <label className="min-w-[14rem] flex-1 text-xs text-muted">
+                    Module {moduleIndex + 1}
+                    <input className="mt-1 w-full px-3 py-2" defaultValue={module.title} name="title" required />
+                  </label>
+                  <GoldButton pendingLabel="Saving…" type="submit">
+                    Rename
+                  </GoldButton>
+                </form>
+                <form action={deleteModule}>
+                  <input name="courseId" type="hidden" value={course.id} />
+                  <input name="moduleId" type="hidden" value={module.id} />
+                  <ConfirmGoldButton
+                    className="!bg-transparent !text-red-200 border border-red-400/40"
+                    confirmMessage={`Delete module “${module.title}” and its lessons?`}
+                    pendingLabel="Deleting…"
+                  >
+                    Delete module
+                  </ConfirmGoldButton>
+                </form>
+              </div>
+
+              <ul className="mt-5 space-y-4">
+                {module.lessons.map((lesson, lessonIndex) => (
+                  <li key={lesson.id} className="rounded-xl border border-[var(--line)] bg-black/15 p-4">
+                    <form action={updateLesson} className="grid gap-3">
+                      <input name="courseId" type="hidden" value={course.id} />
+                      <input name="lessonId" type="hidden" value={lesson.id} />
+                      <div className="grid gap-3 md:grid-cols-12 md:items-end">
+                        <label className="text-xs text-muted md:col-span-6">
+                          Lesson {lessonIndex + 1}
+                          <input
+                            className="mt-1 w-full px-3 py-2"
+                            defaultValue={lesson.title}
+                            name="title"
+                            required
+                          />
+                        </label>
+                        <label className="text-xs text-muted md:col-span-2">
+                          Kind
+                          <select className="mt-1 w-full px-3 py-2" defaultValue={lesson.kind} name="kind">
+                            <option value="video">Video</option>
+                            <option value="audio">Audio</option>
+                            <option value="pdf">PDF</option>
+                            <option value="reading">Reading</option>
+                          </select>
+                        </label>
+                        <label className="text-xs text-muted md:col-span-2">
+                          Duration
+                          <input className="mt-1 w-full px-3 py-2" defaultValue={lesson.duration} name="duration" />
+                        </label>
+                        <div className="flex flex-wrap gap-2 md:col-span-2 md:justify-end">
+                          <GoldButton pendingLabel="Saving…" type="submit">
+                            Save
+                          </GoldButton>
+                        </div>
+                      </div>
+                      <LessonMediaField
+                        compact
+                        initialMediaId={lesson.mediaId}
+                        initialUrl={lesson.mediaUrl}
+                        library={courseFiles}
+                        mode={mode}
+                      />
+                    </form>
+                    <form action={deleteLesson} className="mt-3">
+                      <input name="courseId" type="hidden" value={course.id} />
+                      <input name="moduleId" type="hidden" value={module.id} />
+                      <input name="lessonId" type="hidden" value={lesson.id} />
+                      <ConfirmGoldButton
+                        className="!bg-transparent !px-3 !py-1.5 !text-[11px] !text-red-200 border border-red-400/40"
+                        confirmMessage={`Delete lesson “${lesson.title}”?`}
+                        pendingLabel="Deleting…"
+                      >
+                        Delete lesson
+                      </ConfirmGoldButton>
+                    </form>
+                  </li>
+                ))}
+              </ul>
+
+              <form
+                action={addLesson}
+                className="mt-5 flex max-w-3xl flex-wrap items-end gap-3 border-t border-[var(--line)] pt-4"
+              >
+                <input name="courseId" type="hidden" value={course.id} />
+                <input name="moduleId" type="hidden" value={module.id} />
+                <label className="min-w-[12rem] flex-1 text-xs text-muted">
+                  New lesson
+                  <input className="mt-1 w-full px-3 py-2" name="title" placeholder="Lesson title" />
+                </label>
+                <label className="text-xs text-muted">
+                  Kind
+                  <select className="mt-1 w-full px-3 py-2" defaultValue="video" name="kind">
+                    <option value="video">Video</option>
+                    <option value="audio">Audio</option>
+                    <option value="pdf">PDF</option>
+                    <option value="reading">Reading</option>
+                  </select>
+                </label>
+                <GoldButton pendingLabel="Adding…" type="submit">
+                  Add lesson
+                </GoldButton>
+              </form>
+            </section>
+          ))}
+        </div>
+
+        <form action={addModule} className="mt-6 flex max-w-3xl flex-wrap items-end gap-3 rounded-2xl border border-dashed border-[var(--line)] p-5">
           <input name="courseId" type="hidden" value={course.id} />
           <label className="min-w-[14rem] flex-1 text-xs text-muted">
-            Module title
-            <input className="mt-1 w-full px-3 py-2" name="title" placeholder="Module 2" />
+            New module
+            <input className="mt-1 w-full px-3 py-2" name="title" placeholder="Module title" />
           </label>
           <GoldButton pendingLabel="Adding…" type="submit">
             Add module
           </GoldButton>
         </form>
       </section>
-
-      <div className="space-y-6">
-        {course.modules.map((module) => (
-          <section key={module.id} className="imu-section rounded-2xl p-5 md:p-6">
-            <div className="flex flex-wrap items-start justify-between gap-3">
-              <form action={updateModule} className="flex min-w-[16rem] flex-1 flex-wrap items-end gap-3">
-                <input name="courseId" type="hidden" value={course.id} />
-                <input name="moduleId" type="hidden" value={module.id} />
-                <label className="min-w-[14rem] flex-1 text-xs text-muted">
-                  Module title
-                  <input className="mt-1 w-full px-3 py-2" defaultValue={module.title} name="title" required />
-                </label>
-                <GoldButton pendingLabel="Saving…" type="submit">
-                  Rename
-                </GoldButton>
-              </form>
-              <form action={deleteModule}>
-                <input name="courseId" type="hidden" value={course.id} />
-                <input name="moduleId" type="hidden" value={module.id} />
-                <ConfirmGoldButton
-                  className="!bg-transparent !text-red-200 border border-red-400/40"
-                  confirmMessage={`Delete module “${module.title}” and its lessons?`}
-                  pendingLabel="Deleting…"
-                >
-                  Delete module
-                </ConfirmGoldButton>
-              </form>
-            </div>
-
-            <ul className="mt-4 space-y-5">
-              {module.lessons.map((lesson) => (
-                <li key={lesson.id} className="border-t border-[var(--line)] pt-4">
-                  <form action={updateLesson} className="mb-4 grid max-w-3xl gap-3 md:grid-cols-4">
-                    <input name="courseId" type="hidden" value={course.id} />
-                    <input name="lessonId" type="hidden" value={lesson.id} />
-                    <label className="text-xs text-muted md:col-span-2">
-                      Lesson title
-                      <input className="mt-1 w-full px-3 py-2" defaultValue={lesson.title} name="title" required />
-                    </label>
-                    <label className="text-xs text-muted">
-                      Kind
-                      <select className="mt-1 w-full px-3 py-2" defaultValue={lesson.kind} name="kind">
-                        <option value="video">Video</option>
-                        <option value="audio">Audio</option>
-                        <option value="pdf">PDF</option>
-                        <option value="reading">Reading</option>
-                      </select>
-                    </label>
-                    <label className="text-xs text-muted">
-                      Duration
-                      <input className="mt-1 w-full px-3 py-2" defaultValue={lesson.duration} name="duration" />
-                    </label>
-                    <div className="flex flex-wrap gap-2 md:col-span-4">
-                      <GoldButton pendingLabel="Saving…" type="submit">
-                        Save lesson
-                      </GoldButton>
-                    </div>
-                  </form>
-                  <form action={deleteLesson} className="mb-4">
-                    <input name="courseId" type="hidden" value={course.id} />
-                    <input name="moduleId" type="hidden" value={module.id} />
-                    <input name="lessonId" type="hidden" value={lesson.id} />
-                    <ConfirmGoldButton
-                      className="!bg-transparent !text-red-200 border border-red-400/40"
-                      confirmMessage={`Delete lesson “${lesson.title}”?`}
-                      pendingLabel="Deleting…"
-                    >
-                      Delete lesson
-                    </ConfirmGoldButton>
-                  </form>
-                  {lesson.mediaUrl ? (
-                    <a className="text-xs text-gold" href={campusMediaHref(lesson.mediaUrl) ?? lesson.mediaUrl} rel="noreferrer" target="_blank">
-                      Current file
-                    </a>
-                  ) : (
-                    <p className="text-xs text-muted">No file attached</p>
-                  )}
-                  <form action={attachLessonMedia} className="mt-3 grid max-w-3xl gap-4">
-                    <input name="courseId" type="hidden" value={course.id} />
-                    <input name="lessonId" type="hidden" value={lesson.id} />
-                    <LessonMediaField
-                      initialMediaId={lesson.mediaId}
-                      initialUrl={lesson.mediaUrl}
-                      library={lessonFiles.map((asset) => ({
-                        id: asset.id,
-                        title: asset.title,
-                        kind: asset.kind,
-                        url: asset.url,
-                      }))}
-                      mode={mode}
-                    />
-                    <input name="kind" type="hidden" value={lesson.kind} />
-                    <GoldButton pendingLabel="Saving…" type="submit">
-                      Save lesson media
-                    </GoldButton>
-                  </form>
-                </li>
-              ))}
-            </ul>
-
-            <form action={addLesson} className="mt-5 flex max-w-3xl flex-wrap items-end gap-3 border-t border-[var(--line)] pt-4">
-              <input name="courseId" type="hidden" value={course.id} />
-              <input name="moduleId" type="hidden" value={module.id} />
-              <label className="min-w-[12rem] flex-1 text-xs text-muted">
-                New lesson title
-                <input className="mt-1 w-full px-3 py-2" name="title" placeholder="Lesson title" />
-              </label>
-              <label className="text-xs text-muted">
-                Kind
-                <select className="mt-1 w-full px-3 py-2" defaultValue="video" name="kind">
-                  <option value="video">Video</option>
-                  <option value="audio">Audio</option>
-                  <option value="pdf">PDF</option>
-                  <option value="reading">Reading</option>
-                </select>
-              </label>
-              <GoldButton pendingLabel="Adding…" type="submit">
-                Add lesson
-              </GoldButton>
-            </form>
-          </section>
-        ))}
-      </div>
     </main>
   );
 }

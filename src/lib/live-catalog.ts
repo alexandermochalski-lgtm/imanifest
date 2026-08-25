@@ -45,6 +45,23 @@ export function lessonIsPlayable(lesson: Lesson): boolean {
   return Boolean(lesson.mediaUrl);
 }
 
+/** Strip file extensions left on imported lesson titles. */
+export function cleanLessonTitle(title: string) {
+  return title.replace(/\.(wav|m4a|mp3|mp4|pdf|mov|webm|aac)$/i, "").trim();
+}
+
+function polishCourse(course: Course): Course {
+  return {
+    ...course,
+    modules: course.modules.map((module) => ({
+      ...module,
+      lessons: module.lessons
+        .filter((lesson) => !/^how to use email mini-course$/i.test(cleanLessonTitle(lesson.title)))
+        .map((lesson) => ({ ...lesson, title: cleanLessonTitle(lesson.title) })),
+    })),
+  };
+}
+
 /**
  * Live course catalog.
  * Once Blob overlay has Wave courses, seed placeholders are dropped entirely
@@ -53,9 +70,9 @@ export function lessonIsPlayable(lesson: Lesson): boolean {
 export async function getLiveCourses(): Promise<Course[]> {
   const overlay = await readOverlay();
   if (overlay.courses.length > 0) {
-    return [...overlay.courses];
+    return overlay.courses.map(polishCourse);
   }
-  return mergeById(seedCourses, overlay.courses);
+  return mergeById(seedCourses, overlay.courses).map(polishCourse);
 }
 
 /** Campus + marketing menu: only active courses that actually have media. */

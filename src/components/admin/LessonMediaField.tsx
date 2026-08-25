@@ -10,16 +10,23 @@ const LESSON_ACCEPT =
 
 type LibraryItem = { id: string; title: string; kind: string; url: string };
 
+function shortLabel(title: string) {
+  const cleaned = title.replace(/^[^—–-]+[—–-]\s*/, "").replace(/\.(wav|m4a|mp3|mp4|pdf)$/i, "");
+  return cleaned.length > 72 ? `${cleaned.slice(0, 69)}…` : cleaned || title;
+}
+
 export function LessonMediaField({
   mode,
   library,
   initialUrl,
   initialMediaId,
+  compact = false,
 }: {
   mode: "blob" | "local" | "none";
   library: LibraryItem[];
   initialUrl?: string;
   initialMediaId?: string;
+  compact?: boolean;
 }) {
   const router = useRouter();
   const [url, setUrl] = useState(initialUrl ?? "");
@@ -28,6 +35,7 @@ export function LessonMediaField({
   const [busy, setBusy] = useState(false);
   const [progress, setProgress] = useState(0);
   const [error, setError] = useState("");
+  const [open, setOpen] = useState(!compact || !initialUrl);
 
   const preview = campusMediaHref(url) ?? url;
 
@@ -87,6 +95,85 @@ export function LessonMediaField({
     }
   }
 
+  if (compact) {
+    return (
+      <div className="mt-2">
+        <input name="mediaId" type="hidden" value={mediaId} />
+        <input name="mediaUrl" type="hidden" value={url} />
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs">
+          {url ? (
+            <a className="text-gold underline-offset-2 hover:underline" href={preview} rel="noreferrer" target="_blank">
+              {shortLabel(fileName || "Attached file")}
+            </a>
+          ) : (
+            <span className="text-muted">No file</span>
+          )}
+          <button
+            className="text-[11px] uppercase tracking-[0.14em] text-muted hover:text-gold"
+            onClick={() => setOpen((value) => !value)}
+            type="button"
+          >
+            {open ? "Hide replace" : url ? "Replace file" : "Attach file"}
+          </button>
+        </div>
+        {open ? (
+          <div className="mt-3 grid gap-3 rounded-xl border border-[var(--line)] bg-black/20 p-3">
+            {mode !== "none" ? (
+              <label className="block text-xs text-muted">
+                Upload
+                <input
+                  accept={LESSON_ACCEPT}
+                  className="mt-1 block w-full text-sm"
+                  disabled={busy}
+                  onChange={(event) => void onFile(event.target.files?.[0])}
+                  type="file"
+                />
+              </label>
+            ) : null}
+            {busy ? <p className="text-sm text-gold">Uploading {progress}%</p> : null}
+            {error ? <p className="text-sm text-red-200">{error}</p> : null}
+            <label className="block text-xs text-muted">
+              Paste URL
+              <input
+                className="mt-1 w-full px-3 py-2"
+                onChange={(event) => {
+                  setUrl(event.target.value);
+                  setMediaId("");
+                  setFileName("");
+                }}
+                placeholder="https://…"
+                value={url}
+              />
+            </label>
+            {library.length ? (
+              <label className="block text-xs text-muted">
+                Library ({library.length})
+                <select
+                  className="mt-1 w-full px-3 py-2"
+                  onChange={(event) => {
+                    const id = event.target.value;
+                    const asset = library.find((item) => item.id === id);
+                    setMediaId(id);
+                    setUrl(asset?.url ?? "");
+                    setFileName(asset?.title ?? "");
+                  }}
+                  value={mediaId}
+                >
+                  <option value="">None</option>
+                  {library.map((asset) => (
+                    <option key={asset.id} value={asset.id}>
+                      {shortLabel(asset.title)} ({asset.kind})
+                    </option>
+                  ))}
+                </select>
+              </label>
+            ) : null}
+          </div>
+        ) : null}
+      </div>
+    );
+  }
+
   return (
     <div className="rounded-2xl border border-dashed border-[var(--line)] p-5">
       <input name="mediaId" type="hidden" value={mediaId} />
@@ -94,7 +181,7 @@ export function LessonMediaField({
       <p className="text-xs text-muted">Lesson file</p>
       {url ? (
         <p className="mt-2 text-sm text-gold">
-          {fileName || "File ready"} ·{" "}
+          {shortLabel(fileName || "File ready")} ·{" "}
           <a className="underline" href={preview} rel="noreferrer" target="_blank">
             Open
           </a>
@@ -147,12 +234,11 @@ export function LessonMediaField({
           <option value="">None</option>
           {library.map((asset) => (
             <option key={asset.id} value={asset.id}>
-              {asset.title} ({asset.kind})
+              {shortLabel(asset.title)} ({asset.kind})
             </option>
           ))}
         </select>
       </label>
-      <p className="mt-3 text-xs text-muted">Upload goes straight to storage (max 500 MB) and is saved into the media library.</p>
     </div>
   );
 }
